@@ -10,7 +10,7 @@
 
 /*┌─────────────────────────────────┐
   │GLOBAL                           │
-  │├−►Description:                  │
+  │├−► Description:                 │
   └─────────────────────────────────┘*/
 void clrscr(void){
 	printf("\033[2J");
@@ -18,7 +18,7 @@ void clrscr(void){
 }
 /*┌─────────────────────────────────┐
   │BASIC                            │
-  │├−►Description:                  │
+  │├−► Description:                 │
   └─────────────────────────────────┘*/
 void hello_world(){
 	printf("HELLO WORLD!\n");
@@ -37,6 +37,695 @@ void ascii_table(){
 	printf("INT\tCHAR\t\tINT\tCHAR\t\tINT\tCHAR\n");
 	for(int i=32; i<=63; i++){
 		printf("%d\t%c\t\t%d\t%c\t\t%d\t%c\n", i, i, i+32, i+32, i+64, i+64);
+	}
+}
+/*┌─────────────────────────────────┐
+  │PATTERNS                         │
+  │├−► Description:                 │
+  └─────────────────────────────────┘*/
+void binary_pattern(int n){
+	int count=1;
+	for(int i=1; i<=n; i++){
+		printf("%d: ", i);
+		for(int j=1; j<=i; j++){
+			printf("%d", count++%2);
+			if(j == i){
+				printf("\n");
+			}
+		}
+		if(i%2 == 0){
+			count=1;
+		}else{
+			count=0;
+		}
+	}
+}
+
+void diamond_patter(int n){
+	int space=n-1;
+	for(int k=1; k<=n; k++){
+		printf("%d: ", k);
+		for(int c=1; c<=space; c++){
+			printf(" ");
+		}
+		space--;
+		for(int c=1; c<=2*k-1; c++){
+			printf("*");
+		}
+		printf("\n");
+	}
+	space=1;
+	for(int k=1; k<=n-1; k++){
+		printf("%d: ", n-k);
+		for(int c=1; c<=space; c++){
+			printf(" ");
+		}
+		space++;
+		for(int c=1; c<=2*(n-k)-1; c++){
+			printf("*");
+		}
+		printf("\n");
+	}
+}
+
+void diamond_star_outline(int n){
+	for(int i=1; i<=n; i++){
+		printf("%d: ", i);
+		for(int j=n; j>i; j--){
+			printf(" ");
+		}
+		printf("*");
+		for(int j=1; j<(i-1)*2; j++){
+			printf(" ");
+		}
+		if(i == 1){
+			printf("\n");
+		}else{
+			printf("*\n");
+		}
+	}
+	for(int i=n-1; i>=1; i--){
+		printf("%d: ", i);
+		for(int j=n; j>i; j--){
+			printf(" ");
+		}
+		printf("*");
+		for(int j=1; j<(i-1)*2; j++){
+			printf(" ");
+		}
+		if(i == 1){
+			printf("\n");
+		}else{
+			printf("*\n");
+		}
+	}
+}
+
+void floyds_triangle(int n){
+	int a=1;
+	for(int i=1; i<=n; i++){
+		printf("%d: ", i);
+		for(int c=1; c<=i; c++){
+			printf("%d ", a);
+			a++;
+		}
+		printf("\n");
+	}
+}
+
+void hollow_diamond(int n){
+	for(int i=1; i<=n; i++){
+		printf("%d: ", i);
+		for(int j=1; j<=(n+1)-i; j++){
+			printf("*");
+		}
+		for(int k=1; k<i; k++){
+			printf("  ");
+		}
+		for (int j=1; j<=(n+1)-i; j++){
+			printf("*");
+		}
+		printf("\n");
+	}
+	for(int i=2; i<=n; i++){
+		printf("%d: ", (n+1)-i);
+		for(int j=1; j<=i; j++){
+			printf("*");
+		}
+		for(int k=1; k<=n-i; k++){
+			printf("  ");
+		}
+		for(int j=1; j<=i; j++){
+			printf("*");
+		}
+		printf("\n");
+	}
+}
+
+void hollow_square(int n){
+	for(int i=1; i<=n; i++){
+		printf("%d: ", i);
+		for(int j=1; j<=n; j++){
+			if((i != 1)&&(i != n)&&(j != 1)&&(j != n)){
+				printf(" ");
+			}else{
+				printf("*");
+			}
+		}
+		printf("\n");
+	}
+}
+
+void hourglass_pattern(int n){
+	int l=n;
+	for(int r=1; r<=l; r++){
+		printf("%d: ", r);
+		for(int sp=1; sp<=r; sp++){
+			printf(" ");
+		}
+		for(int c=1; c<=n; c++){
+			printf("*");
+		}
+		for(int c=l-r; c>=1; c--){
+			printf("*");
+		}
+		n--;
+		printf("\n");
+	}
+	for(int r=2; r<=l; r++){
+		printf("%d: ", (l+1)-r);
+		for(int sp=l-r+1; sp>=1; sp--){
+			printf(" ");
+		}
+		for(int c=1; c<=r; c++){
+			printf("*");
+		}
+		for(int c=r-1; c>=1; c--){
+			printf("*");
+		}
+		printf("\n");
+	}
+}
+
+void nested_star_hash_pyramid(int n){
+	for(int r=1; r<=(n+r)-1; r++,n--){
+		printf("%d: ", r);
+		for(int c=1; c<=n; c++){
+			printf(" #");
+		}
+		for(int c=1; c<=r; c++){
+			if(c == 1){
+				printf(" *");
+			}else{
+				printf(" #");
+			}
+		}
+		for(int c=r; c>1; c--){
+			if(c == 2){
+				printf(" *");
+			}else{
+				printf(" #");
+			}
+		}
+		for(int c=n; c>=1; c--){
+			printf(" #");
+		}
+		printf("\n");
+	}
+}
+
+void number_aplphabet_pattern(int n){
+	char ch='A';
+	int i=1;
+	for(int r=1; r<n; r++){
+		printf("%d: ", r);
+		for(int c=1; c<=r; c++){
+			if((r%2) == 0){
+				printf("%c  ", ch++);
+			}else{
+				if(i<=9){
+					printf("%d  ", i++);
+				}else{
+					printf("%d ", i++);
+				}
+			}
+		}
+		printf("\n");
+	}
+}
+
+void number_diamond_pattern(int n){
+	if((n >= 1)&&(n <= 5)){
+		for(int i=1; i<=n; i++){
+			printf("%d: ", i);
+			for(int j=i; j<n; j++){
+				printf(" ");
+			}
+			for(int k=1; k<(i*2); k++){
+				printf("%d", k);
+			}
+			printf("\n");
+		}
+		for(int i=n-1; i>=1; i--){
+			printf("%d: ", i);
+			for(int j=n; j>i; j--){
+				printf(" ");
+			}
+			for(int k=1; k<(i*2); k++){
+				printf("%d", k);
+			}
+			printf("\n");
+		}
+	}
+}
+
+void number_pattern_1(int n){
+	for(int i=1; i<=n; i++){
+		printf("%d: ", i);
+		for(int j=n; j>=1; j--){
+			if(j <= i){
+				printf("%d",j);
+			}else{
+                printf(" ");
+            }
+        }
+        printf("\n");
+    }
+}
+
+void number_pattern_2(int n){
+	for(int i=1; i<=n; i++){
+		printf("%d: ", i);
+		for(int j=1; j<=n; j++){
+			if(j <= i){
+				printf("%d",j);
+			}else{
+				printf(" ");
+			}
+		}
+		for(int j=n-1; j>=1; j--){
+			if(j <= i){
+				printf("%d",j);
+			}else{
+				printf(" ");
+			}
+		}
+		printf("\n");
+	}
+}
+
+void number_pattern_3(int n){
+	for(int i=1; i<=n; i++){
+		printf("%d: ", i);
+		for(int j=i; j>=1; j--){
+			printf("%d",j);
+		}
+		printf("\n");
+	}
+}
+
+void number_pattern_4(int n){
+	for(int i=1; i<=n; i++){
+		printf("%d: ", i);
+		for(int j=1; j<=i; j++){
+			printf("%d",j);
+		}
+		printf("\n");
+	}
+}
+
+void number_pyramid(int n){
+	int num=1, space=n-1;
+	if((n>=1) && (n<=6)){
+		for(int d=1; d<=n; d++){
+			printf("%d: ", d);
+			num=d;
+			for(int c=1; c<=space; c++){
+				printf(" ");
+			}
+			space--;
+			for(int c=1; c<=d; c++){
+				printf("%d", num);
+				num++;
+			}
+			num=num-2;
+			for(int c=1; c<d; c++) {
+				printf("%d", num);
+				num--;
+			}
+			printf("\n");
+		}
+	}
+}
+
+long fact(int n){
+	long f=1;
+	int i=1;
+	while(i <= n){
+		f=f*i;
+		i++;
+	}
+	return f;
+}
+
+void pascal_triangle(int n){
+	if(( n>= 1)&&(n <= 6)){
+		for(int i=1; i<=n; i++){
+			printf("%d: ", i);
+			for(int j=1; j<=n-i-1; j++){
+				printf(" ");
+			}
+			for(int j=1; j<=i; j++){
+				printf("%ld ", fact(i)/(fact(j)*fact(i-j)));
+			}
+			printf("\n");
+		}
+	}
+}
+
+void pascal_triangle_2(int n){
+	int space=n, number=1;
+	for(int c=1; c<=n; c++){
+		for(int k=n; k>1; k--){
+			printf(" ");
+		}
+		n--;
+		for(int k=1; k<=2*c-1; k++){
+			if(k <= c){
+				printf("%d", number);
+				if(k < c){
+					number++;
+				}
+			}else{
+				number--;
+				printf("%d", number);
+			}
+		}
+		number=1;
+		printf("\n");
+	}
+}
+
+void pascals_triangle_without_function(int n){
+	int s=n, a;
+	for(int x=0; x<=n; x++){
+		printf("%d: ", x);
+		a=1;
+		for(int z=s; z>=0; z--){
+			printf(" ");
+		}
+		s--;
+		for(int y=0; y<=x; y++){
+			printf("%d ", a);
+			a=(a*(x-y)/(y+1));
+		}
+		printf("\n");
+	}
+}
+
+void pattern_1(int n){
+	for(int i=1; i<=n; i++){
+		printf("%d: ", i);
+		for(int j=1; j<=i; j++){
+			printf("*");
+		}
+		printf("\n");
+	}
+}
+
+void pattern_2(int n){
+	int space=n, count;
+	for(int c=1; c<=n; c++){
+		printf("%d: ", c);
+		for(int k=1; k<space; k++){
+			printf(" ");
+		}
+		for(int k=1; k<=c; k++){
+			printf("*");
+			if((c > 1)&&(count < c)){
+				printf("A");
+				count++;
+			}
+		}
+		printf("\n");
+		space--;
+		count=1;
+	}
+}
+
+void pattern_3(int n){
+	int c='A';
+	for(int i=1; i<=n; i++){
+		printf("%d: ", i);
+		for(int j=1; j<=i; j++){
+			printf("%c", c);
+			c=c+1;
+		}
+		printf("\n");
+	}
+}
+
+void pattern_4(int n){
+	for(int i=1; i<=n; i++){
+		printf("%d: ", i);
+		for(int j=1; j<=i; j++){
+			printf("%d",j);
+		}
+		for(int j=i-1; j>=1; j--){
+			printf("%d",j);
+		}
+		printf("\n");
+	}
+}
+
+void pattern_5(int n){
+	for(int i=n; i>=1; i--){
+		printf("%d: ", (n+1)-i);
+		for(int j=1; j<=i; j++){
+			printf("*");
+		}
+		printf("\n");
+	}
+}
+
+void pattern_6(int n){
+	for(int i=1; i<=n; i++){
+		printf("%d: ", i);
+		for(int j=1; j<=i; j++){
+			printf ("*");
+		}
+		for(int k=i; k<=i; k++){
+			printf(" ");
+		}
+		for(int l=1; l<=i; l++){
+			printf ("*");
+		}
+		printf ("\n");
+	}
+}
+
+void pattern_7(int n){
+	int a,j;
+	for(int j=1; j<=n; j++){
+		printf("%d: ", j);
+		for(int i=1; i<=n; i++){
+			if(j == i){
+				printf("%d ", a);
+			}else{
+				printf("%d ", j);
+			}
+		}
+		printf("\n");
+	}
+}
+
+void pattern_8(int n){
+	for(int i=1; i<=n; i++){
+		printf("%d: ", i);
+		for(int j=1; j<=i; j++){
+			printf("* ");
+		}
+		printf("\n");
+	}
+}
+
+void pattern_9(int n){
+	int no_of_spaces=n-1;
+	char ch='*';
+	for(int i=1; i<=n; i++){
+		printf("%d: ", i);
+		for(int spaceCount=no_of_spaces; spaceCount>=1; spaceCount--){
+			printf("  ");
+		}
+		for(int j=1; j<=i; j++){
+			printf("%2c", ch);
+		}
+		printf("\n");
+		no_of_spaces--;
+	}
+}
+
+void pattern_10(int n){
+	for(int i=n; i>=1; i--){
+		printf("%d: ", (n+1)-i);
+		for(int j=1; j<=i; j++){
+			printf("%d", j);
+		}
+		printf("\n");
+	}
+}
+
+void pyramid(int n){
+	int temp=n;
+	for(int row=1; row<=n; row++){
+		printf("%d: ", row);
+		for(int c=1; c<temp; c++){
+			printf(" ");
+		}
+		temp--;
+		for(int c=1; c<=2*row-1; c++){
+			printf("*");
+		}
+		printf("\n");
+	}
+}
+
+void rectangle_pattern(int n){
+	int r=1;
+	for(; n>=1; n--,r++){
+		printf("%d: ", r);
+		for(int c=1; c<=n; c++){
+			printf("%d",c);
+		}
+		for(int sp=r; sp>1; sp--){
+			printf("_");
+		}
+		for(int sp=r; sp>1; sp--){
+			printf("_");
+		}
+		for(int c=n; c>=1; c--){
+			printf("%d",c);
+		}
+		printf("\n");
+	}
+}
+
+void retangle_star_pattern(int n, int m){
+	for(int i=1; i<=n; i++){
+		printf("%d: ", i);
+		for(int j=1; j<=m; j++){
+			printf("*");
+		}
+		printf("\n");
+	}
+}
+
+void reverse_star_triangle(int n){
+	for(int i=n; i>=1; i--){
+		printf("%d: ", i);
+		for(int j=n; j>i; j--){
+			printf(" ");
+		}
+		for(int k=1; k<(i*2); k++){
+			printf("*");
+		}
+		printf("\n");
+	}
+}
+
+void rhombus_pattern(int n){
+	for(int r=1; r<=n; r++){
+		printf("%d: ", r);
+		for(int sp=n-r; sp>=1; sp--){
+			printf(" ");
+		}
+		printf("%d", r);
+		for(int sp=r*2; sp>1; sp--){
+			printf(" ");
+		}
+		printf("%d\n", r);
+	}
+	for(int r=1,n=n-1; r<n; r++,n--){
+		for(int sp=r; sp>=1; sp--){
+			printf(" ");
+		}
+		printf("%d",n);
+		for(int sp=n*2; sp>1; sp--){
+			printf(" ");
+		}
+		printf("%d\n", n);
+	}
+}
+
+void square_kite_pattern(int n){
+	for(int i=1; i<=n; i++){
+		printf("%d: ", i);
+		for(int j=n; j>=i-1; j--){
+			printf(" ");
+		}
+		printf("%d", i);
+		for(int j=i+1; j<=(i-1)*3; j++){
+			printf(" ");
+		}
+		if(i > 1){
+			printf("%d", i);
+		}
+		printf("\n");
+	}
+	for(int i=n-1; i>=1; i--){
+		printf("%d: ", i);
+		for(int j=n; j>=i-1; j--){
+			printf(" ");
+		}
+		printf("%d", i);
+		for(int j=i+1; j<=(i-1)*3; j++){
+			printf(" ");
+		}
+		if(i > 1){
+			printf("%d",i);
+		}
+		printf("\n");
+	}
+}
+
+void square_star_pattern(int n){
+	for(int i=1; i<=n; i++){
+		printf("%d: ", i);
+		for(int j=1; j<=n; j++){
+			printf("*");
+		}
+		printf("\n");
+	}
+}
+
+void triangle_borders(char border, char filler, int n){
+	int start=2, base=4, length=n;
+	for(int i=start; i<=length; i++){
+		printf("%d: ", (i-start)+1);
+		for(int sp=0; sp<=length-i; sp++){
+			printf(" ");
+		}
+		if(i>start){
+			printf("%c ", border);
+		}
+		if(i>start){
+			for(int b=base; b<=i; b++){
+				printf("%c ", filler);
+			}
+		}
+		printf("%c \n", border);
+	}
+	printf("%d: ", length);
+	for(int j=base; j<length+base; j++){
+		printf("%c ", border);
+	}
+	printf("\n");
+}
+
+void x_pattern(int n){
+	int k=1, m[n][n];
+	for(int i=0; i<n; i++){
+		for(int j=0; j<n; j++){
+			m[i][j]=0;
+			if((j == i)||((n-1)-i == j)){
+				m[i][j]=k;
+			}
+		}
+		if(i < n){
+			k++;
+		}else{
+			--k;
+		}
+	}
+	for(int i=0; i<n; i++){
+		for(int j=0; j<n; j++){
+			if(m[i][j] == 0){
+				printf(" ");
+			}else{
+				printf("%d", m[i][j]);
+			}
+		}
+		printf("\n");
 	}
 }
 //...
@@ -122,7 +811,7 @@ void main(int argc, char const *argv[]){
 					printf("│       ├► 1.  HELLO WORLD                    [●]│\n");
 					printf("│       ├► 2.  SIZES OF TYPE'S VARIABLES      [●]│\n");
 					printf("│       ├► 3.  ASCII TABLE                    [●]│\n");
-					printf("│       ├► 4.  MENU PATTERNS                  [○]│\n");
+					printf("│       ├► 4.  MENU PATTERNS                  [●]│\n");
 					printf("│       ├► 5.  MENU NUMBERS                   [○]│\n");
 					printf("│       ├► 6.  MENU MATH FORMULA              [○]│\n");
 					printf("│       ├► 7.  MENU FLOATING-POINT ARITHMETIC [●]│\n");
@@ -184,52 +873,52 @@ void main(int argc, char const *argv[]){
 						}break;
 
 						case 4:{
-							int scelta_patterns=0;
+							int scelta_patterns=0, n=0;
 							do{
 								clrscr();
-								printf("┌───────────────────────────────────────────────────────────┐\n");
-								printf("│MAIN MENU                                                  │\n");
-								printf("│└► 1.  MENU BASIC                                          │\n");
-								printf("│       └► 4.  MENU PATTERNS                                │\n");
-								printf("│              ├► 0.  BACK BASIC MENU                    [●]│\n");
-								printf("│              ├► 1.  BINARY PATTERN                     [○]│\n");
-								printf("│              ├► 2.  DIAMOND PATTERN                    [○]│\n");
-								printf("│              ├► 3.  DIAMOND STAR OUTLINE               [○]│\n");
-								printf("│              ├► 4.  FLOYD'S TRIANGLE                   [○]│\n");
-								printf("│              ├► 5.  HOLLOW DIAMOND                     [○]│\n");
-								printf("│              ├► 6.  HOLLOW SQUARE                      [○]│\n");
-								printf("│              ├► 7.  HOURGLASS PATTERN                  [○]│\n");
-								printf("│              ├► 8.  NESTED STAR-HASH PYRAMID           [○]│\n");
-								printf("│              ├► 9.  NUMBER ALPHABET PATTERN            [○]│\n");
-								printf("│              ├► 10. NUMBER DIAMOND PATTERN             [○]│\n");
-								printf("│              ├► 11. NUMBER PATTERN-1                   [○]│\n");
-								printf("│              ├► 12. NUMBER PATTERN-2                   [○]│\n");
-								printf("│              ├► 13. NUMBER PATTERN-3                   [○]│\n");
-								printf("│              ├► 14. NUMBER PATTERN-4                   [○]│\n");
-								printf("│              ├► 15. NUMBER PYRAMID                     [○]│\n");
-								printf("│              ├► 16. PASCAL TRIANGLE                    [○]│\n");
-								printf("│              ├► 17. PASCAL TRIANGLE-2                  [○]│\n");
-								printf("│              ├► 18. PASCAL'S TRIANGLE WITHOUT FUNCTION [○]│\n");
-								printf("│              ├► 19. PATTERN-1                          [○]│\n");
-								printf("│              ├► 20. PATTERN-2                          [○]│\n");
-								printf("│              ├► 21. PATTERN-3                          [○]│\n");
-								printf("│              ├► 22. PATTERN-4                          [○]│\n");
-								printf("│              ├► 23. PATTERN-5                          [○]│\n");
-								printf("│              ├► 24. PATTERN-6                          [○]│\n");
-								printf("│              ├► 25. PATTERN-7                          [○]│\n");
-								printf("│              ├► 26. PATTERN-8                          [○]│\n");
-								printf("│              ├► 27. PATTERN-9                          [○]│\n");
-								printf("│              ├► 28. PATTERN-10                         [○]│\n");
-								printf("│              ├► 29. PYRAMID                            [○]│\n");
-								printf("│              ├► 30. RECTANGLE PATTERN                  [○]│\n");
-								printf("│              ├► 31. RECTANGLE STAR PATTERN             [○]│\n");
-								printf("│              ├► 32. REVERSE STAR TRIANGLE              [○]│\n");
-								printf("│              ├► 33. RHOMBUS PATTERN                    [○]│\n");
-								printf("│              ├► 34. SQUARE KITE PATTERN                [○]│\n");
-								printf("│              ├► 35. SQUARE STAR PATTERN                [○]│\n");
-								printf("│              ├► 36. TRIANGLE WITH ONLY BORDERS         [○]│\n");
-								printf("│              └► 37. X PATTERN                          [○]│\n");
-								printf("└───────────────────────────────────────────────────────────┘\n");
+								printf("┌────────────────────────────────────────────────────────┐\n");
+								printf("│MAIN MENU                                               │\n");
+								printf("│└► 1.  MENU BASIC                                       │\n");
+								printf("│       └► 4.  MENU PATTERNS                             │\n");
+								printf("│              ├► 0.  BACK BASIC MENU                    │\n");
+								printf("│              ├► 1.  BINARY PATTERN                     │\n");
+								printf("│              ├► 2.  DIAMOND PATTERN                    │\n");
+								printf("│              ├► 3.  DIAMOND STAR OUTLINE               │\n");
+								printf("│              ├► 4.  FLOYD'S TRIANGLE                   │\n");
+								printf("│              ├► 5.  HOLLOW DIAMOND                     │\n");
+								printf("│              ├► 6.  HOLLOW SQUARE                      │\n");
+								printf("│              ├► 7.  HOURGLASS PATTERN                  │\n");
+								printf("│              ├► 8.  NESTED STAR-HASH PYRAMID           │\n");
+								printf("│              ├► 9.  NUMBER ALPHABET PATTERN            │\n");
+								printf("│              ├► 10. NUMBER DIAMOND PATTERN             │\n");
+								printf("│              ├► 11. NUMBER PATTERN-1                   │\n");
+								printf("│              ├► 12. NUMBER PATTERN-2                   │\n");
+								printf("│              ├► 13. NUMBER PATTERN-3                   │\n");
+								printf("│              ├► 14. NUMBER PATTERN-4                   │\n");
+								printf("│              ├► 15. NUMBER PYRAMID                     │\n");
+								printf("│              ├► 16. PASCAL TRIANGLE                    │\n");
+								printf("│              ├► 17. PASCAL TRIANGLE-2                  │\n");
+								printf("│              ├► 18. PASCAL'S TRIANGLE WITHOUT FUNCTION │\n");
+								printf("│              ├► 19. PATTERN-1                          │\n");
+								printf("│              ├► 20. PATTERN-2                          │\n");
+								printf("│              ├► 21. PATTERN-3                          │\n");
+								printf("│              ├► 22. PATTERN-4                          │\n");
+								printf("│              ├► 23. PATTERN-5                          │\n");
+								printf("│              ├► 24. PATTERN-6                          │\n");
+								printf("│              ├► 25. PATTERN-7                          │\n");
+								printf("│              ├► 26. PATTERN-8                          │\n");
+								printf("│              ├► 27. PATTERN-9                          │\n");
+								printf("│              ├► 28. PATTERN-10                         │\n");
+								printf("│              ├► 29. PYRAMID                            │\n");
+								printf("│              ├► 30. RECTANGLE PATTERN                  │\n");
+								printf("│              ├► 31. RECTANGLE STAR PATTERN             │\n");
+								printf("│              ├► 32. REVERSE STAR TRIANGLE              │\n");
+								printf("│              ├► 33. RHOMBUS PATTERN                    │\n");
+								printf("│              ├► 34. SQUARE KITE PATTERN                │\n");
+								printf("│              ├► 35. SQUARE STAR PATTERN                │\n");
+								printf("│              ├► 36. TRIANGLE WITH ONLY BORDERS         │\n");
+								printf("│              └► 37. X PATTERN                          │\n");
+								printf("└────────────────────────────────────────────────────────┘\n");
 								printf("CHOICE PATTERNS: ");
 								scanf("%d",&scelta_patterns);
 								switch(scelta_patterns){
@@ -242,7 +931,638 @@ void main(int argc, char const *argv[]){
 										printf("│              └► 0.  BACK BASIC MENU │\n");
 										printf("└─────────────────────────────────────┘\n");
 									}break;
-									//...
+
+									case 1:{
+										do{
+											clrscr();
+											printf("┌────────────────────────────────────┐\n");
+											printf("│MAIN MENU                           │\n");
+											printf("│└► 1.  MENU BASIC                   │\n");
+											printf("│       └► 4.  MENU PATTERNS         │\n");
+											printf("│              └► 1.  BINARY PATTERN │\n");
+											printf("└────────────────────────────────────┘\n");
+											printf("Enter number of row: ");
+											scanf("%d", &n);
+											binary_pattern(n);
+											printf("Do you want to back to PATTERN MENU?(y/n): ");
+											scanf("%s", &torna);
+										}while((torna == 'n')&&(torna != 'y'));
+									}break;
+
+									case 2:{
+										do{
+											clrscr();
+											printf("┌─────────────────────────────────────┐\n");
+											printf("│MAIN MENU                            │\n");
+											printf("│└► 1.  MENU BASIC                    │\n");
+											printf("│       └► 4.  MENU PATTERNS          │\n");
+											printf("│              └► 2.  DIAMOND PATTERN │\n");
+											printf("└─────────────────────────────────────┘\n");
+											printf("Enter number of row: ");
+											scanf("%d", &n);
+											diamond_patter(n);
+											printf("Do you want to back to PATTERN MENU?(y/n): ");
+											scanf("%s", &torna);
+										}while((torna == 'n')&&(torna != 'y'));
+									}break;
+
+									case 3:{
+										do{
+											clrscr();
+											printf("┌──────────────────────────────────────────┐\n");
+											printf("│MAIN MENU                                 │\n");
+											printf("│└► 1.  MENU BASIC                         │\n");
+											printf("│       └► 4.  MENU PATTERNS               │\n");
+											printf("│              └► 3.  DIAMOND STAR OUTLINE │\n");
+											printf("└──────────────────────────────────────────┘\n");
+											printf("Enter number of row: ");
+											scanf("%d", &n);
+											diamond_star_outline(n);
+											printf("Do you want to back to PATTERN MENU?(y/n): ");
+											scanf("%s", &torna);
+										}while((torna == 'n')&&(torna != 'y'));
+									}break;
+
+									case 4:{
+										do{
+											clrscr();
+											printf("┌──────────────────────────────────────┐\n");
+											printf("│MAIN MENU                             │\n");
+											printf("│└► 1.  MENU BASIC                     │\n");
+											printf("│       └► 4.  MENU PATTERNS           │\n");
+											printf("│              └► 4.  FLOYD'S TRIANGLE │\n");
+											printf("└──────────────────────────────────────┘\n");
+											printf("Enter number of row: ");
+											scanf("%d", &n);
+											floyds_triangle(n);
+											printf("Do you want to back to PATTERN MENU?(y/n): ");
+											scanf("%s", &torna);
+										}while((torna == 'n')&&(torna != 'y'));
+									}break;
+
+									case 5:{
+										do{
+											clrscr();
+											printf("┌────────────────────────────────────┐\n");
+											printf("│MAIN MENU                           │\n");
+											printf("│└► 1.  MENU BASIC                   │\n");
+											printf("│       └► 4.  MENU PATTERNS         │\n");
+											printf("│              └► 5.  HOLLOW DIAMOND │\n");
+											printf("└────────────────────────────────────┘\n");
+											printf("Enter number of row: ");
+											scanf("%d", &n);
+											hollow_diamond(n);
+											printf("Do you want to back to PATTERN MENU?(y/n): ");
+											scanf("%s", &torna);
+										}while((torna == 'n')&&(torna != 'y'));
+									}break;
+
+									case 6:{
+										do{
+											clrscr();
+											printf("┌───────────────────────────────────┐\n");
+											printf("│MAIN MENU                          │\n");
+											printf("│└► 1.  MENU BASIC                  │\n");
+											printf("│       └► 4.  MENU PATTERNS        │\n");
+											printf("│              └► 6.  HOLLOW SQUARE │\n");
+											printf("└───────────────────────────────────┘\n");
+											printf("Enter number of row: ");
+											scanf("%d", &n);
+											hollow_square(n);
+											printf("Do you want to back to PATTERN MENU?(y/n): ");
+											scanf("%s", &torna);
+										}while((torna == 'n')&&(torna != 'y'));
+									}break;
+
+									case 7:{
+										do{
+											clrscr();
+											printf("┌───────────────────────────────────────┐\n");
+											printf("│MAIN MENU                              │\n");
+											printf("│└► 1.  MENU BASIC                      │\n");
+											printf("│       └► 4.  MENU PATTERNS            │\n");
+											printf("│              └► 7.  HOURGLASS PATTERN │\n");
+											printf("└───────────────────────────────────────┘\n");
+											printf("Enter number of row: ");
+											scanf("%d", &n);
+											hourglass_pattern(n);
+											printf("Do you want to back to PATTERN MENU?(y/n): ");
+											scanf("%s", &torna);
+										}while((torna == 'n')&&(torna != 'y'));
+									}break;
+
+									case 8:{
+										do{
+											clrscr();
+											printf("┌──────────────────────────────────────────────┐\n");
+											printf("│MAIN MENU                                     │\n");
+											printf("│└► 1.  MENU BASIC                             │\n");
+											printf("│       └► 4.  MENU PATTERNS                   │\n");
+											printf("│              └► 8.  NESTED STAR-HASH PYRAMID │\n");
+											printf("└──────────────────────────────────────────────┘\n");
+											printf("Enter number of row: ");
+											scanf("%d", &n);
+											nested_star_hash_pyramid(n);
+											printf("Do you want to back to PATTERN MENU?(y/n): ");
+											scanf("%s", &torna);
+										}while((torna == 'n')&&(torna != 'y'));
+									}break;
+
+									case 9:{
+										do{
+											clrscr();
+											printf("┌─────────────────────────────────────────────┐\n");
+											printf("│MAIN MENU                                    │\n");
+											printf("│└► 1.  MENU BASIC                            │\n");
+											printf("│       └► 4.  MENU PATTERNS                  │\n");
+											printf("│              └► 9.  NUMBER ALPHABET PATTERN │\n");
+											printf("└─────────────────────────────────────────────┘\n");
+											printf("Enter number of row: ");
+											scanf("%d", &n);
+											number_aplphabet_pattern(n);
+											printf("Do you want to back to PATTERN MENU?(y/n): ");
+											scanf("%s", &torna);
+										}while((torna == 'n')&&(torna != 'y'));
+									}break;
+
+									case 10:{
+										do{
+											clrscr();
+											printf("┌────────────────────────────────────────────┐\n");
+											printf("│MAIN MENU                                   │\n");
+											printf("│└► 1.  MENU BASIC                           │\n");
+											printf("│       └► 4.  MENU PATTERNS                 │\n");
+											printf("│              └► 10. NUMBER DIAMOND PATTERN │\n");
+											printf("└────────────────────────────────────────────┘\n");
+											printf("Enter number of row[min 1, max 5]: ");
+											scanf("%d", &n);
+											number_diamond_pattern(n);
+											printf("Do you want to back to PATTERN MENU?(y/n): ");
+											scanf("%s", &torna);
+										}while((torna == 'n')&&(torna != 'y'));
+									}break;
+
+									case 11:{
+										do{
+											clrscr();
+											printf("┌──────────────────────────────────────┐\n");
+											printf("│MAIN MENU                             │\n");
+											printf("│└► 1.  MENU BASIC                     │\n");
+											printf("│       └► 4.  MENU PATTERNS           │\n");
+											printf("│              └► 11. NUMBER PATTERN-1 │\n");
+											printf("└──────────────────────────────────────┘\n");
+											printf("Enter number of row: ");
+											scanf("%d", &n);
+											number_pattern_1(n);
+											printf("Do you want to back to PATTERN MENU?(y/n): ");
+											scanf("%s", &torna);
+										}while((torna == 'n')&&(torna != 'y'));
+									}break;
+
+									case 12:{
+										do{
+											clrscr();
+											printf("┌──────────────────────────────────────┐\n");
+											printf("│MAIN MENU                             │\n");
+											printf("│└► 1.  MENU BASIC                     │\n");
+											printf("│       └► 4.  MENU PATTERNS           │\n");
+											printf("│              └► 12. NUMBER PATTERN-2 │\n");
+											printf("└──────────────────────────────────────┘\n");
+											printf("Enter number of row: ");
+											scanf("%d", &n);
+											number_pattern_2(n);
+											printf("Do you want to back to PATTERN MENU?(y/n): ");
+											scanf("%s", &torna);
+										}while((torna == 'n')&&(torna != 'y'));
+									}break;
+
+									case 13:{
+										do{
+											clrscr();
+											printf("┌──────────────────────────────────────┐\n");
+											printf("│MAIN MENU                             │\n");
+											printf("│└► 1.  MENU BASIC                     │\n");
+											printf("│       └► 4.  MENU PATTERNS           │\n");
+											printf("│              └► 13. NUMBER PATTERN-3 │\n");
+											printf("└──────────────────────────────────────┘\n");
+											printf("Enter number of row: ");
+											scanf("%d", &n);
+											number_pattern_3(n);
+											printf("Do you want to back to PATTERN MENU?(y/n): ");
+											scanf("%s", &torna);
+										}while((torna == 'n')&&(torna != 'y'));
+									}break;
+
+									case 14:{
+										do{
+											clrscr();
+											printf("┌──────────────────────────────────────┐\n");
+											printf("│MAIN MENU                             │\n");
+											printf("│└► 1.  MENU BASIC                     │\n");
+											printf("│       └► 4.  MENU PATTERNS           │\n");
+											printf("│              └► 14. NUMBER PATTERN-4 │\n");
+											printf("└──────────────────────────────────────┘\n");
+											printf("Enter number of row: ");
+											scanf("%d", &n);
+											number_pattern_4(n);
+											printf("Do you want to back to PATTERN MENU?(y/n): ");
+											scanf("%s", &torna);
+										}while((torna == 'n')&&(torna != 'y'));
+									}break;
+
+									case 15:{
+										do{
+											clrscr();
+											printf("┌─────────────────────────────────────┐\n");
+											printf("│MAIN MENU                            │\n");
+											printf("│└► 1.  MENU BASIC                    │\n");
+											printf("│       └► 4.  MENU PATTERNS          │\n");
+											printf("│              └► 15. NUMBER PYRAMID │\n");
+											printf("└─────────────────────────────────────┘\n");
+											printf("Enter number of row: ");
+											scanf("%d", &n);
+											number_pyramid(n);
+											printf("Do you want to back to PATTERN MENU?(y/n): ");
+											scanf("%s", &torna);
+										}while((torna == 'n')&&(torna != 'y'));
+									}break;
+
+									case 16:{
+										do{
+											clrscr();
+											printf("┌─────────────────────────────────────┐\n");
+											printf("│MAIN MENU                            │\n");
+											printf("│└► 1.  MENU BASIC                    │\n");
+											printf("│       └► 4.  MENU PATTERNS          │\n");
+											printf("│              └► 16. PASCAL TRIANGLE │\n");
+											printf("└─────────────────────────────────────┘\n");
+											printf("Enter number of row: ");
+											scanf("%d", &n);
+											pascal_triangle(n);
+											printf("Do you want to back to PATTERN MENU?(y/n): ");
+											scanf("%s", &torna);
+										}while((torna == 'n')&&(torna != 'y'));
+									}break;
+
+									case 17:{
+										do{
+											clrscr();
+											printf("┌───────────────────────────────────────┐\n");
+											printf("│MAIN MENU                              │\n");
+											printf("│└► 1.  MENU BASIC                      │\n");
+											printf("│       └► 4.  MENU PATTERNS            │\n");
+											printf("│              └► 17. PASCAL TRIANGLE-2 │\n");
+											printf("└───────────────────────────────────────┘\n");
+											printf("Enter number of row: ");
+											scanf("%d", &n);
+											pascal_triangle_2(n);
+											printf("Do you want to back to PATTERN MENU?(y/n): ");
+											scanf("%s", &torna);
+										}while((torna == 'n')&&(torna != 'y'));
+									}break;
+
+									case 18:{
+										do{
+											clrscr();
+											printf("┌──────────────────────────────────────────────────────────────┐\n");
+											printf("│MAIN MENU                                                     │\n");
+											printf("│└► 1.  MENU BASIC                                             │\n");
+											printf("│       └► 4.  MENU PATTERNS                                   │\n");
+											printf("│              └► 18. PASCAL'S TRIANGLE WITHOUT USING FUNCTION │\n");
+											printf("└──────────────────────────────────────────────────────────────┘\n");
+											printf("Enter number of row: ");
+											scanf("%d", &n);
+											pascals_triangle_without_function(n);
+											printf("Do you want to back to PATTERN MENU?(y/n): ");
+											scanf("%s", &torna);
+										}while((torna == 'n')&&(torna != 'y'));
+									}break;
+
+									case 19:{
+										do{
+											clrscr();
+											printf("┌───────────────────────────────┐\n");
+											printf("│MAIN MENU                      │\n");
+											printf("│└► 1.  MENU BASIC              │\n");
+											printf("│       └► 4.  MENU PATTERNS    │\n");
+											printf("│              └► 19. PATTERN-1 │\n");
+											printf("└───────────────────────────────┘\n");
+											printf("Enter number of row: ");
+											scanf("%d", &n);
+											pattern_1(n);
+											printf("Do you want to back to PATTERN MENU?(y/n): ");
+											scanf("%s", &torna);
+										}while((torna == 'n')&&(torna != 'y'));
+									}break;
+
+									case 20:{
+										do{
+											clrscr();
+											printf("┌───────────────────────────────┐\n");
+											printf("│MAIN MENU                      │\n");
+											printf("│└► 1.  MENU BASIC              │\n");
+											printf("│       └► 4.  MENU PATTERNS    │\n");
+											printf("│              └► 20. PATTERN-2 │\n");
+											printf("└───────────────────────────────┘\n");
+											printf("Enter number of row: ");
+											scanf("%d", &n);
+											pattern_2(n);
+											printf("Do you want to back to PATTERN MENU?(y/n): ");
+											scanf("%s", &torna);
+										}while((torna == 'n')&&(torna != 'y'));
+									}break;
+
+									case 21:{
+										do{
+											clrscr();
+											printf("┌───────────────────────────────┐\n");
+											printf("│MAIN MENU                      │\n");
+											printf("│└► 1.  MENU BASIC              │\n");
+											printf("│       └► 4.  MENU PATTERNS    │\n");
+											printf("│              └► 21. PATTERN-3 │\n");
+											printf("└───────────────────────────────┘\n");
+											printf("Enter number of row: ");
+											scanf("%d", &n);
+											pattern_3(n);
+											printf("Do you want to back to PATTERN MENU?(y/n): ");
+											scanf("%s", &torna);
+										}while((torna == 'n')&&(torna != 'y'));
+									}break;
+
+									case 22:{
+										do{
+											clrscr();
+											printf("┌───────────────────────────────┐\n");
+											printf("│MAIN MENU                      │\n");
+											printf("│└► 1.  MENU BASIC              │\n");
+											printf("│       └► 4.  MENU PATTERNS    │\n");
+											printf("│              └► 22. PATTERN-4 │\n");
+											printf("└───────────────────────────────┘\n");
+											printf("Enter number of row: ");
+											scanf("%d", &n);
+											pattern_4(n);
+											printf("Do you want to back to PATTERN MENU?(y/n): ");
+											scanf("%s", &torna);
+										}while((torna == 'n')&&(torna != 'y'));
+									}break;
+
+									case 23:{
+										do{
+											clrscr();
+											printf("┌───────────────────────────────┐\n");
+											printf("│MAIN MENU                      │\n");
+											printf("│└► 1.  MENU BASIC              │\n");
+											printf("│       └► 4.  MENU PATTERNS    │\n");
+											printf("│              └► 23. PATTERN-5 │\n");
+											printf("└───────────────────────────────┘\n");
+											printf("Enter number of row: ");
+											scanf("%d", &n);
+											pattern_5(n);
+											printf("Do you want to back to PATTERN MENU?(y/n): ");
+											scanf("%s", &torna);
+										}while((torna == 'n')&&(torna != 'y'));
+									}break;
+
+									case 24:{
+										do{
+											clrscr();
+											printf("┌───────────────────────────────┐\n");
+											printf("│MAIN MENU                      │\n");
+											printf("│└► 1.  MENU BASIC              │\n");
+											printf("│       └► 4.  MENU PATTERNS    │\n");
+											printf("│              └► 24. PATTERN-6 │\n");
+											printf("└───────────────────────────────┘\n");
+											printf("Enter number of row: ");
+											scanf("%d", &n);
+											pattern_6(n);
+											printf("Do you want to back to PATTERN MENU?(y/n): ");
+											scanf("%s", &torna);
+										}while((torna == 'n')&&(torna != 'y'));
+									}break;
+
+									case 25:{
+										do{
+											clrscr();
+											printf("┌───────────────────────────────┐\n");
+											printf("│MAIN MENU                      │\n");
+											printf("│└► 1.  MENU BASIC              │\n");
+											printf("│       └► 4.  MENU PATTERNS    │\n");
+											printf("│              └► 25. PATTERN-7 │\n");
+											printf("└─────────────────────────────────────┘\n");
+											printf("Enter number of row: ");
+											scanf("%d", &n);
+											pattern_7(n);
+											printf("Do you want to back to PATTERN MENU?(y/n): ");
+											scanf("%s", &torna);
+										}while((torna == 'n')&&(torna != 'y'));
+									}break;
+
+									case 26:{
+										do{
+											clrscr();
+											printf("┌───────────────────────────────┐\n");
+											printf("│MAIN MENU                      │\n");
+											printf("│└► 1.  MENU BASIC              │\n");
+											printf("│       └► 4.  MENU PATTERNS    │\n");
+											printf("│              └► 26. PATTERN-8 │\n");
+											printf("└───────────────────────────────┘\n");
+											printf("Enter number of row: ");
+											scanf("%d", &n);
+											pattern_8(n);
+											printf("Do you want to back to PATTERN MENU?(y/n): ");
+											scanf("%s", &torna);
+										}while((torna == 'n')&&(torna != 'y'));
+									}break;
+
+									case 27:{
+										do{
+											clrscr();
+											printf("┌───────────────────────────────┐\n");
+											printf("│MAIN MENU                      │\n");
+											printf("│└► 1.  MENU BASIC              │\n");
+											printf("│       └► 4.  MENU PATTERNS    │\n");
+											printf("│              └► 27. PATTERN-9 │\n");
+											printf("└───────────────────────────────┘\n");
+											printf("Enter number of row: ");
+											scanf("%d", &n);
+											pattern_9(n);
+											printf("Do you want to back to PATTERN MENU?(y/n): ");
+											scanf("%s", &torna);
+										}while((torna == 'n')&&(torna != 'y'));
+									}break;
+
+									case 28:{
+										do{
+											clrscr();
+											printf("┌────────────────────────────────┐\n");
+											printf("│MAIN MENU                       │\n");
+											printf("│└► 1.  MENU BASIC               │\n");
+											printf("│       └► 4.  MENU PATTERNS     │\n");
+											printf("│              └► 28. PATTERN-10 │\n");
+											printf("└────────────────────────────────┘\n");
+											printf("Enter number of row: ");
+											scanf("%d", &n);
+											pattern_10(n);
+											printf("Do you want to back to PATTERN MENU?(y/n): ");
+											scanf("%s", &torna);
+										}while((torna == 'n')&&(torna != 'y'));
+									}break;
+
+									case 29:{
+										do{
+											clrscr();
+											printf("┌─────────────────────────────┐\n");
+											printf("│MAIN MENU                    │\n");
+											printf("│└► 1.  MENU BASIC            │\n");
+											printf("│       └► 4.  MENU PATTERNS  │\n");
+											printf("│              └► 29. PYRAMID │\n");
+											printf("└─────────────────────────────┘\n");
+											printf("Enter number of row: ");
+											scanf("%d", &n);
+											pyramid(n);
+											printf("Do you want to back to PATTERN MENU?(y/n): ");
+											scanf("%s", &torna);
+										}while((torna == 'n')&&(torna != 'y'));
+									}break;
+
+									case 30:{
+										do{
+											clrscr();
+											printf("┌───────────────────────────────────────┐\n");
+											printf("│MAIN MENU                              │\n");
+											printf("│└► 1.  MENU BASIC                      │\n");
+											printf("│       └► 4.  MENU PATTERNS            │\n");
+											printf("│              └► 30. RECTANGLE PATTERN │\n");
+											printf("└───────────────────────────────────────┘\n");
+											printf("Enter number of row: ");
+											scanf("%d", &n);
+											rectangle_pattern(n);
+											printf("Do you want to back to PATTERN MENU?(y/n): ");
+											scanf("%s", &torna);
+										}while((torna == 'n')&&(torna != 'y'));
+									}break;
+
+									case 31:{
+										do{
+											clrscr();
+											printf("┌────────────────────────────────────────────┐\n");
+											printf("│MAIN MENU                                   │\n");
+											printf("│└► 1.  MENU BASIC                           │\n");
+											printf("│       └► 4.  MENU PATTERNS                 │\n");
+											printf("│              └► 31. RECTANGLE STAR PATTERN │\n");
+											printf("└────────────────────────────────────────────┘\n");
+											printf("Enter number of row: ");
+											scanf("%d", &n);
+											int m=n;
+											retangle_star_pattern(n,m);
+											printf("Do you want to back to PATTERN MENU?(y/n): ");
+											scanf("%s", &torna);
+										}while((torna == 'n')&&(torna != 'y'));
+									}break;
+
+									case 32:{
+										do{
+											clrscr();
+											printf("┌───────────────────────────────────────────┐\n");
+											printf("│MAIN MENU                                  │\n");
+											printf("│└► 1.  MENU BASIC                          │\n");
+											printf("│       └► 4.  MENU PATTERNS                │\n");
+											printf("│              └► 32. REVERSE STAR TRIANGLE │\n");
+											printf("└───────────────────────────────────────────┘\n");
+											printf("Enter number of row: ");
+											scanf("%d", &n);
+											reverse_star_triangle(n);
+											printf("Do you want to back to PATTERN MENU?(y/n): ");
+											scanf("%s", &torna);
+										}while((torna == 'n')&&(torna != 'y'));
+									}break;
+
+									case 33:{
+										do{
+											clrscr();
+											printf("┌─────────────────────────────────────┐\n");
+											printf("│MAIN MENU                            │\n");
+											printf("│└► 1.  MENU BASIC                    │\n");
+											printf("│       └► 4.  MENU PATTERNS          │\n");
+											printf("│              └► 33. RHOMBUS PATTERN │\n");
+											printf("└─────────────────────────────────────┘\n");
+											printf("Enter number of row: ");
+											scanf("%d", &n);
+											rhombus_pattern(n);
+											printf("Do you want to back to PATTERN MENU?(y/n): ");
+											scanf("%s", &torna);
+										}while((torna == 'n')&&(torna != 'y'));
+									}break;
+
+									case 34:{
+										
+										do{
+											clrscr();
+											printf("┌─────────────────────────────────────────┐\n");
+											printf("│MAIN MENU                                │\n");
+											printf("│└► 1.  MENU BASIC                        │\n");
+											printf("│       └► 4.  MENU PATTERNS              │\n");
+											printf("│              └► 34. SQUARE KITE PATTERN │\n");
+											printf("└─────────────────────────────────────────┘\n");
+											printf("Enter number of row: ");
+											scanf("%d", &n);
+											square_kite_pattern(n);
+											printf("Do you want to back to PATTERN MENU?(y/n): ");
+											scanf("%s", &torna);
+										}while((torna == 'n')&&(torna != 'y'));
+									}break;
+
+									case 35:{
+										do{
+											clrscr();
+											printf("┌─────────────────────────────────────────┐\n");
+											printf("│MAIN MENU                                │\n");
+											printf("│└► 1.  MENU BASIC                        │\n");
+											printf("│       └► 4.  MENU PATTERNS              │\n");
+											printf("│              └► 35. SQUARE STAR PATTERN │\n");
+											printf("└─────────────────────────────────────────┘\n");
+											printf("Enter number of row: ");
+											scanf("%d", &n);
+											square_star_pattern(n);
+											printf("Do you want to back to PATTERN MENU?(y/n): ");
+											scanf("%s", &torna);
+										}while((torna == 'n')&&(torna != 'y'));
+									}break;
+
+									case 36:{
+										do{
+											clrscr();
+											printf("┌────────────────────────────────────────────────┐\n");
+											printf("│MAIN MENU                                       │\n");
+											printf("│└► 1.  MENU BASIC                               │\n");
+											printf("│       └► 4.  MENU PATTERNS                     │\n");
+											printf("│              └► 36. TRIANGLE WITH ONLY BORDERS │\n");
+											printf("└────────────────────────────────────────────────┘\n");
+											printf("Enter number of row: ");
+											scanf("%d", &n);
+											triangle_borders('*',' ',n);
+											printf("Do you want to back to PATTERN MENU?(y/n): ");
+											scanf("%s", &torna);
+										}while((torna == 'n')&&(torna != 'y'));
+									}break;
+
+									case 37:{
+										do{
+											clrscr();
+											printf("┌───────────────────────────────┐\n");
+											printf("│MAIN MENU                      │\n");
+											printf("│└► 1.  MENU BASIC              │\n");
+											printf("│       └► 4.  MENU PATTERNS    │\n");
+											printf("│              └► 37. X PATTERN │\n");
+											printf("└───────────────────────────────┘\n");
+											printf("Enter number of row: ");
+											scanf("%d", &n);
+											x_pattern(n);
+											printf("Do you want to back to PATTERN MENU?(y/n): ");
+											scanf("%s", &torna);
+										}while((torna == 'n')&&(torna != 'y'));
+									}break;
+
 									default:{
 										do{
 											clrscr();
