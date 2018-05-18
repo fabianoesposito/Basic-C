@@ -1,7 +1,17 @@
 #include <stdio.h>
 #include <stdlib.h>
-/*__________________________________________________________________________________________________________________________________
-  GLOBAL - Descrizione: */
+#include <stdbool.h>
+#include <math.h>
+#include <string.h>
+#include <ctype.h>
+#include <time.h>
+#define MAXSIZE 100
+#define MAX 1000
+
+/*┌─────────────────────────────────┐
+  │GLOBAL                           │
+  │├−►Description:                  │
+  └─────────────────────────────────┘*/
 void clrscr(void){
 	printf("\033[2J");
 	printf("\033[0;0f");
