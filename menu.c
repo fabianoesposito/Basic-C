@@ -728,7 +728,621 @@ void x_pattern(int n){
 		printf("\n");
 	}
 }
-//...
+/*┌─────────────────────────────────┐
+  │NUMBERS                          │
+  │├−► Description:                 │
+  └─────────────────────────────────┘*/
+void add_n_numbers(){
+	int n=0, val=0, sum=0;
+	printf("Enter the 'n' numbers: ");
+	scanf("%d", &n);
+	printf("Enter %d integers: ", n);
+	for(int i=0; i<n; i++){
+		scanf("%d", &val);
+		sum=sum+val;
+	}
+	printf("Sum of %d integer numbers is: %d\n", n, sum);
+}
+
+void armstrong_number(int n){
+	int a, b=0, t=n;
+	while(n > 0){
+		a=n%10;
+		b=b+a*a*a;
+		n=n/10; 
+	}
+	if(b == t){
+		printf("%d is an Armstrong number\n", t);
+	}else{
+		printf("%d is not an Armstrong number\n", t);
+	}
+}
+
+void average_numb(int n){
+	float sum=0, x, avg;
+	for(int count=1; count<=n; count++){
+		//printf("");
+		scanf("%f", &x);
+		sum+=x;
+	}
+	avg=sum/n;
+	printf("The Average of Numbers is: %0.2f\n", avg);
+}
+
+void square_n(int r){
+	int n, sqr;
+	for(int i=1; i<=r; i++){
+		n=i;
+		sqr=n*n;
+		printf("Square of %d is %d\n",n,sqr);
+	}
+}
+
+void sum_natural(int n){
+	int sum=0;
+	for(int i=1; i<=n; ++i){
+		sum += i;
+	}
+	printf("Sum = %d\n",sum);
+}
+
+void check_prime(int n){
+	int c;
+	for(c=2; c<=n-1; c++){
+		if((n%c) == 0){
+			printf("%d is not prime\n", n);
+			break;
+		}
+	}
+	if(c == n){
+		printf("%d is prime\n", n);
+	}
+}
+
+void check_intfloat(char n[]){
+	int length=strlen(n), flag=0;
+	while(length--){
+		if(n[length]=='.'){
+			flag=1;
+			break;
+		}
+	}
+	if(flag){
+		printf("Entered Number is a Float Number\n");
+	}else{
+		printf("Entered Number is a Integer\n");
+	}
+}
+
+void check_posneg(double n){
+	if(n <= 0.0){
+		if(n == 0.0){
+			printf("You entered 0.\n");
+		}else{
+			printf("You entered a negative number.\n");
+		}
+	}else{
+		printf("You entered a positive number.\n");
+	}
+}
+
+void prime_interval(int n1, int n2){
+	int flag=0;
+	printf("Prime numbers between %d and %d are: ", n1, n2);
+	for(int i=n1+1; i<n2; ++i){
+		flag=0;
+		for(int j=2; j<=i/2; ++j){
+			if(i%j == 0){
+				flag=1;
+				break;
+			}
+		}
+		if(flag == 0){
+			printf("%d ",i);
+		}
+	}
+	printf("\n");
+}
+
+long int factorial(int n){
+	if(n <= 1){
+		return (1);
+	}else{
+		n=n*factorial(n-1);
+		return (n);
+	}
+}
+
+void Factors_numb(int n){
+	int i;
+	printf("Factors of %d are: ", n);
+	for(i=1; i<=n; ++i){
+		if(n%i == 0){
+			printf("%d ",i);
+		}
+	}
+	printf("\n");
+}
+
+void fibonacci(){
+	int i, t1=0, t2=1, next=0;
+	printf("Enter positive number: ");
+	scanf("%d", &i);
+	printf("Fibonacci: %d , %d , ", t1, t2);
+	next=t1+t2;
+	while(next <= i){
+		printf("%d", next);
+		t1=t2;
+		t2=next;
+		next=t1+t2;
+		if(next > i){
+			printf(" .\n");
+		}else{
+			printf(" , ");
+		}
+	}
+}
+
+void even_or_odd(){
+	int n;
+	printf("Enter number: ");
+	scanf("%d", &n);
+	if((n/2)*2 == n){
+		printf("%d is even\n", n);
+	}else{
+		printf("%d is odd\n", n);
+	}
+}
+
+void sum_binarynumbs(long binary1, long binary2){
+	int i=0, remainder=0, sum[20];
+	while(binary1 !=0|| binary2 !=0){
+		sum[i++]=(binary1%10+binary2 %10+remainder)%2;
+		remainder=(binary1%10+binary2%10+remainder)/2;
+		binary1=binary1/10;
+		binary2=binary2/10;
+	}
+	if(remainder != 0){
+		sum[i++]= remainder;
+	}
+	--i;
+	printf("Sum of two binary numbers: ");
+	while(i >= 0){
+		printf("%d", sum[i--]);
+	}
+	printf("\n");
+}
+
+void power_numb(int base, int exponent){
+	long long result=1;
+	while(exponent != 0){
+		result*=base;
+		--exponent;
+	}
+	printf("Answer = %lld\n", result);
+}
+
+void harmonic_series(double n){
+	double sum=0, i;
+	for(i=1; i<=n ;i++){
+		sum=sum+(1/i);
+		if(i == 1){
+			printf("1+");
+		}else if(i == n){
+			printf("(1/%d)", (int)i);
+		}else{
+			printf("(1/%d)+", (int)i);
+		}
+	}
+	printf(" = %.2lf\n",sum);
+}
+
+void hcf_lcm(int x, int y){
+	int a=x;
+	int b=y;
+	while(b != 0) {
+		int t=b;
+		b=a%b;
+		a=t;
+	}
+	int gcd=a;
+	int lcm=(x*y)/gcd;
+	printf("Greatest common divisor of %d and %d = %d\n", x, y, gcd);
+	printf("Least common multiple of %d and %d = %d\n", x, y, lcm);	
+}
+
+void largest_numb(int n){
+	int big, num;
+	printf("Number %d : ",1);
+	scanf("%d",&big);
+	for(int i=2; i<=n; i++){
+		printf("Number %d : ",i);
+		scanf("%d",&num);
+		if(big < num){
+			big=num;
+		}
+	}
+	printf("Largest number is: %d\n",big);
+}
+
+void mult_table(int n){
+	for(int i=1; i<=10; ++i){
+		printf("%d*%d = %d\n", n, i, n*i);
+	}
+}
+
+void palindrome(int n){
+	int temp, reverse=0;
+	temp=n;
+	while(temp != 0){
+		reverse=reverse*10;
+		reverse=reverse+temp%10;
+		temp=temp/10;
+	}
+	if(n == reverse){
+		printf("%d is a palindrome number.\n", n);
+	}else{
+		printf("%d is not a palindrome number.\n", n);
+	}
+}
+
+void perfect_numb(int n){
+	int sum=0, i=1;
+	while(i < n){
+		if(n%i == 0){
+			sum=sum+i;
+		}
+		i++;
+	}
+	if(sum == n){
+		printf("%d is a perfect number\n", i);
+	}else{
+		printf("%d is not a perfect number\n", i);
+	}
+}
+
+void reverse_numb(int n){
+	int reverse=0;
+	while(n != 0){
+		reverse=reverse*10;
+		reverse=reverse+n%10;
+		n=n/10;
+	}
+	printf("Reverse of entered number is: %d\n", reverse);
+}
+
+double sumseries(double m){
+	double sum2=0, f=1, i;
+	for(i=1; i<=m; i++){
+		f=f*i;
+		sum2=sum2+(i/f);
+		if(i == m){
+			printf("%.2lf / %.2lf = %lf",i,f,sum2);
+		}else{
+			printf("%.2lf / %.2lf + \n",i,f);
+		}
+	}
+	return(sum2);
+}
+
+void swap1(int a, int b){
+	int t=a;
+	a=b;
+	b=t;
+	printf("a:%d b:%d\n", a, b);
+}
+
+void swap2(int a, int b){
+	a=a+b;
+	b=a-b;
+	a=a-b;
+	printf("a:%d b:%d\n", a, b);
+}
+
+void swap3(int *a, int *b){
+	int t=*a;
+	*a=*b;
+	*b=t;
+}
+/*┌─────────────────────────────────┐
+  │MATH FORMULA                     │
+  │├−► Description:                 │
+  └─────────────────────────────────┘*/
+void area_circle(){
+	int r;
+	float PI=3.14, area;
+	printf("Enter radius of circle: ");
+	scanf("%d", &r);
+	area=PI*r*r;
+	printf("Area of circle : %f\n", area);
+}
+
+void area_triangle(){
+	int h, b;
+	float area;
+	printf("Enter the height of the triangle: ");
+	scanf("%d", &h);
+	printf("Enter the base of the triangle: ");
+	scanf("%d", &b);
+	area=(h*b)/2;
+	printf("The area of the triangle is: %f\n", area);
+}
+
+void area_parallelogram(){
+	float base, altitude, area;
+	printf("Enter the base of the Parallelogram: ");
+	scanf("%f", &base);
+	printf("Enter the altitude of the Parallelogram: ");
+	scanf("%f", &altitude);
+	area=base*altitude;
+	printf("Area of Parallelogram is: %.3f\n", area);
+}
+
+void area_rhombus(){
+	float diagonal1, diagonal2, area;
+	printf("Enter diagonal1 of the Rhombus: ");
+	scanf("%f", &diagonal1);
+	printf("Enter diagonal2 of the Rhombus: ");
+	scanf("%f", &diagonal2);
+	area=0.5*diagonal1*diagonal2;
+	printf("Area of rhombus is: %.3f\n", area);
+}
+
+void area_right_angled_triangle(){
+	float height, width, area;
+	printf("Enter height of the Right Angled Triangle: ");
+	scanf("%f", &height);
+	printf("Enter width of the Right Angled Triangle: ");
+	scanf("%f", &width);
+	area=0.5*height*width;
+    printf("Area of the Right Angled Triangle is: %.3f\n", area);	
+}
+
+void probability_distribution(){
+	float nuArr[MAXSIZE], mean, variance, standardDeviation, sum=0, sum1=0;
+	int size;
+
+	printf("Enter numbers you want to calculate: ");
+	scanf("%d", &size);
+	printf("Enter %d numbers: ", size);
+	for(int i=0; i<size; i++){
+		scanf("%f", &nuArr[i]);
+		sum=sum+nuArr[i];
+	}
+	mean=sum/(float)size;
+	for(int i=0; i<size; i++){
+		sum1=sum1+pow((nuArr[i]-mean),2);
+	}
+	variance=sum1/(float)size;
+	standardDeviation=sqrt(variance);
+	printf("Mean of all headents: %.2f\n", mean);
+	printf("Variance of all headents: %.2f\n", variance);
+	printf("Standard deviation: %.2f\n", standardDeviation);
+}
+
+void sin_x(){
+	int n, x1;
+	float accuracy, term, denominator, x, sinx, sinval;
+
+	printf("Enter the value of x (in degrees): ");
+	scanf("%f",&x);
+	x1=x;
+	x=x*(3.142/180.0);
+	sinval =sin(x);
+	printf("Enter the accuracy for the result: ");
+	scanf("%f", &accuracy);
+	term=x;
+	sinx=term;
+	n=1;
+	do{
+		denominator=2*n*(2*n+1);
+		term=-term*x*x/denominator;
+		sinx=sinx+term;
+		n=n+1;
+	}while(accuracy <= fabs(sinval-sinx));
+	printf("Sum of the sine series: %f\n", sinx);
+	printf("Using Library function sin(%d): %f\n", x1,sin(x));
+}
+
+void cos_x(){
+	int n, x1;
+	float accuracy, term, denominator, x, cosx, cosval;
+
+	printf("Enter the value of x(in degrees): ");
+	scanf("%f", &x);
+	x1=x;
+	x=x*(3.142/180.0);
+	cosval=cos(x);
+	printf("Enter the accuracy for the result: ");
+	scanf("%f", &accuracy);
+	term=1;
+	cosx=term;
+	n=1;
+	do{
+		denominator=2*n*(2*n -1);
+		term=-term*x*x/denominator;
+		cosx=cosx+term;
+		n=n+1;
+	}while(accuracy <= fabs(cosval-cosx));
+	printf("Sum of the cosine series: %f\n", cosx);
+	printf("Using Library function cos(%d): %f\n", x1, cos(x));
+}
+
+void cosx_series(){
+	int n, x1;
+	float x, sign, cosx, fact;
+
+	printf("Enter the number of the terms in a series: ");
+	scanf("%d", &n);
+	printf("Enter the value of x(in degrees): ");
+	scanf("%f", &x);
+	x1=x;
+	x=x*(3.142/180.0);
+	cosx=1;
+	sign=-1;
+	for(int i=2; i<=n; i=i+2){
+		fact=1;
+		for(int j=1; j<=i; j++){
+			fact=fact*j;
+		}
+		cosx=cosx+(pow(x,i)/fact)*sign;
+		sign=sign*(-1);
+	}
+	printf("Sum of the cosine series: %7.2f\n", cosx);
+	printf("The value of cos(%d) using library function: %f\n", x1,cos(x));
+}
+
+void surface_area_volume_cube(){
+	float side, surfacearea, volume;
+
+	printf("Enter the length of a side: ");
+	scanf("%f", &side);
+	surfacearea=6.0*side*side;
+	volume=pow(side,3);
+	printf("Surface area: %6.2f and Volume: %6.2f\n", surfacearea, volume);
+}
+
+void roots_quadr_equation(float a, float b, float c){
+	float determinant, r1,r2, real, imag;
+	determinant=b*b-4*a*c;
+	if (determinant>0){
+		r1=(-b+sqrt(determinant))/(2*a);
+		r2=(-b-sqrt(determinant))/(2*a);
+		printf("Roots are: %.2f and %.2f\n",r1 , r2);
+	}else if (determinant==0){
+		r1=r2=-b/(2*a);
+		printf("Roots are: %.2f and %.2f\n", r1, r2);
+	}else{
+		real=-b/(2*a);
+		imag=sqrt(-determinant)/(2*a);
+		printf("Roots are: %.2f+%.2fi and %.2f-%.2fi\n", real, imag, real, imag);
+	}
+}
+
+void greatest_three_number(float a, float b, float c){
+	if((a >= b)&&(a >= c)){
+		printf("Largest number= %.2f", a);
+	}
+	if((b >= a)&&(b >= c)){
+		printf("Largest number= %.2f", b);
+	}
+	if(c>=a && c>=b){
+		printf("Largest number= %.2f", c);
+	}
+}
+
+void leap_year(){
+	int year;
+	printf("Enter year: ");
+	scanf("%d", &year);
+	if((year >= 1000)&&(year <= 3000)){
+		if(year%4 == 0){
+			if(year%100 == 0){
+				if(year%400 == 0){
+					printf("%d is leap\n", year);
+				}else{
+					printf("%d is not leap\n", year);
+				}
+			}else{
+				printf("%d is leap\n", year);
+			}
+		}else{
+			printf("%d is not leap\n", year);
+		}
+	}else{
+		printf("year %d WRONG!!!\n", year);
+		do{
+			printf("Enter year: ");
+			scanf("%d", &year);
+			leap_year(year);
+		}while((year<1000)||(year>3000));
+	}
+}
+
+void perfect_square(int number){
+	for(int i=0; i<=number; i++){
+		if(number == i * i){
+			printf("%d is perfect square\n", number);
+			return;
+		}
+	}
+	printf("%d is not perfect square\n", number);
+}
+
+void simple_interest(float principal_amt, float rate, int time){
+	float simple_int=(principal_amt*rate*time)/100.0;
+	char perc='%';
+	printf("Amount: Rs. %5.2f\n", principal_amt);
+	printf("Rate: %5.2f%c\n", rate, perc);
+	printf("Time: %d years\n", time);
+	printf("Simple interest: %5.2f\n", simple_int);
+}
+
+void sum_aps(int a, int n, int d){
+	int sum=0, tn, i;
+	sum=(n*(2*a+(n-1)*d))/2;
+	tn=a+(n-1)*d;
+	printf("Sum of the A.P series is: ");
+	for(i=a; i<=tn; i=i+d){
+		if(i != tn){
+			printf("%d + ", i);
+		}else{
+			printf("%d = %d\n", i, sum);
+		}
+	}
+}
+
+void sum_gps(float a, int n, float r){
+	float last_term, sum=0;
+	sum=(a*(1-pow(r,n+1)))/(1-r);
+	last_term=a*pow(r,n-1);
+	printf("Last_term term of G.P.: %f\n", last_term);
+	printf("Sum of the G.P.: %f\n", sum);
+}
+
+float sum_hps(int n, float sum){
+	float i, term;
+	sum=0;
+	for(i=1; i<=n; i++){
+		term=1/i;
+		sum=sum+term;
+	}
+	return sum;
+}
+
+void vol_sur_cylinder(float radius, float height){
+	float surface_area, volume;
+	surface_area=2*(22/7)*radius*(radius+height);
+	volume=(22/7)*radius*radius*height;
+	printf("Surface area of cylinder is: %.3f\n", surface_area);
+	printf("Volume of cylinder is: %.3f\n", volume);
+}
+
+void vol_sur_cuboid(float width, float height, float length){
+	float surfacearea, volume, space_diagonal;
+	surfacearea=2*(width*length+length*height+height*width);
+    volume=width*length*height;
+    space_diagonal=sqrt(width*width+length*length+height*height);
+    printf("Surface area of cuboids is: %.3f\n", surfacearea);
+    printf("Volume of cuboids is: %.3f\n", volume);
+    printf("Space diagonal of cuboids is: %.3f\n", space_diagonal);
+}
+
+void vol_sur_cone(float radius, float height){
+	float surface_area, volume;
+	surface_area=(22/7)*radius*(radius+sqrt(radius*radius+height*height));
+    volume=(1.0/3)*(22/7)*radius*radius*height;
+    printf("Surface area of cone is: %.3f\n", surface_area);
+    printf("Volume of cone is: %.3f\n", volume);
+}
+
+void vol_sur_sphare(float radius){
+	float surface_area, volume;
+	surface_area=4*(22/7)*radius*radius;
+	volume=(4.0/3)*(22/7)*radius*radius*radius;
+	printf("Surface area of sphere is: %.3f\n", surface_area);
+	printf("Volume of sphere is: %.3f\n", volume);
+}
 /*┌─────────────────────────────────┐
   │FLOATING-POINT ARITHMETIC        │
   │├−►Description:                  │
@@ -771,7 +1385,229 @@ double minimo_rappresentabile_doppia_precisione(double e2, int b){
 	}
 	return rmin_d_p;
 }
+/*┌─────────────────────────────────┐
+  │CONVERSIONS                      │
+  │├−►Description:                  │
+  └─────────────────────────────────┘*/
+char romanval[MAX];
+int i=0;
+int binary_decimal(int n){
+	int decimal=0, i=0, rem;
+	while(n != 0){
+			rem=n%10;
+			n/=10;
+			decimal+=rem*pow(2,i);
+			++i;
+	}
+	return decimal;
+}
+
+long int binary_octal(long int n){
+	long int octal=0, i=1, rem;
+	while(n != 0){
+		rem=n%10;
+		octal=octal+rem*i;
+		i=i*2;
+		n=n/10;
+	}
+	return octal;
+}
+
+long int binary_hexadecimal(long int n){
+	long int hexadecimal=0, i=1, rem;
+	while(n != 0){
+		rem=n%10;
+		hexadecimal=hexadecimal+rem*i;
+		i=i*2;
+		n=n/10;
+	}
+	return hexadecimal;
+}
+
+void uppercase_lowercase(char str[]){
+	for(int i=0; i<=strlen(str); i++){
+		if((str[i] >= 65)&&(str[i]<=90)){
+			str[i]=str[i]+32;
+		}
+	}
+}
+
+char reverse_char(char strn[]){
+	if(islower(*strn)){
+		putchar(toupper(*strn));
+	}else{
+		putchar(tolower(*strn));
+	}
+	return strn[MAXSIZE];
+}
+
+void predigit(char num1, char num2){
+	romanval[i++] = num1;
+	romanval[i++] = num2;
+}
+
+void postdigit(char c, int n){
+	int j;
+	for(j = 0; j < n; j++)
+		romanval[i++] = c;
+}
+
+int value(char r){
+	if (r == 'I'){
+		return 1;
+	}
+	if (r == 'V'){
+		return 5;
+	}
+	if (r == 'X'){
+		return 10;
+	}
+	if (r == 'L'){
+		return 50;
+	}
+	if (r == 'C'){
+		return 100;
+	}
+	if (r == 'D'){
+		return 500;
+	}
+	if (r == 'M'){
+		return 1000;
+	}
+	return -1;
+}
+
+int romanToDecimal(char *str){
+	int res=0;
+	for (int i=0; i<strlen(str); i++){
+		int s1=value(str[i]);
+		if (i+1 < strlen(str)){
+			int s2=value(str[i+1]);
+			if (s1 >= s2){
+				res=res+s1;
+			}else{
+				res=res+s2-s1;
+				i++;
+			}
+		}else{
+			res=res+s1;
+			i++;
+		}
+	}
+	return res;
+}
+
+void decimal_hexadecimal(long int decimal){
+	int j=0, length=0;
+	long quo, rem;
+	char hexadecimalnum[100];
+	quo=decimal;
+	while(quo != 0){
+		rem=quo%16;
+		if(rem < 10){
+			hexadecimalnum[j++]=48+rem;
+		}else{
+			hexadecimalnum[j++]=55+rem;
+		}
+		quo=quo/16;
+	}
+	for(int i=j; i >= 0; i--){
+		printf("%c", hexadecimalnum[i]);
+	}
+}
+
+void decimal_octal(long int decimal, int octal[]){
+	int i=0;
+	long int rem=0, quo=0;
+	quo=decimal;
+	while(quo != 0){
+		octal[i++]=quo%8;
+		quo=quo/8;
+	}
+	for(int j=i-1; j>=0; j--){
+	printf("%d", octal[j]);
+	}
+}
+
+void decimal_binary(int n){
+	int k;
+	for(int c=31; c>=0; c--){
+		k=n>>c;
+		if(k & 1){
+			printf("1");
+		}else{
+			printf("0");
+		}
+	}
+	printf(" binary\n");
+}
+
+int octal_decimal(long int octal, int decimal){
+	int i=0;
+	while(octal != 0){
+		decimal=decimal+(octal%10)*pow(8,i++);
+		octal=octal/10;
+	}
+	return decimal;
+}
+
+void octal_binary(char octal[]){
+	int i=0;
+	while(octal[i]){
+		switch(octal[i]){
+			case '0':{
+				printf("000");
+			}break;
+
+			case '1':{
+				printf("001");
+			}break;
+
+			case '2':{
+				printf("010");
+			}break;
+
+			case '3':{
+				printf("011");
+			}break;
+
+			case '4':{
+				printf("100");
+			}break;
+
+			case '5':{
+				printf("101");
+			}break;
+
+			case '6':{
+				printf("110");
+			}break;
+
+			case '7':{
+				printf("111");
+			}break;
+
+			default:{
+				printf("ERROR: invalid octal digit %c\n", octal[i]);
+			}break;
+		}
+		i++;
+	}
+}
+
+float celsius_fahrenheit(float celsius, float fahrenheit){
+	return fahrenheit=(1.8*celsius)+32;
+}
+
+double fahrenheit_celsius(int fahrenheit, double celsius){
+	return celsius=(5.0/9.0)*(fahrenheit-32);
+}
 //...
+/*____________________________________________________________________________*/
+/*┌─────────────────────────────────┐
+  │DATA-STRUCTURES                  │
+  │├−► Description:                 │
+  └─────────────────────────────────┘*/
 void main(int argc, char const *argv[]){
 	int scelta_menu=0;
 	char torna='n';	
@@ -1583,7 +2419,7 @@ void main(int argc, char const *argv[]){
 						}break;
 
 						case 5:{
-							int scelta_numbers=0;
+							int a, b, scelta_numbers=0;
 							do{
 								clrscr();
 								printf("┌──────────────────────────────────────────────────────────────────┐\n");
@@ -1633,7 +2469,561 @@ void main(int argc, char const *argv[]){
 										printf("│              └► 0.  BACK BASIC MENU │\n");
 										printf("└─────────────────────────────────────┘\n");
 									}break;
-									//...
+									
+									case 1:{
+										do{
+											clrscr();
+											printf("┌─────────────────────────────────────┐\n");
+											printf("│MAIN MENU                            │\n");
+											printf("│└► 1.  MENU BASIC                    │\n");
+											printf("│       └► 5.  MENU NUMBERS           │\n");
+											printf("│              └► 0.  BACK BASIC MENU │\n");
+											printf("└─────────────────────────────────────┘\n");
+											printf("|MENU NUMBERS & MATH FORMULA|-> 1. ADD 'n' NUMBERS\n");
+											add_n_numbers();
+											printf("Do you want to back to NUMBERS & MATH FORMULA MENU?(y/n): ");
+											scanf("%s", &torna);
+										}while((torna == 'n')&&(torna != 'y'));
+									}break;
+									
+									case 2:{
+										int n;
+										do{
+											clrscr();
+											printf("┌─────────────────────────────────────┐\n");
+											printf("│MAIN MENU                            │\n");
+											printf("│└► 1.  MENU BASIC                    │\n");
+											printf("│       └► 5.  MENU NUMBERS           │\n");
+											printf("│              └► 0.  BACK BASIC MENU │\n");
+											printf("└─────────────────────────────────────┘\n");
+											printf("|MENU NUMBERS & MATH FORMULA|-> 2. ARMSTRONG NUMBER\n");
+											printf("Enter a Number to check if it is an Armstrong number or not: ");
+											scanf("%d", &n);
+											armstrong_number(n);
+											printf("Do you want to back to FORMULA MENU?(y/n): ");
+											scanf("%s", &torna);
+										}while((torna == 'n')&&(torna != 'y'));
+									}break;
+
+									case 3:{
+										int n;
+										do{
+											clrscr();
+											printf("┌─────────────────────────────────────┐\n");
+											printf("│MAIN MENU                            │\n");
+											printf("│└► 1.  MENU BASIC                    │\n");
+											printf("│       └► 5.  MENU NUMBERS           │\n");
+											printf("│              └► 0.  BACK BASIC MENU │\n");
+											printf("└─────────────────────────────────────┘\n");
+											printf("|MENU NUMBERS & MATH FORMULA|-> 3. AVERAGE OF NUMBERS\n");
+											printf ("Enter a digit you want take average of : ");
+											scanf("%d", &n);
+											average_numb(n);
+											printf("Do you want to back to FORMULA MENU?(y/n): ");
+											scanf("%s", &torna);
+										}while((torna == 'n')&&(torna != 'y'));
+									}break;
+
+									case 4:{
+										int n;
+										do{
+											clrscr();
+											printf("┌─────────────────────────────────────┐\n");
+											printf("│MAIN MENU                            │\n");
+											printf("│└► 1.  MENU BASIC                    │\n");
+											printf("│       └► 5.  MENU NUMBERS           │\n");
+											printf("│              └► 0.  BACK BASIC MENU │\n");
+											printf("└─────────────────────────────────────┘\n");
+											printf("|MENU NUMBERS & MATH FORMULA|-> 4. SQUARE 'n' NUMBERS\n");
+											printf("Enter the range of numbers: ");
+											scanf("%d", &n);
+											square_n(n);
+											printf("Do you want to back to FORMULA MENU?(y/n): ");
+											scanf("%s", &torna);
+										}while((torna == 'n')&&(torna != 'y'));
+									}break;
+
+									case 5:{
+										int n,sqr;
+										do{
+											clrscr();
+											printf("┌─────────────────────────────────────┐\n");
+											printf("│MAIN MENU                            │\n");
+											printf("│└► 1.  MENU BASIC                    │\n");
+											printf("│       └► 5.  MENU NUMBERS           │\n");
+											printf("│              └► 0.  BACK BASIC MENU │\n");
+											printf("└─────────────────────────────────────┘\n");
+											printf("|MENU NUMBERS & MATH FORMULA|-> 5. SQUARE NUMBERS BY USER\n");
+											printf("Enter a number: ");
+											scanf("%d",&n);
+											sqr=n*n;
+											printf("Square of %d is %d\n",n,sqr);
+											printf("Do you want to back to FORMULA MENU?(y/n): ");
+											scanf("%s", &torna);
+										}while((torna == 'n')&&(torna != 'y'));
+									}break;
+
+									case 6:{
+										int n;
+										do{
+											clrscr();
+											printf("┌─────────────────────────────────────┐\n");
+											printf("│MAIN MENU                            │\n");
+											printf("│└► 1.  MENU BASIC                    │\n");
+											printf("│       └► 5.  MENU NUMBERS           │\n");
+											printf("│              └► 0.  BACK BASIC MENU │\n");
+											printf("└─────────────────────────────────────┘\n");
+											printf("|MENU NUMBERS & MATH FORMULA|-> 6. SUM OF NATURAL NUMBERS (USING FOR)\n");
+											printf("Enter a number: ");
+											scanf("%d",&n);
+											sum_natural(n);
+											printf("Do you want to back to FORMULA MENU?(y/n): ");
+											scanf("%s", &torna);
+										}while((torna == 'n')&&(torna != 'y'));
+									}break;
+
+									case 7:{
+										int n;
+										do{
+											clrscr();
+											printf("┌─────────────────────────────────────┐\n");
+											printf("│MAIN MENU                            │\n");
+											printf("│└► 1.  MENU BASIC                    │\n");
+											printf("│       └► 5.  MENU NUMBERS           │\n");
+											printf("│              └► 0.  BACK BASIC MENU │\n");
+											printf("└─────────────────────────────────────┘\n");
+											printf("|MENU NUMBERS & MATH FORMULA|-> 7. CHECK IF A NUMBER IS PRIME\n");
+											printf("Enter a number: ");
+											scanf("%d",&n);
+											check_prime(n);
+											printf("Do you want to back to FORMULA MENU?(y/n): ");
+											scanf("%s", &torna);
+										}while((torna == 'n')&&(torna != 'y'));
+									}break;
+
+									case 8:{
+										char n[MAXSIZE];
+										do{
+											clrscr();
+											printf("┌─────────────────────────────────────┐\n");
+											printf("│MAIN MENU                            │\n");
+											printf("│└► 1.  MENU BASIC                    │\n");
+											printf("│       └► 5.  MENU NUMBERS           │\n");
+											printf("│              └► 0.  BACK BASIC MENU │\n");
+											printf("└─────────────────────────────────────┘\n");
+											printf("|MENU NUMBERS & MATH FORMULA|-> 8. CHECK IF A NUMBER IS INTEGER OR FLOAT\n");
+											printf("Enter a number: ");
+											scanf("%s", n);
+											check_intfloat(n);
+											printf("Do you want to back to FORMULA MENU?(y/n): ");
+											scanf("%s", &torna);
+										}while((torna == 'n')&&(torna != 'y'));
+									}break;
+
+									case 9:{
+										double n;
+										do{
+											clrscr();
+											printf("┌─────────────────────────────────────┐\n");
+											printf("│MAIN MENU                            │\n");
+											printf("│└► 1.  MENU BASIC                    │\n");
+											printf("│       └► 5.  MENU NUMBERS           │\n");
+											printf("│              └► 0.  BACK BASIC MENU │\n");
+											printf("└─────────────────────────────────────┘\n");
+											printf("|MENU NUMBERS & MATH FORMULA|-> 9. CHECK IF A NUMBER IS POSITIVE OR NEGATIVE\n");
+											printf("Enter a number: ");
+											scanf("%lf", &n);
+											check_posneg(n);
+											printf("Do you want to back to FORMULA MENU?(y/n): ");
+											scanf("%s", &torna);
+										}while((torna == 'n')&&(torna != 'y'));
+									}break;
+
+									case 10:{
+										int n1, n2;
+										do{
+											clrscr();
+											printf("┌─────────────────────────────────────┐\n");
+											printf("│MAIN MENU                            │\n");
+											printf("│└► 1.  MENU BASIC                    │\n");
+											printf("│       └► 5.  MENU NUMBERS           │\n");
+											printf("│              └► 0.  BACK BASIC MENU │\n");
+											printf("└─────────────────────────────────────┘\n");
+											printf("|MENU NUMBERS & MATH FORMULA|-> 10. PRIME NUMBERS BETWEEN INTERVAL\n");
+											printf("Enter two numbers: ");
+											scanf("%d %d", &n1, &n2);
+											prime_interval(n1,n2);
+											printf("Do you want to back to FORMULA MENU?(y/n): ");
+											scanf("%s", &torna);
+										}while((torna == 'n')&&(torna != 'y'));
+									}break;
+
+									case 11:{
+										int n;
+										do{
+											clrscr();
+											printf("┌─────────────────────────────────────┐\n");
+											printf("│MAIN MENU                            │\n");
+											printf("│└► 1.  MENU BASIC                    │\n");
+											printf("│       └► 5.  MENU NUMBERS           │\n");
+											printf("│              └► 0.  BACK BASIC MENU │\n");
+											printf("└─────────────────────────────────────┘\n");
+											printf("|MENU NUMBERS & MATH FORMULA|-> 11. FACTORIAL OF A NUMBER\n");
+											printf("Enter the number: ");
+											scanf("%d", &n);
+											printf("Factorial of %d is: %ld\n", n, factorial(n));
+											printf("Do you want to back to FORMULA MENU?(y/n): ");
+											scanf("%s", &torna);
+										}while((torna == 'n')&&(torna != 'y'));
+									}break;
+
+									case 12:{
+										int n;
+										do{
+											clrscr();
+											printf("┌─────────────────────────────────────┐\n");
+											printf("│MAIN MENU                            │\n");
+											printf("│└► 1.  MENU BASIC                    │\n");
+											printf("│       └► 5.  MENU NUMBERS           │\n");
+											printf("│              └► 0.  BACK BASIC MENU │\n");
+											printf("└─────────────────────────────────────┘\n");
+											printf("|MENU NUMBERS & MATH FORMULA|-> 12. FACTORS OF A NUMBER\n");
+											printf("Enter the number: ");
+											scanf("%d", &n);
+											Factors_numb(n);
+											printf("Do you want to back to FORMULA MENU?(y/n): ");
+											scanf("%s", &torna);
+										}while((torna == 'n')&&(torna != 'y'));
+									}break;
+									
+									case 13:{
+										do{
+											clrscr();
+											printf("┌─────────────────────────────────────┐\n");
+											printf("│MAIN MENU                            │\n");
+											printf("│└► 1.  MENU BASIC                    │\n");
+											printf("│       └► 5.  MENU NUMBERS           │\n");
+											printf("│              └► 0.  BACK BASIC MENU │\n");
+											printf("└─────────────────────────────────────┘\n");
+											printf("|MENU NUMBERS & MATH FORMULA|-> 13. FIBONACCI SERIES\n");
+											fibonacci();
+											printf("Do you want to back to NUMBERS & MATH FORMULA MENU?(y/n): ");
+											scanf("%s", &torna);
+										}while((torna == 'n')&&(torna != 'y'));
+									}break;
+
+									case 14:{
+										do{
+											clrscr();
+											printf("┌─────────────────────────────────────┐\n");
+											printf("│MAIN MENU                            │\n");
+											printf("│└► 1.  MENU BASIC                    │\n");
+											printf("│       └► 5.  MENU NUMBERS           │\n");
+											printf("│              └► 0.  BACK BASIC MENU │\n");
+											printf("└─────────────────────────────────────┘\n");
+											printf("|MENU NUMBERS & MATH FORMULA|-> 14. EVEN OR ODD\n");
+											even_or_odd();
+											printf("Do you want to back to NUMBERS & MATH FORMULA MENU?(y/n): ");
+											scanf("%s", &torna);
+										}while((torna == 'n')&&(torna != 'y'));
+									}break;
+
+									case 15:{
+										long binary1, binary2;
+										do{
+											clrscr();
+											printf("┌─────────────────────────────────────┐\n");
+											printf("│MAIN MENU                            │\n");
+											printf("│└► 1.  MENU BASIC                    │\n");
+											printf("│       └► 5.  MENU NUMBERS           │\n");
+											printf("│              └► 0.  BACK BASIC MENU │\n");
+											printf("└─────────────────────────────────────┘\n");
+											printf("|MENU NUMBERS & MATH FORMULA|-> 15. SUM OF TWO BINARY NUMBERS\n");
+											printf("Enter the first binary number: ");
+											scanf("%ld",&binary1);
+											printf("Enter the second binary number: ");
+											scanf("%ld",&binary2);
+											sum_binarynumbs(binary1,binary2);
+											printf("Do you want to back to FORMULA MENU?(y/n): ");
+											scanf("%s", &torna);
+										}while((torna == 'n')&&(torna != 'y'));
+									}break;
+
+									case 16:{
+										int base, exponent;
+										do{
+											clrscr();
+											printf("┌─────────────────────────────────────┐\n");
+											printf("│MAIN MENU                            │\n");
+											printf("│└► 1.  MENU BASIC                    │\n");
+											printf("│       └► 5.  MENU NUMBERS           │\n");
+											printf("│              └► 0.  BACK BASIC MENU │\n");
+											printf("└─────────────────────────────────────┘\n");
+											printf("|MENU NUMBERS & MATH FORMULA|-> 16. POWER OF NUMBERS (x^n)\n");
+											printf("Enter a base number: ");
+											scanf("%d", &base);
+											printf("Enter an exponent: ");
+											scanf("%d", &exponent);
+											power_numb(base,exponent);
+											printf("Do you want to back to FORMULA MENU?(y/n): ");
+											scanf("%s", &torna);
+										}while((torna == 'n')&&(torna != 'y'));
+									}break;
+
+									case 17:{
+										double n;
+										do{
+											clrscr();
+											printf("┌─────────────────────────────────────┐\n");
+											printf("│MAIN MENU                            │\n");
+											printf("│└► 1.  MENU BASIC                    │\n");
+											printf("│       └► 5.  MENU NUMBERS           │\n");
+											printf("│              └► 0.  BACK BASIC MENU │\n");
+											printf("└─────────────────────────────────────┘\n");
+											printf("|MENU NUMBERS & MATH FORMULA|-> 17. HARMONIC SEIRES\n");
+											printf("Please Enter a value for 'n': ");
+											scanf("%lf",&n);
+											harmonic_series(n);
+											printf("Do you want to back to FORMULA MENU?(y/n): ");
+											scanf("%s", &torna);
+										}while((torna == 'n')&&(torna != 'y'));
+									}break;
+
+									case 18:{
+										int x, y;
+										do{
+											clrscr();
+											printf("┌─────────────────────────────────────┐\n");
+											printf("│MAIN MENU                            │\n");
+											printf("│└► 1.  MENU BASIC                    │\n");
+											printf("│       └► 5.  MENU NUMBERS           │\n");
+											printf("│              └► 0.  BACK BASIC MENU │\n");
+											printf("└─────────────────────────────────────┘\n");
+											printf("|MENU NUMBERS & MATH FORMULA|-> 18. HCF & LCM\n");
+											printf("Enter two integers: ");
+											scanf("%d%d", &x, &y);
+											hcf_lcm(x,y);
+											printf("Do you want to back to FORMULA MENU?(y/n): ");
+											scanf("%s", &torna);
+										}while((torna == 'n')&&(torna != 'y'));
+									}break;
+
+									case 19:{
+										int n;
+										do{
+											clrscr();
+											printf("┌─────────────────────────────────────┐\n");
+											printf("│MAIN MENU                            │\n");
+											printf("│└► 1.  MENU BASIC                    │\n");
+											printf("│       └► 5.  MENU NUMBERS           │\n");
+											printf("│              └► 0.  BACK BASIC MENU │\n");
+											printf("└─────────────────────────────────────┘\n");
+											printf("|MENU NUMBERS & MATH FORMULA|-> 19. LARGEST OF 'n' NUMBERS\n");
+											printf("Enter the values of n: ");
+											scanf("%d",&n);
+											largest_numb(n);
+											printf("Do you want to back to FORMULA MENU?(y/n): ");
+											scanf("%s", &torna);
+										}while((torna == 'n')&&(torna != 'y'));
+									}break;
+
+									case 20:{
+										int n;
+										do{
+											clrscr();
+											printf("┌─────────────────────────────────────┐\n");
+											printf("│MAIN MENU                            │\n");
+											printf("│└► 1.  MENU BASIC                    │\n");
+											printf("│       └► 5.  MENU NUMBERS           │\n");
+											printf("│              └► 0.  BACK BASIC MENU │\n");
+											printf("└─────────────────────────────────────┘\n");
+											printf("|MENU NUMBERS & MATH FORMULA|-> 20. MULTIPLICATION TABLE\n");
+											printf("Enter n: ");
+											scanf("%d",&n);
+											mult_table(n);
+											printf("Do you want to back to FORMULA MENU?(y/n): ");
+											scanf("%s", &torna);
+										}while((torna == 'n')&&(torna != 'y'));
+									}break;
+									
+									case 21:{
+										int n;
+										do{
+											clrscr();
+											printf("┌─────────────────────────────────────┐\n");
+											printf("│MAIN MENU                            │\n");
+											printf("│└► 1.  MENU BASIC                    │\n");
+											printf("│       └► 5.  MENU NUMBERS           │\n");
+											printf("│              └► 0.  BACK BASIC MENU │\n");
+											printf("└─────────────────────────────────────┘\n");
+											printf("|MENU NUMBERS & MATH FORMULA|-> 21. CHECK IF NUMBER PALINDROME??\n");
+											printf("Enter a number to check if it is a palindrome or not: ");
+											scanf("%d",&n);
+											palindrome(n);
+											printf("Do you want to back to FORMULA MENU?(y/n): ");
+											scanf("%s", &torna);
+										}while((torna == 'n')&&(torna != 'y'));
+									}break;
+
+									case 22:{
+										int n;
+										do{
+											clrscr();
+											printf("┌─────────────────────────────────────┐\n");
+											printf("│MAIN MENU                            │\n");
+											printf("│└► 1.  MENU BASIC                    │\n");
+											printf("│       └► 5.  MENU NUMBERS           │\n");
+											printf("│              └► 0.  BACK BASIC MENU │\n");
+											printf("└─────────────────────────────────────┘\n");
+											printf("|MENU NUMBERS & MATH FORMULA|-> 22. PERFECT NUMBER\n");
+											printf("Enter a number to check if it is an perfect number or not: ");
+											scanf("%d",&n);
+											perfect_numb(n);
+											printf("Do you want to back to FORMULA MENU?(y/n): ");
+											scanf("%s", &torna);
+										}while((torna == 'n')&&(torna != 'y'));
+									}break;
+
+									case 23:{
+										int a, b, c;
+										do{
+											clrscr();
+											printf("┌─────────────────────────────────────┐\n");
+											printf("│MAIN MENU                            │\n");
+											printf("│└► 1.  MENU BASIC                    │\n");
+											printf("│       └► 5.  MENU NUMBERS           │\n");
+											printf("│              └► 0.  BACK BASIC MENU │\n");
+											printf("└─────────────────────────────────────┘\n");
+											printf("|MENU NUMBERS & MATH FORMULA|-> 23. PRIMES TILL 'n'\n");
+											printf("Enter 3 numbers:");
+											scanf("%d %d %d",&a,&b,&c);
+											int big=( a>b && a>c ? a:b>c ? b:c);
+											printf("The biggest number is: %d\n",big);
+											printf("Do you want to back to FORMULA MENU?(y/n): ");
+											scanf("%s", &torna);
+										}while((torna == 'n')&&(torna != 'y'));
+									}break;
+
+									case 24:{
+										int n;
+										do{
+											clrscr();
+											printf("┌─────────────────────────────────────┐\n");
+											printf("│MAIN MENU                            │\n");
+											printf("│└► 1.  MENU BASIC                    │\n");
+											printf("│       └► 5.  MENU NUMBERS           │\n");
+											printf("│              └► 0.  BACK BASIC MENU │\n");
+											printf("└─────────────────────────────────────┘\n");
+											printf("|MENU NUMBERS & MATH FORMULA|-> 24. REVERSE OF A NUMBER\n");
+											printf("Enter a number to reverse: ");
+											scanf("%d",&n);
+											reverse_numb(n);
+											printf("Do you want to back to FORMULA MENU?(y/n): ");
+											scanf("%s", &torna);
+										}while((torna == 'n')&&(torna != 'y'));
+									}break;
+
+									case 25:{
+										double num;
+										do{
+											clrscr();
+											printf("┌─────────────────────────────────────┐\n");
+											printf("│MAIN MENU                            │\n");
+											printf("│└► 1.  MENU BASIC                    │\n");
+											printf("│       └► 5.  MENU NUMBERS           │\n");
+											printf("│              └► 0.  BACK BASIC MENU │\n");
+											printf("└─────────────────────────────────────┘\n");
+											printf("|MENU NUMBERS & MATH FORMULA|-> 25. SQUARE ROOT OF A NUMBER (MATH.H)?\n");
+											printf("Enter number to find square root: ");
+											scanf("%lf",&num);
+											double result=sqrt(num);
+											printf("The square root of %lf is : %lf\n", num, result);
+											printf("Do you want to back to FORMULA MENU?(y/n): ");
+											scanf("%s", &torna);
+										}while((torna == 'n')&&(torna != 'y'));
+									}break;
+
+									case 26:{
+										double n;
+										do{
+											clrscr();
+											printf("┌─────────────────────────────────────┐\n");
+											printf("│MAIN MENU                            │\n");
+											printf("│└► 1.  MENU BASIC                    │\n");
+											printf("│       └► 5.  MENU NUMBERS           │\n");
+											printf("│              └► 0.  BACK BASIC MENU │\n");
+											printf("└─────────────────────────────────────┘\n");
+											printf("|MENU NUMBERS & MATH FORMULA|-> 26. \n");
+											printf("Enter the value : ");
+											scanf("%lf", &n);
+											double sum=sumseries(n);
+											printf("\nSum of the above series: %lf\n", sum);
+											printf("Do you want to back to FORMULA MENU?(y/n): ");
+											scanf("%s", &torna);
+										}while((torna == 'n')&&(torna != 'y'));
+									}break;
+
+									case 27:{
+										do{
+											clrscr();
+											printf("┌─────────────────────────────────────┐\n");
+											printf("│MAIN MENU                            │\n");
+											printf("│└► 1.  MENU BASIC                    │\n");
+											printf("│       └► 5.  MENU NUMBERS           │\n");
+											printf("│              └► 0.  BACK BASIC MENU │\n");
+											printf("└─────────────────────────────────────┘\n");
+											printf("|MENU NUMBERS & MATH FORMULA|-> 27. SWAP WITH TEMP VARIABLE\n");
+											printf("a: ");
+											scanf("%d", &a);
+											printf("b: ");
+											scanf("%d", &b);
+											swap1(a,b);
+											printf("Do you want to back to NUMBERS & MATH FORMULA MENU?(y/n): ");
+											scanf("%s", &torna);
+										}while((torna == 'n')&&(torna != 'y'));
+									}break;
+
+									case 28:{
+										do{
+											clrscr();
+											printf("┌─────────────────────────────────────┐\n");
+											printf("│MAIN MENU                            │\n");
+											printf("│└► 1.  MENU BASIC                    │\n");
+											printf("│       └► 5.  MENU NUMBERS           │\n");
+											printf("│              └► 0.  BACK BASIC MENU │\n");
+											printf("└─────────────────────────────────────┘\n");
+											printf("|MENU NUMBERS & MATH FORMULA|-> 28. SWAP WITHOUT TEMP VARIABLE\n");
+											printf("a: ");
+											scanf("%d", &a);
+											printf("b: ");
+											scanf("%d", &b);
+											swap2(a,b);
+											printf("Do you want to back to NUMBERS & MATH FORMULA MENU?(y/n): ");
+											scanf("%s", &torna);
+										}while((torna == 'n')&&(torna != 'y'));
+									}break;
+
+									case 29:{
+										do{
+											clrscr();
+											printf("┌─────────────────────────────────────┐\n");
+											printf("│MAIN MENU                            │\n");
+											printf("│└► 1.  MENU BASIC                    │\n");
+											printf("│       └► 5.  MENU NUMBERS           │\n");
+											printf("│              └► 0.  BACK BASIC MENU │\n");
+											printf("└─────────────────────────────────────┘\n");
+											printf("|MENU NUMBERS & MATH FORMULA|-> 29. SWAP WITH POINTERS\n");
+											printf("a: ");
+											scanf("%d", &a);
+											printf("b: ");
+											scanf("%d", &b);
+											swap3(&a,&b);
+											printf("a:%d b:%d\n", a, b);
+											printf("Do you want to back to NUMBERS & MATH FORMULA MENU?(y/n): ");
+											scanf("%s", &torna);
+										}while((torna == 'n')&&(torna != 'y'));
+									}break;
+
 									default:{
 										do{
 											clrscr();
@@ -1698,7 +3088,426 @@ void main(int argc, char const *argv[]){
 										printf("│              └► 0.  BACK BASIC MENU │\n");
 										printf("└─────────────────────────────────────┘\n");
 									}break;
-									//...
+									
+									case 1:{
+										int radius;
+										float area;
+										do{
+											clrscr();
+											printf("┌─────────────────────────────────────┐\n");
+											printf("│MAIN MENU                            │\n");
+											printf("│└► 1.  MENU BASIC                    │\n");
+											printf("│       └► 6.  MENU MATH FORMULA      │\n");
+											printf("│              └► 0.  BACK BASIC MENU │\n");
+											printf("└─────────────────────────────────────┘\n");
+											printf("|MENU NUMBERS & MATH FORMULA|-> 30. AREA OF CIRCLE\n");
+											area_circle();
+											printf("Do you want to back to NUMBERS & MATH FORMULA MENU?(y/n): ");
+											scanf("%s", &torna);
+										}while((torna == 'n')&&(torna != 'y'));
+									}break;
+
+									case 2:{
+										do{
+											clrscr();
+											printf("┌─────────────────────────────────────┐\n");
+											printf("│MAIN MENU                            │\n");
+											printf("│└► 1.  MENU BASIC                    │\n");
+											printf("│       └► 6.  MENU MATH FORMULA      │\n");
+											printf("│              └► 0.  BACK BASIC MENU │\n");
+											printf("└─────────────────────────────────────┘\n");
+											printf("|MENU NUMBERS & MATH FORMULA|-> 31. AREA OF TRIANGLE\n");
+											area_triangle();
+											printf("Do you want to back to NUMBERS & MATH FORMULA MENU?(y/n): ");
+											scanf("%s", &torna);
+										}while((torna == 'n')&&(torna != 'y'));
+									}break;
+
+									case 3:{
+										do{
+											clrscr();
+											printf("┌─────────────────────────────────────┐\n");
+											printf("│MAIN MENU                            │\n");
+											printf("│└► 1.  MENU BASIC                    │\n");
+											printf("│       └► 6.  MENU MATH FORMULA      │\n");
+											printf("│              └► 0.  BACK BASIC MENU │\n");
+											printf("└─────────────────────────────────────┘\n");
+											printf("|MENU NUMBERS & MATH FORMULA|-> 32. AREA OF PARALLELOGRAM\n");
+											area_parallelogram();
+											printf("Do you want to back to NUMBERS & MATH FORMULA MENU?(y/n): ");
+											scanf("%s", &torna);
+										}while((torna == 'n')&&(torna != 'y'));
+									}break;
+
+									case 4:{
+										do{
+											clrscr();
+											printf("┌─────────────────────────────────────┐\n");
+											printf("│MAIN MENU                            │\n");
+											printf("│└► 1.  MENU BASIC                    │\n");
+											printf("│       └► 6.  MENU MATH FORMULA      │\n");
+											printf("│              └► 0.  BACK BASIC MENU │\n");
+											printf("└─────────────────────────────────────┘\n");
+											printf("|MENU NUMBERS & MATH FORMULA|-> 33. AREA OF RHOMBUS\n");
+											area_rhombus();
+											printf("Do you want to back to NUMBERS & MATH FORMULA MENU?(y/n): ");
+											scanf("%s", &torna);
+										}while((torna == 'n')&&(torna != 'y'));
+									}break;
+
+									case 5:{
+										do{
+											clrscr();
+											printf("┌─────────────────────────────────────┐\n");
+											printf("│MAIN MENU                            │\n");
+											printf("│└► 1.  MENU BASIC                    │\n");
+											printf("│       └► 6.  MENU MATH FORMULA      │\n");
+											printf("│              └► 0.  BACK BASIC MENU │\n");
+											printf("└─────────────────────────────────────┘\n");
+											printf("|MENU NUMBERS & MATH FORMULA|-> 34. AREA OF RIGHT ANGLED TRIANGLE\n");
+											area_right_angled_triangle();
+											printf("Do you want to back to NUMBERS & MATH FORMULA MENU?(y/n): ");
+											scanf("%s", &torna);
+										}while((torna == 'n')&&(torna != 'y'));
+									}break;
+
+									case 6:{
+										do{
+											clrscr();
+											printf("┌─────────────────────────────────────┐\n");
+											printf("│MAIN MENU                            │\n");
+											printf("│└► 1.  MENU BASIC                    │\n");
+											printf("│       └► 6.  MENU MATH FORMULA      │\n");
+											printf("│              └► 0.  BACK BASIC MENU │\n");
+											printf("└─────────────────────────────────────┘\n");
+											printf("|MENU NUMBERS & MATH FORMULA|-> 35. PROBABILITY DISTRIBUTION \n");
+											probability_distribution();
+											printf("Do you want to back to FORMULA MENU?(y/n): ");
+											scanf("%s", &torna);
+										}while((torna == 'n')&&(torna != 'y'));
+									}break;
+
+									case 7:{
+										do{
+											clrscr();
+											printf("┌─────────────────────────────────────┐\n");
+											printf("│MAIN MENU                            │\n");
+											printf("│└► 1.  MENU BASIC                    │\n");
+											printf("│       └► 6.  MENU MATH FORMULA      │\n");
+											printf("│              └► 0.  BACK BASIC MENU │\n");
+											printf("└─────────────────────────────────────┘\n");
+											printf("|MENU NUMBERS & MATH FORMULA|-> 36. SIN(x)\n");
+											sin_x();
+											printf("Do you want to back to FORMULA MENU?(y/n): ");
+											scanf("%s", &torna);
+										}while((torna == 'n')&&(torna != 'y'));
+									}break;
+
+									case 8:{
+										do{
+											clrscr();
+											printf("┌─────────────────────────────────────┐\n");
+											printf("│MAIN MENU                            │\n");
+											printf("│└► 1.  MENU BASIC                    │\n");
+											printf("│       └► 6.  MENU MATH FORMULA      │\n");
+											printf("│              └► 0.  BACK BASIC MENU │\n");
+											printf("└─────────────────────────────────────┘\n");
+											printf("|MENU NUMBERS & MATH FORMULA|-> 37. COS(x)\n");
+											cos_x();
+											printf("Do you want to back to FORMULA MENU?(y/n): ");
+											scanf("%s", &torna);
+										}while((torna == 'n')&&(torna != 'y'));
+									}break;
+
+									case 9:{
+										do{
+											clrscr();
+											printf("┌─────────────────────────────────────┐\n");
+											printf("│MAIN MENU                            │\n");
+											printf("│└► 1.  MENU BASIC                    │\n");
+											printf("│       └► 6.  MENU MATH FORMULA      │\n");
+											printf("│              └► 0.  BACK BASIC MENU │\n");
+											printf("└─────────────────────────────────────┘\n");
+											printf("|MENU NUMBERS & MATH FORMULA|-> 38. COS(x) SERIES\n");
+											cosx_series();
+											printf("Do you want to back to FORMULA MENU?(y/n): ");
+											scanf("%s", &torna);
+										}while((torna == 'n')&&(torna != 'y'));
+									}break;
+
+									case 10:{
+										do{
+											clrscr();
+											printf("┌─────────────────────────────────────┐\n");
+											printf("│MAIN MENU                            │\n");
+											printf("│└► 1.  MENU BASIC                    │\n");
+											printf("│       └► 6.  MENU MATH FORMULA      │\n");
+											printf("│              └► 0.  BACK BASIC MENU │\n");
+											printf("└─────────────────────────────────────┘\n");
+											printf("|MENU NUMBERS & MATH FORMULA|-> 39. SURFACE AREA VOLUME CUBE\n");
+											surface_area_volume_cube();
+											printf("Do you want to back to FORMULA MENU?(y/n): ");
+											scanf("%s", &torna);
+										}while((torna == 'n')&&(torna != 'y'));
+									}break;
+
+									case 11:{
+										float a, b, c;
+										do{
+											clrscr();
+											printf("┌─────────────────────────────────────┐\n");
+											printf("│MAIN MENU                            │\n");
+											printf("│└► 1.  MENU BASIC                    │\n");
+											printf("│       └► 6.  MENU MATH FORMULA      │\n");
+											printf("│              └► 0.  BACK BASIC MENU │\n");
+											printf("└─────────────────────────────────────┘\n");
+											printf("|MENU NUMBERS & MATH FORMULA|-> 40. ROOTS OF A QUADR. EQUATION\n");
+											printf("Enter coefficients a, b and c: ");
+											scanf("%f%f%f",&a,&b,&c);
+											roots_quadr_equation(a,b,c);
+											printf("Do you want to back to FORMULA MENU?(y/n): ");
+											scanf("%s", &torna);
+										}while((torna == 'n')&&(torna != 'y'));
+									}break;
+
+									case 12:{
+										float a, b, c;
+										do{
+											clrscr();
+											printf("┌─────────────────────────────────────┐\n");
+											printf("│MAIN MENU                            │\n");
+											printf("│└► 1.  MENU BASIC                    │\n");
+											printf("│       └► 6.  MENU MATH FORMULA      │\n");
+											printf("│              └► 0.  BACK BASIC MENU │\n");
+											printf("└─────────────────────────────────────┘\n");
+											printf("|MENU NUMBERS & MATH FORMULA|-> 41. GREATEST AMONG THREE NUMBER\n");
+											printf("Enter three numbers: ");
+											scanf("%f %f %f", &a, &b, &c);
+											greatest_three_number(a,b,c);
+											printf("Do you want to back to FORMULA MENU?(y/n): ");
+											scanf("%s", &torna);
+										}while((torna == 'n')&&(torna != 'y'));
+									}break;
+									
+									case 13:{
+										do{
+											clrscr();
+											printf("┌─────────────────────────────────────┐\n");
+											printf("│MAIN MENU                            │\n");
+											printf("│└► 1.  MENU BASIC                    │\n");
+											printf("│       └► 6.  MENU MATH FORMULA      │\n");
+											printf("│              └► 0.  BACK BASIC MENU │\n");
+											printf("└─────────────────────────────────────┘\n");
+											printf("|MENU NUMBERS & MATH FORMULA|-> 48. LEAP YEAR\n");
+											leap_year();
+											printf("Do you want to back to NUMBERS & MATH FORMULA MENU?(y/n): ");
+											scanf("%s", &torna);
+										}while((torna == 'n')&&(torna != 'y'));
+									}break;
+
+									case 14:{
+										int i, number;
+										do{
+											clrscr();
+											printf("┌─────────────────────────────────────┐\n");
+											printf("│MAIN MENU                            │\n");
+											printf("│└► 1.  MENU BASIC                    │\n");
+											printf("│       └► 6.  MENU MATH FORMULA      │\n");
+											printf("│              └► 0.  BACK BASIC MENU │\n");
+											printf("└─────────────────────────────────────┘\n");
+											printf("|MENU NUMBERS & MATH FORMULA|-> 43. PERFECT SQUARE\n");
+											printf("Enter a number to check for perfect square: ");
+											scanf("%d", &number);
+											perfect_square(number);
+											printf("Do you want to back to FORMULA MENU?(y/n): ");
+											scanf("%s", &torna);
+										}while((torna == 'n')&&(torna != 'y'));
+									}break;
+									
+									case 15:{
+										float principal_amt, rate, simple_intt;
+										int time;
+										do{
+											clrscr();
+											printf("┌─────────────────────────────────────┐\n");
+											printf("│MAIN MENU                            │\n");
+											printf("│└► 1.  MENU BASIC                    │\n");
+											printf("│       └► 6.  MENU MATH FORMULA      │\n");
+											printf("│              └► 0.  BACK BASIC MENU │\n");
+											printf("└─────────────────────────────────────┘\n");
+											printf("|MENU NUMBERS & MATH FORMULA|-> 45. SUM OF EVEN NUMBERS 1 TO N\n");
+											printf("Enter the values of Principal amount, rate and time: ");
+											scanf("%f %f %d", &principal_amt, &rate, &time);
+											simple_interest(principal_amt, rate, time);
+											printf("Do you want to back to FORMULA MENU?(y/n): ");
+											scanf("%s", &torna);
+										}while((torna == 'n')&&(torna != 'y'));
+									}break;
+
+									case 16:{
+										int n;
+										do{
+											clrscr();
+											printf("┌─────────────────────────────────────┐\n");
+											printf("│MAIN MENU                            │\n");
+											printf("│└► 1.  MENU BASIC                    │\n");
+											printf("│       └► 6.  MENU MATH FORMULA      │\n");
+											printf("│              └► 0.  BACK BASIC MENU │\n");
+											printf("└─────────────────────────────────────┘\n");
+											printf("|MENU NUMBERS & MATH FORMULA|-> 45. SUM OF EVEN NUMBERS 1 TO N\n");
+											printf("Enter the number: ");
+											scanf("%d",&n);
+											int sum=((n/2)*((n/2)+1));
+											printf("Sum of even numbers between 1 to %d: %d\n",n,sum);
+											printf("Do you want to back to FORMULA MENU?(y/n): ");
+											scanf("%s", &torna);
+										}while((torna == 'n')&&(torna != 'y'));
+									}break;
+
+									case 17:{
+										int a, d, n;
+										do{
+											clrscr();
+											printf("┌─────────────────────────────────────┐\n");
+											printf("│MAIN MENU                            │\n");
+											printf("│└► 1.  MENU BASIC                    │\n");
+											printf("│       └► 6.  MENU MATH FORMULA      │\n");
+											printf("│              └► 0.  BACK BASIC MENU │\n");
+											printf("└─────────────────────────────────────┘\n");
+											printf("|MENU NUMBERS & MATH FORMULA|-> 46. SUM OF ARITHMETIC PROG. SERIES\n");
+											printf("Enter the first term value of the A.P. series: ");
+											scanf("%d",&a);
+											printf("Enter the total numbersin the A.P. series: ");
+											scanf("%d",&n);
+											printf("Enter the common difference of A.P. series: ");
+											scanf("%d",&d);
+											sum_aps(a,n,d);
+											printf("Do you want to back to FORMULA MENU?(y/n): ");
+											scanf("%s", &torna);
+										}while((torna == 'n')&&(torna != 'y'));
+									}break;
+
+									case 18:{
+										float a, r, last_term, sum =0;
+										int n;
+										do{
+											clrscr();
+											printf("┌─────────────────────────────────────┐\n");
+											printf("│MAIN MENU                            │\n");
+											printf("│└► 1.  MENU BASIC                    │\n");
+											printf("│       └► 6.  MENU MATH FORMULA      │\n");
+											printf("│              └► 0.  BACK BASIC MENU │\n");
+											printf("└─────────────────────────────────────┘\n");
+											printf("|MENU NUMBERS & MATH FORMULA|-> 47. SUM OF GEOMETRIC PROG. SERIES\n");
+											printf("Enter the first term of the G.P. series: ");
+											scanf("%f",&a);
+											printf("Enter the total numbersin the G.P. series: ");
+											scanf("%d",&n);
+											printf("Enter the common ratio of G.P. series: ");
+											scanf("%f",&r);
+											sum_gps(a,n,r);
+											printf("Do you want to back to FORMULA MENU?(y/n): ");
+											scanf("%s", &torna);
+										}while((torna == 'n')&&(torna != 'y'));
+									}break;
+
+									case 19:{
+										int n;
+										float sum;
+										do{
+											clrscr();
+											printf("┌─────────────────────────────────────┐\n");
+											printf("│MAIN MENU                            │\n");
+											printf("│└► 1.  MENU BASIC                    │\n");
+											printf("│       └► 6.  MENU MATH FORMULA      │\n");
+											printf("│              └► 0.  BACK BASIC MENU │\n");
+											printf("└─────────────────────────────────────┘\n");
+											printf("|MENU NUMBERS & MATH FORMULA|-> 48. SUM OF HARMONIC PROG. SERIES\n");
+											printf("1 + 1/2 + 1/3 + ... + 1/n\n");
+											printf("Enter the value of n: ");
+											scanf("%d", &n);
+											printf("the Sum of H.P Series is = %f\n", sum_hps(n, sum));
+											printf("Do you want to back to FORMULA MENU?(y/n): ");
+											scanf("%s", &torna);
+										}while((torna == 'n')&&(torna != 'y'));
+									}break;
+
+									case 20:{
+										float radius, height;
+										do{
+											clrscr();
+											printf("┌─────────────────────────────────────┐\n");
+											printf("│MAIN MENU                            │\n");
+											printf("│└► 1.  MENU BASIC                    │\n");
+											printf("│       └► 6.  MENU MATH FORMULA      │\n");
+											printf("│              └► 0.  BACK BASIC MENU │\n");
+											printf("└─────────────────────────────────────┘\n");
+											printf("|MENU NUMBERS & MATH FORMULA|-> 49. VOLUME & SURFACE AREA CYLINDER\n");
+											printf("Enter value for radius and height of a cylinder: ");
+											scanf("%f%f",&radius,&height);
+											vol_sur_cylinder(radius,height);
+											printf("Do you want to back to FORMULA MENU?(y/n): ");
+											scanf("%s", &torna);
+										}while((torna == 'n')&&(torna != 'y'));
+									}break;
+
+									case 21:{
+										float width, height, length;
+										do{
+											clrscr();
+											printf("┌─────────────────────────────────────┐\n");
+											printf("│MAIN MENU                            │\n");
+											printf("│└► 1.  MENU BASIC                    │\n");
+											printf("│       └► 6.  MENU MATH FORMULA      │\n");
+											printf("│              └► 0.  BACK BASIC MENU │\n");
+											printf("└─────────────────────────────────────┘\n");
+											printf("|MENU NUMBERS & MATH FORMULA|-> 50. VOLUME & SURFACE AREA CUBOID\n");
+											printf("Enter value of width, length & height of the cuboids: ");
+											scanf("%f%f%f",&width,&length,&height);
+											vol_sur_cuboid(width,length,height);
+											printf("Do you want to back to FORMULA MENU?(y/n): ");
+											scanf("%s", &torna);
+										}while((torna == 'n')&&(torna != 'y'));
+									}break;
+
+									case 22:{
+										float radius, height;
+										do{
+											clrscr();
+											printf("┌─────────────────────────────────────┐\n");
+											printf("│MAIN MENU                            │\n");
+											printf("│└► 1.  MENU BASIC                    │\n");
+											printf("│       └► 6.  MENU MATH FORMULA      │\n");
+											printf("│              └► 0.  BACK BASIC MENU │\n");
+											printf("└─────────────────────────────────────┘\n");
+											printf("|MENU NUMBERS & MATH FORMULA|-> 51. VOLUME & SURFACE AREA CONE\n");
+											printf("Enter value of radius and height of a cone: ");
+											scanf("%f%f",&radius,&height);
+											vol_sur_cone(radius,height);
+											printf("Do you want to back to FORMULA MENU?(y/n): ");
+											scanf("%s", &torna);
+										}while((torna == 'n')&&(torna != 'y'));
+									}break;
+
+									case 23:{
+										float radius;
+										do{
+											clrscr();
+											printf("┌─────────────────────────────────────┐\n");
+											printf("│MAIN MENU                            │\n");
+											printf("│└► 1.  MENU BASIC                    │\n");
+											printf("│       └► 6.  MENU MATH FORMULA      │\n");
+											printf("│              └► 0.  BACK BASIC MENU │\n");
+											printf("└─────────────────────────────────────┘\n");
+											printf("|MENU NUMBERS & MATH FORMULA|-> 52. VOLUME & SURFACE AREA SPHARE\n");
+											printf("Enter radius of the sphere: ");
+											scanf("%f",&radius);
+											vol_sur_sphare(radius);
+											printf("Do you want to back to FORMULA MENU?(y/n): ");
+											scanf("%s", &torna);
+										}while((torna == 'n')&&(torna != 'y'));
+									}break;
+
 									default:{
 										do{
 											clrscr();
@@ -1836,7 +3645,352 @@ void main(int argc, char const *argv[]){
 										printf("│              └► 0.  BACK BASIC MENU │\n");
 										printf("└─────────────────────────────────────┘\n");
 									}break;
-									//...
+									
+									case 1:{
+										int n=0;
+										do{
+											clrscr();
+											printf("┌─────────────────────────────────────┐\n");
+											printf("│MAIN MENU                            │\n");
+											printf("│└► 1.  MENU BASIC                    │\n");
+											printf("│       └► 8.  MENU CONVERSIONS       │\n");
+											printf("│              └► 0.  BACK BASIC MENU │\n");
+											printf("└─────────────────────────────────────┘\n");
+											printf("|MENU CONVERSIONS|-> 1. BINARY TO DECIMAL\n");
+											printf("Enter a binary number to convert in decimal: ");
+											scanf("%d", &n);
+											printf("%d in binary = %d in decimal\n", n, binary_decimal(n));
+											printf("Do you want to back to CONVERSIONS MENU?(y/n): ");
+											scanf("%s", &torna);
+										}while((torna == 'n')||(torna != 'y'));
+									}break;
+
+									case 2:{
+										long int n=0;
+										do{
+											clrscr();
+											printf("┌─────────────────────────────────────┐\n");
+											printf("│MAIN MENU                            │\n");
+											printf("│└► 1.  MENU BASIC                    │\n");
+											printf("│       └► 8.  MENU CONVERSIONS       │\n");
+											printf("│              └► 0.  BACK BASIC MENU │\n");
+											printf("└─────────────────────────────────────┘\n");
+											printf("|MENU CONVERSIONS|-> 2. BINARY TO OCTAL\n");
+											printf("Enter a binary number to convert in octal: ");
+											scanf("%ld", &n);
+											printf("%lo in binary = %lo in octal\n", n, binary_octal(n));
+											printf("Do you want to back to CONVERSIONS MENU?(y/n): ");
+											scanf("%s", &torna);
+										}while((torna == 'n')||(torna != 'y'));
+									}break;
+
+									case 3:{
+										long int n=0;
+										do{
+											clrscr();
+											printf("┌─────────────────────────────────────┐\n");
+											printf("│MAIN MENU                            │\n");
+											printf("│└► 1.  MENU BASIC                    │\n");
+											printf("│       └► 8.  MENU CONVERSIONS       │\n");
+											printf("│              └► 0.  BACK BASIC MENU │\n");
+											printf("└─────────────────────────────────────┘\n");
+											printf("|MENU CONVERSIONS|-> 3. BINARY TO HEXADECIMAL\n");
+											printf("Enter a binary number to convert in hexadecimal: ");
+											scanf("%ld", &n);
+											printf("%lo in binary = %lX in hexadecimal\n", n, binary_hexadecimal(n));
+											printf("Do you want to back to CONVERSIONS MENU?(y/n): ");
+											scanf("%s", &torna);
+										}while((torna == 'n')||(torna != 'y'));
+									}break;
+									
+									case 4:{
+										char str[MAXSIZE];
+										do{
+											clrscr();
+											printf("┌─────────────────────────────────────┐\n");
+											printf("│MAIN MENU                            │\n");
+											printf("│└► 1.  MENU BASIC                    │\n");
+											printf("│       └► 8.  MENU CONVERSIONS       │\n");
+											printf("│              └► 0.  BACK BASIC MENU │\n");
+											printf("└─────────────────────────────────────┘\n");
+											printf("|MENU CONVERSIONS|-> 5. UPPERCASE TO LOWERCASE STRING\n");
+											printf("Enter string: ");
+											scanf("%s", str);
+											printf("%s in uppercase = ", str);
+											uppercase_lowercase(str);
+											printf("%s in lowercase\n", str);
+											printf("Do you want to back to CONVERSIONS MENU?(y/n): ");
+											scanf("%s", &torna);
+										}while((torna == 'n')||(torna != 'y'));
+									}break;
+
+									case 5:{
+										char strn[MAXSIZE];
+										do{
+											clrscr();
+											printf("┌─────────────────────────────────────┐\n");
+											printf("│MAIN MENU                            │\n");
+											printf("│└► 1.  MENU BASIC                    │\n");
+											printf("│       └► 8.  MENU CONVERSIONS       │\n");
+											printf("│              └► 0.  BACK BASIC MENU │\n");
+											printf("└─────────────────────────────────────┘\n");
+											printf("|MENU CONVERSIONS|-> 5. CHAR TO REVERSE CHAR\n");
+											printf("Enter string: ");
+											scanf("%s", strn);
+											printf("%s not reversed = ", strn);
+											reverse_char(strn);
+											printf(" reversed\n");
+											printf("Do you want to back to CONVERSIONS MENU?(y/n): ");
+											scanf("%s", &torna);
+										}while((torna == 'n')||(torna != 'y'));
+									}break;
+
+									case 6:{
+										int j;
+										long number;
+										do{
+											clrscr();
+											printf("┌─────────────────────────────────────┐\n");
+											printf("│MAIN MENU                            │\n");
+											printf("│└► 1.  MENU BASIC                    │\n");
+											printf("│       └► 8.  MENU CONVERSIONS       │\n");
+											printf("│              └► 0.  BACK BASIC MENU │\n");
+											printf("└─────────────────────────────────────┘\n");
+											printf("|MENU CONVERSIONS|-> 6. NUMBER TO ROMAN NUMBER\n");	
+											printf("Enter the number: ");
+											scanf("%ld", &number);
+											printf("%ld number = ", number);
+											if(number <= 0){
+												printf("Invalid number");
+											}
+											while (number != 0){
+												if(number >= 1000){
+													postdigit('M', number/1000);
+													number=number-(number/1000)*1000;
+												}else if(number >= 500){
+													if(number < (500+4*100)){
+														postdigit('D', number/500);
+														number=number-(number/500)*500;
+													}else{
+														predigit('C','M');
+														number=number-(1000-100);
+													}
+												}else if(number >= 100){
+													if(number < (100+3*100)){
+														postdigit('C', number/100);
+														number=number-(number/100)*100;
+													}else{
+														predigit('L', 'D');
+														number=number-(500-100);
+													}
+												}else if(number >= 50 ){
+													if(number < (50+4*10)){
+														postdigit('L', number/50);
+														number=number-(number/50)*50;
+													}else{
+														predigit('X','C');
+														number=number-(100-10);
+													}
+												}else if(number >= 10){
+													if(number < (10+3*10))
+																	{
+														postdigit('X', number/10);
+														number=number-(number/10)*10;
+													}else{
+														predigit('X','L');
+														number=number-(50-10);
+													}
+												}else if(number >= 5){
+													if(number < (5+4*1)){
+														postdigit('V', number/5);
+														number=number-(number/5)*5;
+													}else{
+														predigit('I', 'X');
+														number=number-(10-1);
+													}
+												}else if(number >= 1){
+													if(number < 4){
+														postdigit('I', number/1);
+														number=number-(number/1)*1;
+													}else{
+														predigit('I', 'V');
+														number=number-(5-1);
+													}
+												}
+											}
+											for(j=0; j < i; j++){
+												printf("%c", romanval[j]);
+											}
+											printf(" roman number\n");
+											printf("Do you want to back to CONVERSIONS MENU?(y/n): ");
+											scanf("%s", &torna);
+										}while((torna == 'n')||(torna != 'y'));
+									}break;
+
+									case 7:{
+										char str[MAX];
+										do{
+											clrscr();
+											printf("┌─────────────────────────────────────┐\n");
+											printf("│MAIN MENU                            │\n");
+											printf("│└► 1.  MENU BASIC                    │\n");
+											printf("│       └► 8.  MENU CONVERSIONS       │\n");
+											printf("│              └► 0.  BACK BASIC MENU │\n");
+											printf("└─────────────────────────────────────┘\n");
+											printf("|MENU CONVERSIONS|-> 7. ROMAN NUMBER TO NUMBER\n");	
+											printf("Enter the roman number: ");
+											scanf("%s", str);
+											printf("%s roman number = %d decimal\n", str, romanToDecimal(str));
+											printf("Do you want to back to CONVERSIONS MENU?(y/n): ");
+											scanf("%s", &torna);
+										}while((torna == 'n')||(torna != 'y'));
+									}break;
+									
+									case 8:{
+										long decimal=0;
+										do{
+											clrscr();
+											printf("┌─────────────────────────────────────┐\n");
+											printf("│MAIN MENU                            │\n");
+											printf("│└► 1.  MENU BASIC                    │\n");
+											printf("│       └► 8.  MENU CONVERSIONS       │\n");
+											printf("│              └► 0.  BACK BASIC MENU │\n");
+											printf("└─────────────────────────────────────┘\n");
+											printf("|MENU CONVERSIONS|-> 8. DECIMAL TO HEXADECIMAL\n");
+											printf("Enter a decimal number to convert in hexadecimal: ");
+											scanf("%ld", &decimal);
+											printf("%ld decimal =", decimal);
+											decimal_hexadecimal(decimal);
+											printf(" hexadecimal\n");
+											printf("Do you want to back to CONVERSIONS MENU?(y/n): ");
+											scanf("%s", &torna);
+										}while((torna == 'n')||(torna != 'y'));
+									}break;
+
+									case 9:{
+										long int decimal=0;
+										int octal[MAXSIZE], i=1;
+										do{
+											clrscr();
+											printf("┌─────────────────────────────────────┐\n");
+											printf("│MAIN MENU                            │\n");
+											printf("│└► 1.  MENU BASIC                    │\n");
+											printf("│       └► 8.  MENU CONVERSIONS       │\n");
+											printf("│              └► 0.  BACK BASIC MENU │\n");
+											printf("└─────────────────────────────────────┘\n");
+											printf("|MENU CONVERSIONS|-> 9. DECIMAL TO OCTAL\n");
+											printf("Enter a decimal number to convert in octal: ");
+											scanf("%ld", &decimal);
+											printf("%ld decimal = ", decimal);
+											decimal_octal(decimal,octal);
+											printf(" octal\n");
+											printf("Do you want to back to CONVERSIONS MENU?(y/n): ");
+											scanf("%s", &torna);
+										}while((torna == 'n')||(torna != 'y'));
+									}break;
+
+									case 10:{
+										int n=0;
+										do{
+											clrscr();
+											printf("┌─────────────────────────────────────┐\n");
+											printf("│MAIN MENU                            │\n");
+											printf("│└► 1.  MENU BASIC                    │\n");
+											printf("│       └► 8.  MENU CONVERSIONS       │\n");
+											printf("│              └► 0.  BACK BASIC MENU │\n");
+											printf("└─────────────────────────────────────┘\n");
+											printf("|MENU CONVERSIONS|-> 10. DECIMAL TO BINARY\n");
+											printf("Enter decimal number to convert in binary: ");
+											scanf("%d", &n);
+											printf("%d decimal = ", n);
+											decimal_binary(n);
+											printf("Do you want to back to CONVERSIONS MENU?(y/n): ");
+											scanf("%s", &torna);
+										}while((torna == 'n')||(torna != 'y'));
+									}break;
+
+									case 11:{
+										long int octal=0, decimal=0;
+										do{
+											clrscr();
+											printf("┌─────────────────────────────────────┐\n");
+											printf("│MAIN MENU                            │\n");
+											printf("│└► 1.  MENU BASIC                    │\n");
+											printf("│       └► 8.  MENU CONVERSIONS       │\n");
+											printf("│              └► 0.  BACK BASIC MENU │\n");
+											printf("└─────────────────────────────────────┘\n");
+											printf("|MENU CONVERSIONS|-> 11. OCTAL TO DECIMAL?\n");
+											printf("Enter a octal number to convert in decimal: ");
+											scanf("%ld", &octal);
+											printf("%ld octal = ", octal);
+											printf("%d decimal\n", octal_decimal(octal,decimal));
+											printf("Do you want to back to CONVERSIONS MENU?(y/n): ");
+											scanf("%s", &torna);
+										}while((torna == 'n')||(torna != 'y'));
+									}break;
+									
+									case 12:{
+										char octal[MAX];
+										do{
+											clrscr();
+											printf("┌─────────────────────────────────────┐\n");
+											printf("│MAIN MENU                            │\n");
+											printf("│└► 1.  MENU BASIC                    │\n");
+											printf("│       └► 8.  MENU CONVERSIONS       │\n");
+											printf("│              └► 0.  BACK BASIC MENU │\n");
+											printf("└─────────────────────────────────────┘\n");
+											printf("|MENU CONVERSIONS|-> 12. OCTAL TO BINARY\n");
+											printf("Enter octal number to convert in binary: ");
+											scanf("%s", octal);
+											printf("%s in octal = ", octal);
+											octal_binary(octal);
+											printf(" binary\n");
+											printf("Do you want to back to CONVERSIONS MENU?(y/n): ");
+											scanf("%s", &torna);
+										}while((torna == 'n')||(torna != 'y'));
+									}break;
+
+									case 13:{
+										float fahrenheit, celsius;
+										do{
+											clrscr();
+											printf("┌─────────────────────────────────────┐\n");
+											printf("│MAIN MENU                            │\n");
+											printf("│└► 1.  MENU BASIC                    │\n");
+											printf("│       └► 8.  MENU CONVERSIONS       │\n");
+											printf("│              └► 0.  BACK BASIC MENU │\n");
+											printf("└─────────────────────────────────────┘\n");
+											printf("|MENU CONVERSIONS|-> 13. CELSIUS TO FAHRENHEIT\n");
+											printf("Enter temperature in degrees celsius: ");
+											scanf("%f", &celsius);
+											fahrenheit=celsius_fahrenheit(celsius,fahrenheit);
+											printf("%f°C = %f°F\n", celsius,fahrenheit);
+											printf("Do you want to back to CONVERSIONS MENU?(y/n): ");
+											scanf("%s", &torna);
+										}while((torna == 'n')||(torna != 'y'));
+									}break;
+
+									case 14:{
+										int fahrenheit;
+										double celsius;
+										do{
+											clrscr();
+											printf("┌─────────────────────────────────────┐\n");
+											printf("│MAIN MENU                            │\n");
+											printf("│└► 1.  MENU BASIC                    │\n");
+											printf("│       └► 8.  MENU CONVERSIONS       │\n");
+											printf("│              └► 0.  BACK BASIC MENU │\n");
+											printf("└─────────────────────────────────────┘\n");
+											printf("|MENU CONVERSIONS|-> 14. FAHRENHEIT TO CELSIUS\n");
+											printf("Enter temperature in degrees fahrenheit: ");
+											scanf("%d", &fahrenheit);
+											celsius=fahrenheit_celsius(fahrenheit,celsius);
+											printf("%d°F = %lf°C\n", fahrenheit, celsius);
+											printf("Do you want to back to CONVERSIONS MENU?(y/n): ");
+											scanf("%s", &torna);
+										}while((torna == 'n')||(torna != 'y'));
+									}break;
+
 									default:{
 										do{
 											clrscr();
