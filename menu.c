@@ -10,7 +10,7 @@
 
 /*┌─────────────────────────────────┐
   │GLOBAL                           │
-  │├−► Description:                 │
+  │├−► clrscr                       │
   └─────────────────────────────────┘*/
 void clrscr(void){
 	printf("\033[2J");
@@ -4064,7 +4064,7 @@ void main(int argc, char const *argv[]){
 								scanf("%s",&torna);
 							}while((torna == 'n')&&(torna != 'y'));
 						}break;
-						//...
+
 						default:{
 							do{
 								clrscr();
@@ -4083,35 +4083,44 @@ void main(int argc, char const *argv[]){
 				}while((torna == 'n')&&(torna != 'y'));
 			}break; //case 1 (basic)
 
-/*			case 2:{ //data-struct
+			case 2:{ //data-struct
 				int scelta_datastruct=0;
 				do{
 					clrscr();
-					printf(" ___________________\n");
-					printf("_|MAIN MENU        |\n");
-					printf("| |-> %d DATA-STRUCT|________________________________\n",scelta_menu);
-					printf("|        |-> 0.  BACK TO MAIN MENU              |OK|\n");
-					printf("|        |-> 1.  MENU ARRAY                     |  |\n");
-					printf("|        |-> 2.  MENU STRING                    |  |\n");
-					printf("|        |-> 3.  MENU MATRIX                    |  |\n");
-					printf("|        |-> 4.  MENU STACK                     |  |\n");
-					printf("|        |-> 5.  MENU QUEUE                     |  |\n");
-					printf("|        |-> 6.  MENU LIST                      |  |\n");
-					printf("|        |-> 7.  MENU TREE                      |  |\n");
-					printf("|        |-> 8.  MENU BINARY TREE               |  |\n");
-					printf("|__________________________________________________|\n");
+					printf("┌─────────────────────────────────────┐\n");
+					printf("│MAIN MENU                            │\n");
+					printf("│└► 2.  DATA-STRUCT                   │\n");
+					printf("│        ├► 0.  BACK TO MAIN MENU  [●]│\n");
+					printf("│        ├► 1.  MENU ARRAY         [○]│\n");
+					printf("│        ├► 2.  MENU STRING        [○]│\n");
+					printf("│        ├► 3.  MENU MATRIX        [○]│\n");
+					printf("│        ├► 4.  MENU STACK         [○]│\n");
+					printf("│        ├► 5.  MENU QUEUE         [○]│\n");
+					printf("│        ├► 6.  MENU LIST          [○]│\n");
+					printf("│        ├► 7.  MENU TREE          [○]│\n");
+					printf("│        └► 8.  MENU BINARY TREE   [○]│\n");
+					printf("└─────────────────────────────────────┘\n");
 					printf("CHOICE DATA-STRUCT: ");
 					scanf("%d", &scelta_datastruct);
 					switch(scelta_datastruct){
 						case 0:{
 							clrscr();
+							printf("┌────────────────────────────────┐\n");
+							printf("│MAIN MENU                       │\n");
+							printf("│└► 2.  DATA-STRUCT              │\n");
+							printf("│       └► 0.  BACK TO MAIN MENU │\n");
+							printf("└────────────────────────────────┘\n");
 						}break;
 						
 						default:{
 							do{
 								clrscr();
-								printf("|MENU DATA-STRUCT|-> |DEFAULT DATA-STRUCT|\n");
-								printf("ERROR DATA-STRUCT CHOICE!! Do you want to back to DATA-STRUCT MENU?(y/n): ");
+								printf("┌─────────────────────────────────────┐\n");
+								printf("│MAIN MENU                            │\n");
+								printf("│└► 2.  MENU DATA-STRUCT              │\n");
+								printf("│       └► X.  DEFAULT: ERROR CHOICE! │\n");
+								printf("└─────────────────────────────────────┘\n");
+								printf("Do you want to back to DATA-STRUCT MENU?(y/n): ");
 								scanf("%s", &torna);
 							}while((torna == 'n')&&(torna != 'y'));
 						}break;
@@ -4120,7 +4129,7 @@ void main(int argc, char const *argv[]){
 					scanf("%s", &torna);
 				}while((torna == 'n')&&(torna != 'y'));
 			}break; //case 2 (data-struct)
-*/
+
 			default:{ //default (main menu)
 				do{
 					clrscr();
