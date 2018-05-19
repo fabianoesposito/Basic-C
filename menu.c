@@ -17,23 +17,15 @@ void clrscr(void){
 	printf("\033[2J");
 	printf("\033[0;0f");
 }
-/*┌──────────────────────────────────────────────┐
-  │MAIN MENU                                     │
-  │├►BASIC                                       │
-  ││ ├► HELLO WORLD               - Description: │
-  ││ ├► VAR SIZE                  - Description: │
-  ││ ├► ASCII TABLE               - Description: │
-  ││ ├► PATTERNS                  - Description: │
-  ││ ├► NUMBERS                   - Description: │
-  ││ ├► MATH FORMULA              - Description: │
-  ││ ├► FLOATING-POINT ARITHMETIC - Description: │
-  ││ ├► CONVERSIONS               - Description: │
-  ││ └► RANDPASS                  - Description: │
-  └──────────────────────────────────────────────┘*/
+/*┌─────────────────────────────────────────────────────┐
+  │MAIN MENU                                            │
+  │├► 1 BASIC                                           │
+  ││    ├► 0 BACK TO MAIN MENU           - Description: │
+  ││    ├► 1 HELLO WORLD                 - Description: │*/
 void hello_world(){
 	printf("HELLO WORLD!\n");
 }
-
+/*││    ├► 2 VAR SIZE                    - Description: │*/
 void var_sizes(){
 	int c=sizeof(char), i=sizeof(int);
 	int f=sizeof(float), d=sizeof(double);
@@ -42,14 +34,14 @@ void var_sizes(){
 	printf("Size of float: %d byte\n",f);
 	printf("Size of double: %d byte\n",d);
 }
-
+/*││    ├► 3 ASCII TABLE                    - Description: │*/
 void ascii_table(){
 	printf("INT\tCHAR\t\tINT\tCHAR\t\tINT\tCHAR\n");
 	for(int i=32; i<=63; i++){
 		printf("%d\t%c\t\t%d\t%c\t\t%d\t%c\n", i, i, i+32, i+32, i+64, i+64);
 	}
 }
-
+/*││    ├► 4 PATTERNS                    - Description: │*/
 void binary_pattern(int n){
 	int count=1;
 	for(int i=1; i<=n; i++){
@@ -735,7 +727,7 @@ void x_pattern(int n){
 		printf("\n");
 	}
 }
-
+/*││    ├► 5 NUMBERS                     - Description: │*/
 void add_n_numbers(){
 	int n=0, val=0, sum=0;
 	printf("Enter the 'n' numbers: ");
@@ -765,7 +757,6 @@ void armstrong_number(int n){
 void average_numb(int n){
 	float sum=0, x, avg;
 	for(int count=1; count<=n; count++){
-		//printf("");
 		scanf("%f", &x);
 		sum+=x;
 	}
@@ -1048,7 +1039,7 @@ void swap3(int *a, int *b){
 	*a=*b;
 	*b=t;
 }
-
+/*││    ├► 6 MATH FORMULA                - Description: │*/
 void area_circle(){
 	int r;
 	float PI=3.14, area;
@@ -1344,7 +1335,7 @@ void vol_sur_sphare(float radius){
 	printf("Surface area of sphere is: %.3f\n", surface_area);
 	printf("Volume of sphere is: %.3f\n", volume);
 }
-
+/*││    ├► 7 FLOATING-POINT ARITHMETIC   - Description: │*/
 float epsilon_macchina_singola_precisione (int b, float e1){
 	float eps_sp, temp;
 	while(temp!=1.0){ 
@@ -1383,7 +1374,7 @@ double minimo_rappresentabile_doppia_precisione(double e2, int b){
 	}
 	return rmin_d_p;
 }
-
+/*││    ├► 8 CONVERSIONS                 - Description: │*/
 char romanval[MAX];
 int i=0;
 int binary_decimal(int n){
@@ -1597,14 +1588,18 @@ float celsius_fahrenheit(float celsius, float fahrenheit){
 double fahrenheit_celsius(int fahrenheit, double celsius){
 	return celsius=(5.0/9.0)*(fahrenheit-32);
 }
-/*┌─────────────────────────────────┐
-  │└►DATA-STRUCTURES                │
-  │  ├►  - Description:             │
-  │  ├►  - Description:             │
-  │  ├►  - Description:             │
-  │  ├►  - Description:             │
-  │  └►  - Description:             │
-  └─────────────────────────────────┘*/
+/*││    └► RANDPASS                  - Description: │*/
+//...
+/*│└► 2 DATA-STRUCTURES                           │
+  │     ├► ARRAY       - Description:             │*/
+/*│     ├► STRING      - Description:             │*/
+/*│     ├► MATRIX      - Description:             │*/
+/*│     ├► STACK       - Description:             │*/
+/*│     ├► QUEUE       - Description:             │*/
+/*│     ├► LIST        - Description:             │*/
+/*│     ├► TREE        - Description:             │*/
+/*│     └► BINARY TREE - Description:             │
+  └──────────────────────────────────────────────┘*/
 void main(int argc, char const *argv[]){
 	int scelta_menu=0;
 	char torna='n';	
