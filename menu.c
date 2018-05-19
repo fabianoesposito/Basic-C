@@ -7,7 +7,6 @@
 #include <time.h>
 #define MAXSIZE 100
 #define MAX 1000
-
 /*┌─────────────────────────────────┐
   │GLOBAL                           │
   │└► clrscr                        │
