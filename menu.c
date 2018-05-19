@@ -4672,7 +4672,7 @@ void main(int argc, char const *argv[]){
 								printf("┌─────────────────────────────────────┐\n");
 								printf("│MAIN MENU                            │\n");
 								printf("│└► 1.  MENU DATA-STRUCT              │\n");
-								printf("│       └► 9.  MENU ARRAY             │\n");
+								printf("│       └► 1.  MENU ARRAY             │\n");
 								printf("│              ├► 0.  BACK BASIC MENU │\n");
 								printf("│              ├► 1.  INSERT          │\n");
 								printf("│              ├► 2.  OPERATIONS      │\n");
@@ -4688,7 +4688,7 @@ void main(int argc, char const *argv[]){
 										printf("┌─────────────────────────────────────┐\n");
 										printf("│MAIN MENU                            │\n");
 										printf("│└► 1.  MENU DATA-STRUCT              │\n");
-										printf("│       └► 9.  MENU ARRAY             │\n");
+										printf("│       └► 1.  MENU ARRAY             │\n");
 										printf("│              └► 0.  BACK BASIC MENU │\n");
 										printf("└─────────────────────────────────────┘\n");
 									}break;
@@ -4699,7 +4699,7 @@ void main(int argc, char const *argv[]){
 											printf("┌────────────────────────────┐\n");
 											printf("│MAIN MENU                   │\n");
 											printf("│└► 1.  MENU DATA-STRUCT     │\n");
-											printf("│       └► 9.  MENU ARRAY    │\n");
+											printf("│       └► 1.  MENU ARRAY    │\n");
 											printf("│              └► 1.  INSERT │\n");
 											printf("└────────────────────────────┘\n");
 											printf("Enter array dim: ");
@@ -4717,7 +4717,7 @@ void main(int argc, char const *argv[]){
 											printf("┌────────────────────────────────────────────┐\n");
 											printf("│MAIN MENU                                   │\n");
 											printf("│└► 1.  MENU DATA-STRUCT                     │\n");
-											printf("│       └► 9.  MENU ARRAY                    │\n");
+											printf("│       └► 1.  MENU ARRAY                    │\n");
 											printf("│              └► 2.  OPERATIONS             │\n");
 											printf("│                     ├► 0.  BACK ARRAY MENU │\n");
 											printf("│                     ├► 1.  k+A             │\n");
@@ -4735,7 +4735,7 @@ void main(int argc, char const *argv[]){
 													printf("┌────────────────────────────────────────────┐\n");
 													printf("│MAIN MENU                                   │\n");
 													printf("│└► 1.  MENU DATA-STRUCT                     │\n");
-													printf("│       └► 9.  MENU ARRAY                    │\n");
+													printf("│       └► 1.  MENU ARRAY                    │\n");
 													printf("│              └► 2.  OPERATIONS             │\n");
 													printf("│                     └► 0.  BACK ARRAY MENU │\n");
 													printf("└────────────────────────────────────────────┘\n");
@@ -4747,7 +4747,7 @@ void main(int argc, char const *argv[]){
 														printf("┌────────────────────────────────┐\n");
 														printf("│MAIN MENU                       │\n");
 														printf("│└► 1.  MENU DATA-STRUCT         │\n");
-														printf("│       └► 9.  MENU ARRAY        │\n");
+														printf("│       └► 1.  MENU ARRAY        │\n");
 														printf("│              └► 2.  OPERATIONS │\n");
 														printf("│                     └► 1.  k+A │\n");
 														printf("└────────────────────────────────┘\n");
@@ -4766,7 +4766,7 @@ void main(int argc, char const *argv[]){
 														printf("┌────────────────────────────────┐\n");
 														printf("│MAIN MENU                       │\n");
 														printf("│└► 1.  MENU DATA-STRUCT         │\n");
-														printf("│       └► 9.  MENU ARRAY        │\n");
+														printf("│       └► 1.  MENU ARRAY        │\n");
 														printf("│              └► 2.  OPERATIONS │\n");
 														printf("│                     └► 2.  k*A │\n");
 														printf("└────────────────────────────────┘\n");
@@ -4785,7 +4785,7 @@ void main(int argc, char const *argv[]){
 														printf("┌────────────────────────────────┐\n");
 														printf("│MAIN MENU                       │\n");
 														printf("│└► 1.  MENU DATA-STRUCT         │\n");
-														printf("│       └► 9.  MENU ARRAY        │\n");
+														printf("│       └► 1.  MENU ARRAY        │\n");
 														printf("│              └► 2.  OPERATIONS │\n");
 														printf("│                     └► 3.  A+A │\n");
 														printf("└────────────────────────────────┘\n");
@@ -4802,7 +4802,7 @@ void main(int argc, char const *argv[]){
 														printf("┌────────────────────────────────┐\n");
 														printf("│MAIN MENU                       │\n");
 														printf("│└► 1.  MENU DATA-STRUCT         │\n");
-														printf("│       └► 9.  MENU ARRAY        │\n");
+														printf("│       └► 1.  MENU ARRAY        │\n");
 														printf("│              └► 2.  OPERATIONS │\n");
 														printf("│                     └► 4.  A*A │\n");
 														printf("└────────────────────────────────┘\n");
@@ -4819,7 +4819,7 @@ void main(int argc, char const *argv[]){
 														printf("┌────────────────────────────────────┐\n");
 														printf("│MAIN MENU                           │\n");
 														printf("│└► 1.  MENU DATA-STRUCT             │\n");
-														printf("│       └► 9.  MENU ARRAY            │\n");
+														printf("│       └► 1.  MENU ARRAY            │\n");
 														printf("│              └► 2.  OPERATIONS     │\n");
 														printf("│                     └► 5.  REVERSE │\n");
 														printf("└────────────────────────────────────┘\n");
@@ -4836,7 +4836,7 @@ void main(int argc, char const *argv[]){
 														printf("┌────────────────────────────────────┐\n");
 														printf("│MAIN MENU                           │\n");
 														printf("│└► 1.  MENU DATA-STRUCT             │\n");
-														printf("│       └► 9.  MENU ARRAY            │\n");
+														printf("│       └► 1.  MENU ARRAY            │\n");
 														printf("│              └► 2.  OPERATIONS     │\n");
 														printf("│                     └► 6.  MAX/MIN │\n");
 														printf("└────────────────────────────────────┘\n");
@@ -4854,7 +4854,7 @@ void main(int argc, char const *argv[]){
 														printf("┌───────────────────────────────────────────────────┐\n");
 														printf("│MAIN MENU                                          │\n");
 														printf("│└► 1.  MENU DATA-STRUCT                            │\n");
-														printf("│       └► 9.  MENU ARRAY                           │\n");
+														printf("│       └► 1.  MENU ARRAY                           │\n");
 														printf("│              └► 2.  OPERATIONS                    │\n");
 														printf("│                     └► X.  DEFAULT: ERROR CHOICE! │\n");
 														printf("└───────────────────────────────────────────────────┘\n");
@@ -4875,7 +4875,7 @@ void main(int argc, char const *argv[]){
 											printf("┌────────────────────────────────────────────┐\n");
 											printf("│MAIN MENU                                   │\n");
 											printf("│└► 1.  MENU DATA-STRUCT                     │\n");
-											printf("│       └► 9.  MENU ARRAY                    │\n");
+											printf("│       └► 1.  MENU ARRAY                    │\n");
 											printf("│              └► 3.  SORTING                │\n");
 											printf("│                     ├► 0.  BACK ARRAY MENU │\n");
 											printf("│                     ├► 1.  BUBBLE    IT    │\n");
@@ -4899,7 +4899,7 @@ void main(int argc, char const *argv[]){
 													printf("┌────────────────────────────────────────────┐\n");
 													printf("│MAIN MENU                                   │\n");
 													printf("│└► 1.  MENU DATA-STRUCT                     │\n");
-													printf("│       └► 9.  MENU ARRAY                    │\n");
+													printf("│       └► 1.  MENU ARRAY                    │\n");
 													printf("│              └► 2.  SORT                   │\n");
 													printf("│                     └► 0.  BACK ARRAY MENU │\n");
 													printf("└────────────────────────────────────────────┘\n");
@@ -4911,7 +4911,7 @@ void main(int argc, char const *argv[]){
 														printf("┌──────────────────────────────────────┐\n");
 														printf("│MAIN MENU                             │\n");
 														printf("│└► 1.  MENU DATA-STRUCT               │\n");
-														printf("│       └► 9.  MENU ARRAY              │\n");
+														printf("│       └► 1.  MENU ARRAY              │\n");
 														printf("│              └► 2.  SORT             │\n");
 														printf("│                     └► 1.  BUBBLE IT │\n");
 														printf("└──────────────────────────────────────┘\n");
@@ -4931,7 +4931,7 @@ void main(int argc, char const *argv[]){
 														printf("┌─────────────────────────────────────────┐\n");
 														printf("│MAIN MENU                                │\n");
 														printf("│└► 1.  MENU DATA-STRUCT                  │\n");
-														printf("│       └► 9.  MENU ARRAY                 │\n");
+														printf("│       └► 1.  MENU ARRAY                 │\n");
 														printf("│              └► 2.  SORT                │\n");
 														printf("│                     └► 2.  SELECTION IT │\n");
 														printf("└─────────────────────────────────────────┘\n");
@@ -4951,7 +4951,7 @@ void main(int argc, char const *argv[]){
 														printf("┌─────────────────────────────────────────┐\n");
 														printf("│MAIN MENU                                │\n");
 														printf("│└► 1.  MENU DATA-STRUCT                  │\n");
-														printf("│       └► 9.  MENU ARRAY                 │\n");
+														printf("│       └► 1.  MENU ARRAY                 │\n");
 														printf("│              └► 2.  SORT                │\n");
 														printf("│                     └► 3.  INSERTION IT │\n");
 														printf("└─────────────────────────────────────────┘\n");
@@ -4971,7 +4971,7 @@ void main(int argc, char const *argv[]){
 														printf("┌─────────────────────────────────────┐\n");
 														printf("│MAIN MENU                            │\n");
 														printf("│└► 1.  MENU DATA-STRUCT              │\n");
-														printf("│       └► 9.  MENU ARRAY             │\n");
+														printf("│       └► 1.  MENU ARRAY             │\n");
 														printf("│              └► 2.  SORT            │\n");
 														printf("│                     └► 4.  MERGE IT │\n");
 														printf("└─────────────────────────────────────┘\n");
@@ -4991,7 +4991,7 @@ void main(int argc, char const *argv[]){
 														printf("┌─────────────────────────────────────┐\n");
 														printf("│MAIN MENU                            │\n");
 														printf("│└► 1.  MENU DATA-STRUCT              │\n");
-														printf("│       └► 9.  MENU ARRAY             │\n");
+														printf("│       └► 1.  MENU ARRAY             │\n");
 														printf("│              └► 2.  SORT            │\n");
 														printf("│                     └► 5.  QUICK IT │\n");
 														printf("└─────────────────────────────────────┘\n");
@@ -5011,7 +5011,7 @@ void main(int argc, char const *argv[]){
 														printf("┌─────────────────────────────────────┐\n");
 														printf("│MAIN MENU                            │\n");
 														printf("│└► 1.  MENU DATA-STRUCT              │\n");
-														printf("│       └► 9.  MENU ARRAY             │\n");
+														printf("│       └► 1.  MENU ARRAY             │\n");
 														printf("│              └► 2.  SORT            │\n");
 														printf("│                     └► 6.  SHELL IT │\n");
 														printf("└─────────────────────────────────────┘\n");
@@ -5029,7 +5029,7 @@ void main(int argc, char const *argv[]){
 														printf("┌──────────────────────────────────────┐\n");
 														printf("│MAIN MENU                             │\n");
 														printf("│└► 1.  MENU DATA-STRUCT               │\n");
-														printf("│       └► 9.  MENU ARRAY              │\n");
+														printf("│       └► 1.  MENU ARRAY              │\n");
 														printf("│              └► 2.  SORT             │\n");
 														printf("│                     └► 7.  BUBBLE RE │\n");
 														printf("└──────────────────────────────────────┘\n");
@@ -5049,7 +5049,7 @@ void main(int argc, char const *argv[]){
 														printf("┌─────────────────────────────────────────┐\n");
 														printf("│MAIN MENU                                │\n");
 														printf("│└► 1.  MENU DATA-STRUCT                  │\n");
-														printf("│       └► 9.  MENU ARRAY                 │\n");
+														printf("│       └► 1.  MENU ARRAY                 │\n");
 														printf("│              └► 2.  SORT                │\n");
 														printf("│                     └► 8.  SELECTION RE │\n");
 														printf("└─────────────────────────────────────────┘\n");
@@ -5069,7 +5069,7 @@ void main(int argc, char const *argv[]){
 														printf("┌─────────────────────────────────────────┐\n");
 														printf("│MAIN MENU                                │\n");
 														printf("│└► 1.  MENU DATA-STRUCT                  │\n");
-														printf("│       └► 9.  MENU ARRAY                 │\n");
+														printf("│       └► 1.  MENU ARRAY                 │\n");
 														printf("│              └► 2.  SORT                │\n");
 														printf("│                     └► 9.  INSERTION RE │\n");
 														printf("└─────────────────────────────────────────┘\n");
@@ -5089,7 +5089,7 @@ void main(int argc, char const *argv[]){
 														printf("┌─────────────────────────────────────┐\n");
 														printf("│MAIN MENU                            │\n");
 														printf("│└► 1.  MENU DATA-STRUCT              │\n");
-														printf("│       └► 9.  MENU ARRAY             │\n");
+														printf("│       └► 1.  MENU ARRAY             │\n");
 														printf("│              └► 2.  SORT            │\n");
 														printf("│                     └► 10. MERGE RE │\n");
 														printf("└─────────────────────────────────────┘\n");
@@ -5109,7 +5109,7 @@ void main(int argc, char const *argv[]){
 														printf("┌─────────────────────────────────────┐\n");
 														printf("│MAIN MENU                            │\n");
 														printf("│└► 1.  MENU DATA-STRUCT              │\n");
-														printf("│       └► 9.  MENU ARRAY             │\n");
+														printf("│       └► 1.  MENU ARRAY             │\n");
 														printf("│              └► 2.  SORT            │\n");
 														printf("│                     └► 11. QUICK RE │\n");
 														printf("└─────────────────────────────────────┘\n");
@@ -5129,7 +5129,7 @@ void main(int argc, char const *argv[]){
 														printf("┌─────────────────────────────────────┐\n");
 														printf("│MAIN MENU                            │\n");
 														printf("│└► 1.  MENU DATA-STRUCT              │\n");
-														printf("│       └► 9.  MENU ARRAY             │\n");
+														printf("│       └► 1.  MENU ARRAY             │\n");
 														printf("│              └► 2.  SORT            │\n");
 														printf("│                     └► 12. SHELL RE │\n");
 														printf("└─────────────────────────────────────┘\n");
@@ -5145,7 +5145,7 @@ void main(int argc, char const *argv[]){
 														printf("┌───────────────────────────────────────────────────┐\n");
 														printf("│MAIN MENU                                          │\n");
 														printf("│└► 1.  MENU DATA-STRUCT                            │\n");
-														printf("│       └► 9.  MENU ARRAY                           │\n");
+														printf("│       └► 1.  MENU ARRAY                           │\n");
 														printf("│              └► 2.  SORT                          │\n");
 														printf("│                     └► X.  DEFAULT: ERROR CHOICE! │\n");
 														printf("└───────────────────────────────────────────────────┘\n");
@@ -5166,7 +5166,7 @@ void main(int argc, char const *argv[]){
 											printf("┌────────────────────────────────────────────┐\n");
 											printf("│MAIN MENU                                   │\n");
 											printf("│└► 1.  MENU DATA-STRUCT                     │\n");
-											printf("│       └► 9.  MENU ARRAY                    │\n");
+											printf("│       └► 1.  MENU ARRAY                    │\n");
 											printf("│              └► 4.  SEARCHING              │\n");
 											printf("│                     ├► 0.  BACK ARRAY MENU │\n");
 											printf("│                     ├► 1.  LINEAR    IT    │\n");
@@ -5182,7 +5182,7 @@ void main(int argc, char const *argv[]){
 													printf("┌────────────────────────────────────────────┐\n");
 													printf("│MAIN MENU                                   │\n");
 													printf("│└► 1.  MENU DATA-STRUCT                     │\n");
-													printf("│       └► 9.  MENU ARRAY                    │\n");
+													printf("│       └► 1.  MENU ARRAY                    │\n");
 													printf("│              └► 4.  SEARCHING              │\n");
 													printf("│                     └► 0.  BACK ARRAY MENU │\n");
 													printf("└────────────────────────────────────────────┘\n");
@@ -5194,7 +5194,7 @@ void main(int argc, char const *argv[]){
 														printf("┌──────────────────────────────────────┐\n");
 														printf("│MAIN MENU                             │\n");
 														printf("│└► 1.  MENU DATA-STRUCT               │\n");
-														printf("│       └► 9.  MENU ARRAY              │\n");
+														printf("│       └► 1.  MENU ARRAY              │\n");
 														printf("│              └► 4.  SEARCHING        │\n");
 														printf("│                     └► 1.  LINEAR IT │\n");
 														printf("└──────────────────────────────────────┘\n");
@@ -5218,7 +5218,7 @@ void main(int argc, char const *argv[]){
 														printf("┌──────────────────────────────────────┐\n");
 														printf("│MAIN MENU                             │\n");
 														printf("│└► 1.  MENU DATA-STRUCT               │\n");
-														printf("│       └► 9.  MENU ARRAY              │\n");
+														printf("│       └► 1.  MENU ARRAY              │\n");
 														printf("│              └► 4.  SEARCHING        │\n");
 														printf("│                     └► 2.  BINARY IT │\n");
 														printf("└──────────────────────────────────────┘\n");
@@ -5242,7 +5242,7 @@ void main(int argc, char const *argv[]){
 														printf("┌──────────────────────────────────────┐\n");
 														printf("│MAIN MENU                             │\n");
 														printf("│└► 1.  MENU DATA-STRUCT               │\n");
-														printf("│       └► 9.  MENU ARRAY              │\n");
+														printf("│       └► 1.  MENU ARRAY              │\n");
 														printf("│              └► 4.  SEARCHING        │\n");
 														printf("│                     └► 3.  LINEAR RE │\n");
 														printf("└──────────────────────────────────────┘\n");
@@ -5258,7 +5258,7 @@ void main(int argc, char const *argv[]){
 														printf("┌──────────────────────────────────────┐\n");
 														printf("│MAIN MENU                             │\n");
 														printf("│└► 1.  MENU DATA-STRUCT               │\n");
-														printf("│       └► 9.  MENU ARRAY              │\n");
+														printf("│       └► 1.  MENU ARRAY              │\n");
 														printf("│              └► 4.  SEARCHING        │\n");
 														printf("│                     └► 4.  BINARY RE │\n");
 														printf("└──────────────────────────────────────┘\n");
@@ -5274,7 +5274,7 @@ void main(int argc, char const *argv[]){
 															printf("┌───────────────────────────────────────────────────┐\n");
 															printf("│MAIN MENU                                          │\n");
 															printf("│└► 1.  MENU DATA-STRUCT                            │\n");
-															printf("│       └► 9.  MENU ARRAY                           │\n");
+															printf("│       └► 1.  MENU ARRAY                           │\n");
 															printf("│              └► 4.  SEARCHING                     │\n");
 															printf("│                     └► X.  DEFAULT: ERROR CHOICE! │\n");
 															printf("└───────────────────────────────────────────────────┘\n");
