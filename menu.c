@@ -1588,7 +1588,7 @@ double fahrenheit_celsius(int fahrenheit, double celsius){
 	return celsius=(5.0/9.0)*(fahrenheit-32);
 }
 /*││    └► 9 RANDPASS                    - Description: │*/
-void randpass(int length, int lower, int upper){ //1
+void randpass(int length, int lower, int upper){ //1/2/3/4
 	srand((unsigned int)time(NULL));
 	while(length){
 		putchar(rand()%(upper-lower+1)+lower);
@@ -1597,7 +1597,123 @@ void randpass(int length, int lower, int upper){ //1
 	}
 	printf("\n");
 }
-//...
+
+void randpass_sym(int length, int lower, int upper){ //5
+	srand((unsigned int)time(NULL));
+	while(length){
+		int val=(rand()%(upper-lower+1)+lower);
+		if( (!(val >= 48)) || (!(val <= 57)) && (!(val >= 65)) || (!(val <= 90))&& (!(val >= 97)) || (!(val <= 122)) ){
+			putchar(val);
+			srand(rand());
+			length--;
+		}
+	}
+	printf("\n");
+}
+
+void randpass_cl_cu(int length, int lower, int upper){ //6
+	srand((unsigned int)time(NULL));
+	while(length){
+		int val=(rand()%(upper-lower+1)+lower);
+		if((val >= 65 && val <= 90)||(val >= 97 && val <= 122)){
+			putchar(val);
+			srand(rand());
+			length--;
+		}
+	}
+	printf("\n");
+}
+
+void randpass_cl_cu_num(int length, int lower, int upper){ //7
+		srand((unsigned int)time(NULL));
+	while(length){
+		int val=(rand()%(upper-lower+1)+lower);
+		if(!( (!(val >= 48)) || (!(val <= 57)) && (!(val >= 65)) || (!(val <= 90))&& (!(val >= 97)) || (!(val <= 122)) ) ){
+			putchar(val);
+			srand(rand());
+			length--;
+		}
+	}
+	printf("\n");
+}
+
+void randpass_cl_cu_sym(int length, int lower, int upper){ //8
+	srand((unsigned int)time(NULL));
+	while(length){
+		int val=(rand()%(upper-lower+1)+lower);
+		if(!( ((val >= 48)) && ((val <= 57)) && (!(val >= 65)) || (!(val <= 90))&& (!(val >= 97)) || (!(val <= 122)) ) ){
+			putchar(val);
+			srand(rand());
+			length--;
+		}
+	}
+	printf("\n");
+}
+
+void randpass_cu_num(int length, int lower, int upper){ //9
+	srand((unsigned int)time(NULL));
+	while(length){
+		int val=(rand()%(upper-lower+1)+lower);
+		if((val >= 65 && val <= 90)||(val >= 48 && val <= 57)){
+			putchar(val);
+			srand(rand());
+			length--;
+		}
+	}
+	printf("\n");
+}
+
+void randpass_cu_sym(int length, int lower, int upper){ //10
+	srand((unsigned int)time(NULL));
+	while(length){
+		int val=(rand()%(upper-lower+1)+lower);
+		if( (!(val >= 48)) || (!(val <= 57)) && (!(val >= 97)) || (!(val <= 122)) ){
+			putchar(val);
+			srand(rand());
+			length--;
+		}
+	}
+	printf("\n");
+}
+
+void randpass_cl_num(int length, int lower, int upper){ //11
+	srand((unsigned int)time(NULL));
+	while(length){
+		int val=(rand()%(upper-lower+1)+lower);
+		if((val >= 97 && val <= 122)||(val >= 48 && val <= 57)){
+			putchar(val);
+			srand(rand());
+			length--;
+		}
+	}
+	printf("\n");
+}
+
+void randpass_cl_sym(int length, int lower, int upper){ //12
+	srand((unsigned int)time(NULL));
+	while(length){
+		int val=(rand()%(upper-lower+1)+lower);
+		if( (!(val >= 48)) || (!(val <= 57)) && (!(val >= 65)) || (!(val <= 90)) ){
+			putchar(val);
+			srand(rand());
+			length--;
+		}
+	}
+	printf("\n");
+}
+
+void randpass_num_sym(int length, int lower, int upper){
+	srand((unsigned int)time(NULL));
+	while(length){
+		int val=(rand()%(upper-lower+1)+lower);
+		if( (!(val >= 65)) || (!(val <= 90))&& (!(val >= 97)) || (!(val <= 122)) ){
+			putchar(val);
+			srand(rand());
+			length--;
+		}
+	}
+	printf("\n");
+}
 /*│└► 2 DATA-STRUCTURES                           │
   │     ├► ARRAY       - Description:             │*/
 /*│     ├► STRING      - Description:             │*/
@@ -1624,7 +1740,7 @@ void main(int argc, char const *argv[]){
 		printf("┌───────────────────────────┐\n");
 		printf("│MAIN MENU                  │\n");
 		printf("│├► 0.  EXIT             [●]│\n");
-		printf("│├► 1.  MENU BASIC       [○]│\n");
+		printf("│├► 1.  MENU BASIC       [●]│\n");
 		printf("│└► 2.  MENU DATA-STRUCT [○]│\n");
 		printf("└───────────────────────────┘\n");
 		printf("CHOICE MENU: ");
@@ -1639,20 +1755,20 @@ void main(int argc, char const *argv[]){
 				int scelta_basic=0;
 				do{
 					clrscr();
-					printf("┌────────────────────────────────────────────────┐\n");
-					printf("│MAIN MENU                                       │\n");
-					printf("│└► 1.  MENU BASIC                               │\n");
-					printf("│       ├► 0.  BACK TO MAIN MENU              [●]│\n");
-					printf("│       ├► 1.  HELLO WORLD                    [●]│\n");
-					printf("│       ├► 2.  SIZES OF TYPE'S VARIABLES      [●]│\n");
-					printf("│       ├► 3.  ASCII TABLE                    [●]│\n");
-					printf("│       ├► 4.  MENU PATTERNS                  [●]│\n");
-					printf("│       ├► 5.  MENU NUMBERS                   [●]│\n");
-					printf("│       ├► 6.  MENU MATH FORMULA              [●]│\n");
-					printf("│       ├► 7.  MENU FLOATING-POINT ARITHMETIC [●]│\n");
-					printf("│       ├► 8.  MENU CONVERSIONS               [●]│\n");
-					printf("│       └► 9.  MENU RANDPASS                  [○]│\n");
-					printf("└────────────────────────────────────────────────┘\n");
+					printf("┌─────────────────────────────────────────────┐\n");
+					printf("│MAIN MENU                                    │\n");
+					printf("│└► 1.  MENU BASIC                            │\n");
+					printf("│       ├► 0.  BACK TO MAIN MENU              │\n");
+					printf("│       ├► 1.  HELLO WORLD                    │\n");
+					printf("│       ├► 2.  SIZES OF TYPE'S VARIABLES      │\n");
+					printf("│       ├► 3.  ASCII TABLE                    │\n");
+					printf("│       ├► 4.  MENU PATTERNS                  │\n");
+					printf("│       ├► 5.  MENU NUMBERS                   │\n");
+					printf("│       ├► 6.  MENU MATH FORMULA              │\n");
+					printf("│       ├► 7.  MENU FLOATING-POINT ARITHMETIC │\n");
+					printf("│       ├► 8.  MENU CONVERSIONS               │\n");
+					printf("│       └► 9.  MENU RANDPASS                  │\n");
+					printf("└─────────────────────────────────────────────┘\n");
 					printf("CHOICE BASIC: ");
 					scanf("%d", &scelta_basic);
 					switch(scelta_basic){
@@ -3947,25 +4063,25 @@ void main(int argc, char const *argv[]){
 							int scelta_randpass=0, length=0;
 							do{
 								clrscr();
-								printf("┌──────────────────────────────────────────────┐\n");
-								printf("│MAIN MENU                                     │\n");
-								printf("│└► 1.  MENU BASIC                             │\n");
-								printf("│       └► 9.  MENU RANDPASS                   │\n");
-								printf("│              ├► 0.  BACK BASIC MENU       [●]│\n");
-								printf("│              ├► 1.  C-U + C-L + NUM + SYM [●]│\n");
-								printf("│              ├► 2.  C-U                   [●]│\n");
-								printf("│              ├► 3.        C-L             [●]│\n");
-								printf("│              ├► 4.              NUM       [●]│\n");
-								printf("│              ├► 5.                    SYM [○]│\n");
-								printf("│              ├► 6.  C-U + C-L             [○]│\n");
-								printf("│              ├► 7.  C-U + C-L + NUM       [○]│\n");
-								printf("│              ├► 8.  C-U + C-L       + SYM [○]│\n");
-								printf("│              ├► 9.  C-U       + NUM       [○]│\n");
-								printf("│              ├► 10. C-U             + SYM [○]│\n");
-								printf("│              ├► 11.       C-L + NUM       [○]│\n");
-								printf("│              ├► 12.       C-L       + SYM [○]│\n");
-								printf("│              └► 13.             NUM + SYM [○]│\n");
-								printf("└──────────────────────────────────────────────┘\n");
+								printf("┌───────────────────────────────────────────┐\n");
+								printf("│MAIN MENU                                  │\n");
+								printf("│└► 1.  MENU BASIC                          │\n");
+								printf("│       └► 9.  MENU RANDPASS                │\n");
+								printf("│              ├► 0.  BACK BASIC MENU       │\n");
+								printf("│              ├► 1.  C-U + C-L + NUM + SYM │\n");
+								printf("│              ├► 2.  C-U                   │\n");
+								printf("│              ├► 3.        C-L             │\n");
+								printf("│              ├► 4.              NUM       │\n");
+								printf("│              ├► 5.                    SYM │\n");
+								printf("│              ├► 6.  C-U + C-L             │\n");
+								printf("│              ├► 7.  C-U + C-L + NUM       │\n");
+								printf("│              ├► 8.  C-U + C-L       + SYM │\n");
+								printf("│              ├► 9.  C-U       + NUM       │\n");
+								printf("│              ├► 10. C-U             + SYM │\n");
+								printf("│              ├► 11.       C-L + NUM       │\n");
+								printf("│              ├► 12.       C-L       + SYM │\n");
+								printf("│              └► 13.             NUM + SYM │\n");
+								printf("└───────────────────────────────────────────┘\n");
 								printf("CHOICE RANDPASS: ");
 								scanf("%d",&scelta_randpass);
 								switch(scelta_randpass){
@@ -4046,7 +4162,160 @@ void main(int argc, char const *argv[]){
 											scanf("%s", &torna);
 										}while((torna == 'n')||(torna != 'y'));
 									}break;
-									//...
+
+									case 5:{
+										do{
+											clrscr();
+											printf("┌───────────────────────────────────────────┐\n");
+											printf("│MAIN MENU                                  │\n");
+											printf("│└► 1.  MENU BASIC                          │\n");
+											printf("│       └► 9.  MENU RANDPASS                │\n");
+											printf("│              └► 5.                    SYM │\n");
+											printf("└───────────────────────────────────────────┘\n");
+											printf("Enter the length of the password: ");
+											scanf("%d", &length);
+											randpass_sym(length,33,126);
+											printf("Do you want to back to RANDPASS MENU?(y/n): ");
+											scanf("%s", &torna);
+										}while((torna == 'n')||(torna != 'y'));
+									}break;
+
+									case 6:{
+										do{
+											clrscr();
+											printf("┌───────────────────────────────────────────┐\n");
+											printf("│MAIN MENU                                  │\n");
+											printf("│└► 1.  MENU BASIC                          │\n");
+											printf("│       └► 9.  MENU RANDPASS                │\n");
+											printf("│              └► 6.  C-U + C-L             │\n");
+											printf("└───────────────────────────────────────────┘\n");
+											printf("Enter the length of the password: ");
+											scanf("%d", &length);
+											randpass_cl_cu(length,33,126);
+											printf("Do you want to back to RANDPASS MENU?(y/n): ");
+											scanf("%s", &torna);
+										}while((torna == 'n')||(torna != 'y'));
+									}break;
+
+									case 7:{
+										do{
+											clrscr();
+											printf("┌───────────────────────────────────────────┐\n");
+											printf("│MAIN MENU                                  │\n");
+											printf("│└► 1.  MENU BASIC                          │\n");
+											printf("│       └► 9.  MENU RANDPASS                │\n");
+											printf("│              ├► 7.  C-U + C-L + NUM       │\n");
+											printf("└───────────────────────────────────────────┘\n");
+											printf("Enter the length of the password: ");
+											scanf("%d", &length);
+											randpass_cl_cu_num(length,33,126);
+											printf("Do you want to back to RANDPASS MENU?(y/n): ");
+											scanf("%s", &torna);
+										}while((torna == 'n')||(torna != 'y'));
+									}break;
+
+									case 8:{
+										do{
+											clrscr();
+											printf("┌───────────────────────────────────────────┐\n");
+											printf("│MAIN MENU                                  │\n");
+											printf("│└► 1.  MENU BASIC                          │\n");
+											printf("│       └► 9.  MENU RANDPASS                │\n");
+											printf("│              ├► 8.  C-U + C-L       + SYM │\n");
+											printf("└───────────────────────────────────────────┘\n");
+											printf("Enter the length of the password: ");
+											scanf("%d", &length);
+											randpass_cl_cu_sym(length,33,126);
+											printf("Do you want to back to RANDPASS MENU?(y/n): ");
+											scanf("%s", &torna);
+										}while((torna == 'n')||(torna != 'y'));
+									}break;
+
+									case 9:{
+										do{
+											clrscr();
+											printf("┌───────────────────────────────────────────┐\n");
+											printf("│MAIN MENU                                  │\n");
+											printf("│└► 1.  MENU BASIC                          │\n");
+											printf("│       └► 9.  MENU RANDPASS                │\n");
+											printf("│              ├► 9.  C-U       + NUM       │\n");
+											printf("└───────────────────────────────────────────┘\n");
+											printf("Enter the length of the password: ");
+											scanf("%d", &length);
+											randpass_cu_num(length,33,126);
+											printf("Do you want to back to RANDPASS MENU?(y/n): ");
+											scanf("%s", &torna);
+										}while((torna == 'n')||(torna != 'y'));
+									}break;
+
+									case 10:{
+										do{
+											clrscr();
+											printf("┌───────────────────────────────────────────┐\n");
+											printf("│MAIN MENU                                  │\n");
+											printf("│└► 1.  MENU BASIC                          │\n");
+											printf("│       └► 9.  MENU RANDPASS                │\n");
+											printf("│              ├► 10. C-U             + SYM │\n");
+											printf("└───────────────────────────────────────────┘\n");
+											printf("Enter the length of the password: ");
+											scanf("%d", &length);
+											randpass_cu_sym(length,33,126);
+											printf("Do you want to back to RANDPASS MENU?(y/n): ");
+											scanf("%s", &torna);
+										}while((torna == 'n')||(torna != 'y'));
+									}break;
+
+									case 11:{
+										do{
+											clrscr();
+											printf("┌───────────────────────────────────────────┐\n");
+											printf("│MAIN MENU                                  │\n");
+											printf("│└► 1.  MENU BASIC                          │\n");
+											printf("│       └► 9.  MENU RANDPASS                │\n");
+											printf("│              ├► 11.       C-L + NUM       │\n");
+											printf("└───────────────────────────────────────────┘\n");
+											printf("Enter the length of the password: ");
+											scanf("%d", &length);
+											randpass_cl_num(length,33,126);
+											printf("Do you want to back to RANDPASS MENU?(y/n): ");
+											scanf("%s", &torna);
+										}while((torna == 'n')||(torna != 'y'));
+									}break;
+
+									case 12:{
+										do{
+											clrscr();
+											printf("┌───────────────────────────────────────────┐\n");
+											printf("│MAIN MENU                                  │\n");
+											printf("│└► 1.  MENU BASIC                          │\n");
+											printf("│       └► 9.  MENU RANDPASS                │\n");
+											printf("│              ├► 12.       C-L       + SYM │\n");
+											printf("└───────────────────────────────────────────┘\n");
+											printf("Enter the length of the password: ");
+											scanf("%d", &length);
+											randpass_cl_sym(length,33,126);
+											printf("Do you want to back to RANDPASS MENU?(y/n): ");
+											scanf("%s", &torna);
+										}while((torna == 'n')||(torna != 'y'));
+									}break;
+
+									case 13:{
+										do{
+											clrscr();
+											printf("┌───────────────────────────────────────────┐\n");
+											printf("│MAIN MENU                                  │\n");
+											printf("│└► 1.  MENU BASIC                          │\n");
+											printf("│       └► 9.  MENU RANDPASS                │\n");
+											printf("│              └► 13.             NUM + SYM │\n");
+											printf("└───────────────────────────────────────────┘\n");
+											printf("Enter the length of the password: ");
+											scanf("%d", &length);
+											randpass_num_sym(length,33,126);
+											printf("Do you want to back to RANDPASS MENU?(y/n): ");
+											scanf("%s", &torna);
+										}while((torna == 'n')||(torna != 'y'));
+									}break;
+									
 									default:{
 										do{
 											clrscr();
