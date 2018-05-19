@@ -17,20 +17,19 @@ void clrscr(void){
 	printf("\033[2J");
 	printf("\033[0;0f");
 }
-/*
-┌─────────────────────────────────────────────┐
-│MAIN MENU                                    │
-│├►BASIC                                      │
-││ ├► HELLO WORLD              - Description: │
-││ ├► VAR SIZE                 - Description: │
-││ ├► ASCII TABLE              - Description: │
-││ ├►PATTERNS                  - Description: │
-││ ├►NUMBERS                   - Description: │
-││ ├►MATH FORMULA              - Description: │
-││ ├►FLOATING-POINT ARITHMETIC - Description: │
-││ ├►CONVERSIONS               - Description: │
-││ └►RANDPASS                  - Description: │
-└─────────────────────────────────────────────┘*/
+/*┌──────────────────────────────────────────────┐
+  │MAIN MENU                                     │
+  │├►BASIC                                       │
+  ││ ├► HELLO WORLD               - Description: │
+  ││ ├► VAR SIZE                  - Description: │
+  ││ ├► ASCII TABLE               - Description: │
+  ││ ├► PATTERNS                  - Description: │
+  ││ ├► NUMBERS                   - Description: │
+  ││ ├► MATH FORMULA              - Description: │
+  ││ ├► FLOATING-POINT ARITHMETIC - Description: │
+  ││ ├► CONVERSIONS               - Description: │
+  ││ └► RANDPASS                  - Description: │
+  └──────────────────────────────────────────────┘*/
 void hello_world(){
 	printf("HELLO WORLD!\n");
 }
@@ -1598,30 +1597,27 @@ float celsius_fahrenheit(float celsius, float fahrenheit){
 double fahrenheit_celsius(int fahrenheit, double celsius){
 	return celsius=(5.0/9.0)*(fahrenheit-32);
 }
-/*____________________________________________________________________________*/
-/*
-┌─────────────────────────────────┐
-│└►DATA-STRUCTURES                │
-│  ├►  - Description:             │
-│  ├►  - Description:             │
-│  ├►  - Description:             │
-│  ├►  - Description:             │
-│  └►  - Description:             │
-└─────────────────────────────────┘*/
+/*┌─────────────────────────────────┐
+  │└►DATA-STRUCTURES                │
+  │  ├►  - Description:             │
+  │  ├►  - Description:             │
+  │  ├►  - Description:             │
+  │  ├►  - Description:             │
+  │  └►  - Description:             │
+  └─────────────────────────────────┘*/
 void main(int argc, char const *argv[]){
 	int scelta_menu=0;
 	char torna='n';	
-/*	┌─────────────────────────────────┐
-	│├► [●]: completato/funziona     │
-	│├► [○]: manca                   │
-	│├► [ ]: quasi finito            │
-	│├► [ ]: in sviluppo             │
-	│├► [ ]: pronto in un altro file │
-	│└► [ ]: da aggiustare           │
-	└─────────────────────────────────┘
-*/
-	do{
-		clrscr();
+/*┌────────────────────────────────┐
+  │├► [●]: completato/funziona     │
+  │├► [○]: manca                   │
+  │├► [ ]: quasi finito            │
+  │├► [ ]: in sviluppo             │
+  │├► [ ]: pronto in un altro file │
+  │└► [ ]: da aggiustare           │
+  └────────────────────────────────┘*/
+  	do{
+  		clrscr();
 		printf("┌───────────────────────────┐\n");
 		printf("│MAIN MENU                  │\n");
 		printf("│├► 0.  EXIT             [●]│\n");
