@@ -6824,7 +6824,6 @@ void main(int argc, char const *argv[]){
 							srand(time(NULL));
 							do{
 								clrscr();
-								printf("│              ├► 4.  SORTING               [○]│\n");
 								printf("┌───────────────────────────────────────────┐\n");
 								printf("│MAIN MENU                                  │\n");
 								printf("│└► 1.  MENU DATA-STRUCT                    │\n");
