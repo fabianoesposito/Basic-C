@@ -4669,28 +4669,28 @@ void main(int argc, char const *argv[]){
 							int scelta_array=0, dim=0, A[dim], k, x, min=0, max=0;
 							do{
 								clrscr();
-								printf("┌─────────────────────────────────────┐\n");
-								printf("│MAIN MENU                            │\n");
-								printf("│└► 1.  MENU DATA-STRUCT              │\n");
-								printf("│       └► 1.  MENU ARRAY             │\n");
-								printf("│              ├► 0.  BACK BASIC MENU │\n");
-								printf("│              ├► 1.  INSERT          │\n");
-								printf("│              ├► 2.  OPERATIONS      │\n");
-								printf("│              ├► 3.  SORTING         │\n");
-								printf("│              ├► 4.  SEARCHING       │\n");
-								printf("│              └► 5.  CHECK        [○]│\n");
-								printf("└─────────────────────────────────────┘\n");
+								printf("┌───────────────────────────────────────────┐\n");
+								printf("│MAIN MENU                                  │\n");
+								printf("│└► 1.  MENU DATA-STRUCT                    │\n");
+								printf("│       └► 1.  MENU ARRAY                   │\n");
+								printf("│              ├► 0.  BACK DATA-STRUCT MENU │\n");
+								printf("│              ├► 1.  INSERT                │\n");
+								printf("│              ├► 2.  OPERATIONS            │\n");
+								printf("│              ├► 3.  SORTING               │\n");
+								printf("│              ├► 4.  SEARCHING             │\n");
+								printf("│              └► 5.  CHECK              [○]│\n");
+								printf("└───────────────────────────────────────────┘\n");
 								printf("CHOICE ARRAY: ");
 								scanf("%d",&scelta_array);
 								switch(scelta_array){
 									case 0:{
 										clrscr();
-										printf("┌─────────────────────────────────────┐\n");
-										printf("│MAIN MENU                            │\n");
-										printf("│└► 1.  MENU DATA-STRUCT              │\n");
-										printf("│       └► 1.  MENU ARRAY             │\n");
-										printf("│              └► 0.  BACK BASIC MENU │\n");
-										printf("└─────────────────────────────────────┘\n");
+										printf("┌───────────────────────────────────────────┐\n");
+										printf("│MAIN MENU                                  │\n");
+										printf("│└► 1.  MENU DATA-STRUCT                    │\n");
+										printf("│       └► 1.  MENU ARRAY                   │\n");
+										printf("│              └► 0.  BACK DATA-STRUCT MENU │\n");
+										printf("└───────────────────────────────────────────┘\n");
 									}break;
 									
 									case 1:{
@@ -5021,8 +5021,6 @@ void main(int argc, char const *argv[]){
 													}while((torna == 'n')||(torna != 'y'));
 												}break;
 
-
-
 												case 7:{
 													do{
 														clrscr();
@@ -5269,20 +5267,20 @@ void main(int argc, char const *argv[]){
 												}break;
 
 												default:{
-														do{
-															clrscr();
-															printf("┌───────────────────────────────────────────────────┐\n");
-															printf("│MAIN MENU                                          │\n");
-															printf("│└► 1.  MENU DATA-STRUCT                            │\n");
-															printf("│       └► 1.  MENU ARRAY                           │\n");
-															printf("│              └► 4.  SEARCHING                     │\n");
-															printf("│                     └► X.  DEFAULT: ERROR CHOICE! │\n");
-															printf("└───────────────────────────────────────────────────┘\n");
-															printf("Do you want to back to SEARCHING?(y/n): ");
-															scanf("%s", &torna);
-														}while((torna == 'n')&&(torna != 'y'));
-													}break;
-												}
+													do{
+														clrscr();
+														printf("┌───────────────────────────────────────────────────┐\n");
+														printf("│MAIN MENU                                          │\n");
+														printf("│└► 1.  MENU DATA-STRUCT                            │\n");
+														printf("│       └► 1.  MENU ARRAY                           │\n");
+														printf("│              └► 4.  SEARCHING                     │\n");
+														printf("│                     └► X.  DEFAULT: ERROR CHOICE! │\n");
+														printf("└───────────────────────────────────────────────────┘\n");
+														printf("Do you want to back to SEARCHING?(y/n): ");
+														scanf("%s", &torna);
+													}while((torna == 'n')&&(torna != 'y'));
+												}break;
+											}
 											printf("Do you want to back to ARRAY MENU?(y/n): ");
 											scanf("%s", &torna);
 										}while((torna == 'n')||(torna != 'y'));
@@ -5294,7 +5292,7 @@ void main(int argc, char const *argv[]){
 											printf("┌───────────────────────────────────────────┐\n");
 											printf("│MAIN MENU                                  │\n");
 											printf("│└► 1.  MENU DATA-STRUCT                    │\n");
-											printf("│       └► 9.  MENU ARRAY                   │\n");
+											printf("│       └► 1.  MENU ARRAY                   │\n");
 											printf("│              └► 5.  CHECK                 │\n");
 											printf("└───────────────────────────────────────────┘\n");
 											printf("Do you want to back to ARRAY MENU?(y/n): ");
@@ -5308,7 +5306,7 @@ void main(int argc, char const *argv[]){
 											printf("┌────────────────────────────────────────────┐\n");
 											printf("│MAIN MENU                                   │\n");
 											printf("│└► 1.  MENU DATA-STRUCT                     │\n");
-											printf("│       └► 9.  MENU ARRAY                    │\n");
+											printf("│       └► 1.  MENU ARRAY                    │\n");
 											printf("│              └► X.  DEFAULT: ERROR CHOICE! │\n");
 											printf("└────────────────────────────────────────────┘\n");
 											printf("Do you want to back to ARRAY MENU?(y/n): ");
@@ -5322,19 +5320,19 @@ void main(int argc, char const *argv[]){
 						}break;
 						//...
 						case 3:{
-							int scelta_matrix=0;
+							int scelta_matrix=0, r=0, c=0, max=0, min=0, M[r][c];
 							do{
 								clrscr();
 								printf("┌────────────────────────────────────────┐\n");
 								printf("│MAIN MENU                               │\n");
 								printf("│└► 1.  MENU DATA-STRUCT                 │\n");
-								printf("│       └► 9.  MENU MATRIX               │\n");
-								printf("│              └► 0.  BACK BASIC MENU [●]│\n");
-								printf("│              ├► 1.  INSERT          [○]│\n");
-								printf("│              ├► 2.  OPERATIONS      [○]│\n");
+								printf("│       └► 3.  MENU MATRIX               │\n");
+								printf("│              ├► 0.  BACK BASIC MENU    │\n");
+								printf("│              ├► 1.  INSERT             │\n");
+								printf("│              ├► 2.  OPERATIONS         │\n");
 								printf("│              ├► 3.  SORTING         [○]│\n");
 								printf("│              ├► 4.  SEARCHING       [○]│\n");
-								printf("│              └► 5.  CHECK           [○]│\n");
+								printf("│              └► 5.  CHECK              │\n");
 								printf("└────────────────────────────────────────┘\n");
 								printf("CHOICE MATRIX: ");
 								scanf("%d",&scelta_matrix);
@@ -5344,7 +5342,7 @@ void main(int argc, char const *argv[]){
 										printf("┌─────────────────────────────────────┐\n");
 										printf("│MAIN MENU                            │\n");
 										printf("│└► 1.  MENU DATA-STRUCT              │\n");
-										printf("│       └► 9.  MENU MATRIX            │\n");
+										printf("│       └► 3.  MENU MATRIX            │\n");
 										printf("│              └► 0.  BACK BASIC MENU │\n");
 										printf("└─────────────────────────────────────┘\n");
 									}break;
@@ -5355,23 +5353,201 @@ void main(int argc, char const *argv[]){
 											printf("┌───────────────────────────────────────────┐\n");
 											printf("│MAIN MENU                                  │\n");
 											printf("│└► 1.  MENU DATA-STRUCT                    │\n");
-											printf("│       └► 9.  MENU MATRIX                  │\n");
+											printf("│       └► 3.  MENU MATRIX                  │\n");
 											printf("│              └► 1.  INSERT                │\n");
 											printf("└───────────────────────────────────────────┘\n");
+											printf("Insert row: ");
+											scanf("%d", &r);
+											printf("Insert column: ");
+											scanf("%d", &c);
+											ins_matrix(r,c,M);
 											printf("Do you want to back to MATRIX MENU?(y/n): ");
 											scanf("%s", &torna);
 										}while((torna == 'n')||(torna != 'y'));
 									}break;
 
 									case 2:{
+										int scelta_operations=0;
 										do{
 											clrscr();
-											printf("┌───────────────────────────────────────────┐\n");
-											printf("│MAIN MENU                                  │\n");
-											printf("│└► 1.  MENU DATA-STRUCT                    │\n");
-											printf("│       └► 9.  MENU MATRIX                  │\n");
-											printf("│              └► 2.  OPERATIONS            │\n");
-											printf("└───────────────────────────────────────────┘\n");
+											printf("┌─────────────────────────────────────────────┐\n");
+											printf("│MAIN MENU                                    │\n");
+											printf("│└► 1.  MENU DATA-STRUCT                      │\n");
+											printf("│       └► 3.  MENU MATRIX                    │\n");
+											printf("│              └► 2.  OPERATIONS              │\n");
+											printf("│                     ├► 0.  BACK MATRIX MENU │\n");
+											printf("│                     ├► 1.  k+M              │\n");
+											printf("│                     ├► 2.  k*M              │\n");
+											printf("│                     ├► 3.  M+M              │\n");
+											printf("│                     ├► 4.  M*M              │\n");
+											printf("│                     ├► 5.  INVERSE          │\n");
+											printf("│                     ├► 6.  MAX/MIN          │\n");
+											printf("│                     └► 7.  TRASPOSITION     │\n");
+											printf("└─────────────────────────────────────────────┘\n");
+											//printf("|5   M-M             |OK|\n"); NO
+											printf("CHOICE OPERATIONS: ");
+											scanf("%d",&scelta_operations);
+											switch(scelta_operations){
+												case 0:{
+													clrscr();
+													printf("┌─────────────────────────────────────────────┐\n");
+													printf("│MAIN MENU                                    │\n");
+													printf("│└► 1.  MENU DATA-STRUCT                      │\n");
+													printf("│       └► 3.  MENU MATRIX                    │\n");
+													printf("│              └► 2.  OPERATIONS              │\n");
+													printf("│                     └► 0.  BACK MATRIX MENU │\n");
+													printf("└─────────────────────────────────────────────┘\n");
+												}break;
+
+												case 1:{
+													do{
+														clrscr();
+														printf("┌────────────────────────────────┐\n");
+														printf("│MAIN MENU                       │\n");
+														printf("│└► 1.  MENU DATA-STRUCT         │\n");
+														printf("│       └► 3.  MENU MATRIX       │\n");
+														printf("│              └► 2.  OPERATIONS │\n");
+														printf("│                     └► 1.  k+M │\n");
+														printf("└────────────────────────────────┘\n");
+														printf("MATRIX BEFORE k+M:\n");
+														print_matrix(r,c,M);
+														k_piu_M(r,c,M);
+														printf("MATRIX AFTER k+M:\n");
+														print_matrix(r,c,M);
+														printf("Do you want to back to OPERATIONS MENU?(y/n): ");
+														scanf("%s", &torna);
+													}while((torna == 'n')||(torna != 'y'));
+												}break;
+
+												case 2:{
+													do{
+														clrscr();
+														printf("┌────────────────────────────────┐\n");
+														printf("│MAIN MENU                       │\n");
+														printf("│└► 1.  MENU DATA-STRUCT         │\n");
+														printf("│       └► 3.  MENU MATRIX       │\n");
+														printf("│              └► 2.  OPERATIONS │\n");
+														printf("│                     └► 2.  k*M │\n");
+														printf("└────────────────────────────────┘\n");
+														printf("MATRIX BEFORE k*M:\n");
+														print_matrix(r,c,M);
+														k_x_M(r,c,M);
+														printf("MATRIX AFTER k*M:\n");
+														print_matrix(r,c,M);
+														printf("Do you want to back to OPERATIONS MENU?(y/n): ");
+														scanf("%s", &torna);
+													}while((torna == 'n')||(torna != 'y'));
+												}break;
+
+												case 3:{
+													do{
+														clrscr();
+														printf("┌────────────────────────────────┐\n");
+														printf("│MAIN MENU                       │\n");
+														printf("│└► 1.  MENU DATA-STRUCT         │\n");
+														printf("│       └► 3.  MENU MATRIX       │\n");
+														printf("│              └► 2.  OPERATIONS │\n");
+														printf("│                     └► 3.  M+M │\n");
+														printf("└────────────────────────────────┘\n");
+														printf("MATRIX BEFORE M+M:\n");
+														print_matrix(r,c,M);
+														M_piu_M(r,c,M);
+														printf("MATRIX AFTER M+M:\n");
+														print_matrix(r,c,M);
+														printf("Do you want to back to OPERATIONS MENU?(y/n): ");
+														scanf("%s", &torna);
+													}while((torna == 'n')||(torna != 'y'));
+												}break;
+
+												case 4:{
+													do{
+														clrscr();
+														printf("┌────────────────────────────────┐\n");
+														printf("│MAIN MENU                       │\n");
+														printf("│└► 1.  MENU DATA-STRUCT         │\n");
+														printf("│       └► 3.  MENU MATRIX       │\n");
+														printf("│              └► 2.  OPERATIONS │\n");
+														printf("│                     └► 4.  M*M │\n");
+														printf("└────────────────────────────────┘\n");
+														printf("MATRIX BEFORE M*M:\n");
+														print_matrix(r,c,M);
+														M_x_M(r,c,M);
+														printf("MATRIX AFTER M*M:\n");
+														print_matrix(r,c,M);
+														printf("Do you want to back to OPERATIONS MENU?(y/n): ");
+														scanf("%s", &torna);
+													}while((torna == 'n')||(torna != 'y'));
+												}break;
+
+												case 5:{
+													do{
+														clrscr();
+														printf("┌────────────────────────────────────┐\n");
+														printf("│MAIN MENU                           │\n");
+														printf("│└► 1.  MENU DATA-STRUCT             │\n");
+														printf("│       └► 3.  MENU MATRIX           │\n");
+														printf("│              └► 2.  OPERATIONS     │\n");
+														printf("│                     └► 5.  INVERSE │\n");
+														printf("└────────────────────────────────────┘\n");
+														inverse_matrix(r,c,M);
+														printf("Do you want to back to OPERATIONS MENU?(y/n): ");
+														scanf("%s", &torna);
+													}while((torna == 'n')||(torna != 'y'));
+												}break;
+
+												case 6:{
+													do{
+														clrscr();
+														printf("┌────────────────────────────────────┐\n");
+														printf("│MAIN MENU                           │\n");
+														printf("│└► 1.  MENU DATA-STRUCT             │\n");
+														printf("│       └► 3.  MENU MATRIX           │\n");
+														printf("│              └► 2.  OPERATIONS     │\n");
+														printf("│                     └► 6.  MAX/MIN │\n");
+														printf("└────────────────────────────────────┘\n");
+														max=max_matrix(r,c,M,max);
+														min=min_matrix(r,c,M,min);
+														printf("MAX(M[%d][%d])=%d, min(M[%d][%d])=%d\n", r, c, max, r, c, min);
+														printf("Do you want to back to OPERATIONS MENU?(y/n): ");
+														scanf("%s", &torna);
+													}while((torna == 'n')||(torna != 'y'));
+												}break;
+
+												case 7:{
+													do{
+														clrscr();
+														printf("┌─────────────────────────────────────────┐\n");
+														printf("│MAIN MENU                                │\n");
+														printf("│└► 1.  MENU DATA-STRUCT                  │\n");
+														printf("│       └► 3.  MENU MATRIX                │\n");
+														printf("│              └► 2.  OPERATIONS          │\n");
+														printf("│                     └► 7.  TRASPOSITION │\n");
+														printf("└─────────────────────────────────────────┘\n");
+														printf("MATRIX BEFORE TRASPOSITION:\n");
+														print_matrix(r,c,M);
+														trasp_matrix(r,c,M);
+														printf("MATRIX AFTER TRASPOSITION:\n");
+														print_matrix(r,c,M);
+														printf("Do you want to back to OPERATIONS MENU?(y/n): ");
+														scanf("%s", &torna);
+													}while((torna == 'n')||(torna != 'y'));
+												}break;
+
+												default:{
+													do{
+														clrscr();
+														printf("┌───────────────────────────────────────────────────┐\n");
+														printf("│MAIN MENU                                          │\n");
+														printf("│└► 1.  MENU DATA-STRUCT                            │\n");
+														printf("│       └► 3.  MENU MATRIX                          │\n");
+														printf("│              └► 2.  OPERATIONS                    │\n");
+														printf("│                     └► X.  DEFAULT: ERROR CHOICE! │\n");
+														printf("└───────────────────────────────────────────────────┘\n");
+														printf("Do you want to back to OPERATIONS?(y/n): ");
+														scanf("%s", &torna);
+													}while((torna == 'n')&&(torna != 'y'));
+												}break;
+											}
 											printf("Do you want to back to MATRIX MENU?(y/n): ");
 											scanf("%s", &torna);
 										}while((torna == 'n')||(torna != 'y'));
@@ -5383,7 +5559,7 @@ void main(int argc, char const *argv[]){
 											printf("┌───────────────────────────────────────────┐\n");
 											printf("│MAIN MENU                                  │\n");
 											printf("│└► 1.  MENU DATA-STRUCT                    │\n");
-											printf("│       └► 9.  MENU MATRIX                  │\n");
+											printf("│       └► 3.  MENU MATRIX                  │\n");
 											printf("│              └► 3.  SORTING               │\n");
 											printf("└───────────────────────────────────────────┘\n");
 											printf("Do you want to back to MATRIX MENU?(y/n): ");
@@ -5397,7 +5573,7 @@ void main(int argc, char const *argv[]){
 											printf("┌───────────────────────────────────────────┐\n");
 											printf("│MAIN MENU                                  │\n");
 											printf("│└► 1.  MENU DATA-STRUCT                    │\n");
-											printf("│       └► 9.  MENU MATRIX                  │\n");
+											printf("│       └► 3.  MENU MATRIX                  │\n");
 											printf("│              └► 4.  SEARCHING             │\n");
 											printf("└───────────────────────────────────────────┘\n");
 											printf("Do you want to back to MATRIX MENU?(y/n): ");
@@ -5406,14 +5582,98 @@ void main(int argc, char const *argv[]){
 									}break;
 
 									case 5:{
+										int scelta_check=0;
 										do{
 											clrscr();
-											printf("┌───────────────────────────────────────────┐\n");
-											printf("│MAIN MENU                                  │\n");
-											printf("│└► 1.  MENU DATA-STRUCT                    │\n");
-											printf("│       └► 9.  MENU MATRIX                  │\n");
-											printf("│              └► 5.  CHECK                 │\n");
-											printf("└───────────────────────────────────────────┘\n");
+											printf("┌─────────────────────────────────────────────┐\n");
+											printf("│MAIN MENU                                    │\n");
+											printf("│└► 1.  MENU DATA-STRUCT                      │\n");
+											printf("│       └► 3.  MENU MATRIX                    │\n");
+											printf("│              └► 5.  CHECK                   │\n");
+											printf("│                     ├► 0.  BACK MATRIX MENU │\n");
+											printf("│                     ├► 1.  DETERMINANT      │\n");
+											printf("│                     ├► 2.  SPARSE           │\n");
+											printf("│                     └► 3.  IDENTIFY OR NOT  │\n");
+											printf("└─────────────────────────────────────────────┘\n");
+											printf("CHOICE CHECK: ");
+											scanf("%d",&scelta_check);
+											switch(scelta_check){
+												case 0:{
+													clrscr();
+													printf("┌─────────────────────────────────────────────┐\n");
+													printf("│MAIN MENU                                    │\n");
+													printf("│└► 1.  MENU DATA-STRUCT                      │\n");
+													printf("│       └► 3.  MENU MATRIX                    │\n");
+													printf("│              └► 5.  CHECK                   │\n");
+													printf("│                     └► 0.  BACK MATRIX MENU │\n");
+													printf("└─────────────────────────────────────────────┘\n");
+												}break;
+
+												case 1:{
+													do{
+														clrscr();
+														printf("┌────────────────────────────────────────┐\n");
+														printf("│MAIN MENU                               │\n");
+														printf("│└► 1.  MENU DATA-STRUCT                 │\n");
+														printf("│       └► 3.  MENU MATRIX               │\n");
+														printf("│              └► 5.  CHECK              │\n");
+														printf("│                     └► 1.  DETERMINANT │\n");
+														printf("└────────────────────────────────────────┘\n");
+														print_matrix(r,c,M);
+														printf("Determinant of %dX%d matrix is: %d\n", r,c, det(r,c,M));
+														printf("Do you want to back to CHECK MENU?(y/n): ");
+														scanf("%s", &torna);
+													}while((torna == 'n')||(torna != 'y'));
+												}break;
+
+												case 2:{
+													do{
+														clrscr();
+														printf("┌───────────────────────────────────┐\n");
+														printf("│MAIN MENU                          │\n");
+														printf("│└► 1.  MENU DATA-STRUCT            │\n");
+														printf("│       └► 3.  MENU MATRIX          │\n");
+														printf("│              └► 5.  CHECK         │\n");
+														printf("│                     └► 2.  SPARSE │\n");
+														printf("└───────────────────────────────────┘\n");
+														print_matrix(r,c,M);
+														sparse_matrix(r,c,M);
+														printf("Do you want to back to CHECK MENU?(y/n): ");
+														scanf("%s", &torna);
+													}while((torna == 'n')||(torna != 'y'));
+												}break;
+
+												case 3:{
+													do{
+														clrscr();
+														printf("┌────────────────────────────────────────────┐\n");
+														printf("│MAIN MENU                                   │\n");
+														printf("│└► 1.  MENU DATA-STRUCT                     │\n");
+														printf("│       └► 3.  MENU MATRIX                   │\n");
+														printf("│              └► 5.  CHECK                  │\n");
+														printf("│                     └► 3.  IDENTIFY OR NOT │\n");
+														printf("└────────────────────────────────────────────┘\n");
+														isIdentity(r,c,M)? printf("Yes!\n") : printf("No!\n");
+														printf("Do you want to back to CHECK MENU?(y/n): ");
+														scanf("%s", &torna);
+													}while((torna == 'n')||(torna != 'y'));
+												}break;
+
+												default:{
+													do{
+														clrscr();
+														printf("┌───────────────────────────────────────────────────┐\n");
+														printf("│MAIN MENU                                          │\n");
+														printf("│└► 1.  MENU DATA-STRUCT                            │\n");
+														printf("│       └► 3.  MENU MATRIX                          │\n");
+														printf("│              └► 5.  CHECK                         │\n");
+														printf("│                     └► X.  DEFAULT: ERROR CHOICE! │\n");
+														printf("└───────────────────────────────────────────────────┘\n");
+														printf("Do you want to back to CHECK?(y/n): ");
+														scanf("%s", &torna);
+													}while((torna == 'n')&&(torna != 'y'));
+												}break;
+											}
 											printf("Do you want to back to MATRIX MENU?(y/n): ");
 											scanf("%s", &torna);
 										}while((torna == 'n')||(torna != 'y'));
@@ -5425,7 +5685,7 @@ void main(int argc, char const *argv[]){
 											printf("┌────────────────────────────────────────────┐\n");
 											printf("│MAIN MENU                                   │\n");
 											printf("│└► 1.  MENU DATA-STRUCT                     │\n");
-											printf("│       └► 9.  MENU MATRIX                   │\n");
+											printf("│       └► 3.  MENU MATRIX                   │\n");
 											printf("│              └► X.  DEFAULT: ERROR CHOICE! │\n");
 											printf("└────────────────────────────────────────────┘\n");
 											printf("Do you want to back to MATRIX MENU?(y/n): ");
