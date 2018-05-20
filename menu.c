@@ -2003,6 +2003,320 @@ int binary_I(int A[], int l, int r, int x){
 }
 /*│     ├► STRING      - Description:             │*/
 /*│     ├► MATRIX      - Description:             │*/
+void print_matrix(int r, int c, int M[r][c]){
+	printf("M[%d][%d]= r\\c ", r, c);
+	for(int i=0; i<r; i++){
+		for(int j=0; j<c; j++){
+			if(i == 0){
+				printf(" %d|  ", j);
+			}
+		}
+		printf("\n\t %d|", i);
+		for(int j=0; j<c; j++){
+			printf("%4d|", M[i][j]);
+		}
+	}
+	printf("\n");
+}
+
+void print_matrix1(int r, int c, float M[r][c]){
+	printf("M[%d][%d]= r\\c ", r, c);
+	for(int i=0; i<r; i++){
+		for(int j=0; j<c; j++){
+			if(i == 0){
+				printf("  %d|  ", j);
+			}
+		}
+		printf("\n\t %d|", i);
+		for(int j=0; j<c; j++){
+			if(M[i][j] == -0){
+				M[i][j]=0;
+			}
+			printf("%.3f|", M[i][j]);
+		}
+	}
+	printf("\n");
+}
+
+void ins_random_matrix(int r, int c, int M[r][c]){
+	int upper=10, lower=0, n=r+c;
+	srand((unsigned int)time(NULL));
+	//srand(time(NULL));
+	for(int i=0; i<r; i++){
+		for(int j=0; j<c; j++){
+			M[i][j]=0;
+		}
+	}
+	//print_matrix(r,c,M);
+	for(int i=0; i<r; i++){
+		for(int j=0; j<c; j++){
+			for(int l=0; l<n; l++){
+				int val=rand()%(upper-lower+1)+lower;
+				srand(rand());
+				M[i][j]=val;
+			}
+		}
+	}
+	print_matrix(r,c,M);
+}
+
+void ins_value_by_dim(int r, int c, int M[r][c]){
+	int upper=10, lower=0, n=r+c;
+	for(int i=0; i<r; i++){
+		for(int j=0; j<c; j++){
+			M[i][j]=0;
+		}
+	}
+	//print_matrix(r,c,M);
+	for(int i=0; i<r; i++){
+		for(int j=0; j<c; j++){
+			M[i][j]=n;
+			n--;
+		}
+	}
+	print_matrix(r,c,M);
+}
+
+void ins_id_val(int r, int c, int M[r][c]){
+	int upper=10, lower=0, n=r+c;
+	for(int i=0; i<r; i++){
+		for(int j=0; j<c; j++){
+			M[i][j]=0;
+		}
+	}
+	//print_matrix(r,c,M);
+	for(int i=0; i<r; i++){
+		for(int j=0; j<c; j++){
+			if(i==j){
+				M[i][j]=1;
+			}else{
+				M[i][j]=0;
+			}
+		}
+	}
+	print_matrix(r,c,M);
+}
+
+void ins_manual(int r, int c, int M[r][c]){
+	int upper=10, lower=0, n=r+c;
+	for(int i=0; i<r; i++){
+		for(int j=0; j<c; j++){
+			M[i][j]=0;
+		}
+	}
+	//print_matrix(r,c,M);
+	for(int i=0; i<r; i++){
+		for(int j=0; j<c; j++){
+			printf("M[%d][%d]: ", i, j);
+			scanf("%d", &M[i][j]);
+		}
+	}
+	print_matrix(r,c,M);
+}
+
+void ins_matrix(int r, int c, int M[r][c]){
+	char scelta_ins='n';
+	printf("Insert random value/s?(y/n): ");
+	scanf("%s", &scelta_ins);
+	if((scelta_ins == 'y')&&(scelta_ins != 'n')){
+		ins_random_matrix(r,c,M);
+	}else{
+		printf("Insert dimension value/s?(y/n): ");
+		scanf("%s", &scelta_ins);
+		if((scelta_ins == 'y')&&(scelta_ins != 'n')){
+			ins_value_by_dim(r,c,M);
+		}else{
+			printf("Insert identity value/s?(y/n): ");
+			scanf("%s", &scelta_ins);
+			if((scelta_ins == 'y')&&(scelta_ins != 'n')){
+				ins_id_val(r,c,M);
+			}else{
+				ins_manual(r,c,M);
+			}
+		}
+	}
+}
+
+void k_piu_M(int r, int c, int M[r][c]){
+	int k=0;
+	printf("Insert k value: ");
+	scanf("%d", &k);
+	for(int i=0; i<r; i++){
+		for(int j=0; j<c; j++){
+			M[i][j]+=k;
+		}
+	}
+}
+
+void k_x_M(int r, int c, int M[r][c]){
+	int k=0;
+	printf("Insert k value: ");
+	scanf("%d", &k);
+	for(int i=0; i<r; i++){
+		for(int j=0; j<c; j++){
+			M[i][j]*=k;
+		}
+	}
+}
+
+void M_piu_M(int r, int c, int M[r][c]){
+	for(int i=0; i<r; i++){
+		for(int j=0; j<c; j++){
+			M[i][j]+=M[i][j];
+		}
+	}
+}
+
+void M_meno_M(int r, int c, int M[r][c]){
+	for(int i=0; i<r; i++){
+		for(int j=0; j<c; j++){
+			M[i][j]-=M[i][j];
+		}
+	}
+}
+
+void M_x_M(int r, int c, int M[r][c]){
+	for(int i=0; i<r; i++){
+		for(int j=0; j<c; j++){
+			M[i][j]*=M[i][j];
+		}
+	}
+}
+
+void reduction(int r, int c, float a[][c+c], int pivot){
+	float factor=a[pivot][pivot];
+	for(int i=0; i<2*r; i++){
+		a[pivot][i] /= factor;
+	}
+	for(int i=0; i<r; i++){
+		if(i != pivot){
+			factor=a[i][pivot];
+			for(int j=0; j<2*r; j++){
+				a[i][j]=a[i][j]-a[pivot][j]*factor;
+			}
+		}
+	}
+}
+
+void inverse_matrix(int r, int c, int M[r][c]){ //testare con una matrice 2x2
+	float matrix[r][c+c];
+	for(int i=0; i<r; i++){
+		for(int j=0; j<c+c; j++){
+			if(j == i + r){
+				matrix[i][j]=1;
+			}else{
+				matrix[i][j]=0;
+			}
+		}
+	}
+	print_matrix1(r,c+c,matrix);
+	for(int i=0; i<r; i++){
+		for(int j=0; j<c; j++){
+			matrix[i][j]=M[i][j];
+		}
+	}
+	print_matrix1(r,c+c,matrix);
+	for(int i=0; i<r; i++){
+		reduction(r,c,matrix,i);
+	}
+	print_matrix1(r,c+c,matrix);
+}
+
+int max_matrix(int r, int c, int M[r][c], int max){
+	max=M[0][0];
+	for(int i=1; i<r; i++){
+		for(int j=1; j<c; j++){
+			if(M[i][j] > max){
+				max=M[i][j];
+			}
+		}
+	}
+	return max;
+}
+
+int min_matrix(int r, int c, int M[r][c], int min){
+	min=M[0][0];
+	for(int i=1; i<r; i++){
+		for(int j=1; j<c; j++){
+			if(M[i][j] < min){
+				min=M[i][j];
+			}
+		}
+	}
+	return min;
+}
+
+void trasp_matrix(int r, int c, int M[r][c]){
+	int A[c][r];
+	for(int i=0; i<r; i++){
+		for(int j=0; j<c; j++){
+			A[j][i]=M[i][j];
+		}
+	}
+	for(int i=0; i<r; i++){
+		for(int j=0; j<c; j++){
+			M[i][j]=A[i][j];
+		}
+	}
+}
+
+void getCofactor(int r, int c, int M[r][c], int temp[r][c], int p, int q){
+	int e = 0, w = 0;
+	for(int i=0; i<r; i++){
+		for(int j=0; j<c; j++){
+			if(i != p && j != q){
+				temp[e][w++] = M[i][j];
+				if(w == r - 1){
+					w = 0;
+					e++;
+				}
+			}
+		}
+	}
+}
+
+int det(int r, int c, int M[r][c]){
+	int D=0;
+	if((r == 1)&&(c == 1)){
+		return M[0][0];
+	}
+	int temp[r][c], sign=1;
+	for(int f=0; f<r; f++){
+		getCofactor(r,c,M,temp, 0, f);
+		D+=sign*M[0][f]*det(r-1,c-1,temp);
+		sign = -sign;
+	}
+	return D;
+}
+
+void sparse_matrix(int r, int c, int M[r][c]){
+	int counter=0;
+	for(int i=0; i<r; ++i){
+		for(int j=0; j<c; ++j){
+			if(M[i][j] == 0){
+				++counter;
+			}
+		}
+	}
+	if(counter > ((r*c)/2)){
+		printf("The given matrix is sparse matrix\n");
+	}else{
+		printf("The given matrix is not a sparse matrix\n");
+	}
+	printf("There are %d number of zeros\n", counter);
+}
+
+bool isIdentity(int r, int c, int M[r][c]){
+	for(int i=0; i<r; i++){
+		for (int j=0; j<c; j++){
+			if (i == j && M[i][j] != 1)
+				return false;
+			else if (i != j && M[i][j] != 0)
+				return false;
+		}
+	}
+	return true;
+}
 /*│     ├► STACK       - Description:             │*/
 /*│     ├► QUEUE       - Description:             │*/
 /*│     ├► LIST        - Description:             │*/
