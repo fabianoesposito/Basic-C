@@ -2318,6 +2318,366 @@ bool isIdentity(int r, int c, int M[r][c]){
 	return true;
 }
 /*│     ├► STACK       - Description:             │*/
+struct S{
+	int val;
+	struct S *next;	
+};
+
+int length_it_stack(struct S **head){
+	struct S *current=*head;
+	int len =0;
+	while(current != NULL){
+		current=current->next;
+		len++;
+	}
+	return len;
+}
+
+void push_stack_head_it(struct S **head, int val){
+	struct S *current=(struct S*)malloc(sizeof(struct S));
+	if(current == NULL){
+		return;
+	}else{
+		current->val=val;
+		current->next=*head;
+		*head=current;
+	}
+}
+
+void push_stack_head_re(struct S **head, int val){
+	if((*head == NULL) || ((*head)->val <= val)) {
+		struct S *current=(struct S *)malloc(sizeof(struct S));
+		current->val=val;
+		current->next=*head;
+		*head=current;
+	}else{
+		push_stack_head_re(&(*head)->next,val);
+	}
+}
+
+void pop_stack_head_it(struct S **head){
+	if(*head != NULL){
+		struct S *current=*head;
+		*head=(*head)->next;
+		current->next=NULL;
+		free(current);
+	}
+}
+
+void pop_stack_head_re(struct S **head){ //da rivedere 13
+	if(*head == NULL){
+		return;
+	}else{
+		free(*head);
+		*head=(*head)->next;
+		return;
+	}
+	pop_stack_head_re(&(*head)->next);
+}
+
+void print_stack_it(struct S **head){
+	struct S *current=*head;
+	printf("S[%d]:\n", length_it_stack(&(*head)));
+	while(current != NULL){
+		printf("| %d |\n  ^\n  |\n", current->val);
+		current=current->next;
+	}
+	printf("|NULL|\n");
+}
+
+void reverse_stack_it(struct S **head){
+	struct S *prev=NULL;
+	struct S *current=*head;
+	struct S *next=NULL;
+	while(current != NULL){
+		next=current->next;
+		current->next=prev;
+		prev=current;
+		current=next;
+	}
+	*head=prev;
+}
+
+bool search_stack_it(struct S **head, int val){
+	struct S *current=*head;
+	while(current != NULL){
+		if(current->val == val){
+			return true;
+		}
+		current=current->next;
+	}
+	return false;
+}
+
+void swapNodes_stack_it(struct S **head, int x, int y){
+	if (x == y){
+		return;
+	}
+	struct S *prevX=NULL, *currX=*head;
+	while (currX && currX->val != x){
+		prevX=currX;
+		currX=currX->next;
+	}
+	struct S *prevY=NULL, *currY=*head;
+	while((currY)&&(currY->val != y)){
+		prevY=currY;
+		currY=currY->next;
+	}
+	if((currX == NULL)||(currY == NULL)){
+		return;
+	}
+	if(prevX != NULL){
+		prevX->next=currY;
+	}else{
+		*head=currY;
+	}
+	if(prevY != NULL){
+		prevY->next=currX;
+	}else{
+		*head=currX;
+	}
+	struct S *temp=currY->next;
+	currY->next=currX->next;
+	currX->next =temp;
+}
+
+int length_re_stack(struct S **head){
+	struct S *current=*head;
+	if(current==NULL){
+		return 0;
+	}else{ 
+		return length_re_stack(&current->next)+1;
+	}
+}
+
+void print_stack_re(struct S **head){
+	struct S *current=*head;
+	if(current != NULL){
+		printf("| %d |\n  ^\n  |\n", current->val);
+		print_stack_re(&current->next);
+	}else{
+		printf("|NULL|\n");
+		return;
+	}
+}
+
+void reverse_stack_re(struct S **head){
+	struct S* first;
+	struct S* rest;
+	if(*head == NULL){
+		return;
+	}
+	first=*head;
+	rest=first->next;
+	if(rest == NULL){
+		return;   
+	}
+	reverse_stack_re(&rest);
+	first->next->next=first;
+	first->next=NULL;
+	*head=rest;
+}
+
+bool search_stack_re(struct S **head, int val){
+	if(*head == NULL){
+		return false;
+	}
+	if((*head)->val == val){
+		return true;
+	}
+	return search_stack_re(&(*head)->next,val);
+}
+
+//BUBBLE SORT
+void swap4_stack(struct S **a, struct S **b){
+	struct S *temp=*a;
+	*a=*b;
+	*b=temp;
+}
+
+void swapNodes_stack_re(struct S** head, int x, int y){
+	if (x == y){
+		return;
+	}
+	struct S **a=NULL, **b=NULL;
+	while(*head){
+		if((*head)->val == x){
+			a=head;
+		}else if((*head)->val == y){
+			b=head;
+		}
+		head=&((*head)->next);
+	}
+	if(a && b){
+
+		swap4_stack(&(*a),&(*b));
+		swap4_stack(&((*a)->next),&((*b)->next));
+	}
+}
+
+void bubble_stack_struct_it(struct S **head){
+	if(!(*head)){
+		return;
+	}
+	struct S *previous_node=NULL, *sort_up_to=NULL;
+	while(1){
+		previous_node=NULL;
+		struct S *ptr=*head, *last_change=NULL;
+		while(ptr->next){
+			if(sort_up_to && ptr == sort_up_to){
+				break;
+			}
+			struct S *next=ptr->next;
+			if(ptr->val > next->val){
+				if(previous_node == NULL){
+					*head=next;
+				}else{
+					previous_node->next=next;
+				}
+				ptr->next=next->next;
+				next->next=ptr;
+				last_change=next;
+			}
+			previous_node=ptr;
+			ptr=next;
+		}
+		if(!last_change){
+			break;
+		}
+		sort_up_to=last_change;
+	}
+}
+
+//INSERTION SORT
+void sortedInsert_it_stack(struct S** head, struct S* new_L){
+	struct S* current;
+	if(*head == NULL || (*head)->val >= new_L->val){
+		new_L->next=*head;
+		*head=new_L;
+	}else{
+		current=*head;
+		while(current->next!=NULL && current->next->val < new_L->val){
+			current=current->next;
+		}
+		new_L->next=current->next;
+		current->next=new_L;
+	}
+}
+
+void insertion_struct_stack_it(struct S **head){
+	struct S *sorted=NULL, *current=*head;
+	while(current != NULL){
+		struct S *next=current->next;
+		sortedInsert_it_stack(&sorted,current);
+		current=next;
+	}
+	*head=sorted;
+}
+
+//MERGE SORT - Time Complexity: O(n Log n)
+struct S* SortedMerge_stack(struct S **a, struct S **b){
+    struct S *result=NULL;
+    if((*a) == NULL){
+        return(*b);
+    }else if((*b) == NULL){
+        return(*a);
+    }
+    if((*a)->val <= (*b)->val){
+        result=*a;
+        result->next=SortedMerge_stack(&(*a)->next, &(*b));
+    }else{
+        result=*b;
+        result->next=SortedMerge_stack(&(*a), &(*b)->next);
+    }
+    return(result);
+}
+
+void FrontBackSplit_stack(struct S **source, struct S **frontRef, struct S **backRef){
+    struct S *fast=(*source)->next;;
+    struct S *slow=*source;
+    while(fast != NULL){
+    	fast=fast->next;
+   		if(fast != NULL){
+   		     slow=slow->next;
+  		     fast=fast->next;
+    	}
+    }
+    *frontRef=*source;
+    *backRef=slow->next;
+    slow->next=NULL;
+}
+
+void MergeSort_atack(struct S **head){
+    struct S *a;
+    struct S *b;
+    if((*head == NULL) || ((*head)->next == NULL)){
+        return;
+    }
+    FrontBackSplit_stack(&(*head),&a,&b);
+    MergeSort_atack(&a);
+    MergeSort_atack(&b);
+    *head=SortedMerge_stack(&a,&b);
+}
+
+//QUICK SORT
+struct S *getTail_stack(struct S *cur){
+	while(cur != NULL && cur->next != NULL){
+		cur=cur->next;
+	}
+	return cur;
+}
+
+struct S *partition_struct_stack(struct S *head, struct S *end, struct S **newHead, struct S **newEnd){
+	struct S *pivot=end, *prev=NULL, *cur=head, *tail=pivot;
+	while (cur != pivot){
+		if(cur->val < pivot->val){
+			if((*newHead) == NULL){
+				(*newHead)=cur;
+			}
+			prev=cur;  
+			cur=cur->next;
+		}else{
+			if(prev){
+				prev->next=cur->next;
+			}
+			struct S *tmp=cur->next;
+			cur->next=NULL;
+			tail->next=cur;
+			tail=cur;
+			cur=tmp;
+		}
+	}
+	if((*newHead) == NULL){
+		(*newHead)=pivot;
+	}
+	(*newEnd)=tail;
+	return pivot;
+}
+ 
+struct S *quickSortRecur_stack(struct S *head, struct S *end){
+	if(!head || head == end){
+		return head;
+	}
+	struct S *newHead=NULL, *newEnd=NULL;
+	struct S *pivot=partition_struct_stack(head,end,&newHead,&newEnd);
+	if(newHead != pivot){
+		struct S *tmp=newHead;
+		while(tmp->next != pivot){
+			tmp=tmp->next;
+		}
+		tmp->next=NULL;
+		newHead=quickSortRecur_stack(newHead,tmp);
+		tmp=getTail_stack(newHead);
+		tmp->next= pivot;
+	}
+	pivot->next=quickSortRecur_stack(pivot->next,newEnd);
+	return newHead;
+}
+
+void quickSort_stack(struct S **headRef){
+	(*headRef)=quickSortRecur_stack(*headRef, getTail_stack(*headRef));
+	return;
+}
 /*│     ├► QUEUE       - Description:             │*/
 /*│     ├► LIST        - Description:             │*/
 struct L{
@@ -6554,85 +6914,641 @@ void main(int argc, char const *argv[]){
 						}break;
 
 						case 4:{
-							int scelta_stack=0;
+							int scelta_stack=0, val=0, length=0, x=0, y=0, n=0, upper=10, lower=0;
+							struct S *head=NULL;
+							char scelta_random='n';
+							srand(time(NULL));
 							do{
 								clrscr();
-								printf("┌────────────────────────────────────────┐\n");
-								printf("│MAIN MENU                               │\n");
-								printf("│└► 1.  MENU DATA-STRUCT                 │\n");
-								printf("│       └► 9.  MENU STACK                │\n");
-								printf("│              ├► 0.  BACK DATA-STRUCT MENU [●]│\n");
-								printf("│              ├► 1.  INSERT          [○]│\n");
-								printf("│              ├► 2.  DELETE          [○]│\n");
-								printf("│              ├► 3.  OPERATIONS      [○]│\n");
-								printf("│              ├► 4.  SORTING         [○]│\n");
-								printf("│              ├► 5.  SEARCHING       [○]│\n");
-								printf("│              └► 6.  CHECK           [○]│\n");
-								printf("└────────────────────────────────────────┘\n");
+								printf("┌───────────────────────────────────────────┐\n");
+								printf("│MAIN MENU                                  │\n");
+								printf("│└► 1.  MENU DATA-STRUCT                    │\n");
+								printf("│       └► 4.  MENU STACK                   │\n");
+								printf("│              ├► 0.  BACK DATA-STRUCT MENU │\n");
+								printf("│              ├► 1.  INSERT                │\n");
+								printf("│              ├► 2.  DELETE                │\n");
+								printf("│              ├► 3.  OPERATIONS            │\n");
+								printf("│              ├► 4.  SORTING            [○]│\n");
+								printf("│              ├► 5.  SEARCHING          [○]│\n");
+								printf("│              └► 6.  CHECK              [○]│\n");
+								printf("└───────────────────────────────────────────┘\n");
 								printf("CHOICE STACK: ");
 								scanf("%d",&scelta_stack);
 								switch(scelta_stack){
 									case 0:{
 										clrscr();
-										printf("┌─────────────────────────────────────┐\n");
-										printf("│MAIN MENU                            │\n");
-										printf("│└► 1.  MENU DATA-STRUCT              │\n");
-										printf("│       └► 9.  MENU STACK             │\n");
+										printf("┌───────────────────────────────────────────┐\n");
+										printf("│MAIN MENU                                  │\n");
+										printf("│└► 1.  MENU DATA-STRUCT                    │\n");
+										printf("│       └► 4.  MENU STACK                   │\n");
 										printf("│              └► 0.  BACK DATA-STRUCT MENU │\n");
-										printf("└─────────────────────────────────────┘\n");
+										printf("└───────────────────────────────────────────┘\n");
 									}break;
 									
 									case 1:{
+										int scelta_insert=0;
 										do{
 											clrscr();
-											printf("┌───────────────────────────────────────────┐\n");
-											printf("│MAIN MENU                                  │\n");
-											printf("│└► 1.  MENU DATA-STRUCT                    │\n");
-											printf("│       └► 9.  MENU STACK                   │\n");
-											printf("│              └► 1.  INSERT                │\n");
-											printf("└───────────────────────────────────────────┘\n");
+											printf("┌────────────────────────────────────────────┐\n");
+											printf("│MAIN MENU                                   │\n");
+											printf("│└► 1.  MENU DATA-STRUCT                     │\n");
+											printf("│       └► 4.  MENU STACK                    │\n");
+											printf("│              └► 1.  INSERT                 │\n");
+											printf("│                     ├► 0.  BACK STACK MENU │\n");
+											printf("│                     ├► 1.  HEAD        IT  │\n");
+											printf("│                     └► 2.  HEAD        RE  │\n");
+											printf("└────────────────────────────────────────────┘\n");
+											printf("CHOICE INSERT: ");
+											scanf("%d",&scelta_insert);
+											switch(scelta_insert){
+												case 0:{
+													clrscr();
+													printf("┌────────────────────────────────────────────┐\n");
+													printf("│MAIN MENU                                   │\n");
+													printf("│└► 1.  MENU DATA-STRUCT                     │\n");
+													printf("│       └► 4.  MENU STACK                    │\n");
+													printf("│              └► 1.  INSERT                 │\n");
+													printf("│                     └► 0.  BACK STACK MENU │\n");
+													printf("└────────────────────────────────────────────┘\n");
+												}break;
+
+												case 1:{
+													do{
+														clrscr();
+														printf("┌────────────────────────────────────┐\n");
+														printf("│MAIN MENU                           │\n");
+														printf("│└► 1.  MENU DATA-STRUCT             │\n");
+														printf("│       └► 4.  MENU STACK            │\n");
+														printf("│              └► 1.  INSERT         │\n");
+														printf("│                     └► 1.  HEAD IT │\n");
+														printf("└────────────────────────────────────┘\n");
+														print_stack_it(&head);
+														printf("Insert random value/s?(y/n): ");
+														scanf("%s", &scelta_random);
+														if((scelta_random == 'y')&&(scelta_random != 'n')){
+															//random insert
+															printf("Enter how many value/s: ");
+															scanf("%d", &n);
+															for(int i=0; i<n; i++){
+																int val=rand()%(upper-lower+1)+lower;
+																printf("pushing: %d\n", val);
+																push_stack_head_it(&head,val);
+															}
+														}else{
+															//manual insert
+															printf("Push new value: ");
+															scanf("%d", &val);
+															printf("pushing: %d\n", val);
+															push_stack_head_it(&head,val);
+														}
+														print_stack_it(&head);
+														printf("Do you want to back to INSERT?(y/n): ");
+														scanf("%s", &torna);
+													}while((torna == 'n')||(torna != 'y'));
+												}break;
+
+												case 2:{
+													do{
+														clrscr();
+														printf("┌────────────────────────────────────┐\n");
+														printf("│MAIN MENU                           │\n");
+														printf("│└► 1.  MENU DATA-STRUCT             │\n");
+														printf("│       └► 4.  MENU STACK            │\n");
+														printf("│              └► 1.  INSERT         │\n");
+														printf("│                     └► 2.  HEAD RE │\n");
+														printf("└────────────────────────────────────┘\n");
+														print_stack_it(&head);
+														printf("Insert random value/s?(y/n): ");
+														scanf("%s", &scelta_random);
+														if((scelta_random == 'y')&&(scelta_random != 'n')){
+															//random insert
+															printf("Enter how many value/s: ");
+															scanf("%d", &n);
+															for(int i=0; i<n; i++){
+																int val=rand()%(upper-lower+1)+lower;
+																printf("pushing: %d\n", val);
+																push_stack_head_re(&head,val);
+															}
+														}else{
+															//manual insert
+															printf("Push new value: ");
+															scanf("%d", &val);
+															printf("pushing: %d\n", val);
+															push_stack_head_re(&head,val);
+														}
+														print_stack_it(&head);
+														printf("Do you want to back to INSERT?(y/n): ");
+														scanf("%s", &torna);
+													}while((torna == 'n')||(torna != 'y'));
+												}break;
+
+												default:{
+													do{
+														clrscr();
+														printf("┌───────────────────────────────────────────────────┐\n");
+														printf("│MAIN MENU                                          │\n");
+														printf("│└► 1.  MENU DATA-STRUCT                            │\n");
+														printf("│       └► 4.  MENU STACK                           │\n");
+														printf("│              └► 1.  INSERT                        │\n");
+														printf("│                     └► X.  DEFAULT: ERROR CHOICE! │\n");
+														printf("└───────────────────────────────────────────────────┘\n");
+														printf("Do you want to back to INSERT?(y/n): ");
+														scanf("%s", &torna);
+													}while((torna == 'n')&&(torna != 'y'));
+												}break;
+											}
 											printf("Do you want to back to STACK MENU?(y/n): ");
 											scanf("%s", &torna);
 										}while((torna == 'n')||(torna != 'y'));
 									}break;
 
 									case 2:{
+										int scelta_delete=0;
 										do{
 											clrscr();
-											printf("┌───────────────────────────────────────────┐\n");
-											printf("│MAIN MENU                                  │\n");
-											printf("│└► 1.  MENU DATA-STRUCT                    │\n");
-											printf("│       └► 9.  MENU STACK                   │\n");
-											printf("│              └► 2.  DELETE                │\n");
-											printf("└───────────────────────────────────────────┘\n");
+											printf("┌────────────────────────────────────────────┐\n");
+											printf("│MAIN MENU                                   │\n");
+											printf("│└► 1.  MENU DATA-STRUCT                     │\n");
+											printf("│       └► 4.  MENU STACK                    │\n");
+											printf("│              └► 2.  DELETE                 │\n");
+											printf("│                     ├► 0.  BACK STACK MENU │\n");
+											printf("│                     ├► 1.  HEAD        IT  │\n");
+											printf("│                     └► 2.  HEAD        RE  │\n");
+											printf("└────────────────────────────────────────────┘\n");
+											printf("CHOICE DELETE: ");
+											scanf("%d",&scelta_delete);
+											switch(scelta_delete){
+												case 0:{
+													clrscr();
+													printf("┌────────────────────────────────────────────┐\n");
+													printf("│MAIN MENU                                   │\n");
+													printf("│└► 1.  MENU DATA-STRUCT                     │\n");
+													printf("│       └► 4.  MENU STACK                    │\n");
+													printf("│              └► 2.  DELETE                 │\n");
+													printf("│                     └► 0.  BACK STACK MENU │\n");
+													printf("└────────────────────────────────────────────┘\n");
+												}break;
+
+												case 1:{
+													do{
+														clrscr();
+														printf("┌────────────────────────────────────┐\n");
+														printf("│MAIN MENU                           │\n");
+														printf("│└► 1.  MENU DATA-STRUCT             │\n");
+														printf("│       └► 4.  MENU STACK            │\n");
+														printf("│              └► 2.  DELETE         │\n");
+														printf("│                     └► 1.  HEAD IT │\n");
+														printf("└────────────────────────────────────┘\n");
+														printf("-Before delete head:\n");
+														print_stack_it(&head);
+														pop_stack_head_it(&head);
+														printf("-After delete head:\n");
+														print_stack_it(&head);
+														printf("Do you want to back to DELETE?(y/n): ");
+														scanf("%s", &torna);
+													}while((torna == 'n')||(torna != 'y'));
+												}break;
+
+												case 2:{
+													do{
+														clrscr();
+														printf("┌────────────────────────────────────┐\n");
+														printf("│MAIN MENU                           │\n");
+														printf("│└► 1.  MENU DATA-STRUCT             │\n");
+														printf("│       └► 4.  MENU STACK            │\n");
+														printf("│              └► 2.  DELETE         │\n");
+														printf("│                     └► 2.  HEAD RE │\n");
+														printf("└────────────────────────────────────┘\n");
+														printf("-Before delete head:\n");
+														print_stack_it(&head);
+														pop_stack_head_re(&head);
+														printf("-After delete head:\n");
+														print_stack_it(&head);
+														printf("Do you want to back to DELETE?(y/n): ");
+														scanf("%s", &torna);
+													}while((torna == 'n')||(torna != 'y'));
+												}break;
+
+												default:{
+													do{
+														clrscr();
+														printf("┌───────────────────────────────────────────────────┐\n");
+														printf("│MAIN MENU                                          │\n");
+														printf("│└► 1.  MENU DATA-STRUCT                            │\n");
+														printf("│       └► 4.  MENU STACK                           │\n");
+														printf("│              └► 2.  DELETE                        │\n");
+														printf("│                     └► X.  DEFAULT: ERROR CHOICE! │\n");
+														printf("└───────────────────────────────────────────────────┘\n");
+														printf("Do you want to back to DELETE?(y/n): ");
+														scanf("%s", &torna);
+													}while((torna == 'n')&&(torna != 'y'));
+												}break;
+											}
 											printf("Do you want to back to STACK MENU?(y/n): ");
 											scanf("%s", &torna);
 										}while((torna == 'n')||(torna != 'y'));
 									}break;
 
 									case 3:{
+										int scelta_operations=0;
 										do{
 											clrscr();
-											printf("┌───────────────────────────────────────────┐\n");
-											printf("│MAIN MENU                                  │\n");
-											printf("│└► 1.  MENU DATA-STRUCT                    │\n");
-											printf("│       └► 9.  MENU STACK                   │\n");
-											printf("│              └► 3.  OPERATIONS            │\n");
-											printf("└───────────────────────────────────────────┘\n");
+											printf("┌────────────────────────────────────────────┐\n");
+											printf("│MAIN MENU                                   │\n");
+											printf("│└► 1.  MENU DATA-STRUCT                     │\n");
+											printf("│       └► 4.  MENU STACK                    │\n");
+											printf("│              └► 3.  OPERATIONS             │\n");
+											printf("│                     ├► 0.  BACK STACK MENU │\n");
+											printf("│                     ├► 1.  PRINT STACK IT  │\n");
+											printf("│                     ├► 2.  REVERSE     IT  │\n");
+											printf("│                     ├► 3.  SEARCH      IT  │\n");
+											printf("│                     ├► 4.  SWAP        IT  │\n");
+											printf("│                     ├► 5.  PRINT STACK RE  │\n");
+											printf("│                     ├► 6.  REVERSE     RE  │\n");
+											printf("│                     ├► 7.  SEARCH      RE  │\n");
+											printf("│                     └► 8.  SWAP        RE  │\n");
+											printf("└────────────────────────────────────────────┘\n");
+											printf("CHOICE OPERATIONS: ");
+											scanf("%d",&scelta_operations);
+											switch(scelta_operations){
+												case 0:{
+													clrscr();
+													printf("┌────────────────────────────────────────────┐\n");
+													printf("│MAIN MENU                                   │\n");
+													printf("│└► 1.  MENU DATA-STRUCT                     │\n");
+													printf("│       └► 4.  MENU STACK                    │\n");
+													printf("│              └► 3.  OPERATIONS             │\n");
+													printf("│                     └► 0.  BACK STACK MENU │\n");
+													printf("└────────────────────────────────────────────┘\n");
+												}break;
+
+												case 1:{
+													do{
+														clrscr();
+														printf("┌───────────────────────────────────────────┐\n");
+														printf("│MAIN MENU                                  │\n");
+														printf("│└► 1.  MENU DATA-STRUCT                    │\n");
+														printf("│       └► 4.  MENU STACK                   │\n");
+														printf("│              └► 3.  OPERATIONS            │\n");
+														printf("│                     └► 1.  PRINT STACK IT │\n");
+														printf("└───────────────────────────────────────────┘\n");
+														print_stack_it(&head);
+														printf("Do you want to back to OPERATIONS?(y/n): ");
+														scanf("%s", &torna);
+													}while((torna == 'n')||(torna != 'y'));
+												}break;
+
+												case 2:{
+													do{
+														clrscr();
+														printf("┌───────────────────────────────────────┐\n");
+														printf("│MAIN MENU                              │\n");
+														printf("│└► 1.  MENU DATA-STRUCT                │\n");
+														printf("│       └► 4.  MENU STACK               │\n");
+														printf("│              └► 3.  OPERATIONS        │\n");
+														printf("│                     └► 2.  REVERSE IT │\n");
+														printf("└───────────────────────────────────────┘\n");
+														printf("-Before reverse:\n");
+														print_stack_it(&head);
+														reverse_stack_it(&head);
+														printf("-After reverse:\n");
+														print_stack_it(&head);
+														printf("Do you want to back to OPERATIONS?(y/n): ");
+														scanf("%s", &torna);
+													}while((torna == 'n')||(torna != 'y'));
+												}break;
+
+												case 3:{
+													do{
+														clrscr();
+														printf("┌──────────────────────────────────────┐\n");
+														printf("│MAIN MENU                             │\n");
+														printf("│└► 1.  MENU DATA-STRUCT               │\n");
+														printf("│       └► 4.  MENU STACK              │\n");
+														printf("│              └► 3.  OPERATIONS       │\n");
+														printf("│                     └► 3.  SEARCH IT │\n");
+														printf("└──────────────────────────────────────┘\n");
+														print_stack_it(&head);
+														printf("Enter value to search: ");
+														scanf("%d", &val);
+														search_stack_it(&head, val)? printf("Yes\n") : printf("No\n");
+														printf("Do you want to back to OPERATIONS?(y/n): ");
+														scanf("%s", &torna);
+													}while((torna == 'n')||(torna != 'y'));
+												}break;
+
+												case 4:{
+													do{
+														clrscr();
+														printf("┌────────────────────────────────────┐\n");
+														printf("│MAIN MENU                           │\n");
+														printf("│└► 1.  MENU DATA-STRUCT             │\n");
+														printf("│       └► 4.  MENU STACK            │\n");
+														printf("│              └► 3.  OPERATIONS     │\n");
+														printf("│                     └► 4.  SWAP IT │\n");
+														printf("└────────────────────────────────────┘\n");
+														printf("-Before swap:\n");
+														print_stack_it(&head);
+														printf("Push value to swap (x y): ");
+														scanf("%d%d", &x, &y);
+														swapNodes_stack_it(&head,x,y);
+														printf("-After swap:\n");
+														print_stack_it(&head);
+														printf("Do you want to back to OPERATIONS?(y/n): ");
+														scanf("%s", &torna);
+													}while((torna == 'n')||(torna != 'y'));
+												}break;
+
+												case 5:{
+													do{
+														clrscr();
+														printf("┌──────────────────────────────────────────┐\n");
+														printf("│MAIN MENU                                 │\n");
+														printf("│└► 1.  MENU DATA-STRUCT                   │\n");
+														printf("│       └► 4.  MENU STACK                  │\n");
+														printf("│              └► 3.  OPERATIONS           │\n");
+														printf("│                     └► 5.  PRINT LIST RE │\n");
+														printf("└──────────────────────────────────────────┘\n");
+														printf("L: { ");
+														print_stack_re(&head);
+														printf("Do you want to back to OPERATIONS?(y/n): ");
+														scanf("%s", &torna);
+													}while((torna == 'n')||(torna != 'y'));
+												}break;
+
+												case 6:{
+													do{
+														clrscr();
+														printf("┌───────────────────────────────────────┐\n");
+														printf("│MAIN MENU                              │\n");
+														printf("│└► 1.  MENU DATA-STRUCT                │\n");
+														printf("│       └► 4.  MENU STACK               │\n");
+														printf("│              └► 3.  OPERATIONS        │\n");
+														printf("│                     └► 6.  REVERSE RE │\n");
+														printf("└───────────────────────────────────────┘\n");
+														printf("-Before reverse:\n");
+														print_stack_it(&head);
+														reverse_stack_re(&head);
+														printf("-After reverse:\n");
+														print_stack_it(&head);
+														printf("Do you want to back to OPERATIONS?(y/n): ");
+														scanf("%s", &torna);
+													}while((torna == 'n')||(torna != 'y'));
+												}break;
+
+												case 7:{
+													do{
+														clrscr();
+														printf("┌──────────────────────────────────────┐\n");
+														printf("│MAIN MENU                             │\n");
+														printf("│└► 1.  MENU DATA-STRUCT               │\n");
+														printf("│       └► 4.  MENU STACK              │\n");
+														printf("│              └► 3.  OPERATIONS       │\n");
+														printf("│                     └► 7.  SEARCH RE │\n");
+														printf("└──────────────────────────────────────┘\n");
+														print_stack_it(&head);
+														printf("Enter value to search: ");
+														scanf("%d", &val);
+														search_stack_re(&head, val)? printf("Yes\n") : printf("No\n");
+														printf("Do you want to back to OPERATIONS?(y/n): ");
+														scanf("%s", &torna);
+													}while((torna == 'n')||(torna != 'y'));
+												}break;
+
+												case 8:{
+													do{
+														clrscr();
+														printf("┌────────────────────────────────────┐\n");
+														printf("│MAIN MENU                           │\n");
+														printf("│└► 1.  MENU DATA-STRUCT             │\n");
+														printf("│       └► 4.  MENU STACK            │\n");
+														printf("│              └► 3.  OPERATIONS     │\n");
+														printf("│                     └► 8.  SWAP RE │\n");
+														printf("└────────────────────────────────────┘\n");
+														printf("-Before swap:\n");
+														print_stack_it(&head);
+														printf("Push value to swap (x y): ");
+														scanf("%d%d", &x, &y);
+														swapNodes_stack_re(&head,x,y);
+														printf("-After swap:\n");
+														print_stack_it(&head);
+														printf("Do you want to back to OPERATIONS?(y/n): ");
+														scanf("%s", &torna);
+													}while((torna == 'n')||(torna != 'y'));
+												}break;
+
+												default:{
+													do{
+														clrscr();
+														printf("┌───────────────────────────────────────────────────┐\n");
+														printf("│MAIN MENU                                          │\n");
+														printf("│└► 1.  MENU DATA-STRUCT                            │\n");
+														printf("│       └► 4.  MENU STACK                           │\n");
+														printf("│              └► 3.  OPERATIONS                    │\n");
+														printf("│                     └► X.  DEFAULT: ERROR CHOICE! │\n");
+														printf("└───────────────────────────────────────────────────┘\n");
+														printf("Do you want to back to OPERATIONS?(y/n): ");
+														scanf("%s", &torna);
+													}while((torna == 'n')&&(torna != 'y'));
+												}break;
+											}
 											printf("Do you want to back to STACK MENU?(y/n): ");
 											scanf("%s", &torna);
 										}while((torna == 'n')||(torna != 'y'));
 									}break;
 
 									case 4:{
+										int scelta_sort=0;
 										do{
 											clrscr();
-											printf("┌───────────────────────────────────────────┐\n");
-											printf("│MAIN MENU                                  │\n");
-											printf("│└► 1.  MENU DATA-STRUCT                    │\n");
-											printf("│       └► 9.  MENU STACK                   │\n");
-											printf("│              └► 4.  SORTING               │\n");
-											printf("└───────────────────────────────────────────┘\n");
+											printf("┌──────────────────────────────────────────────┐\n");
+											printf("│MAIN MENU                                     │\n");
+											printf("│└► 1.  MENU DATA-STRUCT                       │\n");
+											printf("│       └► 4.  MENU STACK                      │\n");
+											printf("│              └► 4.  SORTING                  │\n");
+											printf("│                     ├► 0.  BACK STACK MENU   │\n");
+											printf("│                     ├► 1.  BUBBLE      IT    │\n");
+											printf("│                     ├► 2.  INSERTION   IT    │\n");
+											printf("│                     ├► 3.  MERGE       IT    │\n");
+											printf("│                     ├► 4.  QUICK       IT [○]│\n");
+											printf("│                     ├► 5.  BUBBLE      RE [○]│\n");
+											printf("│                     ├► 6.  INSERTION   RE [○]│\n");
+											printf("│                     ├► 7.  MERGE       RE [○]│\n");
+											printf("│                     └► 8.  QUICK       RE    │\n");
+											printf("└──────────────────────────────────────────────┘\n");
+											printf("CHOICE SORTING: ");
+											scanf("%d",&scelta_sort);
+											switch(scelta_sort){
+												case 0:{
+													clrscr();
+													printf("┌────────────────────────────────────────────┐\n");
+													printf("│MAIN MENU                                   │\n");
+													printf("│└► 1.  MENU DATA-STRUCT                     │\n");
+													printf("│       └► 4.  MENU STACK                    │\n");
+													printf("│              └► 4.  SORTING                │\n");
+													printf("│                     └► 0.  BACK STACK MENU │\n");
+													printf("└────────────────────────────────────────────┘\n");
+												}break;
+
+												case 1:{
+													do{
+														clrscr();
+														printf("┌──────────────────────────────────────┐\n");
+														printf("│MAIN MENU                             │\n");
+														printf("│└► 1.  MENU DATA-STRUCT               │\n");
+														printf("│       └► 4.  MENU STACK              │\n");
+														printf("│              └► 4.  SORTING          │\n");
+														printf("│                     └► 1.  BUBBLE IT │\n");
+														printf("└──────────────────────────────────────┘\n");
+														printf("-Before bubble sort:\n");
+														print_stack_it(&head);
+														bubble_stack_struct_it(&head);
+														printf("-After bubble sort:\n");
+														print_stack_it(&head);
+														printf("Do you want to back to SORTING?(y/n): ");
+														scanf("%s", &torna);
+													}while((torna == 'n')||(torna != 'y'));
+												}break;
+
+												case 2:{
+													do{
+														clrscr();
+														printf("┌─────────────────────────────────────────┐\n");
+														printf("│MAIN MENU                                │\n");
+														printf("│└► 1.  MENU DATA-STRUCT                  │\n");
+														printf("│       └► 4.  MENU STACK                 │\n");
+														printf("│              └► 4.  SORTING             │\n");
+														printf("│                     └► 2.  INSERTION IT │\n");
+														printf("└─────────────────────────────────────────┘\n");
+														printf("-Before insertion sort:\n");
+														print_stack_it(&head);
+														insertion_struct_stack_it(&head);
+														printf("-After insertion sort:\n");
+														print_stack_it(&head);
+														printf("Do you want to back to SORTING?(y/n): ");
+														scanf("%s", &torna);
+													}while((torna == 'n')||(torna != 'y'));
+												}break;
+
+												case 3:{
+													do{
+														clrscr();
+														printf("┌─────────────────────────────────────┐\n");
+														printf("│MAIN MENU                            │\n");
+														printf("│└► 1.  MENU DATA-STRUCT              │\n");
+														printf("│       └► 4.  MENU STACK             │\n");
+														printf("│              └► 4.  SORTING         │\n");
+														printf("│                     └► 3.  MERGE IT │\n");
+														printf("└─────────────────────────────────────┘\n");
+														printf("-Before merge sort:\n");
+														print_stack_it(&head);
+														MergeSort_atack(&head);
+														printf("-After merge sort:\n");
+														print_stack_it(&head);
+														printf("Do you want to back to SORTING?(y/n): ");
+														scanf("%s", &torna);
+													}while((torna == 'n')||(torna != 'y'));
+												}break;
+
+												case 4:{
+													do{
+														clrscr();
+														printf("┌─────────────────────────────────────┐\n");
+														printf("│MAIN MENU                            │\n");
+														printf("│└► 1.  MENU DATA-STRUCT              │\n");
+														printf("│       └► 4.  MENU STACK             │\n");
+														printf("│              └► 4.  SORTING         │\n");
+														printf("│                     └► 4.  QUICK IT │\n");
+														printf("└─────────────────────────────────────┘\n");
+														
+														printf("Do you want to back to SORTING?(y/n): ");
+														scanf("%s", &torna);
+													}while((torna == 'n')||(torna != 'y'));
+												}break;
+
+												case 5:{
+													do{
+														clrscr();
+														printf("┌──────────────────────────────────────┐\n");
+														printf("│MAIN MENU                             │\n");
+														printf("│└► 1.  MENU DATA-STRUCT               │\n");
+														printf("│       └► 4.  MENU STACK              │\n");
+														printf("│              └► 4.  SORTING          │\n");
+														printf("│                     └► 5.  BUBBLE RE │\n");
+														printf("└──────────────────────────────────────┘\n");
+														
+														printf("Do you want to back to SORTING?(y/n): ");
+														scanf("%s", &torna);
+													}while((torna == 'n')||(torna != 'y'));
+												}break;
+
+												case 6:{
+													do{
+														clrscr();
+														printf("┌─────────────────────────────────────────┐\n");
+														printf("│MAIN MENU                                │\n");
+														printf("│└► 1.  MENU DATA-STRUCT                  │\n");
+														printf("│       └► 4.  MENU STACK                 │\n");
+														printf("│              └► 4.  SORTING             │\n");
+														printf("│                     └► 6.  INSERTION RE │\n");
+														printf("└─────────────────────────────────────────┘\n");
+														
+														printf("Do you want to back to SORTING?(y/n): ");
+														scanf("%s", &torna);
+													}while((torna == 'n')||(torna != 'y'));
+												}break;
+
+												case 7:{
+													do{
+														clrscr();
+														printf("┌─────────────────────────────────────┐\n");
+														printf("│MAIN MENU                            │\n");
+														printf("│└► 1.  MENU DATA-STRUCT              │\n");
+														printf("│       └► 4.  MENU STACK             │\n");
+														printf("│              └► 4.  SORTING         │\n");
+														printf("│                     └► 7.  MERGE RE │\n");
+														printf("└─────────────────────────────────────┘\n");
+														
+														printf("Do you want to back to SORTING?(y/n): ");
+														scanf("%s", &torna);
+													}while((torna == 'n')||(torna != 'y'));
+												}break;
+
+												case 8:{
+													do{
+														clrscr();
+														printf("┌─────────────────────────────────────┐\n");
+														printf("│MAIN MENU                            │\n");
+														printf("│└► 1.  MENU DATA-STRUCT              │\n");
+														printf("│       └► 4.  MENU STACK             │\n");
+														printf("│              └► 4.  SORTING         │\n");
+														printf("│                     └► 8.  QUICK RE │\n");
+														printf("└─────────────────────────────────────┘\n");
+														printf("-Before quick sort:\n");
+														print_stack_it(&head);
+														quickSort_stack(&head);
+														printf("-After quick sort:\n");
+														print_stack_it(&head);
+														printf("Do you want to back to SORTING?(y/n): ");
+														scanf("%s", &torna);
+													}while((torna == 'n')||(torna != 'y'));
+												}break;
+
+												default:{
+													do{
+														clrscr();
+														printf("┌───────────────────────────────────────────────────┐\n");
+														printf("│MAIN MENU                                          │\n");
+														printf("│└► 1.  MENU DATA-STRUCT                            │\n");
+														printf("│       └► 4.  MENU STACK                           │\n");
+														printf("│              └► 4.  SORTING                       │\n");
+														printf("│                     └► X.  DEFAULT: ERROR CHOICE! │\n");
+														printf("└───────────────────────────────────────────────────┘\n");
+														printf("Do you want to back to SORTING?(y/n): ");
+														scanf("%s", &torna);
+													}while((torna == 'n')&&(torna != 'y'));
+												}break;
+											}
 											printf("Do you want to back to STACK MENU?(y/n): ");
 											scanf("%s", &torna);
 										}while((torna == 'n')||(torna != 'y'));
@@ -6644,7 +7560,7 @@ void main(int argc, char const *argv[]){
 											printf("┌───────────────────────────────────────────┐\n");
 											printf("│MAIN MENU                                  │\n");
 											printf("│└► 1.  MENU DATA-STRUCT                    │\n");
-											printf("│       └► 9.  MENU STACK                   │\n");
+											printf("│       └► 4.  MENU STACK                   │\n");
 											printf("│              └► 5.  SEARCHING             │\n");
 											printf("└───────────────────────────────────────────┘\n");
 											printf("Do you want to back to STACK MENU?(y/n): ");
@@ -6658,7 +7574,7 @@ void main(int argc, char const *argv[]){
 											printf("┌───────────────────────────────────────────┐\n");
 											printf("│MAIN MENU                                  │\n");
 											printf("│└► 1.  MENU DATA-STRUCT                    │\n");
-											printf("│       └► 9.  MENU STACK                   │\n");
+											printf("│       └► 4.  MENU STACK                   │\n");
 											printf("│              └► 6.  CHECK                 │\n");
 											printf("└───────────────────────────────────────────┘\n");
 											printf("Do you want to back to STACK MENU?(y/n): ");
@@ -6672,7 +7588,7 @@ void main(int argc, char const *argv[]){
 											printf("┌────────────────────────────────────────────┐\n");
 											printf("│MAIN MENU                                   │\n");
 											printf("│└► 1.  MENU DATA-STRUCT                     │\n");
-											printf("│       └► 9.  MENU STACK                    │\n");
+											printf("│       └► 4.  MENU STACK                    │\n");
 											printf("│              └► X.  DEFAULT: ERROR CHOICE! │\n");
 											printf("└────────────────────────────────────────────┘\n");
 											printf("Do you want to back to STACK MENU?(y/n): ");
