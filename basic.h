@@ -1356,7 +1356,7 @@ double minimo_rappresentabile_doppia_precisione(double e2, int b){
 	return rmin_d_p;
 }
 /*││    ├► 8 CONVERSIONS                    - Description: │*/
-char romanval[MAX];
+char romanval[MAXSIZE];
 int i=0;
 int binary_decimal(int n){
 	int decimal=0, i=0, rem;
