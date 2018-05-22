@@ -5,8 +5,7 @@
 #include <string.h>
 #include <ctype.h>
 #include <time.h>
-#define MAXSIZE 100
-#define MAX 1000
+#define MAXSIZE 1000
 /*┌─────────────────────────────────┐
   │GLOBAL                           │
   │└► clrscr                        │
@@ -2178,7 +2177,7 @@ void main(int argc, char const *argv[]){
 									}break;
 
 									case 7:{
-										char str[MAX];
+										char str[MAXSIZE];
 										do{
 											clrscr();
 											printf("┌──────────────────────────────────────────────────────────────────────────────┐\n");
@@ -2275,7 +2274,7 @@ void main(int argc, char const *argv[]){
 									}break;
 									
 									case 12:{
-										char octal[MAX];
+										char octal[MAXSIZE];
 										do{
 											clrscr();
 											printf("┌──────────────────────────────────────────────────────────────────────────────┐\n");
