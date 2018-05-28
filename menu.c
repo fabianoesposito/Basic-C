@@ -24,7 +24,7 @@ void main(int argc,char const *argv[]){
 /*┌────────────────────────────────┐
   │├► [●]: completato/funziona     │
   │├► [ ]: manca                   │
-  │├► [○]: in sviluppo             │  
+  │├► [○]: in sviluppo             │
   └────────────────────────────────┘*/
   	do{
   		clrscr();
@@ -3327,7 +3327,607 @@ void main(int argc,char const *argv[]){
 								scanf("%s",&torna);
 							}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
 						}break;
-						//...
+						
+						case 2:{
+							int scelta_string=0,dim=0,k,x,min=0,max=0;
+							char Str1[MAXSIZE], Str2[MAXSIZE], Str3[MAXSIZE][MAXSIZE];
+							do{
+								clrscr();
+								printf("┌──────────────────────────────────────────────────────────────────────────────┐\n");
+								printf("│MAIN MENU                                                                     │\n");
+								printf("│└► 2.  MENU DATA-STRUCT                                                       │\n");
+								printf("│       └► 2.  MENU STRING                                                     │\n");
+								printf("│              ├► 0.  BACK DATA-STRUCT MENU                                    │\n");
+								printf("│              ├► 1.  INSERT                                                   │\n");
+								printf("│              ├► 2.  OPERATIONS                                               │\n");
+								printf("│              ├► 3.  SORTING                                                  │\n");
+								printf("│              ├► 4.  SEARCHING                                             [ ]│\n");
+								printf("│              └► 5.  CHECK                                                    │\n");
+								printf("└──────────────────────────────────────────────────────────────────────────────┘\n");
+								printf("CHOICE STRING: ");
+								scanf("%d",&scelta_string);
+								switch(scelta_string){
+									case 0:{
+										clrscr();
+										printf("┌──────────────────────────────────────────────────────────────────────────────┐\n");
+										printf("│MAIN MENU                                                                     │\n");
+										printf("│└► 2.  MENU DATA-STRUCT                                                       │\n");
+										printf("│       └► 2.  MENU STRING                                                     │\n");
+										printf("│              └► 0.  BACK DATA-STRUCT MENU                                    │\n");
+										printf("└──────────────────────────────────────────────────────────────────────────────┘\n");
+									}break;
+									
+									case 1:{
+										do{
+											clrscr();
+											printf("┌──────────────────────────────────────────────────────────────────────────────┐\n");
+											printf("│MAIN MENU                                                                     │\n");
+											printf("│└► 2.  MENU DATA-STRUCT                                                       │\n");
+											printf("│       └► 2.  MENU STRING                                                     │\n");
+											printf("│              └► 1.  INSERT                                                   │\n");
+											printf("└──────────────────────────────────────────────────────────────────────────────┘\n");
+											ins_string(1,Str1,Str2,0,Str3);
+											printf("Do you want to back to STRING MENU?(y/n): ");
+											scanf("%s",&torna);
+										}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+									}break;
+
+									case 2:{
+										int scelta_operations=0;
+										do{
+											clrscr();
+											printf("┌──────────────────────────────────────────────────────────────────────────────┐\n");
+											printf("│MAIN MENU                                                                     │\n");
+											printf("│└► 2.  MENU DATA-STRUCT                                                       │\n");
+											printf("│       └► 2.  MENU STRING                                                     │\n");
+											printf("│              └► 2.  OPERATIONS                                               │\n");
+											printf("│                     ├► 0.  BACK STRING MENU                                  │\n");
+											printf("│                     ├► 1.  ADD STRING WITHOUT CONCAT()                       │\n");
+											printf("│                     ├► 2.  CONCAT STRING                                     │\n");
+											printf("│                     ├► 3.  CONVERSION UPPERCASE TO LOWERCASE STRING          │\n");
+											printf("│                     ├► 4.  REMOVE SPACES IN STRING                           │\n");
+											printf("│                     ├► 5.  REMOVE ALL CHARACTERS IN A STRING EXCEPT ALPHABET │\n");
+											printf("│                     ├► 6.  REVERSE STRING USING POINTER                      │\n");
+											printf("│                     ├► 7.  REVERSE THE STRING                                │\n");
+											printf("│                     ├► 8.  COPY STRING WITHOUT STRCPY()                      │\n");
+											printf("│                     └► 9.  COPY CHAR ARRAY                                   │\n");
+											printf("└──────────────────────────────────────────────────────────────────────────────┘\n");
+											printf("CHOICE OPERATIONS: ");
+											scanf("%d",&scelta_operations);
+											switch(scelta_operations){
+												case 0:{
+													clrscr();
+													printf("┌──────────────────────────────────────────────────────────────────────────────┐\n");
+													printf("│MAIN MENU                                                                     │\n");
+													printf("│└► 1.  MENU DATA-STRUCT                                                       │\n");
+													printf("│       └► 2.  MENU STRING                                                     │\n");
+													printf("│              └► 2.  OPERATIONS                                               │\n");
+													printf("│                     └► 0.  BACK STRING MENU                                  │\n");
+													printf("└──────────────────────────────────────────────────────────────────────────────┘\n");
+												}break;
+
+												case 1:{
+													do{
+														clrscr();
+														printf("┌──────────────────────────────────────────────────────────────────────────────┐\n");
+														printf("│MAIN MENU                                                                     │\n");
+														printf("│└► 1.  MENU DATA-STRUCT                                                       │\n");
+														printf("│       └► 2.  MENU STRING                                                     │\n");
+														printf("│              └► 2.  OPERATIONS                                               │\n");
+														printf("│                     └► 1.  ADD STRING WITHOUT CONCAT()                       │\n");
+														printf("└──────────────────────────────────────────────────────────────────────────────┘\n");
+														ins_string(2,Str1,Str2,0,Str3);
+														printf("Before concat():\n");
+														print_string(1,Str1,Str2,0,Str3);
+														print_string(2,Str1,Str2,0,Str3);
+														concat(Str1,Str2);
+														printf("After concat():\n");
+														print_string(1,Str1,Str2,0,Str3);
+														print_string(2,Str1,Str2,0,Str3);
+														printf("Do you want to back to OPERATIONS?(y/n): ");
+														scanf("%s",&torna);
+													}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+												}break;
+
+												case 2:{
+													do{
+														clrscr();
+														printf("┌──────────────────────────────────────────────────────────────────────────────┐\n");
+														printf("│MAIN MENU                                                                     │\n");
+														printf("│└► 1.  MENU DATA-STRUCT                                                       │\n");
+														printf("│       └► 2.  MENU STRING                                                     │\n");
+														printf("│              └► 2.  OPERATIONS                                               │\n");
+														printf("│                     └► 2.  CONCAT STRING                                     │\n");
+														printf("└──────────────────────────────────────────────────────────────────────────────┘\n");
+														ins_string(2,Str1,Str2,0,Str3);
+														printf("Before strcat():\n");
+														print_string(1,Str1,Str2,0,Str3);
+														print_string(2,Str1,Str2,0,Str3);
+														strcat(Str1,Str2);
+														printf("After strcat():\n");
+														print_string(1,Str1,Str2,0,Str3);
+														print_string(2,Str1,Str2,0,Str3);
+														printf("Do you want to back to OPERATIONS?(y/n): ");
+														scanf("%s",&torna);
+													}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+												}break;
+
+												case 3:{
+													do{
+														clrscr();
+														printf("┌──────────────────────────────────────────────────────────────────────────────┐\n");
+														printf("│MAIN MENU                                                                     │\n");
+														printf("│└► 1.  MENU DATA-STRUCT                                                       │\n");
+														printf("│       └► 2.  MENU STRING                                                     │\n");
+														printf("│              └► 2.  OPERATIONS                                               │\n");
+														printf("│                     └► 3.  CONVERSION UPPERCASE TO LOWERCASE STRING          │\n");
+														printf("└──────────────────────────────────────────────────────────────────────────────┘\n");
+														printf("Before conversion:\n");
+														print_string(1,Str1,Str2,0,Str3);
+														conversion_upper_lower_string(Str1);
+														printf("After conversion:\n");
+														print_string(1,Str1,Str2,0,Str3);
+														printf("Do you want to back to OPERATIONS?(y/n): ");
+														scanf("%s",&torna);
+													}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+												}break;
+
+												case 4:{
+													do{
+														clrscr();
+														printf("┌──────────────────────────────────────────────────────────────────────────────┐\n");
+														printf("│MAIN MENU                                                                     │\n");
+														printf("│└► 1.  MENU DATA-STRUCT                                                       │\n");
+														printf("│       └► 2.  MENU STRING                                                     │\n");
+														printf("│              └► 2.  OPERATIONS                                               │\n");
+														printf("│                     └► 4.  REMOVE SPACES IN STRING                           │\n");
+														printf("└──────────────────────────────────────────────────────────────────────────────┘\n");
+														char Str1[]="g  eeks   for ge  eeks  .";
+														printf("Before remove spaces:\n");
+														print_string(1,Str1,Str2,0,Str3);
+														removeSpaces(Str1);
+														printf("After remove spaces:\n");
+														print_string(1,Str1,Str2,0,Str3);
+														printf("Do you want to back to OPERATIONS?(y/n): ");
+														scanf("%s",&torna);
+													}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+												}break;
+
+												case 5:{
+													int j=0;
+													do{
+														clrscr();
+														printf("┌──────────────────────────────────────────────────────────────────────────────┐\n");
+														printf("│MAIN MENU                                                                     │\n");
+														printf("│└► 1.  MENU DATA-STRUCT                                                       │\n");
+														printf("│       └► 2.  MENU STRING                                                     │\n");
+														printf("│              └► 2.  OPERATIONS                                               │\n");
+														printf("│                     └► 5.  REMOVE ALL CHARACTERS IN A STRING EXCEPT ALPHABET │\n");
+														printf("└──────────────────────────────────────────────────────────────────────────────┘\n");
+														printf("Before remove characters:\n");
+														print_string(1,Str1,Str2,0,Str3);
+														remove_characters_string(Str1);
+														printf("After remove characters:\n");
+														print_string(1,Str1,Str2,0,Str3);
+														printf("Do you want to back to OPERATIONS?(y/n): ");
+														scanf("%s",&torna);
+													}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+												}break;
+
+												case 6:{
+													do{
+														clrscr();
+														printf("┌──────────────────────────────────────────────────────────────────────────────┐\n");
+														printf("│MAIN MENU                                                                     │\n");
+														printf("│└► 1.  MENU DATA-STRUCT                                                       │\n");
+														printf("│       └► 2.  MENU STRING                                                     │\n");
+														printf("│              └► 2.  OPERATIONS                                               │\n");
+														printf("│                     └► 6.  REVERSE STRING USING POINTER                      │\n");
+														printf("└──────────────────────────────────────────────────────────────────────────────┘\n");
+														printf("Before reverse:\n");
+														print_string(1,Str1,Str2,0,Str3);
+														reverse_string_pointer(1,Str1);
+														printf("Do you want to back to OPERATIONS?(y/n): ");
+														scanf("%s",&torna);
+													}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+												}break;
+
+												case 7:{
+													do{
+														clrscr();
+														printf("┌──────────────────────────────────────────────────────────────────────────────┐\n");
+														printf("│MAIN MENU                                                                     │\n");
+														printf("│└► 1.  MENU DATA-STRUCT                                                       │\n");
+														printf("│       └► 2.  MENU STRING                                                     │\n");
+														printf("│              └► 2.  OPERATIONS                                               │\n");
+														printf("│                     └► 7.  REVERSE THE STRING                                │\n");
+														printf("└──────────────────────────────────────────────────────────────────────────────┘\n");
+														printf("Before reverse:\n");
+														print_string(1,Str1,Str2,0,Str3);
+														strrev(Str1);
+														printf("After reverse:\n");
+														print_string(1,Str1,Str2,0,Str3);
+														printf("Do you want to back to OPERATIONS?(y/n): ");
+														scanf("%s",&torna);
+													}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+												}break;
+
+												case 8:{
+													do{
+														clrscr();
+														printf("┌──────────────────────────────────────────────────────────────────────────────┐\n");
+														printf("│MAIN MENU                                                                     │\n");
+														printf("│└► 1.  MENU DATA-STRUCT                                                       │\n");
+														printf("│       └► 2.  MENU STRING                                                     │\n");
+														printf("│              └► 2.  OPERATIONS                                               │\n");
+														printf("│                     └► 8.  COPY STRING WITHOUT STRCPY()                      │\n");
+														printf("└──────────────────────────────────────────────────────────────────────────────┘\n");
+														printf("Before copy:\n");
+														print_string(1,Str1,Str2,0,Str3);
+														print_string(2,Str1,Str2,0,Str3);
+														copy_string_without_strcpy(Str1,Str2);
+														printf("After copy:\n");
+														print_string(1,Str1,Str2,0,Str3);
+														print_string(2,Str1,Str2,0,Str3);
+														printf("Do you want to back to OPERATIONS?(y/n): ");
+														scanf("%s",&torna);
+													}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+												}break;
+
+												case 9:{
+													do{
+														clrscr();
+														printf("┌──────────────────────────────────────────────────────────────────────────────┐\n");
+														printf("│MAIN MENU                                                                     │\n");
+														printf("│└► 1.  MENU DATA-STRUCT                                                       │\n");
+														printf("│       └► 2.  MENU STRING                                                     │\n");
+														printf("│              └► 2.  OPERATIONS                                               │\n");
+														printf("│                     └► 9.  COPY CHAR ARRAY                                   │\n");
+														printf("└──────────────────────────────────────────────────────────────────────────────┘\n");
+														ins_string(2,Str1,Str2,0,Str3);
+														printf("Before copy:\n");
+														print_string(1,Str1,Str2,0,Str3);
+														print_string(2,Str1,Str2,0,Str3);
+														strcpy(Str1,Str2);
+														printf("After copy:\n");
+														print_string(1,Str1,Str2,0,Str3);
+														print_string(2,Str1,Str2,0,Str3);
+														printf("Do you want to back to OPERATIONS?(y/n): ");
+														scanf("%s",&torna);
+													}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+												}break;
+
+												default:{
+													do{
+														clrscr();
+														printf("┌──────────────────────────────────────────────────────────────────────────────┐\n");
+														printf("│MAIN MENU                                                                     │\n");
+														printf("│└► 1.  MENU DATA-STRUCT                                                       │\n");
+														printf("│       └► 2.  MENU STRING                                                     │\n");
+														printf("│              └► 2.  OPERATIONS                                               │\n");
+														printf("│                     └► X.  DEFAULT: ERROR CHOICE!                            │\n");
+														printf("└──────────────────────────────────────────────────────────────────────────────┘\n");
+														printf("Do you want to back to OPERATIONS?(y/n): ");
+														scanf("%s",&torna);
+													}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+												}break;
+											}
+											printf("Do you want to back to STRING MENU?(y/n): ");
+											scanf("%s",&torna);
+										}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+									}break;
+
+									case 3:{
+										int scelta_sort=0;
+										do{
+											clrscr();
+											printf("┌──────────────────────────────────────────────────────────────────────────────┐\n");
+											printf("│MAIN MENU                                                                     │\n");
+											printf("│└► 2.  MENU DATA-STRUCT                                                       │\n");
+											printf("│       └► 2.  MENU STRING                                                     │\n");
+											printf("│              └► 3.  SORTING                                                  │\n");
+											printf("│                     ├► 0.  BACK STRING MENU                                  │\n");
+											printf("│                     └► 1.  STRING SORTING                                    │\n");
+											printf("└──────────────────────────────────────────────────────────────────────────────┘\n");
+											printf("CHOICE SORT: ");
+											scanf("%d",&scelta_sort);
+											switch(scelta_sort){
+												case 0:{
+													clrscr();
+													printf("┌──────────────────────────────────────────────────────────────────────────────┐\n");
+													printf("│MAIN MENU                                                                     │\n");
+													printf("│└► 2.  MENU DATA-STRUCT                                                       │\n");
+													printf("│       └► 2.  MENU STRING                                                     │\n");
+													printf("│              └► 3.  SORTING                                                  │\n");
+													printf("│                     └► 0.  BACK STRING MENU                                  │\n");
+													printf("└──────────────────────────────────────────────────────────────────────────────┘\n");
+												}break;
+
+												case 1:{
+													do{
+														clrscr();
+														printf("┌──────────────────────────────────────────────────────────────────────────────┐\n");
+														printf("│MAIN MENU                                                                     │\n");
+														printf("│└► 2.  MENU DATA-STRUCT                                                       │\n");
+														printf("│       └► 2.  MENU STRING                                                     │\n");
+														printf("│              └► 3.  SORTING                                                  │\n");
+														printf("│                     └► 1.  STRING SORTING                                    │\n");
+														printf("└──────────────────────────────────────────────────────────────────────────────┘\n");
+														sort_string(3,Str1,Str2,Str3);
+														printf("Do you want to back to SORT?(y/n): ");
+														scanf("%s",&torna);
+													}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+												}break;
+
+												default:{
+													do{
+														clrscr();
+														printf("┌──────────────────────────────────────────────────────────────────────────────┐\n");
+														printf("│MAIN MENU                                                                     │\n");
+														printf("│└► 2.  MENU DATA-STRUCT                                                       │\n");
+														printf("│       └► 2.  MENU STRING                                                     │\n");
+														printf("│              └► 3.  SORTING                                                  │\n");
+														printf("│                     └► X.  DEFAULT: ERROR CHOICE!                            │\n");
+														printf("└──────────────────────────────────────────────────────────────────────────────┘\n");
+														printf("Do you want to back to SORT?(y/n): ");
+														scanf("%s",&torna);
+													}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+												}break;
+											}
+											printf("Do you want to back to STRING MENU?(y/n): ");
+											scanf("%s",&torna);
+										}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+									}break;
+
+									case 4:{
+										int scelta_search=0;
+										do{
+											clrscr();
+											printf("┌──────────────────────────────────────────────────────────────────────────────┐\n");
+											printf("│MAIN MENU                                                                     │\n");
+											printf("│└► 2.  MENU DATA-STRUCT                                                       │\n");
+											printf("│       └► 2.  MENU STRING                                                     │\n");
+											printf("│              └► 4.  SEARCHING                                                │\n");
+											printf("│                     ├► 0.  BACK STRING MENU                                  │\n");
+											printf("└──────────────────────────────────────────────────────────────────────────────┘\n");
+											printf("CHOICE SEARCHING: ");
+											scanf("%d",&scelta_search);
+											switch(scelta_search){
+												case 0:{
+													clrscr();
+													printf("┌──────────────────────────────────────────────────────────────────────────────┐\n");
+													printf("│MAIN MENU                                                                     │\n");
+													printf("│└► 2.  MENU DATA-STRUCT                                                       │\n");
+													printf("│       └► 2.  MENU STRING                                                     │\n");
+													printf("│              └► 4.  SEARCHING                                                │\n");
+													printf("│                     └► 0.  BACK STRING MENU                                  │\n");
+													printf("└──────────────────────────────────────────────────────────────────────────────┘\n");
+												}break;
+
+												default:{
+													do{
+														clrscr();
+														printf("┌──────────────────────────────────────────────────────────────────────────────┐\n");
+														printf("│MAIN MENU                                                                     │\n");
+														printf("│└► 2.  MENU DATA-STRUCT                                                       │\n");
+														printf("│       └► 2.  MENU STRING                                                     │\n");
+														printf("│              └► 4.  SEARCHING                                                │\n");
+														printf("│                     └► X.  DEFAULT: ERROR CHOICE!                            │\n");
+														printf("└──────────────────────────────────────────────────────────────────────────────┘\n");
+														printf("Do you want to back to SEARCHING?(y/n): ");
+														scanf("%s",&torna);
+													}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+												}break;
+											}
+											printf("Do you want to back to STRING MENU?(y/n): ");
+											scanf("%s",&torna);
+										}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+									}break;
+
+									case 5:{
+										int scelta_check=0;
+										do{
+											clrscr();
+											printf("┌──────────────────────────────────────────────────────────────────────────────┐\n");
+											printf("│MAIN MENU                                                                     │\n");
+											printf("│└► 2.  MENU DATA-STRUCT                                                       │\n");
+											printf("│       └► 2.  MENU STRING                                                     │\n");
+											printf("│              └► 5.  CHECK                                                    │\n");
+											printf("│                     ├► 0.  BACK STRING MENU                                  │\n");
+											printf("│                     ├► 1.  CHECK VOWELS IN A STRING                          │\n");
+											printf("│                     ├► 2.  COMPARE STRINGS WITHOUT STRCMP()                  │\n");
+											printf("│                     ├► 3.  COMPARE TWO STRINGS                               │\n");
+											printf("│                     ├► 4.  COUNT FREQUENCY OF CHARACTERS IN A STRING         │\n");
+											printf("│                     ├► 5.  COUNT TOT NUMBER UPPER/LOWERCASE IN STRING        │\n");
+											printf("│                     ├► 6.  PALINDROME USING ARRAY                            │\n");
+											printf("│                     └► 7.  PALINDROME OF STRING                              │\n");
+											printf("└──────────────────────────────────────────────────────────────────────────────┘\n");
+											printf("CHOICE CHECK: ");
+											scanf("%d",&scelta_check);
+											switch(scelta_check){
+												case 0:{
+													clrscr();
+													printf("┌──────────────────────────────────────────────────────────────────────────────┐\n");
+													printf("│MAIN MENU                                                                     │\n");
+													printf("│└► 2.  MENU DATA-STRUCT                                                       │\n");
+													printf("│       └► 2.  MENU STRING                                                     │\n");
+													printf("│              └► 4.  CHECK                                                    │\n");
+													printf("│                     └► 0.  BACK STRING MENU                                  │\n");
+													printf("└──────────────────────────────────────────────────────────────────────────────┘\n");
+												}break;
+
+												case 1:{
+													int c;
+													do{
+														clrscr();
+														printf("┌──────────────────────────────────────────────────────────────────────────────┐\n");
+														printf("│MAIN MENU                                                                     │\n");
+														printf("│└► 2.  MENU DATA-STRUCT                                                       │\n");
+														printf("│       └► 2.  MENU STRING                                                     │\n");
+														printf("│              └► 4.  CHECK                                                    │\n");
+														printf("│                     └► 1.  CHECK VOWELS IN A STRING                          │\n");
+														printf("└──────────────────────────────────────────────────────────────────────────────┘\n");
+														print_string(1,Str1,Str2,0,Str3);
+														c=count_vowels(Str1);
+														printf("Number of vowels in the string %s: are %d\n",Str1,c);
+														printf("Do you want to back to CHECK?(y/n): ");
+														scanf("%s",&torna);
+													}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+												}break;
+
+												case 2:{
+													int compare;
+													do{
+														clrscr();
+														printf("┌──────────────────────────────────────────────────────────────────────────────┐\n");
+														printf("│MAIN MENU                                                                     │\n");
+														printf("│└► 2.  MENU DATA-STRUCT                                                       │\n");
+														printf("│       └► 2.  MENU STRING                                                     │\n");
+														printf("│              └► 4.  CHECK                                                    │\n");
+														printf("│                     └► 2.  COMPARE STRINGS WITHOUT STRCMP()                  │\n");
+														printf("└──────────────────────────────────────────────────────────────────────────────┘\n");
+														ins_string(2,Str1,Str2,0,Str3);
+														print_string(1,Str1,Str2,0,Str3);
+														compare=stringCompare(Str1,Str2);
+														if(compare == 1){
+															printf("Strings are equal\n");
+														}else{
+															printf("Strings are not equal\n");
+														}
+														printf("Do you want to back to CHECK?(y/n): ");
+														scanf("%s",&torna);
+													}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+												}break;
+
+												case 3:{
+													do{
+														clrscr();
+														printf("┌──────────────────────────────────────────────────────────────────────────────┐\n");
+														printf("│MAIN MENU                                                                     │\n");
+														printf("│└► 2.  MENU DATA-STRUCT                                                       │\n");
+														printf("│       └► 2.  MENU STRING                                                     │\n");
+														printf("│              └► 4.  CHECK                                                    │\n");
+														printf("│                     └► 3.  COMPARE TWO STRINGS                               │\n");
+														printf("└──────────────────────────────────────────────────────────────────────────────┘\n");
+														ins_string(2,Str1,Str2,0,Str3);
+														print_string(1,Str1,Str2,0,Str3);
+														if(strcmp(Str1,Str2) == 0){
+															printf("Strings are equal\n");
+														}else{
+															printf("Strings are not equal\n");
+														}
+														printf("Do you want to back to CHECK?(y/n): ");
+														scanf("%s",&torna);
+													}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+												}break;
+
+												case 4:{
+													do{
+														clrscr();
+														printf("┌──────────────────────────────────────────────────────────────────────────────┐\n");
+														printf("│MAIN MENU                                                                     │\n");
+														printf("│└► 2.  MENU DATA-STRUCT                                                       │\n");
+														printf("│       └► 2.  MENU STRING                                                     │\n");
+														printf("│              └► 4.  CHECK                                                    │\n");
+														printf("│                     └► 4.  COUNT FREQUENCY OF CHARACTERS IN A STRING         │\n");
+														printf("└──────────────────────────────────────────────────────────────────────────────┘\n");
+														print_string(1,Str1,Str2,0,Str3);
+														count_freq_characters_string(Str1);
+														printf("Do you want to back to CHECK?(y/n): ");
+														scanf("%s",&torna);
+													}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+												}break;
+
+												case 5:{
+													do{
+														clrscr();
+														printf("┌──────────────────────────────────────────────────────────────────────────────┐\n");
+														printf("│MAIN MENU                                                                     │\n");
+														printf("│└► 2.  MENU DATA-STRUCT                                                       │\n");
+														printf("│       └► 2.  MENU STRING                                                     │\n");
+														printf("│              └► 4.  CHECK                                                    │\n");
+														printf("│                     └► 5.  COUNT TOT NUMBER UPPER/LOWERCASE IN STRING        │\n");
+														printf("└──────────────────────────────────────────────────────────────────────────────┘\n");
+														print_string(1,Str1,Str2,0,Str3);
+														count_upper_lower_characters_string(Str1);
+														printf("Do you want to back to CHECK?(y/n): ");
+														scanf("%s",&torna);
+													}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+												}break;
+
+												case 6:{
+													do{
+														clrscr();
+														printf("┌──────────────────────────────────────────────────────────────────────────────┐\n");
+														printf("│MAIN MENU                                                                     │\n");
+														printf("│└► 2.  MENU DATA-STRUCT                                                       │\n");
+														printf("│       └► 2.  MENU STRING                                                     │\n");
+														printf("│              └► 4.  CHECK                                                    │\n");
+														printf("│                     └► 6.  PALINDROME USING ARRAY                            │\n");
+														printf("└──────────────────────────────────────────────────────────────────────────────┘\n");
+														print_string(1,Str1,Str2,0,Str3);
+														palindrome_string_array(Str1);
+														printf("Do you want to back to CHECK?(y/n): ");
+														scanf("%s",&torna);
+													}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+												}break;
+
+												case 7:{
+													do{
+														clrscr();
+														printf("┌──────────────────────────────────────────────────────────────────────────────┐\n");
+														printf("│MAIN MENU                                                                     │\n");
+														printf("│└► 2.  MENU DATA-STRUCT                                                       │\n");
+														printf("│       └► 2.  MENU STRING                                                     │\n");
+														printf("│              └► 4.  CHECK                                                    │\n");
+														printf("│                     └► 7.  PALINDROME OF STRING                              │\n");
+														printf("└──────────────────────────────────────────────────────────────────────────────┘\n");
+														print_string(1,Str1,Str2,0,Str3);
+														palindrome_string(Str1);
+														printf("Do you want to back to CHECK?(y/n): ");
+														scanf("%s",&torna);
+													}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+												}break;
+
+												default:{
+													do{
+														clrscr();
+														printf("┌──────────────────────────────────────────────────────────────────────────────┐\n");
+														printf("│MAIN MENU                                                                     │\n");
+														printf("│└► 2.  MENU DATA-STRUCT                                                       │\n");
+														printf("│       └► 2.  MENU STRING                                                     │\n");
+														printf("│              └► 4.  CHECK                                                    │\n");
+														printf("│                     └► X.  DEFAULT: ERROR CHOICE!                            │\n");
+														printf("└──────────────────────────────────────────────────────────────────────────────┘\n");
+														printf("Do you want to back to CHECK?(y/n): ");
+														scanf("%s",&torna);
+													}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+												}break;
+											}
+											printf("Do you want to back to STRING MENU?(y/n): ");
+											scanf("%s",&torna);
+										}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+									}break;
+									
+									default:{
+										do{
+											clrscr();
+											printf("┌──────────────────────────────────────────────────────────────────────────────┐\n");
+											printf("│MAIN MENU                                                                     │\n");
+											printf("│└► 2.  MENU DATA-STRUCT                                                       │\n");
+											printf("│       └► 2.  MENU STRING                                                     │\n");
+											printf("│              └► X.  DEFAULT: ERROR CHOICE!                                   │\n");
+											printf("└──────────────────────────────────────────────────────────────────────────────┘\n");
+											printf("Do you want to back to STRING MENU?(y/n): ");
+											scanf("%s",&torna);
+										}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+									}break;
+								}
+								printf("Do you want to back to DATA-STRUCT MENU?(y/n): ");
+								scanf("%s",&torna);
+							}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+						}break;
+
 						case 3:{
 							int scelta_matrix=0,r=0,c=0,max=0,min=0,M[r][c];
 							do{
@@ -6144,7 +6744,7 @@ void main(int argc,char const *argv[]){
 					printf("└──────────────────────────────────────────────────────────────────────────────┘\n");
 					printf("Do you want to back to MAIN MENU?(y/n): ");
 					scanf("%s",&torna);
-					if(torna == 'n'){
+					if((torna == 'n')||(torna == 'N')){
 						clrscr();
 						exit(0);
 					}
