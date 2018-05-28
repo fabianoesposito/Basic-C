@@ -13,9 +13,10 @@ void print_array(int dim, int A[dim]){
 
 void ins_random_array(int dim, int A[dim]){
 	int upper=10, lower=0;
-	srand(time(NULL));
+	srand((unsigned int)time(NULL));
 	for(int i=0; i<dim; i++){
 		int val=rand()%(upper-lower+1)+lower;
+		srand(rand());
 		A[i]=val;
 	}
 	print_array(dim,A);
@@ -289,6 +290,257 @@ int binary_I(int A[], int l, int r, int x){
 	return -1;
 }
 /*│     ├► STRING                           - Description: │*/
+void print_single_string(int i,char Str1[]){
+	printf("Str%d[%ld]: ",i,strlen(Str1));
+	puts(Str1);
+}
+
+void print_multiple_string(int i,int n,char Str3[MAXSIZE][MAXSIZE]){
+	for(int k=0; k<n; k++){
+		printf("Str%d[%d]: ",i,k);
+		puts(Str3[k]);
+	}
+}
+
+void print_string(int i,char Str1[],char Str2[],int n,char Str3[MAXSIZE][MAXSIZE]){
+	if(i == 1){
+		print_single_string(i,Str1);
+	}else if(i == 2){
+		print_single_string(i,Str2);
+	}else if(i == 3){
+		print_multiple_string(i,n,Str3);
+	}
+}
+
+void ins_single_manual_string(int i,char Str1[]){ //da agg.: no insert spaces
+	printf("Inserting single manual string: ");
+	scanf("%s",Str1);
+	print_single_string(i,Str1);
+}
+void ins_multiple_manual_string(int i,int n,char Str3[MAXSIZE][MAXSIZE]){
+	printf("Inserting multiple manual strings: \n");
+	for(int k=0; k<n; k++){
+		printf("Str%d[%d]: ",i,k);
+		scanf("%s",Str3[k]);
+	}
+}
+void ins_string(int i,char Str1[],char Str2[],int n,char Str3[MAXSIZE][MAXSIZE]){
+	if(i == 1){
+		ins_single_manual_string(i,Str1);
+	}else if(i == 2){
+		ins_single_manual_string(i,Str2);
+	}else if(i == 3){
+		ins_multiple_manual_string(i,n,Str3);
+	}
+}
+
+void sorting_string(int n,char Str3[MAXSIZE][MAXSIZE]){
+	char temp[MAXSIZE];
+	for(int i=0; i<n; i++){
+		for(int j=i; j<n; j++){
+			if(strcmp(Str3[i],Str3[j]) > 0){
+				strcpy(temp,Str3[i]);
+				strcpy(Str3[i],Str3[j]);
+				strcpy(Str3[j],temp);
+			}
+		}
+	}
+}
+
+void sort_string(int i,char Str1[],char Str2[],char Str3[MAXSIZE][MAXSIZE]){
+	int n=0;
+	printf("Insert no. of string: ");
+	scanf("%d",&n);
+	ins_string(i,Str1,Str2,n,Str3);
+	printf("\nBefore sort string:\n");
+	print_string(i,Str1,Str2,n,Str3);
+	sorting_string(n,Str3);
+	printf("\nAfter sort string:\n");
+	print_string(i,Str1,Str2,n,Str3);
+}
+
+void concat(char *Str,char *Str2){
+	int i=strlen(Str),j;
+	for(j=0; Str2[j] != '\0'; i++,j++){
+		Str[i]=Str2[j];
+	}
+	Str[i]='\0';
+}
+
+void conversion_upper_lower_string(char *Str){
+	for(int i=0; i<=strlen(Str); i++){
+		if(Str[i] >= 65 && Str[i] <= 90){
+			Str[i]=Str[i]+32;
+		}
+	}
+}
+
+void removeSpaces(char *Str){
+	int count=0;
+	for(int i=0; Str[i]; i++){
+		if(Str[i] != ' ')
+			Str[count++]=Str[i];
+	}
+	Str[count]='\0';
+}
+
+void remove_characters_string(char *Str){
+	int j;
+	for(int i=0; Str[i]!='\0'; ++i){
+		while(!((Str[i]>='a' && Str[i]<='z') || (Str[i]>='A' && Str[i]<='Z') || Str[i]=='\0')){
+			for(j=i; Str[j]!='\0'; ++j){
+				Str[j]=Str[j+1];
+			}
+			Str[j]='\0';
+		}
+	}
+}
+
+void reverse_string_pointer(int i,char Str1[]){
+	char *ptr;
+	int k=0;
+	ptr=Str1;
+	for(int k=0; k<strlen(Str1); k++){
+		if(*ptr == '\0'){
+			break;
+		}
+		ptr++;
+	}
+	ptr--;
+	k=strlen(Str1);
+	printf("After reverse:\n");
+	printf("Str%d[%d]: ",i,k);
+	for(k=strlen(Str1); k>0; k--){
+		printf("%c",*ptr--);
+	}
+	printf("\n");
+}
+
+char *strrev(char *Str){
+	char *p1,*p2;
+	if(! Str || ! *Str){
+		return Str;
+	}
+	for(p1=Str,p2=Str+strlen(Str)-1; p2>p1; ++p1,--p2){
+		*p1^=*p2;
+		*p2^=*p1;
+		*p1^=*p2;
+	}
+	return Str;
+}
+
+void copy_string_without_strcpy(char str1[],char str2[]){
+	int i=0;
+	while(str1[i]!='\0'){
+		str2[i]=str1[i];
+		i++;
+	}
+	str2[i]='\0';
+}
+
+int check_vowel(char a){
+	if(a >= 'A' && a <= 'Z'){
+		a=a + 'a' - 'A';
+	}
+	if(a == 'a' || a == 'e' || a == 'i' || a == 'o' || a == 'u'){
+		return 1;
+	}
+	return 0;
+}
+
+int count_vowels(char a[]){
+	int count=0,c=0,flag;
+	char d;
+	do{
+		d=a[c];
+		flag=check_vowel(d);
+		if(flag == 1){
+			count++;
+		}
+		c++;
+	}while(d != '\0');
+	return count;
+}
+
+int stringCompare(char str1[],char str2[]){
+	int i=0,flag=0;
+	while(str1[i]!='\0' && str2[i]!='\0'){
+		if(str1[i]!=str2[i]){
+			flag=1;
+			break;
+		}
+		i++;
+	}
+	if(flag==0 && str1[i]=='\0' && str2[i]=='\0'){
+		return 1;
+	}else{
+		return 0;
+	}
+}
+
+void count_freq_characters_string(char Str[]){
+	int c=0,count[26]={0};
+	while(Str[c] != '\0'){
+		if(Str[c] >= 'a' && Str[c] <= 'z'){
+			count[Str[c]-'a']++;
+		}
+		c++;
+	}
+	for(c=0; c<26; c++){
+		if(count[c] != 0){
+			printf("%c: %d times\n",c+'a',count[c]);
+		}
+	}
+}
+
+void count_upper_lower_characters_string(char Str[]){
+	int upper=0,lower=0,i=0;
+	while(Str[i] != '\0'){
+		if(Str[i] >= 'A' && Str[i] <= 'Z'){
+			upper++;
+		}
+		if(Str[i] >= 'a' && Str[i] <= 'z'){
+			lower++;
+		}
+		i++;
+	}
+	printf("Uppercase Letters: %d\n",upper);
+	printf("Lowercase Letters: %d\n",lower);
+}
+
+void palindrome_string_array(char Str[]){
+	int counter=0,length=strlen(Str),flag=1;
+	for(counter = 0; counter < length/2 && flag; counter++){
+		if(Str[counter] != Str[length-counter-1]){
+			flag = 0;
+			break;
+		}
+	}
+	if(flag){
+		printf("%s is a palindrome\n",Str);
+	}else{
+		printf("%s is not a palindrome\n",Str);
+	}
+}
+
+void palindrome_string(char Str[]){
+	int begin=0,middle=0,end=0,length=0;
+	while(Str[length] != '\0'){
+		length++;
+	}
+	end=length - 1;
+	middle=length/2;
+	for(begin=0; begin<middle; begin++){
+		if(Str[begin] != Str[end]){
+			printf("Entered String is not a palindrome string\n");
+			break;
+		}
+		end--;
+	}
+	if(begin == middle){
+		printf("Entered String is a palindrome string\n");
+	}
+}
 /*│     ├► MATRIX                           - Description: │*/
 void print_matrix(int r, int c, int M[r][c]){
 	printf("M[%d][%d]= r\\c ", r, c);
