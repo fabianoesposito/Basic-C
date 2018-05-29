@@ -20,7 +20,7 @@ void clrscr(void){
 
 void main(int argc,char const *argv[]){
 	int choice_menu=0;
-	char torna='n';	
+	char back='n';	
 /*┌────────────────────────────────┐
   │├► [●]: complete/work           │
   │├► [ ]: miss                    │
@@ -82,8 +82,8 @@ void main(int argc,char const *argv[]){
 								printf("└──────────────────────────────────────────────────────────────────────────────┘\n");
 								hello_world();
 								printf("Do you want to back to BASIC MENU?(y/n): ");
-								scanf("%s",&torna);
-							}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+								scanf("%s",&back);
+							}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 						}break;
 
 						case 2:{
@@ -96,8 +96,8 @@ void main(int argc,char const *argv[]){
 								printf("└──────────────────────────────────────────────────────────────────────────────┘\n");
 								var_sizes();
 								printf("Do you want to back to BASIC MENU?(y/n): ");
-								scanf("%s",&torna);
-							}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+								scanf("%s",&back);
+							}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 						}break;
 
 						case 3:{
@@ -110,8 +110,8 @@ void main(int argc,char const *argv[]){
 								printf("└──────────────────────────────────────────────────────────────────────────────┘\n");
 								ascii_table();
 								printf("Do you want to back to BASIC MENU?(y/n): ");
-								scanf("%s",&torna);
-							}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+								scanf("%s",&back);
+							}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 						}break;
 
 						case 4:{
@@ -187,8 +187,8 @@ void main(int argc,char const *argv[]){
 											scanf("%d",&n);
 											binary_pattern(n);
 											printf("Do you want to back to PATTERN MENU?(y/n): ");
-											scanf("%s",&torna);
-										}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+											scanf("%s",&back);
+										}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 									}break;
 
 									case 2:{
@@ -204,8 +204,8 @@ void main(int argc,char const *argv[]){
 											scanf("%d",&n);
 											diamond_patter(n);
 											printf("Do you want to back to PATTERN MENU?(y/n): ");
-											scanf("%s",&torna);
-										}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+											scanf("%s",&back);
+										}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 									}break;
 
 									case 3:{
@@ -221,8 +221,8 @@ void main(int argc,char const *argv[]){
 											scanf("%d",&n);
 											diamond_star_outline(n);
 											printf("Do you want to back to PATTERN MENU?(y/n): ");
-											scanf("%s",&torna);
-										}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+											scanf("%s",&back);
+										}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 									}break;
 
 									case 4:{
@@ -238,8 +238,8 @@ void main(int argc,char const *argv[]){
 											scanf("%d",&n);
 											floyds_triangle(n);
 											printf("Do you want to back to PATTERN MENU?(y/n): ");
-											scanf("%s",&torna);
-										}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+											scanf("%s",&back);
+										}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 									}break;
 
 									case 5:{
@@ -255,8 +255,8 @@ void main(int argc,char const *argv[]){
 											scanf("%d",&n);
 											hollow_diamond(n);
 											printf("Do you want to back to PATTERN MENU?(y/n): ");
-											scanf("%s",&torna);
-										}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+											scanf("%s",&back);
+										}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 									}break;
 
 									case 6:{
@@ -272,8 +272,8 @@ void main(int argc,char const *argv[]){
 											scanf("%d",&n);
 											hollow_square(n);
 											printf("Do you want to back to PATTERN MENU?(y/n): ");
-											scanf("%s",&torna);
-										}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+											scanf("%s",&back);
+										}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 									}break;
 
 									case 7:{
@@ -289,8 +289,8 @@ void main(int argc,char const *argv[]){
 											scanf("%d",&n);
 											hourglass_pattern(n);
 											printf("Do you want to back to PATTERN MENU?(y/n): ");
-											scanf("%s",&torna);
-										}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+											scanf("%s",&back);
+										}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 									}break;
 
 									case 8:{
@@ -306,8 +306,8 @@ void main(int argc,char const *argv[]){
 											scanf("%d",&n);
 											nested_star_hash_pyramid(n);
 											printf("Do you want to back to PATTERN MENU?(y/n): ");
-											scanf("%s",&torna);
-										}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+											scanf("%s",&back);
+										}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 									}break;
 
 									case 9:{
@@ -323,8 +323,8 @@ void main(int argc,char const *argv[]){
 											scanf("%d",&n);
 											number_aplphabet_pattern(n);
 											printf("Do you want to back to PATTERN MENU?(y/n): ");
-											scanf("%s",&torna);
-										}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+											scanf("%s",&back);
+										}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 									}break;
 
 									case 10:{
@@ -340,8 +340,8 @@ void main(int argc,char const *argv[]){
 											scanf("%d",&n);
 											number_diamond_pattern(n);
 											printf("Do you want to back to PATTERN MENU?(y/n): ");
-											scanf("%s",&torna);
-										}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+											scanf("%s",&back);
+										}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 									}break;
 
 									case 11:{
@@ -357,8 +357,8 @@ void main(int argc,char const *argv[]){
 											scanf("%d",&n);
 											number_pattern_1(n);
 											printf("Do you want to back to PATTERN MENU?(y/n): ");
-											scanf("%s",&torna);
-										}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+											scanf("%s",&back);
+										}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 									}break;
 
 									case 12:{
@@ -374,8 +374,8 @@ void main(int argc,char const *argv[]){
 											scanf("%d",&n);
 											number_pattern_2(n);
 											printf("Do you want to back to PATTERN MENU?(y/n): ");
-											scanf("%s",&torna);
-										}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+											scanf("%s",&back);
+										}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 									}break;
 
 									case 13:{
@@ -391,8 +391,8 @@ void main(int argc,char const *argv[]){
 											scanf("%d",&n);
 											number_pattern_3(n);
 											printf("Do you want to back to PATTERN MENU?(y/n): ");
-											scanf("%s",&torna);
-										}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+											scanf("%s",&back);
+										}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 									}break;
 
 									case 14:{
@@ -408,8 +408,8 @@ void main(int argc,char const *argv[]){
 											scanf("%d",&n);
 											number_pattern_4(n);
 											printf("Do you want to back to PATTERN MENU?(y/n): ");
-											scanf("%s",&torna);
-										}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+											scanf("%s",&back);
+										}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 									}break;
 
 									case 15:{
@@ -425,8 +425,8 @@ void main(int argc,char const *argv[]){
 											scanf("%d",&n);
 											number_pyramid(n);
 											printf("Do you want to back to PATTERN MENU?(y/n): ");
-											scanf("%s",&torna);
-										}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+											scanf("%s",&back);
+										}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 									}break;
 
 									case 16:{
@@ -442,8 +442,8 @@ void main(int argc,char const *argv[]){
 											scanf("%d",&n);
 											pascal_triangle(n);
 											printf("Do you want to back to PATTERN MENU?(y/n): ");
-											scanf("%s",&torna);
-										}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+											scanf("%s",&back);
+										}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 									}break;
 
 									case 17:{
@@ -459,8 +459,8 @@ void main(int argc,char const *argv[]){
 											scanf("%d",&n);
 											pascal_triangle_2(n);
 											printf("Do you want to back to PATTERN MENU?(y/n): ");
-											scanf("%s",&torna);
-										}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+											scanf("%s",&back);
+										}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 									}break;
 
 									case 18:{
@@ -476,8 +476,8 @@ void main(int argc,char const *argv[]){
 											scanf("%d",&n);
 											pascals_triangle_without_function(n);
 											printf("Do you want to back to PATTERN MENU?(y/n): ");
-											scanf("%s",&torna);
-										}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+											scanf("%s",&back);
+										}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 									}break;
 
 									case 19:{
@@ -493,8 +493,8 @@ void main(int argc,char const *argv[]){
 											scanf("%d",&n);
 											pattern_1(n);
 											printf("Do you want to back to PATTERN MENU?(y/n): ");
-											scanf("%s",&torna);
-										}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+											scanf("%s",&back);
+										}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 									}break;
 
 									case 20:{
@@ -510,8 +510,8 @@ void main(int argc,char const *argv[]){
 											scanf("%d",&n);
 											pattern_2(n);
 											printf("Do you want to back to PATTERN MENU?(y/n): ");
-											scanf("%s",&torna);
-										}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+											scanf("%s",&back);
+										}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 									}break;
 
 									case 21:{
@@ -527,8 +527,8 @@ void main(int argc,char const *argv[]){
 											scanf("%d",&n);
 											pattern_3(n);
 											printf("Do you want to back to PATTERN MENU?(y/n): ");
-											scanf("%s",&torna);
-										}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+											scanf("%s",&back);
+										}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 									}break;
 
 									case 22:{
@@ -544,8 +544,8 @@ void main(int argc,char const *argv[]){
 											scanf("%d",&n);
 											pattern_4(n);
 											printf("Do you want to back to PATTERN MENU?(y/n): ");
-											scanf("%s",&torna);
-										}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+											scanf("%s",&back);
+										}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 									}break;
 
 									case 23:{
@@ -561,8 +561,8 @@ void main(int argc,char const *argv[]){
 											scanf("%d",&n);
 											pattern_5(n);
 											printf("Do you want to back to PATTERN MENU?(y/n): ");
-											scanf("%s",&torna);
-										}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+											scanf("%s",&back);
+										}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 									}break;
 
 									case 24:{
@@ -578,8 +578,8 @@ void main(int argc,char const *argv[]){
 											scanf("%d",&n);
 											pattern_6(n);
 											printf("Do you want to back to PATTERN MENU?(y/n): ");
-											scanf("%s",&torna);
-										}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+											scanf("%s",&back);
+										}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 									}break;
 
 									case 25:{
@@ -595,8 +595,8 @@ void main(int argc,char const *argv[]){
 											scanf("%d",&n);
 											pattern_7(n);
 											printf("Do you want to back to PATTERN MENU?(y/n): ");
-											scanf("%s",&torna);
-										}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+											scanf("%s",&back);
+										}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 									}break;
 
 									case 26:{
@@ -612,8 +612,8 @@ void main(int argc,char const *argv[]){
 											scanf("%d",&n);
 											pattern_8(n);
 											printf("Do you want to back to PATTERN MENU?(y/n): ");
-											scanf("%s",&torna);
-										}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+											scanf("%s",&back);
+										}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 									}break;
 
 									case 27:{
@@ -629,8 +629,8 @@ void main(int argc,char const *argv[]){
 											scanf("%d",&n);
 											pattern_9(n);
 											printf("Do you want to back to PATTERN MENU?(y/n): ");
-											scanf("%s",&torna);
-										}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+											scanf("%s",&back);
+										}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 									}break;
 
 									case 28:{
@@ -646,8 +646,8 @@ void main(int argc,char const *argv[]){
 											scanf("%d",&n);
 											pattern_10(n);
 											printf("Do you want to back to PATTERN MENU?(y/n): ");
-											scanf("%s",&torna);
-										}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+											scanf("%s",&back);
+										}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 									}break;
 
 									case 29:{
@@ -663,8 +663,8 @@ void main(int argc,char const *argv[]){
 											scanf("%d",&n);
 											pyramid(n);
 											printf("Do you want to back to PATTERN MENU?(y/n): ");
-											scanf("%s",&torna);
-										}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+											scanf("%s",&back);
+										}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 									}break;
 
 									case 30:{
@@ -680,8 +680,8 @@ void main(int argc,char const *argv[]){
 											scanf("%d",&n);
 											rectangle_pattern(n);
 											printf("Do you want to back to PATTERN MENU?(y/n): ");
-											scanf("%s",&torna);
-										}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+											scanf("%s",&back);
+										}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 									}break;
 
 									case 31:{
@@ -698,8 +698,8 @@ void main(int argc,char const *argv[]){
 											int m=n;
 											retangle_star_pattern(n,m);
 											printf("Do you want to back to PATTERN MENU?(y/n): ");
-											scanf("%s",&torna);
-										}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+											scanf("%s",&back);
+										}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 									}break;
 
 									case 32:{
@@ -715,8 +715,8 @@ void main(int argc,char const *argv[]){
 											scanf("%d",&n);
 											reverse_star_triangle(n);
 											printf("Do you want to back to PATTERN MENU?(y/n): ");
-											scanf("%s",&torna);
-										}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+											scanf("%s",&back);
+										}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 									}break;
 
 									case 33:{
@@ -732,8 +732,8 @@ void main(int argc,char const *argv[]){
 											scanf("%d",&n);
 											rhombus_pattern(n);
 											printf("Do you want to back to PATTERN MENU?(y/n): ");
-											scanf("%s",&torna);
-										}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+											scanf("%s",&back);
+										}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 									}break;
 
 									case 34:{
@@ -750,8 +750,8 @@ void main(int argc,char const *argv[]){
 											scanf("%d",&n);
 											square_kite_pattern(n);
 											printf("Do you want to back to PATTERN MENU?(y/n): ");
-											scanf("%s",&torna);
-										}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+											scanf("%s",&back);
+										}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 									}break;
 
 									case 35:{
@@ -767,8 +767,8 @@ void main(int argc,char const *argv[]){
 											scanf("%d",&n);
 											square_star_pattern(n);
 											printf("Do you want to back to PATTERN MENU?(y/n): ");
-											scanf("%s",&torna);
-										}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+											scanf("%s",&back);
+										}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 									}break;
 
 									case 36:{
@@ -784,8 +784,8 @@ void main(int argc,char const *argv[]){
 											scanf("%d",&n);
 											triangle_borders('*',' ',n);
 											printf("Do you want to back to PATTERN MENU?(y/n): ");
-											scanf("%s",&torna);
-										}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+											scanf("%s",&back);
+										}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 									}break;
 
 									case 37:{
@@ -801,8 +801,8 @@ void main(int argc,char const *argv[]){
 											scanf("%d",&n);
 											x_pattern(n);
 											printf("Do you want to back to PATTERN MENU?(y/n): ");
-											scanf("%s",&torna);
-										}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+											scanf("%s",&back);
+										}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 									}break;
 
 									default:{
@@ -815,13 +815,13 @@ void main(int argc,char const *argv[]){
 											printf("│              └► X.  DEFAULT: ERROR CHOICE!                                   │\n");
 											printf("└──────────────────────────────────────────────────────────────────────────────┘\n");
 											printf("Do you want to back to PATTERN MENU?(y/n): ");
-											scanf("%s",&torna);
-										}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+											scanf("%s",&back);
+										}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 									}break;
 								}
 								printf("Do you want to back to BASIC MENU?(y/n): ");
-								scanf("%s",&torna);
-							}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+								scanf("%s",&back);
+							}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 						}break;
 
 						case 5:{
@@ -887,8 +887,8 @@ void main(int argc,char const *argv[]){
 											printf("└──────────────────────────────────────────────────────────────────────────────┘\n");
 											add_n_numbers();
 											printf("Do you want to back to NUMBERS MENU?(y/n): ");
-											scanf("%s",&torna);
-										}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+											scanf("%s",&back);
+										}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 									}break;
 									
 									case 2:{
@@ -905,8 +905,8 @@ void main(int argc,char const *argv[]){
 											scanf("%d",&n);
 											armstrong_number(n);
 											printf("Do you want to back to NUMBERS MENU?(y/n): ");
-											scanf("%s",&torna);
-										}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+											scanf("%s",&back);
+										}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 									}break;
 
 									case 3:{
@@ -923,8 +923,8 @@ void main(int argc,char const *argv[]){
 											scanf("%d",&n);
 											average_numb(n);
 											printf("Do you want to back to NUMBERS MENU?(y/n): ");
-											scanf("%s",&torna);
-										}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+											scanf("%s",&back);
+										}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 									}break;
 
 									case 4:{
@@ -941,8 +941,8 @@ void main(int argc,char const *argv[]){
 											scanf("%d",&n);
 											square_n(n);
 											printf("Do you want to back to NUMBERS MENU?(y/n): ");
-											scanf("%s",&torna);
-										}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+											scanf("%s",&back);
+										}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 									}break;
 
 									case 5:{
@@ -960,8 +960,8 @@ void main(int argc,char const *argv[]){
 											sqr=n*n;
 											printf("Square of %d is %d\n",n,sqr);
 											printf("Do you want to back to NUMBERS MENU?(y/n): ");
-											scanf("%s",&torna);
-										}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+											scanf("%s",&back);
+										}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 									}break;
 
 									case 6:{
@@ -978,8 +978,8 @@ void main(int argc,char const *argv[]){
 											scanf("%d",&n);
 											sum_natural(n);
 											printf("Do you want to back to NUMBERS MENU?(y/n): ");
-											scanf("%s",&torna);
-										}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+											scanf("%s",&back);
+										}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 									}break;
 
 									case 7:{
@@ -996,8 +996,8 @@ void main(int argc,char const *argv[]){
 											scanf("%d",&n);
 											check_prime(n);
 											printf("Do you want to back to NUMBERS MENU?(y/n): ");
-											scanf("%s",&torna);
-										}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+											scanf("%s",&back);
+										}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 									}break;
 
 									case 8:{
@@ -1014,8 +1014,8 @@ void main(int argc,char const *argv[]){
 											scanf("%s",n);
 											check_intfloat(n);
 											printf("Do you want to back to NUMBERS MENU?(y/n): ");
-											scanf("%s",&torna);
-										}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+											scanf("%s",&back);
+										}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 									}break;
 
 									case 9:{
@@ -1032,8 +1032,8 @@ void main(int argc,char const *argv[]){
 											scanf("%lf",&n);
 											check_posneg(n);
 											printf("Do you want to back to NUMBERS MENU?(y/n): ");
-											scanf("%s",&torna);
-										}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+											scanf("%s",&back);
+										}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 									}break;
 
 									case 10:{
@@ -1050,8 +1050,8 @@ void main(int argc,char const *argv[]){
 											scanf("%d %d",&n1,&n2);
 											prime_interval(n1,n2);
 											printf("Do you want to back to NUMBERS MENU?(y/n): ");
-											scanf("%s",&torna);
-										}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+											scanf("%s",&back);
+										}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 									}break;
 
 									case 11:{
@@ -1068,8 +1068,8 @@ void main(int argc,char const *argv[]){
 											scanf("%d",&n);
 											printf("Factorial of %d is: %ld\n",n,factorial(n));
 											printf("Do you want to back to NUMBERS MENU?(y/n): ");
-											scanf("%s",&torna);
-										}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+											scanf("%s",&back);
+										}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 									}break;
 
 									case 12:{
@@ -1086,8 +1086,8 @@ void main(int argc,char const *argv[]){
 											scanf("%d",&n);
 											Factors_numb(n);
 											printf("Do you want to back to NUMBERS MENU?(y/n): ");
-											scanf("%s",&torna);
-										}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+											scanf("%s",&back);
+										}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 									}break;
 									
 									case 13:{
@@ -1101,8 +1101,8 @@ void main(int argc,char const *argv[]){
 											printf("└──────────────────────────────────────────────────────────────────────────────┘\n");
 											fibonacci();
 											printf("Do you want to back to NUMBERS MENU?(y/n): ");
-											scanf("%s",&torna);
-										}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+											scanf("%s",&back);
+										}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 									}break;
 
 									case 14:{
@@ -1116,8 +1116,8 @@ void main(int argc,char const *argv[]){
 											printf("└──────────────────────────────────────────────────────────────────────────────┘\n");
 											even_or_odd();
 											printf("Do you want to back to NUMBERS MENU?(y/n): ");
-											scanf("%s",&torna);
-										}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+											scanf("%s",&back);
+										}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 									}break;
 
 									case 15:{
@@ -1136,8 +1136,8 @@ void main(int argc,char const *argv[]){
 											scanf("%ld",&binary2);
 											sum_binarynumbs(binary1,binary2);
 											printf("Do you want to back to NUMBERS MENU?(y/n): ");
-											scanf("%s",&torna);
-										}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+											scanf("%s",&back);
+										}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 									}break;
 
 									case 16:{
@@ -1157,8 +1157,8 @@ void main(int argc,char const *argv[]){
 											scanf("%d",&exponent);
 											power_numb(base,exponent);
 											printf("Do you want to back to NUMBERS MENU?(y/n): ");
-											scanf("%s",&torna);
-										}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+											scanf("%s",&back);
+										}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 									}break;
 
 									case 17:{
@@ -1175,8 +1175,8 @@ void main(int argc,char const *argv[]){
 											scanf("%lf",&n);
 											harmonic_series(n);
 											printf("Do you want to back to NUMBERS MENU?(y/n): ");
-											scanf("%s",&torna);
-										}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+											scanf("%s",&back);
+										}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 									}break;
 
 									case 18:{
@@ -1193,8 +1193,8 @@ void main(int argc,char const *argv[]){
 											scanf("%d%d",&x,&y);
 											hcf_lcm(x,y);
 											printf("Do you want to back to NUMBERS MENU?(y/n): ");
-											scanf("%s",&torna);
-										}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+											scanf("%s",&back);
+										}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 									}break;
 
 									case 19:{
@@ -1211,8 +1211,8 @@ void main(int argc,char const *argv[]){
 											scanf("%d",&n);
 											largest_numb(n);
 											printf("Do you want to back to NUMBERS MENU?(y/n): ");
-											scanf("%s",&torna);
-										}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+											scanf("%s",&back);
+										}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 									}break;
 
 									case 20:{
@@ -1229,8 +1229,8 @@ void main(int argc,char const *argv[]){
 											scanf("%d",&n);
 											mult_table(n);
 											printf("Do you want to back to NUMBERS MENU?(y/n): ");
-											scanf("%s",&torna);
-										}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+											scanf("%s",&back);
+										}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 									}break;
 									
 									case 21:{
@@ -1247,8 +1247,8 @@ void main(int argc,char const *argv[]){
 											scanf("%d",&n);
 											palindrome(n);
 											printf("Do you want to back to NUMBERS MENU?(y/n): ");
-											scanf("%s",&torna);
-										}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+											scanf("%s",&back);
+										}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 									}break;
 
 									case 22:{
@@ -1265,8 +1265,8 @@ void main(int argc,char const *argv[]){
 											scanf("%d",&n);
 											perfect_numb(n);
 											printf("Do you want to back to NUMBERS MENU?(y/n): ");
-											scanf("%s",&torna);
-										}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+											scanf("%s",&back);
+										}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 									}break;
 
 									case 23:{
@@ -1284,8 +1284,8 @@ void main(int argc,char const *argv[]){
 											int big=( a>b && a>c ? a:b>c ? b:c);
 											printf("The biggest number is: %d\n",big);
 											printf("Do you want to back to NUMBERS MENU?(y/n): ");
-											scanf("%s",&torna);
-										}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+											scanf("%s",&back);
+										}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 									}break;
 
 									case 24:{
@@ -1302,8 +1302,8 @@ void main(int argc,char const *argv[]){
 											scanf("%d",&n);
 											reverse_numb(n);
 											printf("Do you want to back to NUMBERS MENU?(y/n): ");
-											scanf("%s",&torna);
-										}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+											scanf("%s",&back);
+										}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 									}break;
 
 									case 25:{
@@ -1321,8 +1321,8 @@ void main(int argc,char const *argv[]){
 											double result=sqrt(num);
 											printf("The square root of %lf is : %lf\n",num,result);
 											printf("Do you want to back to NUMBERS MENU?(y/n): ");
-											scanf("%s",&torna);
-										}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+											scanf("%s",&back);
+										}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 									}break;
 
 									case 26:{
@@ -1340,8 +1340,8 @@ void main(int argc,char const *argv[]){
 											double sum=sumseries(n);
 											printf("\nSum of the above series: %lf\n",sum);
 											printf("Do you want to back to NUMBERS MENU?(y/n): ");
-											scanf("%s",&torna);
-										}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+											scanf("%s",&back);
+										}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 									}break;
 
 									case 27:{
@@ -1359,8 +1359,8 @@ void main(int argc,char const *argv[]){
 											scanf("%d",&b);
 											swap1(a,b);
 											printf("Do you want to back to NUMBERS MENU?(y/n): ");
-											scanf("%s",&torna);
-										}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+											scanf("%s",&back);
+										}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 									}break;
 
 									case 28:{
@@ -1378,8 +1378,8 @@ void main(int argc,char const *argv[]){
 											scanf("%d",&b);
 											swap2(a,b);
 											printf("Do you want to back to NUMBERS MENU?(y/n): ");
-											scanf("%s",&torna);
-										}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+											scanf("%s",&back);
+										}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 									}break;
 
 									case 29:{
@@ -1398,8 +1398,8 @@ void main(int argc,char const *argv[]){
 											swap3(&a,&b);
 											printf("a:%d b:%d\n",a,b);
 											printf("Do you want to back to NUMBERS MENU?(y/n): ");
-											scanf("%s",&torna);
-										}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+											scanf("%s",&back);
+										}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 									}break;
 
 									default:{
@@ -1412,13 +1412,13 @@ void main(int argc,char const *argv[]){
 											printf("│              └► X.  DEFAULT: ERROR CHOICE!                                   │\n");
 											printf("└──────────────────────────────────────────────────────────────────────────────┘\n");
 											printf("Do you want to back to NUMBERS MENU?(y/n): ");
-											scanf("%s",&torna);
-										}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+											scanf("%s",&back);
+										}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 									}break;
 								}
 								printf("Do you want to back to BASIC MENU?(y/n): ");
-								scanf("%s",&torna);
-							}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+								scanf("%s",&back);
+							}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 						}break;
 
 						case 6:{
@@ -1480,8 +1480,8 @@ void main(int argc,char const *argv[]){
 											printf("└──────────────────────────────────────────────────────────────────────────────┘\n");
 											area_circle();
 											printf("Do you want to back to MATH FORMULA MENU?(y/n): ");
-											scanf("%s",&torna);
-										}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+											scanf("%s",&back);
+										}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 									}break;
 
 									case 2:{
@@ -1495,8 +1495,8 @@ void main(int argc,char const *argv[]){
 											printf("└──────────────────────────────────────────────────────────────────────────────┘\n");
 											area_triangle();
 											printf("Do you want to back to MATH FORMULA MENU?(y/n): ");
-											scanf("%s",&torna);
-										}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+											scanf("%s",&back);
+										}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 									}break;
 
 									case 3:{
@@ -1510,8 +1510,8 @@ void main(int argc,char const *argv[]){
 											printf("└──────────────────────────────────────────────────────────────────────────────┘\n");
 											area_parallelogram();
 											printf("Do you want to back to MATH FORMULA MENU?(y/n): ");
-											scanf("%s",&torna);
-										}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+											scanf("%s",&back);
+										}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 									}break;
 
 									case 4:{
@@ -1525,8 +1525,8 @@ void main(int argc,char const *argv[]){
 											printf("└──────────────────────────────────────────────────────────────────────────────┘\n");
 											area_rhombus();
 											printf("Do you want to back to MATH FORMULA MENU?(y/n): ");
-											scanf("%s",&torna);
-										}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+											scanf("%s",&back);
+										}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 									}break;
 
 									case 5:{
@@ -1540,8 +1540,8 @@ void main(int argc,char const *argv[]){
 											printf("└──────────────────────────────────────────────────────────────────────────────┘\n");
 											area_right_angled_triangle();
 											printf("Do you want to back to MATH FORMULA MENU?(y/n): ");
-											scanf("%s",&torna);
-										}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+											scanf("%s",&back);
+										}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 									}break;
 
 									case 6:{
@@ -1555,8 +1555,8 @@ void main(int argc,char const *argv[]){
 											printf("└──────────────────────────────────────────────────────────────────────────────┘\n");
 											probability_distribution();
 											printf("Do you want to back to MATH FORMULA MENU?(y/n): ");
-											scanf("%s",&torna);
-										}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+											scanf("%s",&back);
+										}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 									}break;
 
 									case 7:{
@@ -1570,8 +1570,8 @@ void main(int argc,char const *argv[]){
 											printf("└──────────────────────────────────────────────────────────────────────────────┘\n");
 											sin_x();
 											printf("Do you want to back to MATH FORMULA MENU?(y/n): ");
-											scanf("%s",&torna);
-										}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+											scanf("%s",&back);
+										}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 									}break;
 
 									case 8:{
@@ -1585,8 +1585,8 @@ void main(int argc,char const *argv[]){
 											printf("└──────────────────────────────────────────────────────────────────────────────┘\n");
 											cos_x();
 											printf("Do you want to back to MATH FORMULA MENU?(y/n): ");
-											scanf("%s",&torna);
-										}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+											scanf("%s",&back);
+										}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 									}break;
 
 									case 9:{
@@ -1600,8 +1600,8 @@ void main(int argc,char const *argv[]){
 											printf("└──────────────────────────────────────────────────────────────────────────────┘\n");
 											cosx_series();
 											printf("Do you want to back to MATH FORMULA MENU?(y/n): ");
-											scanf("%s",&torna);
-										}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+											scanf("%s",&back);
+										}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 									}break;
 
 									case 10:{
@@ -1615,8 +1615,8 @@ void main(int argc,char const *argv[]){
 											printf("└──────────────────────────────────────────────────────────────────────────────┘\n");
 											surface_area_volume_cube();
 											printf("Do you want to back to MATH FORMULA MENU?(y/n): ");
-											scanf("%s",&torna);
-										}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+											scanf("%s",&back);
+										}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 									}break;
 
 									case 11:{
@@ -1633,8 +1633,8 @@ void main(int argc,char const *argv[]){
 											scanf("%f%f%f",&a,&b,&c);
 											roots_quadr_equation(a,b,c);
 											printf("Do you want to back to MATH FORMULA MENU?(y/n): ");
-											scanf("%s",&torna);
-										}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+											scanf("%s",&back);
+										}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 									}break;
 
 									case 12:{
@@ -1651,8 +1651,8 @@ void main(int argc,char const *argv[]){
 											scanf("%f %f %f",&a,&b,&c);
 											greatest_three_number(a,b,c);
 											printf("Do you want to back to MATH FORMULA MENU?(y/n): ");
-											scanf("%s",&torna);
-										}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+											scanf("%s",&back);
+										}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 									}break;
 									
 									case 13:{
@@ -1666,8 +1666,8 @@ void main(int argc,char const *argv[]){
 											printf("└──────────────────────────────────────────────────────────────────────────────┘\n");
 											leap_year();
 											printf("Do you want to back to MATH FORMULA MENU?(y/n): ");
-											scanf("%s",&torna);
-										}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+											scanf("%s",&back);
+										}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 									}break;
 
 									case 14:{
@@ -1684,8 +1684,8 @@ void main(int argc,char const *argv[]){
 											scanf("%d",&number);
 											perfect_square(number);
 											printf("Do you want to back to MATH FORMULA MENU?(y/n): ");
-											scanf("%s",&torna);
-										}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+											scanf("%s",&back);
+										}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 									}break;
 									
 									case 15:{
@@ -1703,8 +1703,8 @@ void main(int argc,char const *argv[]){
 											scanf("%f %f %d",&principal_amt,&rate,&time);
 											simple_interest(principal_amt,rate,time);
 											printf("Do you want to back to MATH FORMULA MENU?(y/n): ");
-											scanf("%s",&torna);
-										}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+											scanf("%s",&back);
+										}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 									}break;
 
 									case 16:{
@@ -1722,8 +1722,8 @@ void main(int argc,char const *argv[]){
 											int sum=((n/2)*((n/2)+1));
 											printf("Sum of even numbers between 1 to %d: %d\n",n,sum);
 											printf("Do you want to back to MATH FORMULA MENU?(y/n): ");
-											scanf("%s",&torna);
-										}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+											scanf("%s",&back);
+										}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 									}break;
 
 									case 17:{
@@ -1744,8 +1744,8 @@ void main(int argc,char const *argv[]){
 											scanf("%d",&d);
 											sum_aps(a,n,d);
 											printf("Do you want to back to MATH FORMULA MENU?(y/n): ");
-											scanf("%s",&torna);
-										}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+											scanf("%s",&back);
+										}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 									}break;
 
 									case 18:{
@@ -1767,8 +1767,8 @@ void main(int argc,char const *argv[]){
 											scanf("%f",&r);
 											sum_gps(a,n,r);
 											printf("Do you want to back to MATH FORMULA MENU?(y/n): ");
-											scanf("%s",&torna);
-										}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+											scanf("%s",&back);
+										}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 									}break;
 
 									case 19:{
@@ -1787,8 +1787,8 @@ void main(int argc,char const *argv[]){
 											scanf("%d",&n);
 											printf("the Sum of H.P Series is = %f\n",sum_hps(n,sum));
 											printf("Do you want to back to MATH FORMULA MENU?(y/n): ");
-											scanf("%s",&torna);
-										}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+											scanf("%s",&back);
+										}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 									}break;
 
 									case 20:{
@@ -1805,8 +1805,8 @@ void main(int argc,char const *argv[]){
 											scanf("%f%f",&radius,&height);
 											vol_sur_cylinder(radius,height);
 											printf("Do you want to back to MATH FORMULA MENU?(y/n): ");
-											scanf("%s",&torna);
-										}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+											scanf("%s",&back);
+										}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 									}break;
 
 									case 21:{
@@ -1823,8 +1823,8 @@ void main(int argc,char const *argv[]){
 											scanf("%f%f%f",&width,&length,&height);
 											vol_sur_cuboid(width,length,height);
 											printf("Do you want to back to MATH FORMULA MENU?(y/n): ");
-											scanf("%s",&torna);
-										}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+											scanf("%s",&back);
+										}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 									}break;
 
 									case 22:{
@@ -1841,8 +1841,8 @@ void main(int argc,char const *argv[]){
 											scanf("%f%f",&radius,&height);
 											vol_sur_cone(radius,height);
 											printf("Do you want to back to MATH FORMULA MENU?(y/n): ");
-											scanf("%s",&torna);
-										}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+											scanf("%s",&back);
+										}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 									}break;
 
 									case 23:{
@@ -1859,8 +1859,8 @@ void main(int argc,char const *argv[]){
 											scanf("%f",&radius);
 											vol_sur_sphare(radius);
 											printf("Do you want to back to MATH FORMULA MENU?(y/n): ");
-											scanf("%s",&torna);
-										}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+											scanf("%s",&back);
+										}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 									}break;
 
 									default:{
@@ -1873,13 +1873,13 @@ void main(int argc,char const *argv[]){
 											printf("│              └► X.  DEFAULT: ERROR CHOICE!                                   │\n");
 											printf("└──────────────────────────────────────────────────────────────────────────────┘\n");
 											printf("Do you want to back to MATH FORMULA MENU?(y/n): ");
-											scanf("%s",&torna);
-										}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+											scanf("%s",&back);
+										}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 									}break;
 								}
 								printf("Do you want to back to BASIC MENU?(y/n): ");
-								scanf("%s",&torna);
-							}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+								scanf("%s",&back);
+							}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 						}break;
 
 						case 7:{
@@ -1923,8 +1923,8 @@ void main(int argc,char const *argv[]){
 											printf("Machine Epsilon (Single Precision): %.16f\n",epsilon1);
 											printf("Machine Epsilon (Double Precision): %.32f\n",epsilon2);
 											printf("Do you want to back to FLOATING-POINT ARITHMETIC MENU?(y/n): ");
-											scanf("%s",&torna);
-										}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+											scanf("%s",&back);
+										}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 									}break;
 
 									case 2:{
@@ -1941,8 +1941,8 @@ void main(int argc,char const *argv[]){
 											printf("Minimum Real Number (Single Precision): %E\n",rmins);
 											printf("Minimum Real Number (Double Precision): %E\n",rmind);
 											printf("Do you want to back to FLOATING-POINT ARITHMETIC MENU?(y/n): ");
-											scanf("%s",&torna);
-										}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+											scanf("%s",&back);
+										}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 									}break;
 
 									default:{
@@ -1955,13 +1955,13 @@ void main(int argc,char const *argv[]){
 											printf("│              └► X.  DEFAULT: ERROR CHOICE!                                   │\n");
 											printf("└──────────────────────────────────────────────────────────────────────────────┘\n");
 											printf("Do you want to back to FLOATING-POINT ARITHMETIC MENU?(y/n): ");
-											scanf("%s",&torna);
-										}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+											scanf("%s",&back);
+										}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 									}break;
 								}
 								printf("Do you want to back to BASIC MENU?(y/n): ");
-								scanf("%s",&torna);
-							}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+								scanf("%s",&back);
+							}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 						}break;
 
 						case 8:{
@@ -2015,8 +2015,8 @@ void main(int argc,char const *argv[]){
 											scanf("%d",&n);
 											printf("%d in binary = %d in decimal\n",n,binary_decimal(n));
 											printf("Do you want to back to CONVERSIONS MENU?(y/n): ");
-											scanf("%s",&torna);
-										}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+											scanf("%s",&back);
+										}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 									}break;
 
 									case 2:{
@@ -2033,8 +2033,8 @@ void main(int argc,char const *argv[]){
 											scanf("%ld",&n);
 											printf("%lo in binary = %lo in octal\n",n,binary_octal(n));
 											printf("Do you want to back to CONVERSIONS MENU?(y/n): ");
-											scanf("%s",&torna);
-										}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+											scanf("%s",&back);
+										}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 									}break;
 
 									case 3:{
@@ -2051,8 +2051,8 @@ void main(int argc,char const *argv[]){
 											scanf("%ld",&n);
 											printf("%lo in binary = %lX in hexadecimal\n",n,binary_hexadecimal(n));
 											printf("Do you want to back to CONVERSIONS MENU?(y/n): ");
-											scanf("%s",&torna);
-										}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+											scanf("%s",&back);
+										}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 									}break;
 									
 									case 4:{
@@ -2071,8 +2071,8 @@ void main(int argc,char const *argv[]){
 											uppercase_lowercase(str);
 											printf("%s in lowercase\n",str);
 											printf("Do you want to back to CONVERSIONS MENU?(y/n): ");
-											scanf("%s",&torna);
-										}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+											scanf("%s",&back);
+										}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 									}break;
 
 									case 5:{
@@ -2091,8 +2091,8 @@ void main(int argc,char const *argv[]){
 											reverse_char(strn);
 											printf(" reversed\n");
 											printf("Do you want to back to CONVERSIONS MENU?(y/n): ");
-											scanf("%s",&torna);
-										}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+											scanf("%s",&back);
+										}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 									}break;
 
 									case 6:{
@@ -2172,8 +2172,8 @@ void main(int argc,char const *argv[]){
 											}
 											printf(" roman number\n");
 											printf("Do you want to back to CONVERSIONS MENU?(y/n): ");
-											scanf("%s",&torna);
-										}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+											scanf("%s",&back);
+										}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 									}break;
 
 									case 7:{
@@ -2190,8 +2190,8 @@ void main(int argc,char const *argv[]){
 											scanf("%s",str);
 											printf("%s roman number = %d decimal\n",str,romanToDecimal(str));
 											printf("Do you want to back to CONVERSIONS MENU?(y/n): ");
-											scanf("%s",&torna);
-										}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+											scanf("%s",&back);
+										}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 									}break;
 									
 									case 8:{
@@ -2210,8 +2210,8 @@ void main(int argc,char const *argv[]){
 											decimal_hexadecimal(decimal);
 											printf(" hexadecimal\n");
 											printf("Do you want to back to CONVERSIONS MENU?(y/n): ");
-											scanf("%s",&torna);
-										}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+											scanf("%s",&back);
+										}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 									}break;
 
 									case 9:{
@@ -2231,8 +2231,8 @@ void main(int argc,char const *argv[]){
 											decimal_octal(decimal,octal);
 											printf(" octal\n");
 											printf("Do you want to back to CONVERSIONS MENU?(y/n): ");
-											scanf("%s",&torna);
-										}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+											scanf("%s",&back);
+										}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 									}break;
 
 									case 10:{
@@ -2250,8 +2250,8 @@ void main(int argc,char const *argv[]){
 											printf("%d decimal = ",n);
 											decimal_binary(n);
 											printf("Do you want to back to CONVERSIONS MENU?(y/n): ");
-											scanf("%s",&torna);
-										}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+											scanf("%s",&back);
+										}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 									}break;
 
 									case 11:{
@@ -2269,8 +2269,8 @@ void main(int argc,char const *argv[]){
 											printf("%ld octal = ",octal);
 											printf("%d decimal\n",octal_decimal(octal,decimal));
 											printf("Do you want to back to CONVERSIONS MENU?(y/n): ");
-											scanf("%s",&torna);
-										}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+											scanf("%s",&back);
+										}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 									}break;
 									
 									case 12:{
@@ -2289,8 +2289,8 @@ void main(int argc,char const *argv[]){
 											octal_binary(octal);
 											printf(" binary\n");
 											printf("Do you want to back to CONVERSIONS MENU?(y/n): ");
-											scanf("%s",&torna);
-										}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+											scanf("%s",&back);
+										}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 									}break;
 
 									case 13:{
@@ -2308,8 +2308,8 @@ void main(int argc,char const *argv[]){
 											fahrenheit=celsius_fahrenheit(celsius,fahrenheit);
 											printf("%f°C = %f°F\n",celsius,fahrenheit);
 											printf("Do you want to back to CONVERSIONS MENU?(y/n): ");
-											scanf("%s",&torna);
-										}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+											scanf("%s",&back);
+										}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 									}break;
 
 									case 14:{
@@ -2328,8 +2328,8 @@ void main(int argc,char const *argv[]){
 											celsius=fahrenheit_celsius(fahrenheit,celsius);
 											printf("%d°F = %lf°C\n",fahrenheit,celsius);
 											printf("Do you want to back to CONVERSIONS MENU?(y/n): ");
-											scanf("%s",&torna);
-										}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+											scanf("%s",&back);
+										}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 									}break;
 
 									default:{
@@ -2342,13 +2342,13 @@ void main(int argc,char const *argv[]){
 											printf("│              └► X.  DEFAULT: ERROR CHOICE!                                   │\n");
 											printf("└──────────────────────────────────────────────────────────────────────────────┘\n");
 											printf("Do you want to back to CONVERSIONS MENU?(y/n): ");
-											scanf("%s",&torna);
-										}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+											scanf("%s",&back);
+										}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 									}break;
 								}
 								printf("Do you want to back to BASIC MENU?(y/n): ");
-								scanf("%s",&torna);
-							}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+								scanf("%s",&back);
+							}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 						}break;
 
 						case 9:{
@@ -2400,8 +2400,8 @@ void main(int argc,char const *argv[]){
 											scanf("%d",&length);
 											randpass(length,33,126);
 											printf("Do you want to back to RANDPASS MENU?(y/n): ");
-											scanf("%s",&torna);
-										}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+											scanf("%s",&back);
+										}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 									}break;
 
 									case 2:{
@@ -2417,8 +2417,8 @@ void main(int argc,char const *argv[]){
 											scanf("%d",&length);
 											randpass(length,65,90);
 											printf("Do you want to back to RANDPASS MENU?(y/n): ");
-											scanf("%s",&torna);
-										}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+											scanf("%s",&back);
+										}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 									}break;
 
 									case 3:{
@@ -2434,8 +2434,8 @@ void main(int argc,char const *argv[]){
 											scanf("%d",&length);
 											randpass(length,97,122);
 											printf("Do you want to back to RANDPASS MENU?(y/n): ");
-											scanf("%s",&torna);
-										}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+											scanf("%s",&back);
+										}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 									}break;
 
 									case 4:{
@@ -2451,8 +2451,8 @@ void main(int argc,char const *argv[]){
 											scanf("%d",&length);
 											randpass(length,48,57);
 											printf("Do you want to back to RANDPASS MENU?(y/n): ");
-											scanf("%s",&torna);
-										}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+											scanf("%s",&back);
+										}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 									}break;
 
 									case 5:{
@@ -2468,8 +2468,8 @@ void main(int argc,char const *argv[]){
 											scanf("%d",&length);
 											randpass_sym(length,33,126);
 											printf("Do you want to back to RANDPASS MENU?(y/n): ");
-											scanf("%s",&torna);
-										}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+											scanf("%s",&back);
+										}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 									}break;
 
 									case 6:{
@@ -2485,8 +2485,8 @@ void main(int argc,char const *argv[]){
 											scanf("%d",&length);
 											randpass_cl_cu(length,33,126);
 											printf("Do you want to back to RANDPASS MENU?(y/n): ");
-											scanf("%s",&torna);
-										}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+											scanf("%s",&back);
+										}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 									}break;
 
 									case 7:{
@@ -2502,8 +2502,8 @@ void main(int argc,char const *argv[]){
 											scanf("%d",&length);
 											randpass_cl_cu_num(length,33,126);
 											printf("Do you want to back to RANDPASS MENU?(y/n): ");
-											scanf("%s",&torna);
-										}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+											scanf("%s",&back);
+										}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 									}break;
 
 									case 8:{
@@ -2519,8 +2519,8 @@ void main(int argc,char const *argv[]){
 											scanf("%d",&length);
 											randpass_cl_cu_sym(length,33,126);
 											printf("Do you want to back to RANDPASS MENU?(y/n): ");
-											scanf("%s",&torna);
-										}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+											scanf("%s",&back);
+										}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 									}break;
 
 									case 9:{
@@ -2536,8 +2536,8 @@ void main(int argc,char const *argv[]){
 											scanf("%d",&length);
 											randpass_cu_num(length,33,126);
 											printf("Do you want to back to RANDPASS MENU?(y/n): ");
-											scanf("%s",&torna);
-										}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+											scanf("%s",&back);
+										}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 									}break;
 
 									case 10:{
@@ -2553,8 +2553,8 @@ void main(int argc,char const *argv[]){
 											scanf("%d",&length);
 											randpass_cu_sym(length,33,126);
 											printf("Do you want to back to RANDPASS MENU?(y/n): ");
-											scanf("%s",&torna);
-										}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+											scanf("%s",&back);
+										}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 									}break;
 
 									case 11:{
@@ -2570,8 +2570,8 @@ void main(int argc,char const *argv[]){
 											scanf("%d",&length);
 											randpass_cl_num(length,33,126);
 											printf("Do you want to back to RANDPASS MENU?(y/n): ");
-											scanf("%s",&torna);
-										}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+											scanf("%s",&back);
+										}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 									}break;
 
 									case 12:{
@@ -2587,8 +2587,8 @@ void main(int argc,char const *argv[]){
 											scanf("%d",&length);
 											randpass_cl_sym(length,33,126);
 											printf("Do you want to back to RANDPASS MENU?(y/n): ");
-											scanf("%s",&torna);
-										}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+											scanf("%s",&back);
+										}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 									}break;
 
 									case 13:{
@@ -2604,8 +2604,8 @@ void main(int argc,char const *argv[]){
 											scanf("%d",&length);
 											randpass_num_sym(length,33,126);
 											printf("Do you want to back to RANDPASS MENU?(y/n): ");
-											scanf("%s",&torna);
-										}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+											scanf("%s",&back);
+										}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 									}break;
 									
 									default:{
@@ -2618,13 +2618,13 @@ void main(int argc,char const *argv[]){
 											printf("│              └► X.  DEFAULT: ERROR CHOICE!                                   │\n");
 											printf("└──────────────────────────────────────────────────────────────────────────────┘\n");
 											printf("Do you want to back to RANDPASS MENU?(y/n): ");
-											scanf("%s",&torna);
-										}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+											scanf("%s",&back);
+										}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 									}break;
 								}
 								printf("Do you want to back to BASIC MENU?(y/n): ");
-								scanf("%s",&torna);
-							}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+								scanf("%s",&back);
+							}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 						}break;
 
 						default:{
@@ -2636,13 +2636,13 @@ void main(int argc,char const *argv[]){
 								printf("│       └► X.  DEFAULT: ERROR CHOICE!                                          │\n");
 								printf("└──────────────────────────────────────────────────────────────────────────────┘\n");
 								printf("Do you want to back to BASIC MENU?(y/n): ");
-								scanf("%s",&torna);
-							}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+								scanf("%s",&back);
+							}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 						}break;
 					}
 					printf("Do you want to back to MAIN MENU?(y/n): ");
-					scanf("%s",&torna);
-				}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+					scanf("%s",&back);
+				}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 			}break; //case 1 (basic)
 
 			case 2:{ //data-struct
@@ -2715,8 +2715,8 @@ void main(int argc,char const *argv[]){
 											scanf("%d",&dim);
 											ins_array(dim,A);
 											printf("Do you want to back to ARRAY MENU?(y/n): ");
-											scanf("%s",&torna);
-										}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+											scanf("%s",&back);
+										}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 									}break;
 
 									case 2:{
@@ -2765,8 +2765,8 @@ void main(int argc,char const *argv[]){
 														cost_piu_array(k,A,dim);
 														print_array(dim,A);
 														printf("Do you want to back to OPERATIONS?(y/n): ");
-														scanf("%s",&torna);
-													}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+														scanf("%s",&back);
+													}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 												}break;
 
 												case 2:{
@@ -2784,8 +2784,8 @@ void main(int argc,char const *argv[]){
 														cost_per_array(k,A,dim);
 														print_array(dim,A);
 														printf("Do you want to back to OPERATIONS?(y/n): ");
-														scanf("%s",&torna);
-													}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+														scanf("%s",&back);
+													}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 												}break;
 
 												case 3:{
@@ -2801,8 +2801,8 @@ void main(int argc,char const *argv[]){
 														A_piu_A(A,dim);
 														print_array(dim,A);
 														printf("Do you want to back to OPERATIONS?(y/n): ");
-														scanf("%s",&torna);
-													}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+														scanf("%s",&back);
+													}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 												}break;
 
 												case 4:{
@@ -2818,8 +2818,8 @@ void main(int argc,char const *argv[]){
 														A_per_A(A,dim);
 														print_array(dim,A);
 														printf("Do you want to back to OPERATIONS?(y/n): ");
-														scanf("%s",&torna);
-													}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+														scanf("%s",&back);
+													}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 												}break;
 
 												case 5:{
@@ -2835,8 +2835,8 @@ void main(int argc,char const *argv[]){
 														inversione_array(A,dim);
 														print_array(dim,A);
 														printf("Do you want to back to OPERATIONS?(y/n): ");
-														scanf("%s",&torna);
-													}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+														scanf("%s",&back);
+													}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 												}break;
 
 												case 6:{
@@ -2853,8 +2853,8 @@ void main(int argc,char const *argv[]){
 														min=minimo(A,dim,min);
 														printf("MAX(A[%d])=%d,min(A[%d])=%d\n",dim,max,dim,min);
 														printf("Do you want to back to OPERATIONS?(y/n): ");
-														scanf("%s",&torna);
-													}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+														scanf("%s",&back);
+													}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 												}break;
 
 												default:{
@@ -2868,13 +2868,13 @@ void main(int argc,char const *argv[]){
 														printf("│                     └► X.  DEFAULT: ERROR CHOICE!                            │\n");
 														printf("└──────────────────────────────────────────────────────────────────────────────┘\n");
 														printf("Do you want to back to OPERATIONS?(y/n): ");
-														scanf("%s",&torna);
-													}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+														scanf("%s",&back);
+													}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 												}break;
 											}
 											printf("Do you want to back to ARRAY MENU?(y/n): ");
-											scanf("%s",&torna);
-										}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+											scanf("%s",&back);
+										}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 									}break;
 
 									case 3:{
@@ -2930,8 +2930,8 @@ void main(int argc,char const *argv[]){
 														printf("Array after:\n");
 														print_array(dim,A);
 														printf("Do you want to back to SORT?(y/n): ");
-														scanf("%s",&torna);
-													}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+														scanf("%s",&back);
+													}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 												}break;
 
 												case 2:{
@@ -2950,8 +2950,8 @@ void main(int argc,char const *argv[]){
 														printf("Array after:\n");
 														print_array(dim,A);
 														printf("Do you want to back to SORT?(y/n): ");
-														scanf("%s",&torna);
-													}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+														scanf("%s",&back);
+													}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 												}break;
 
 												case 3:{
@@ -2970,8 +2970,8 @@ void main(int argc,char const *argv[]){
 														printf("Array after:\n");
 														print_array(dim,A);
 														printf("Do you want to back to SORT?(y/n): ");
-														scanf("%s",&torna);
-													}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+														scanf("%s",&back);
+													}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 												}break;
 
 												case 4:{
@@ -2990,8 +2990,8 @@ void main(int argc,char const *argv[]){
 														printf("Array after:\n");
 														print_array(dim,A);
 														printf("Do you want to back to SORT?(y/n): ");
-														scanf("%s",&torna);
-													}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+														scanf("%s",&back);
+													}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 												}break;
 
 												case 5:{
@@ -3010,8 +3010,8 @@ void main(int argc,char const *argv[]){
 														printf("Array after:\n");
 														print_array(dim,A);
 														printf("Do you want to back to SORT?(y/n): ");
-														scanf("%s",&torna);
-													}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+														scanf("%s",&back);
+													}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 												}break;
 
 												case 6:{
@@ -3026,8 +3026,8 @@ void main(int argc,char const *argv[]){
 														printf("└──────────────────────────────────────────────────────────────────────────────┘\n");
 														//shell sort it
 														printf("Do you want to back to SORT?(y/n): ");
-														scanf("%s",&torna);
-													}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+														scanf("%s",&back);
+													}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 												}break;
 
 												case 7:{
@@ -3046,8 +3046,8 @@ void main(int argc,char const *argv[]){
 														printf("Array after:\n");
 														print_array(dim,A);
 														printf("Do you want to back to SORT?(y/n): ");
-														scanf("%s",&torna);
-													}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+														scanf("%s",&back);
+													}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 												}break;
 
 												case 8:{
@@ -3066,8 +3066,8 @@ void main(int argc,char const *argv[]){
 														printf("Array after:\n");
 														print_array(dim,A);
 														printf("Do you want to back to SORT?(y/n): ");
-														scanf("%s",&torna);
-													}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+														scanf("%s",&back);
+													}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 												}break;
 
 												case 9:{
@@ -3086,8 +3086,8 @@ void main(int argc,char const *argv[]){
 														printf("Array after:\n");
 														print_array(dim,A);
 														printf("Do you want to back to SORT?(y/n): ");
-														scanf("%s",&torna);
-													}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+														scanf("%s",&back);
+													}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 												}break;
 
 												case 10:{
@@ -3106,8 +3106,8 @@ void main(int argc,char const *argv[]){
 														printf("Array after:\n");
 														print_array(dim,A);
 														printf("Do you want to back to SORT?(y/n): ");
-														scanf("%s",&torna);
-													}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+														scanf("%s",&back);
+													}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 												}break;
 
 												case 11:{
@@ -3126,8 +3126,8 @@ void main(int argc,char const *argv[]){
 														printf("Array after:\n");
 														print_array(dim,A);
 														printf("Do you want to back to SORT?(y/n): ");
-														scanf("%s",&torna);
-													}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+														scanf("%s",&back);
+													}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 												}break;
 
 												case 12:{
@@ -3142,8 +3142,8 @@ void main(int argc,char const *argv[]){
 														printf("└──────────────────────────────────────────────────────────────────────────────┘\n");
 														//shell sort re
 														printf("Do you want to back to SORT?(y/n): ");
-														scanf("%s",&torna);
-													}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+														scanf("%s",&back);
+													}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 												}break;
 
 												default:{
@@ -3157,13 +3157,13 @@ void main(int argc,char const *argv[]){
 														printf("│                     └► X.  DEFAULT: ERROR CHOICE!                            │\n");
 														printf("└──────────────────────────────────────────────────────────────────────────────┘\n");
 														printf("Do you want to back to SORT?(y/n): ");
-														scanf("%s",&torna);
-													}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+														scanf("%s",&back);
+													}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 												}break;
 											}
 											printf("Do you want to back to ARRAY MENU?(y/n): ");
-											scanf("%s",&torna);
-										}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+											scanf("%s",&back);
+										}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 									}break;
 
 									case 4:{
@@ -3215,8 +3215,8 @@ void main(int argc,char const *argv[]){
 														}
 														print_array(dim,A);
 														printf("Do you want to back to SEARCHING?(y/n): ");
-														scanf("%s",&torna);
-													}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+														scanf("%s",&back);
+													}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 												}break;
 
 												case 2:{
@@ -3239,8 +3239,8 @@ void main(int argc,char const *argv[]){
 														}
 														print_array(dim,A);
 														printf("Do you want to back to SEARCHING?(y/n): ");
-														scanf("%s",&torna);
-													}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+														scanf("%s",&back);
+													}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 												}break;
 
 												case 3:{
@@ -3255,8 +3255,8 @@ void main(int argc,char const *argv[]){
 														printf("└──────────────────────────────────────────────────────────────────────────────┘\n");
 														
 														printf("Do you want to back to SEARCHING?(y/n): ");
-														scanf("%s",&torna);
-													}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+														scanf("%s",&back);
+													}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 												}break;
 
 												case 4:{
@@ -3271,8 +3271,8 @@ void main(int argc,char const *argv[]){
 														printf("└──────────────────────────────────────────────────────────────────────────────┘\n");
 														
 														printf("Do you want to back to SEARCHING?(y/n): ");
-														scanf("%s",&torna);
-													}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+														scanf("%s",&back);
+													}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 												}break;
 
 												default:{
@@ -3286,13 +3286,13 @@ void main(int argc,char const *argv[]){
 														printf("│                     └► X.  DEFAULT: ERROR CHOICE!                            │\n");
 														printf("└──────────────────────────────────────────────────────────────────────────────┘\n");
 														printf("Do you want to back to SEARCHING?(y/n): ");
-														scanf("%s",&torna);
-													}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+														scanf("%s",&back);
+													}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 												}break;
 											}
 											printf("Do you want to back to ARRAY MENU?(y/n): ");
-											scanf("%s",&torna);
-										}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+											scanf("%s",&back);
+										}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 									}break;
 
 									case 5:{
@@ -3305,8 +3305,8 @@ void main(int argc,char const *argv[]){
 											printf("│              └► 5.  CHECK                                                    │\n");
 											printf("└──────────────────────────────────────────────────────────────────────────────┘\n");
 											printf("Do you want to back to ARRAY MENU?(y/n): ");
-											scanf("%s",&torna);
-										}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+											scanf("%s",&back);
+										}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 									}break;
 									
 									default:{
@@ -3319,13 +3319,13 @@ void main(int argc,char const *argv[]){
 											printf("│              └► X.  DEFAULT: ERROR CHOICE!                                   │\n");
 											printf("└──────────────────────────────────────────────────────────────────────────────┘\n");
 											printf("Do you want to back to ARRAY MENU?(y/n): ");
-											scanf("%s",&torna);
-										}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+											scanf("%s",&back);
+										}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 									}break;
 								}
 								printf("Do you want to back to DATA-STRUCT MENU?(y/n): ");
-								scanf("%s",&torna);
-							}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+								scanf("%s",&back);
+							}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 						}break;
 						
 						case 2:{
@@ -3368,8 +3368,8 @@ void main(int argc,char const *argv[]){
 											printf("└──────────────────────────────────────────────────────────────────────────────┘\n");
 											ins_string(1,Str1,Str2,0,Str3);
 											printf("Do you want to back to STRING MENU?(y/n): ");
-											scanf("%s",&torna);
-										}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+											scanf("%s",&back);
+										}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 									}break;
 
 									case 2:{
@@ -3425,8 +3425,8 @@ void main(int argc,char const *argv[]){
 														print_string(1,Str1,Str2,0,Str3);
 														print_string(2,Str1,Str2,0,Str3);
 														printf("Do you want to back to OPERATIONS?(y/n): ");
-														scanf("%s",&torna);
-													}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+														scanf("%s",&back);
+													}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 												}break;
 
 												case 2:{
@@ -3448,8 +3448,8 @@ void main(int argc,char const *argv[]){
 														print_string(1,Str1,Str2,0,Str3);
 														print_string(2,Str1,Str2,0,Str3);
 														printf("Do you want to back to OPERATIONS?(y/n): ");
-														scanf("%s",&torna);
-													}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+														scanf("%s",&back);
+													}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 												}break;
 
 												case 3:{
@@ -3468,8 +3468,8 @@ void main(int argc,char const *argv[]){
 														printf("After conversion:\n");
 														print_string(1,Str1,Str2,0,Str3);
 														printf("Do you want to back to OPERATIONS?(y/n): ");
-														scanf("%s",&torna);
-													}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+														scanf("%s",&back);
+													}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 												}break;
 
 												case 4:{
@@ -3489,8 +3489,8 @@ void main(int argc,char const *argv[]){
 														printf("After remove spaces:\n");
 														print_string(1,Str1,Str2,0,Str3);
 														printf("Do you want to back to OPERATIONS?(y/n): ");
-														scanf("%s",&torna);
-													}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+														scanf("%s",&back);
+													}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 												}break;
 
 												case 5:{
@@ -3510,8 +3510,8 @@ void main(int argc,char const *argv[]){
 														printf("After remove characters:\n");
 														print_string(1,Str1,Str2,0,Str3);
 														printf("Do you want to back to OPERATIONS?(y/n): ");
-														scanf("%s",&torna);
-													}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+														scanf("%s",&back);
+													}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 												}break;
 
 												case 6:{
@@ -3528,8 +3528,8 @@ void main(int argc,char const *argv[]){
 														print_string(1,Str1,Str2,0,Str3);
 														reverse_string_pointer(1,Str1);
 														printf("Do you want to back to OPERATIONS?(y/n): ");
-														scanf("%s",&torna);
-													}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+														scanf("%s",&back);
+													}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 												}break;
 
 												case 7:{
@@ -3548,8 +3548,8 @@ void main(int argc,char const *argv[]){
 														printf("After reverse:\n");
 														print_string(1,Str1,Str2,0,Str3);
 														printf("Do you want to back to OPERATIONS?(y/n): ");
-														scanf("%s",&torna);
-													}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+														scanf("%s",&back);
+													}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 												}break;
 
 												case 8:{
@@ -3570,8 +3570,8 @@ void main(int argc,char const *argv[]){
 														print_string(1,Str1,Str2,0,Str3);
 														print_string(2,Str1,Str2,0,Str3);
 														printf("Do you want to back to OPERATIONS?(y/n): ");
-														scanf("%s",&torna);
-													}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+														scanf("%s",&back);
+													}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 												}break;
 
 												case 9:{
@@ -3593,8 +3593,8 @@ void main(int argc,char const *argv[]){
 														print_string(1,Str1,Str2,0,Str3);
 														print_string(2,Str1,Str2,0,Str3);
 														printf("Do you want to back to OPERATIONS?(y/n): ");
-														scanf("%s",&torna);
-													}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+														scanf("%s",&back);
+													}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 												}break;
 
 												default:{
@@ -3608,13 +3608,13 @@ void main(int argc,char const *argv[]){
 														printf("│                     └► X.  DEFAULT: ERROR CHOICE!                            │\n");
 														printf("└──────────────────────────────────────────────────────────────────────────────┘\n");
 														printf("Do you want to back to OPERATIONS?(y/n): ");
-														scanf("%s",&torna);
-													}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+														scanf("%s",&back);
+													}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 												}break;
 											}
 											printf("Do you want to back to STRING MENU?(y/n): ");
-											scanf("%s",&torna);
-										}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+											scanf("%s",&back);
+										}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 									}break;
 
 									case 3:{
@@ -3655,8 +3655,8 @@ void main(int argc,char const *argv[]){
 														printf("└──────────────────────────────────────────────────────────────────────────────┘\n");
 														sort_string(3,Str1,Str2,Str3);
 														printf("Do you want to back to SORT?(y/n): ");
-														scanf("%s",&torna);
-													}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+														scanf("%s",&back);
+													}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 												}break;
 
 												default:{
@@ -3670,13 +3670,13 @@ void main(int argc,char const *argv[]){
 														printf("│                     └► X.  DEFAULT: ERROR CHOICE!                            │\n");
 														printf("└──────────────────────────────────────────────────────────────────────────────┘\n");
 														printf("Do you want to back to SORT?(y/n): ");
-														scanf("%s",&torna);
-													}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+														scanf("%s",&back);
+													}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 												}break;
 											}
 											printf("Do you want to back to STRING MENU?(y/n): ");
-											scanf("%s",&torna);
-										}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+											scanf("%s",&back);
+										}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 									}break;
 
 									case 4:{
@@ -3715,13 +3715,13 @@ void main(int argc,char const *argv[]){
 														printf("│                     └► X.  DEFAULT: ERROR CHOICE!                            │\n");
 														printf("└──────────────────────────────────────────────────────────────────────────────┘\n");
 														printf("Do you want to back to SEARCHING?(y/n): ");
-														scanf("%s",&torna);
-													}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+														scanf("%s",&back);
+													}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 												}break;
 											}
 											printf("Do you want to back to STRING MENU?(y/n): ");
-											scanf("%s",&torna);
-										}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+											scanf("%s",&back);
+										}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 									}break;
 
 									case 5:{
@@ -3771,8 +3771,8 @@ void main(int argc,char const *argv[]){
 														c=count_vowels(Str1);
 														printf("Number of vowels in the string %s: are %d\n",Str1,c);
 														printf("Do you want to back to CHECK?(y/n): ");
-														scanf("%s",&torna);
-													}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+														scanf("%s",&back);
+													}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 												}break;
 
 												case 2:{
@@ -3795,8 +3795,8 @@ void main(int argc,char const *argv[]){
 															printf("Strings are not equal\n");
 														}
 														printf("Do you want to back to CHECK?(y/n): ");
-														scanf("%s",&torna);
-													}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+														scanf("%s",&back);
+													}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 												}break;
 
 												case 3:{
@@ -3817,8 +3817,8 @@ void main(int argc,char const *argv[]){
 															printf("Strings are not equal\n");
 														}
 														printf("Do you want to back to CHECK?(y/n): ");
-														scanf("%s",&torna);
-													}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+														scanf("%s",&back);
+													}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 												}break;
 
 												case 4:{
@@ -3834,8 +3834,8 @@ void main(int argc,char const *argv[]){
 														print_string(1,Str1,Str2,0,Str3);
 														count_freq_characters_string(Str1);
 														printf("Do you want to back to CHECK?(y/n): ");
-														scanf("%s",&torna);
-													}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+														scanf("%s",&back);
+													}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 												}break;
 
 												case 5:{
@@ -3851,8 +3851,8 @@ void main(int argc,char const *argv[]){
 														print_string(1,Str1,Str2,0,Str3);
 														count_upper_lower_characters_string(Str1);
 														printf("Do you want to back to CHECK?(y/n): ");
-														scanf("%s",&torna);
-													}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+														scanf("%s",&back);
+													}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 												}break;
 
 												case 6:{
@@ -3868,8 +3868,8 @@ void main(int argc,char const *argv[]){
 														print_string(1,Str1,Str2,0,Str3);
 														palindrome_string_array(Str1);
 														printf("Do you want to back to CHECK?(y/n): ");
-														scanf("%s",&torna);
-													}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+														scanf("%s",&back);
+													}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 												}break;
 
 												case 7:{
@@ -3885,8 +3885,8 @@ void main(int argc,char const *argv[]){
 														print_string(1,Str1,Str2,0,Str3);
 														palindrome_string(Str1);
 														printf("Do you want to back to CHECK?(y/n): ");
-														scanf("%s",&torna);
-													}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+														scanf("%s",&back);
+													}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 												}break;
 
 												default:{
@@ -3900,13 +3900,13 @@ void main(int argc,char const *argv[]){
 														printf("│                     └► X.  DEFAULT: ERROR CHOICE!                            │\n");
 														printf("└──────────────────────────────────────────────────────────────────────────────┘\n");
 														printf("Do you want to back to CHECK?(y/n): ");
-														scanf("%s",&torna);
-													}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+														scanf("%s",&back);
+													}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 												}break;
 											}
 											printf("Do you want to back to STRING MENU?(y/n): ");
-											scanf("%s",&torna);
-										}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+											scanf("%s",&back);
+										}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 									}break;
 									
 									default:{
@@ -3919,13 +3919,13 @@ void main(int argc,char const *argv[]){
 											printf("│              └► X.  DEFAULT: ERROR CHOICE!                                   │\n");
 											printf("└──────────────────────────────────────────────────────────────────────────────┘\n");
 											printf("Do you want to back to STRING MENU?(y/n): ");
-											scanf("%s",&torna);
-										}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+											scanf("%s",&back);
+										}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 									}break;
 								}
 								printf("Do you want to back to DATA-STRUCT MENU?(y/n): ");
-								scanf("%s",&torna);
-							}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+								scanf("%s",&back);
+							}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 						}break;
 
 						case 3:{
@@ -3971,8 +3971,8 @@ void main(int argc,char const *argv[]){
 											scanf("%d",&c);
 											ins_matrix(r,c,M);
 											printf("Do you want to back to MATRIX MENU?(y/n): ");
-											scanf("%s",&torna);
-										}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+											scanf("%s",&back);
+										}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 									}break;
 
 									case 2:{
@@ -4024,8 +4024,8 @@ void main(int argc,char const *argv[]){
 														printf("MATRIX AFTER k+M:\n");
 														print_matrix(r,c,M);
 														printf("Do you want to back to OPERATIONS MENU?(y/n): ");
-														scanf("%s",&torna);
-													}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+														scanf("%s",&back);
+													}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 												}break;
 
 												case 2:{
@@ -4044,8 +4044,8 @@ void main(int argc,char const *argv[]){
 														printf("MATRIX AFTER k*M:\n");
 														print_matrix(r,c,M);
 														printf("Do you want to back to OPERATIONS MENU?(y/n): ");
-														scanf("%s",&torna);
-													}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+														scanf("%s",&back);
+													}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 												}break;
 
 												case 3:{
@@ -4064,8 +4064,8 @@ void main(int argc,char const *argv[]){
 														printf("MATRIX AFTER M+M:\n");
 														print_matrix(r,c,M);
 														printf("Do you want to back to OPERATIONS MENU?(y/n): ");
-														scanf("%s",&torna);
-													}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+														scanf("%s",&back);
+													}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 												}break;
 
 												case 4:{
@@ -4084,8 +4084,8 @@ void main(int argc,char const *argv[]){
 														printf("MATRIX AFTER M*M:\n");
 														print_matrix(r,c,M);
 														printf("Do you want to back to OPERATIONS MENU?(y/n): ");
-														scanf("%s",&torna);
-													}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+														scanf("%s",&back);
+													}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 												}break;
 
 												case 5:{
@@ -4100,8 +4100,8 @@ void main(int argc,char const *argv[]){
 														printf("└──────────────────────────────────────────────────────────────────────────────┘\n");
 														inverse_matrix(r,c,M);
 														printf("Do you want to back to OPERATIONS MENU?(y/n): ");
-														scanf("%s",&torna);
-													}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+														scanf("%s",&back);
+													}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 												}break;
 
 												case 6:{
@@ -4118,8 +4118,8 @@ void main(int argc,char const *argv[]){
 														min=min_matrix(r,c,M,min);
 														printf("MAX(M[%d][%d])=%d,min(M[%d][%d])=%d\n",r,c,max,r,c,min);
 														printf("Do you want to back to OPERATIONS MENU?(y/n): ");
-														scanf("%s",&torna);
-													}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+														scanf("%s",&back);
+													}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 												}break;
 
 												case 7:{
@@ -4138,8 +4138,8 @@ void main(int argc,char const *argv[]){
 														printf("MATRIX AFTER TRASPOSITION:\n");
 														print_matrix(r,c,M);
 														printf("Do you want to back to OPERATIONS MENU?(y/n): ");
-														scanf("%s",&torna);
-													}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+														scanf("%s",&back);
+													}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 												}break;
 
 												default:{
@@ -4153,13 +4153,13 @@ void main(int argc,char const *argv[]){
 														printf("│                     └► X.  DEFAULT: ERROR CHOICE!                            │\n");
 														printf("└──────────────────────────────────────────────────────────────────────────────┘\n");
 														printf("Do you want to back to OPERATIONS?(y/n): ");
-														scanf("%s",&torna);
-													}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+														scanf("%s",&back);
+													}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 												}break;
 											}
 											printf("Do you want to back to MATRIX MENU?(y/n): ");
-											scanf("%s",&torna);
-										}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+											scanf("%s",&back);
+										}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 									}break;
 
 									case 3:{
@@ -4172,8 +4172,8 @@ void main(int argc,char const *argv[]){
 											printf("│              └► 3.  SORTING                                                  │\n");
 											printf("└──────────────────────────────────────────────────────────────────────────────┘\n");
 											printf("Do you want to back to MATRIX MENU?(y/n): ");
-											scanf("%s",&torna);
-										}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+											scanf("%s",&back);
+										}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 									}break;
 
 									case 4:{
@@ -4186,8 +4186,8 @@ void main(int argc,char const *argv[]){
 											printf("│              └► 4.  SEARCHING                                                │\n");
 											printf("└──────────────────────────────────────────────────────────────────────────────┘\n");
 											printf("Do you want to back to MATRIX MENU?(y/n): ");
-											scanf("%s",&torna);
-										}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+											scanf("%s",&back);
+										}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 									}break;
 
 									case 5:{
@@ -4231,8 +4231,8 @@ void main(int argc,char const *argv[]){
 														print_matrix(r,c,M);
 														printf("Determinant of %dX%d matrix is: %d\n",r,c,det(r,c,M));
 														printf("Do you want to back to CHECK MENU?(y/n): ");
-														scanf("%s",&torna);
-													}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+														scanf("%s",&back);
+													}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 												}break;
 
 												case 2:{
@@ -4248,8 +4248,8 @@ void main(int argc,char const *argv[]){
 														print_matrix(r,c,M);
 														sparse_matrix(r,c,M);
 														printf("Do you want to back to CHECK MENU?(y/n): ");
-														scanf("%s",&torna);
-													}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+														scanf("%s",&back);
+													}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 												}break;
 
 												case 3:{
@@ -4264,8 +4264,8 @@ void main(int argc,char const *argv[]){
 														printf("└──────────────────────────────────────────────────────────────────────────────┘\n");
 														isIdentity(r,c,M)? printf("Yes!\n") : printf("No!\n");
 														printf("Do you want to back to CHECK MENU?(y/n): ");
-														scanf("%s",&torna);
-													}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+														scanf("%s",&back);
+													}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 												}break;
 
 												default:{
@@ -4279,13 +4279,13 @@ void main(int argc,char const *argv[]){
 														printf("│                     └► X.  DEFAULT: ERROR CHOICE!                            │\n");
 														printf("└──────────────────────────────────────────────────────────────────────────────┘\n");
 														printf("Do you want to back to CHECK?(y/n): ");
-														scanf("%s",&torna);
-													}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+														scanf("%s",&back);
+													}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 												}break;
 											}
 											printf("Do you want to back to MATRIX MENU?(y/n): ");
-											scanf("%s",&torna);
-										}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+											scanf("%s",&back);
+										}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 									}break;
 									
 									default:{
@@ -4298,13 +4298,13 @@ void main(int argc,char const *argv[]){
 											printf("│              └► X.  DEFAULT: ERROR CHOICE!                                   │\n");
 											printf("└──────────────────────────────────────────────────────────────────────────────┘\n");
 											printf("Do you want to back to MATRIX MENU?(y/n): ");
-											scanf("%s",&torna);
-										}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+											scanf("%s",&back);
+										}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 									}break;
 								}
 								printf("Do you want to back to DATA-STRUCT MENU?(y/n): ");
-								scanf("%s",&torna);
-							}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+								scanf("%s",&back);
+							}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 						}break;
 
 						case 4:{
@@ -4397,8 +4397,8 @@ void main(int argc,char const *argv[]){
 														}
 														print_stack_it(&head);
 														printf("Do you want to back to INSERT?(y/n): ");
-														scanf("%s",&torna);
-													}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+														scanf("%s",&back);
+													}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 												}break;
 
 												case 2:{
@@ -4432,8 +4432,8 @@ void main(int argc,char const *argv[]){
 														}
 														print_stack_it(&head);
 														printf("Do you want to back to INSERT?(y/n): ");
-														scanf("%s",&torna);
-													}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+														scanf("%s",&back);
+													}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 												}break;
 
 												default:{
@@ -4447,13 +4447,13 @@ void main(int argc,char const *argv[]){
 														printf("│                     └► X.  DEFAULT: ERROR CHOICE!                            │\n");
 														printf("└──────────────────────────────────────────────────────────────────────────────┘\n");
 														printf("Do you want to back to INSERT?(y/n): ");
-														scanf("%s",&torna);
-													}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+														scanf("%s",&back);
+													}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 												}break;
 											}
 											printf("Do you want to back to STACK MENU?(y/n): ");
-											scanf("%s",&torna);
-										}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+											scanf("%s",&back);
+										}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 									}break;
 
 									case 2:{
@@ -4499,8 +4499,8 @@ void main(int argc,char const *argv[]){
 														printf("-After delete head:\n");
 														print_stack_it(&head);
 														printf("Do you want to back to DELETE?(y/n): ");
-														scanf("%s",&torna);
-													}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+														scanf("%s",&back);
+													}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 												}break;
 
 												case 2:{
@@ -4519,8 +4519,8 @@ void main(int argc,char const *argv[]){
 														printf("-After delete head:\n");
 														print_stack_it(&head);
 														printf("Do you want to back to DELETE?(y/n): ");
-														scanf("%s",&torna);
-													}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+														scanf("%s",&back);
+													}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 												}break;
 
 												default:{
@@ -4534,13 +4534,13 @@ void main(int argc,char const *argv[]){
 														printf("│                     └► X.  DEFAULT: ERROR CHOICE!                            │\n");
 														printf("└──────────────────────────────────────────────────────────────────────────────┘\n");
 														printf("Do you want to back to DELETE?(y/n): ");
-														scanf("%s",&torna);
-													}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+														scanf("%s",&back);
+													}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 												}break;
 											}
 											printf("Do you want to back to STACK MENU?(y/n): ");
-											scanf("%s",&torna);
-										}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+											scanf("%s",&back);
+										}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 									}break;
 
 									case 3:{
@@ -4588,8 +4588,8 @@ void main(int argc,char const *argv[]){
 														printf("└──────────────────────────────────────────────────────────────────────────────┘\n");
 														print_stack_it(&head);
 														printf("Do you want to back to OPERATIONS?(y/n): ");
-														scanf("%s",&torna);
-													}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+														scanf("%s",&back);
+													}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 												}break;
 
 												case 2:{
@@ -4608,8 +4608,8 @@ void main(int argc,char const *argv[]){
 														printf("-After reverse:\n");
 														print_stack_it(&head);
 														printf("Do you want to back to OPERATIONS?(y/n): ");
-														scanf("%s",&torna);
-													}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+														scanf("%s",&back);
+													}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 												}break;
 
 												case 3:{
@@ -4627,8 +4627,8 @@ void main(int argc,char const *argv[]){
 														scanf("%d",&val);
 														search_stack_it(&head,val)? printf("Yes\n") : printf("No\n");
 														printf("Do you want to back to OPERATIONS?(y/n): ");
-														scanf("%s",&torna);
-													}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+														scanf("%s",&back);
+													}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 												}break;
 
 												case 4:{
@@ -4649,8 +4649,8 @@ void main(int argc,char const *argv[]){
 														printf("-After swap:\n");
 														print_stack_it(&head);
 														printf("Do you want to back to OPERATIONS?(y/n): ");
-														scanf("%s",&torna);
-													}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+														scanf("%s",&back);
+													}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 												}break;
 
 												case 5:{
@@ -4666,8 +4666,8 @@ void main(int argc,char const *argv[]){
 														printf("L: { ");
 														print_stack_re(&head);
 														printf("Do you want to back to OPERATIONS?(y/n): ");
-														scanf("%s",&torna);
-													}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+														scanf("%s",&back);
+													}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 												}break;
 
 												case 6:{
@@ -4686,8 +4686,8 @@ void main(int argc,char const *argv[]){
 														printf("-After reverse:\n");
 														print_stack_it(&head);
 														printf("Do you want to back to OPERATIONS?(y/n): ");
-														scanf("%s",&torna);
-													}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+														scanf("%s",&back);
+													}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 												}break;
 
 												case 7:{
@@ -4705,8 +4705,8 @@ void main(int argc,char const *argv[]){
 														scanf("%d",&val);
 														search_stack_re(&head,val)? printf("Yes\n") : printf("No\n");
 														printf("Do you want to back to OPERATIONS?(y/n): ");
-														scanf("%s",&torna);
-													}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+														scanf("%s",&back);
+													}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 												}break;
 
 												case 8:{
@@ -4727,8 +4727,8 @@ void main(int argc,char const *argv[]){
 														printf("-After swap:\n");
 														print_stack_it(&head);
 														printf("Do you want to back to OPERATIONS?(y/n): ");
-														scanf("%s",&torna);
-													}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+														scanf("%s",&back);
+													}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 												}break;
 
 												default:{
@@ -4742,13 +4742,13 @@ void main(int argc,char const *argv[]){
 														printf("│                     └► X.  DEFAULT: ERROR CHOICE!                            │\n");
 														printf("└──────────────────────────────────────────────────────────────────────────────┘\n");
 														printf("Do you want to back to OPERATIONS?(y/n): ");
-														scanf("%s",&torna);
-													}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+														scanf("%s",&back);
+													}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 												}break;
 											}
 											printf("Do you want to back to STACK MENU?(y/n): ");
-											scanf("%s",&torna);
-										}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+											scanf("%s",&back);
+										}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 									}break;
 
 									case 4:{
@@ -4800,8 +4800,8 @@ void main(int argc,char const *argv[]){
 														printf("-After bubble sort:\n");
 														print_stack_it(&head);
 														printf("Do you want to back to SORTING?(y/n): ");
-														scanf("%s",&torna);
-													}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+														scanf("%s",&back);
+													}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 												}break;
 
 												case 2:{
@@ -4820,8 +4820,8 @@ void main(int argc,char const *argv[]){
 														printf("-After insertion sort:\n");
 														print_stack_it(&head);
 														printf("Do you want to back to SORTING?(y/n): ");
-														scanf("%s",&torna);
-													}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+														scanf("%s",&back);
+													}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 												}break;
 
 												case 3:{
@@ -4840,8 +4840,8 @@ void main(int argc,char const *argv[]){
 														printf("-After merge sort:\n");
 														print_stack_it(&head);
 														printf("Do you want to back to SORTING?(y/n): ");
-														scanf("%s",&torna);
-													}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+														scanf("%s",&back);
+													}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 												}break;
 
 												case 4:{
@@ -4856,8 +4856,8 @@ void main(int argc,char const *argv[]){
 														printf("└──────────────────────────────────────────────────────────────────────────────┘\n");
 														
 														printf("Do you want to back to SORTING?(y/n): ");
-														scanf("%s",&torna);
-													}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+														scanf("%s",&back);
+													}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 												}break;
 
 												case 5:{
@@ -4872,8 +4872,8 @@ void main(int argc,char const *argv[]){
 														printf("└──────────────────────────────────────────────────────────────────────────────┘\n");
 														
 														printf("Do you want to back to SORTING?(y/n): ");
-														scanf("%s",&torna);
-													}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+														scanf("%s",&back);
+													}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 												}break;
 
 												case 6:{
@@ -4888,8 +4888,8 @@ void main(int argc,char const *argv[]){
 														printf("└──────────────────────────────────────────────────────────────────────────────┘\n");
 														
 														printf("Do you want to back to SORTING?(y/n): ");
-														scanf("%s",&torna);
-													}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+														scanf("%s",&back);
+													}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 												}break;
 
 												case 7:{
@@ -4904,8 +4904,8 @@ void main(int argc,char const *argv[]){
 														printf("└──────────────────────────────────────────────────────────────────────────────┘\n");
 														
 														printf("Do you want to back to SORTING?(y/n): ");
-														scanf("%s",&torna);
-													}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+														scanf("%s",&back);
+													}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 												}break;
 
 												case 8:{
@@ -4924,8 +4924,8 @@ void main(int argc,char const *argv[]){
 														printf("-After quick sort:\n");
 														print_stack_it(&head);
 														printf("Do you want to back to SORTING?(y/n): ");
-														scanf("%s",&torna);
-													}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+														scanf("%s",&back);
+													}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 												}break;
 
 												default:{
@@ -4939,13 +4939,13 @@ void main(int argc,char const *argv[]){
 														printf("│                     └► X.  DEFAULT: ERROR CHOICE!                            │\n");
 														printf("└──────────────────────────────────────────────────────────────────────────────┘\n");
 														printf("Do you want to back to SORTING?(y/n): ");
-														scanf("%s",&torna);
-													}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+														scanf("%s",&back);
+													}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 												}break;
 											}
 											printf("Do you want to back to STACK MENU?(y/n): ");
-											scanf("%s",&torna);
-										}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+											scanf("%s",&back);
+										}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 									}break;
 
 									case 5:{
@@ -4958,8 +4958,8 @@ void main(int argc,char const *argv[]){
 											printf("│              └► 5.  SEARCHING                                                │\n");
 											printf("└──────────────────────────────────────────────────────────────────────────────┘\n");
 											printf("Do you want to back to STACK MENU?(y/n): ");
-											scanf("%s",&torna);
-										}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+											scanf("%s",&back);
+										}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 									}break;
 
 									case 6:{
@@ -4972,8 +4972,8 @@ void main(int argc,char const *argv[]){
 											printf("│              └► 6.  CHECK                                                    │\n");
 											printf("└──────────────────────────────────────────────────────────────────────────────┘\n");
 											printf("Do you want to back to STACK MENU?(y/n): ");
-											scanf("%s",&torna);
-										}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+											scanf("%s",&back);
+										}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 									}break;
 									
 									default:{
@@ -4986,13 +4986,13 @@ void main(int argc,char const *argv[]){
 											printf("│              └► X.  DEFAULT: ERROR CHOICE!                                   │\n");
 											printf("└──────────────────────────────────────────────────────────────────────────────┘\n");
 											printf("Do you want to back to STACK MENU?(y/n): ");
-											scanf("%s",&torna);
-										}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+											scanf("%s",&back);
+										}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 									}break;
 								}
 								printf("Do you want to back to DATA-STRUCT MENU?(y/n): ");
-								scanf("%s",&torna);
-							}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+								scanf("%s",&back);
+							}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 						}break;
 
 						case 5:{
@@ -5085,8 +5085,8 @@ void main(int argc,char const *argv[]){
 														}
 														print_queue_it(&head);
 														printf("Do you want to back to INSERT?(y/n): ");
-														scanf("%s",&torna);
-													}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+														scanf("%s",&back);
+													}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 												}break;
 
 												case 2:{
@@ -5120,8 +5120,8 @@ void main(int argc,char const *argv[]){
 														}
 														print_queue_it(&head);
 														printf("Do you want to back to INSERT?(y/n): ");
-														scanf("%s",&torna);
-													}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+														scanf("%s",&back);
+													}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 												}break;
 
 												default:{
@@ -5135,13 +5135,13 @@ void main(int argc,char const *argv[]){
 														printf("│                     └► X.  DEFAULT: ERROR CHOICE!                            │\n");
 														printf("└──────────────────────────────────────────────────────────────────────────────┘\n");
 														printf("Do you want to back to INSERT?(y/n): ");
-														scanf("%s",&torna);
-													}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+														scanf("%s",&back);
+													}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 												}break;
 											}
 											printf("Do you want to back to QUEUE MENU?(y/n): ");
-											scanf("%s",&torna);
-										}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+											scanf("%s",&back);
+										}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 									}break;
 
 									case 2:{
@@ -5187,8 +5187,8 @@ void main(int argc,char const *argv[]){
 														printf("-After delete queue:\n");
 														print_queue_it(&head);
 														printf("Do you want to back to DELETE?(y/n): ");
-														scanf("%s",&torna);
-													}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+														scanf("%s",&back);
+													}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 												}break;
 
 												case 2:{
@@ -5207,8 +5207,8 @@ void main(int argc,char const *argv[]){
 														printf("-After delete queue:\n");
 														print_queue_it(&head);
 														printf("Do you want to back to DELETE?(y/n): ");
-														scanf("%s",&torna);
-													}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+														scanf("%s",&back);
+													}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 												}break;
 
 												default:{
@@ -5222,13 +5222,13 @@ void main(int argc,char const *argv[]){
 														printf("│                     └► X.  DEFAULT: ERROR CHOICE!                            │\n");
 														printf("└──────────────────────────────────────────────────────────────────────────────┘\n");
 														printf("Do you want to back to DELETE?(y/n): ");
-														scanf("%s",&torna);
-													}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+														scanf("%s",&back);
+													}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 												}break;
 											}
 											printf("Do you want to back to QUEUE MENU?(y/n): ");
-											scanf("%s",&torna);
-										}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+											scanf("%s",&back);
+										}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 									}break;
 
 									case 3:{
@@ -5276,8 +5276,8 @@ void main(int argc,char const *argv[]){
 														printf("└──────────────────────────────────────────────────────────────────────────────┘\n");
 														print_queue_it(&head);
 														printf("Do you want to back to OPERATIONS?(y/n): ");
-														scanf("%s",&torna);
-													}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+														scanf("%s",&back);
+													}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 												}break;
 
 												case 2:{
@@ -5296,8 +5296,8 @@ void main(int argc,char const *argv[]){
 														printf("-After reverse:\n");
 														print_queue_it(&head);
 														printf("Do you want to back to OPERATIONS?(y/n): ");
-														scanf("%s",&torna);
-													}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+														scanf("%s",&back);
+													}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 												}break;
 
 												case 3:{
@@ -5315,8 +5315,8 @@ void main(int argc,char const *argv[]){
 														scanf("%d",&val);
 														search_queue_it(&head,val)? printf("Yes\n") : printf("No\n");
 														printf("Do you want to back to OPERATIONS?(y/n): ");
-														scanf("%s",&torna);
-													}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+														scanf("%s",&back);
+													}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 												}break;
 
 												case 4:{
@@ -5337,8 +5337,8 @@ void main(int argc,char const *argv[]){
 														printf("-After swap:\n");
 														print_queue_it(&head);
 														printf("Do you want to back to OPERATIONS?(y/n): ");
-														scanf("%s",&torna);
-													}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+														scanf("%s",&back);
+													}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 												}break;
 
 												case 5:{
@@ -5354,8 +5354,8 @@ void main(int argc,char const *argv[]){
 														printf("L: { ");
 														print_queue_re(&head);
 														printf("Do you want to back to OPERATIONS?(y/n): ");
-														scanf("%s",&torna);
-													}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+														scanf("%s",&back);
+													}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 												}break;
 
 												case 6:{
@@ -5374,8 +5374,8 @@ void main(int argc,char const *argv[]){
 														printf("-After reverse:\n");
 														print_queue_it(&head);
 														printf("Do you want to back to OPERATIONS?(y/n): ");
-														scanf("%s",&torna);
-													}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+														scanf("%s",&back);
+													}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 												}break;
 
 												case 7:{
@@ -5393,8 +5393,8 @@ void main(int argc,char const *argv[]){
 														scanf("%d",&val);
 														search_queue_re(&head,val)? printf("Yes\n") : printf("No\n");
 														printf("Do you want to back to OPERATIONS?(y/n): ");
-														scanf("%s",&torna);
-													}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+														scanf("%s",&back);
+													}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 												}break;
 
 												case 8:{
@@ -5415,8 +5415,8 @@ void main(int argc,char const *argv[]){
 														printf("-After swap:\n");
 														print_queue_it(&head);
 														printf("Do you want to back to OPERATIONS?(y/n): ");
-														scanf("%s",&torna);
-													}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+														scanf("%s",&back);
+													}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 												}break;
 
 												default:{
@@ -5430,13 +5430,13 @@ void main(int argc,char const *argv[]){
 														printf("│                     └► X.  DEFAULT: ERROR CHOICE!                            │\n");
 														printf("└──────────────────────────────────────────────────────────────────────────────┘\n");
 														printf("Do you want to back to OPERATIONS?(y/n): ");
-														scanf("%s",&torna);
-													}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+														scanf("%s",&back);
+													}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 												}break;
 											}
 											printf("Do you want to back to QUEUE MENU?(y/n): ");
-											scanf("%s",&torna);
-										}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+											scanf("%s",&back);
+										}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 									}break;
 
 									case 4:{
@@ -5488,8 +5488,8 @@ void main(int argc,char const *argv[]){
 														printf("-After bubble sort:\n");
 														print_queue_it(&head);
 														printf("Do you want to back to SORTING?(y/n): ");
-														scanf("%s",&torna);
-													}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+														scanf("%s",&back);
+													}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 												}break;
 
 												case 2:{
@@ -5508,8 +5508,8 @@ void main(int argc,char const *argv[]){
 														printf("-After insertion sort:\n");
 														print_queue_it(&head);
 														printf("Do you want to back to SORTING?(y/n): ");
-														scanf("%s",&torna);
-													}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+														scanf("%s",&back);
+													}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 												}break;
 
 												case 3:{
@@ -5528,8 +5528,8 @@ void main(int argc,char const *argv[]){
 														printf("-After merge sort:\n");
 														print_queue_it(&head);
 														printf("Do you want to back to SORTING?(y/n): ");
-														scanf("%s",&torna);
-													}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+														scanf("%s",&back);
+													}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 												}break;
 
 												case 4:{
@@ -5544,8 +5544,8 @@ void main(int argc,char const *argv[]){
 														printf("└──────────────────────────────────────────────────────────────────────────────┘\n");
 														
 														printf("Do you want to back to SORTING?(y/n): ");
-														scanf("%s",&torna);
-													}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+														scanf("%s",&back);
+													}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 												}break;
 
 												case 5:{
@@ -5560,8 +5560,8 @@ void main(int argc,char const *argv[]){
 														printf("└──────────────────────────────────────────────────────────────────────────────┘\n");
 														
 														printf("Do you want to back to SORTING?(y/n): ");
-														scanf("%s",&torna);
-													}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+														scanf("%s",&back);
+													}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 												}break;
 
 												case 6:{
@@ -5576,8 +5576,8 @@ void main(int argc,char const *argv[]){
 														printf("└──────────────────────────────────────────────────────────────────────────────┘\n");
 														
 														printf("Do you want to back to SORTING?(y/n): ");
-														scanf("%s",&torna);
-													}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+														scanf("%s",&back);
+													}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 												}break;
 
 												case 7:{
@@ -5592,8 +5592,8 @@ void main(int argc,char const *argv[]){
 														printf("└──────────────────────────────────────────────────────────────────────────────┘\n");
 														
 														printf("Do you want to back to SORTING?(y/n): ");
-														scanf("%s",&torna);
-													}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+														scanf("%s",&back);
+													}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 												}break;
 
 												case 8:{
@@ -5612,8 +5612,8 @@ void main(int argc,char const *argv[]){
 														printf("-After quick sort:\n");
 														print_queue_it(&head);
 														printf("Do you want to back to SORTING?(y/n): ");
-														scanf("%s",&torna);
-													}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+														scanf("%s",&back);
+													}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 												}break;
 
 												default:{
@@ -5627,13 +5627,13 @@ void main(int argc,char const *argv[]){
 														printf("│                     └► X.  DEFAULT: ERROR CHOICE!                            │\n");
 														printf("└──────────────────────────────────────────────────────────────────────────────┘\n");
 														printf("Do you want to back to SORTING?(y/n): ");
-														scanf("%s",&torna);
-													}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+														scanf("%s",&back);
+													}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 												}break;
 											}
 											printf("Do you want to back to QUEUE MENU?(y/n): ");
-											scanf("%s",&torna);
-										}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+											scanf("%s",&back);
+										}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 									}break;
 
 									case 5:{
@@ -5646,8 +5646,8 @@ void main(int argc,char const *argv[]){
 											printf("│              └► 5.  SEARCHING                                                │\n");
 											printf("└──────────────────────────────────────────────────────────────────────────────┘\n");
 											printf("Do you want to back to QUEUE MENU?(y/n): ");
-											scanf("%s",&torna);
-										}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+											scanf("%s",&back);
+										}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 									}break;
 
 									case 6:{
@@ -5660,8 +5660,8 @@ void main(int argc,char const *argv[]){
 											printf("│              └► 6.  CHECK                                                    │\n");
 											printf("└──────────────────────────────────────────────────────────────────────────────┘\n");
 											printf("Do you want to back to QUEUE MENU?(y/n): ");
-											scanf("%s",&torna);
-										}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+											scanf("%s",&back);
+										}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 									}break;
 									
 									default:{
@@ -5674,13 +5674,13 @@ void main(int argc,char const *argv[]){
 											printf("│              └► X.  DEFAULT: ERROR CHOICE!                                   │\n");
 											printf("└──────────────────────────────────────────────────────────────────────────────┘\n");
 											printf("Do you want to back to QUEUE MENU?(y/n): ");
-											scanf("%s",&torna);
-										}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+											scanf("%s",&back);
+										}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 									}break;
 								}
 								printf("Do you want to back to DATA-STRUCT MENU?(y/n): ");
-								scanf("%s",&torna);
-							}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+								scanf("%s",&back);
+							}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 						}break;
 
 						case 6:{
@@ -5779,8 +5779,8 @@ void main(int argc,char const *argv[]){
 														}
 														print_list_it(&head);
 														printf("Do you want to back to INSERT?(y/n): ");
-														scanf("%s",&torna);
-													}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+														scanf("%s",&back);
+													}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 												}break;
 
 												case 2:{
@@ -5814,8 +5814,8 @@ void main(int argc,char const *argv[]){
 														}
 														print_list_it(&head);
 														printf("Do you want to back to INSERT?(y/n): ");
-														scanf("%s",&torna);
-													}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+														scanf("%s",&back);
+													}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 												}break;
 
 												case 3:{
@@ -5849,8 +5849,8 @@ void main(int argc,char const *argv[]){
 														}
 														print_list_it(&head);
 														printf("Do you want to back to INSERT?(y/n): ");
-														scanf("%s",&torna);
-													}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+														scanf("%s",&back);
+													}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 												}break;
 
 												case 4:{
@@ -5884,8 +5884,8 @@ void main(int argc,char const *argv[]){
 														}
 														print_list_it(&head);
 														printf("Do you want to back to INSERT?(y/n): ");
-														scanf("%s",&torna);
-													}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+														scanf("%s",&back);
+													}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 												}break;
 
 												case 5:{
@@ -5919,8 +5919,8 @@ void main(int argc,char const *argv[]){
 														}
 														print_list_it(&head);
 														printf("Do you want to back to INSERT?(y/n): ");
-														scanf("%s",&torna);
-													}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+														scanf("%s",&back);
+													}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 												}break;
 
 												case 6:{
@@ -5954,8 +5954,8 @@ void main(int argc,char const *argv[]){
 														}
 														print_list_it(&head);
 														printf("Do you want to back to INSERT?(y/n): ");
-														scanf("%s",&torna);
-													}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+														scanf("%s",&back);
+													}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 												}break;
 
 												case 7:{
@@ -5989,8 +5989,8 @@ void main(int argc,char const *argv[]){
 														}
 														print_list_it(&head);
 														printf("Do you want to back to INSERT?(y/n): ");
-														scanf("%s",&torna);
-													}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+														scanf("%s",&back);
+													}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 												}break;
 
 												case 8:{
@@ -6024,8 +6024,8 @@ void main(int argc,char const *argv[]){
 														}
 														print_list_it(&head);
 														printf("Do you want to back to INSERT?(y/n): ");
-														scanf("%s",&torna);
-													}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+														scanf("%s",&back);
+													}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 												}break;
 
 												default:{
@@ -6039,13 +6039,13 @@ void main(int argc,char const *argv[]){
 														printf("│                     └► X.  DEFAULT: ERROR CHOICE!                            │\n");
 														printf("└──────────────────────────────────────────────────────────────────────────────┘\n");
 														printf("Do you want to back to INSERT?(y/n): ");
-														scanf("%s",&torna);
-													}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+														scanf("%s",&back);
+													}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 												}break;
 											}
 											printf("Do you want to back to LIST MENU?(y/n): ");
-											scanf("%s",&torna);
-										}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+											scanf("%s",&back);
+										}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 									}break;
 
 									case 2:{
@@ -6097,8 +6097,8 @@ void main(int argc,char const *argv[]){
 														printf("-After delete head:\n");
 														print_list_it(&head);
 														printf("Do you want to back to DELETE?(y/n): ");
-														scanf("%s",&torna);
-													}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+														scanf("%s",&back);
+													}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 												}break;
 
 												case 2:{
@@ -6119,8 +6119,8 @@ void main(int argc,char const *argv[]){
 														printf("-After delete by val:\n");
 														print_list_it(&head);
 														printf("Do you want to back to DELETE?(y/n): ");
-														scanf("%s",&torna);
-													}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+														scanf("%s",&back);
+													}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 												}break;
 
 												case 3:{
@@ -6139,8 +6139,8 @@ void main(int argc,char const *argv[]){
 														printf("-After delete queue:\n");
 														print_list_it(&head);
 														printf("Do you want to back to DELETE?(y/n): ");
-														scanf("%s",&torna);
-													}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+														scanf("%s",&back);
+													}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 												}break;
 
 												case 4:{
@@ -6159,8 +6159,8 @@ void main(int argc,char const *argv[]){
 														printf("-After delete all:\n");
 														print_list_it(&head);
 														printf("Do you want to back to DELETE?(y/n): ");
-														scanf("%s",&torna);
-													}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+														scanf("%s",&back);
+													}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 												}break;
 
 												case 5:{
@@ -6179,8 +6179,8 @@ void main(int argc,char const *argv[]){
 														printf("-After delete head:\n");
 														print_list_it(&head);
 														printf("Do you want to back to DELETE?(y/n): ");
-														scanf("%s",&torna);
-													}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+														scanf("%s",&back);
+													}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 												}break;
 
 												case 6:{
@@ -6201,8 +6201,8 @@ void main(int argc,char const *argv[]){
 														printf("-After delete by val:\n");
 														print_list_it(&head);
 														printf("Do you want to back to DELETE?(y/n): ");
-														scanf("%s",&torna);
-													}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+														scanf("%s",&back);
+													}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 												}break;
 
 												case 7:{
@@ -6221,8 +6221,8 @@ void main(int argc,char const *argv[]){
 														printf("-After delete queue:\n");
 														print_list_it(&head);
 														printf("Do you want to back to DELETE?(y/n): ");
-														scanf("%s",&torna);
-													}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+														scanf("%s",&back);
+													}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 												}break;
 
 												case 8:{
@@ -6241,8 +6241,8 @@ void main(int argc,char const *argv[]){
 														printf("-After delete all:\n");
 														print_list_it(&head);
 														printf("Do you want to back to DELETE?(y/n): ");
-														scanf("%s",&torna);
-													}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+														scanf("%s",&back);
+													}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 												}break;
 
 												default:{
@@ -6256,13 +6256,13 @@ void main(int argc,char const *argv[]){
 														printf("│                     └► X.  DEFAULT: ERROR CHOICE!                            │\n");
 														printf("└──────────────────────────────────────────────────────────────────────────────┘\n");
 														printf("Do you want to back to DELETE?(y/n): ");
-														scanf("%s",&torna);
-													}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+														scanf("%s",&back);
+													}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 												}break;
 											}
 											printf("Do you want to back to LIST MENU?(y/n): ");
-											scanf("%s",&torna);
-										}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+											scanf("%s",&back);
+										}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 									}break;
 
 									case 3:{
@@ -6310,8 +6310,8 @@ void main(int argc,char const *argv[]){
 														printf("└──────────────────────────────────────────────────────────────────────────────┘\n");
 														print_list_it(&head);
 														printf("Do you want to back to OPERATIONS?(y/n): ");
-														scanf("%s",&torna);
-													}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+														scanf("%s",&back);
+													}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 												}break;
 
 												case 2:{
@@ -6330,8 +6330,8 @@ void main(int argc,char const *argv[]){
 														printf("-After reverse:\n");
 														print_list_it(&head);
 														printf("Do you want to back to OPERATIONS?(y/n): ");
-														scanf("%s",&torna);
-													}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+														scanf("%s",&back);
+													}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 												}break;
 
 												case 3:{
@@ -6349,8 +6349,8 @@ void main(int argc,char const *argv[]){
 														scanf("%d",&val);
 														search_it(&head,val)? printf("Yes\n") : printf("No\n");
 														printf("Do you want to back to OPERATIONS?(y/n): ");
-														scanf("%s",&torna);
-													}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+														scanf("%s",&back);
+													}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 												}break;
 
 												case 4:{
@@ -6371,8 +6371,8 @@ void main(int argc,char const *argv[]){
 														printf("-After swap:\n");
 														print_list_it(&head);
 														printf("Do you want to back to OPERATIONS?(y/n): ");
-														scanf("%s",&torna);
-													}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+														scanf("%s",&back);
+													}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 												}break;
 
 												case 5:{
@@ -6388,8 +6388,8 @@ void main(int argc,char const *argv[]){
 														printf("L: { ");
 														print_list_re(&head);
 														printf("Do you want to back to OPERATIONS?(y/n): ");
-														scanf("%s",&torna);
-													}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+														scanf("%s",&back);
+													}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 												}break;
 
 												case 6:{
@@ -6408,8 +6408,8 @@ void main(int argc,char const *argv[]){
 														printf("-After reverse:\n");
 														print_list_it(&head);
 														printf("Do you want to back to OPERATIONS?(y/n): ");
-														scanf("%s",&torna);
-													}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+														scanf("%s",&back);
+													}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 												}break;
 
 												case 7:{
@@ -6427,8 +6427,8 @@ void main(int argc,char const *argv[]){
 														scanf("%d",&val);
 														search_re(&head,val)? printf("Yes\n") : printf("No\n");
 														printf("Do you want to back to OPERATIONS?(y/n): ");
-														scanf("%s",&torna);
-													}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+														scanf("%s",&back);
+													}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 												}break;
 
 												case 8:{
@@ -6449,8 +6449,8 @@ void main(int argc,char const *argv[]){
 														printf("-After swap:\n");
 														print_list_it(&head);
 														printf("Do you want to back to OPERATIONS?(y/n): ");
-														scanf("%s",&torna);
-													}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+														scanf("%s",&back);
+													}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 												}break;
 
 												default:{
@@ -6464,13 +6464,13 @@ void main(int argc,char const *argv[]){
 														printf("│                     └► X.  DEFAULT: ERROR CHOICE!                            │\n");
 														printf("└──────────────────────────────────────────────────────────────────────────────┘\n");
 														printf("Do you want to back to OPERATIONS?(y/n): ");
-														scanf("%s",&torna);
-													}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+														scanf("%s",&back);
+													}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 												}break;
 											}
 											printf("Do you want to back to LIST MENU?(y/n): ");
-											scanf("%s",&torna);
-										}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+											scanf("%s",&back);
+										}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 									}break;
 
 									case 4:{
@@ -6522,8 +6522,8 @@ void main(int argc,char const *argv[]){
 														printf("-After bubble sort:\n");
 														print_list_it(&head);
 														printf("Do you want to back to SORTING?(y/n): ");
-														scanf("%s",&torna);
-													}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+														scanf("%s",&back);
+													}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 												}break;
 
 												case 2:{
@@ -6542,8 +6542,8 @@ void main(int argc,char const *argv[]){
 														printf("-After insertion sort:\n");
 														print_list_it(&head);
 														printf("Do you want to back to SORTING?(y/n): ");
-														scanf("%s",&torna);
-													}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+														scanf("%s",&back);
+													}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 												}break;
 
 												case 3:{
@@ -6562,8 +6562,8 @@ void main(int argc,char const *argv[]){
 														printf("-After merge sort:\n");
 														print_list_it(&head);
 														printf("Do you want to back to SORTING?(y/n): ");
-														scanf("%s",&torna);
-													}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+														scanf("%s",&back);
+													}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 												}break;
 
 												case 4:{
@@ -6578,8 +6578,8 @@ void main(int argc,char const *argv[]){
 														printf("└──────────────────────────────────────────────────────────────────────────────┘\n");
 														
 														printf("Do you want to back to SORTING?(y/n): ");
-														scanf("%s",&torna);
-													}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+														scanf("%s",&back);
+													}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 												}break;
 
 												case 5:{
@@ -6594,8 +6594,8 @@ void main(int argc,char const *argv[]){
 														printf("└──────────────────────────────────────────────────────────────────────────────┘\n");
 														
 														printf("Do you want to back to SORTING?(y/n): ");
-														scanf("%s",&torna);
-													}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+														scanf("%s",&back);
+													}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 												}break;
 
 												case 6:{
@@ -6610,8 +6610,8 @@ void main(int argc,char const *argv[]){
 														printf("└──────────────────────────────────────────────────────────────────────────────┘\n");
 														
 														printf("Do you want to back to SORTING?(y/n): ");
-														scanf("%s",&torna);
-													}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+														scanf("%s",&back);
+													}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 												}break;
 
 												case 7:{
@@ -6626,8 +6626,8 @@ void main(int argc,char const *argv[]){
 														printf("└──────────────────────────────────────────────────────────────────────────────┘\n");
 														
 														printf("Do you want to back to SORTING?(y/n): ");
-														scanf("%s",&torna);
-													}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+														scanf("%s",&back);
+													}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 												}break;
 
 												case 8:{
@@ -6646,8 +6646,8 @@ void main(int argc,char const *argv[]){
 														printf("-After quick sort:\n");
 														print_list_it(&head);
 														printf("Do you want to back to SORTING?(y/n): ");
-														scanf("%s",&torna);
-													}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+														scanf("%s",&back);
+													}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 												}break;
 
 												default:{
@@ -6661,13 +6661,13 @@ void main(int argc,char const *argv[]){
 														printf("│                     └► X.  DEFAULT: ERROR CHOICE!                            │\n");
 														printf("└──────────────────────────────────────────────────────────────────────────────┘\n");
 														printf("Do you want to back to SORTING?(y/n): ");
-														scanf("%s",&torna);
-													}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+														scanf("%s",&back);
+													}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 												}break;
 											}
 											printf("Do you want to back to LIST MENU?(y/n): ");
-											scanf("%s",&torna);
-										}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+											scanf("%s",&back);
+										}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 									}break;
 
 									case 5:{
@@ -6680,8 +6680,8 @@ void main(int argc,char const *argv[]){
 											printf("│              └► 5.  SEARCHING                                                │\n");
 											printf("└──────────────────────────────────────────────────────────────────────────────┘\n");
 											printf("Do you want to back to LIST MENU?(y/n): ");
-											scanf("%s",&torna);
-										}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+											scanf("%s",&back);
+										}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 									}break;
 
 									case 6:{
@@ -6694,8 +6694,8 @@ void main(int argc,char const *argv[]){
 											printf("│              └► 6.  CHECK                                                    │\n");
 											printf("└──────────────────────────────────────────────────────────────────────────────┘\n");
 											printf("Do you want to back to LIST MENU?(y/n): ");
-											scanf("%s",&torna);
-										}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+											scanf("%s",&back);
+										}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 									}break;
 									
 									default:{
@@ -6708,13 +6708,13 @@ void main(int argc,char const *argv[]){
 											printf("│              └► X.  DEFAULT: ERROR CHOICE!                                   │\n");
 											printf("└──────────────────────────────────────────────────────────────────────────────┘\n");
 											printf("Do you want to back to LIST MENU?(y/n): ");
-											scanf("%s",&torna);
-										}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+											scanf("%s",&back);
+										}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 									}break;
 								}
 								printf("Do you want to back to DATA-STRUCT MENU?(y/n): ");
-								scanf("%s",&torna);
-							}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+								scanf("%s",&back);
+							}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 						}break;
 						//...
 						default:{
@@ -6726,13 +6726,13 @@ void main(int argc,char const *argv[]){
 								printf("│       └► X.  DEFAULT: ERROR CHOICE!                                          │\n");
 								printf("└──────────────────────────────────────────────────────────────────────────────┘\n");
 								printf("Do you want to back to DATA-STRUCT MENU?(y/n): ");
-								scanf("%s",&torna);
-							}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+								scanf("%s",&back);
+							}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 						}break;
 					}
 					printf("Do you want to back to MAIN MENU?(y/n): ");
-					scanf("%s",&torna);
-				}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+					scanf("%s",&back);
+				}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 			}break; //case 2 (data-struct)
 
 			default:{ //default (main menu)
@@ -6743,12 +6743,12 @@ void main(int argc,char const *argv[]){
 					printf("│└► X.  DEFAULT: ERROR CHOICE!                                                 │\n");
 					printf("└──────────────────────────────────────────────────────────────────────────────┘\n");
 					printf("Do you want to back to MAIN MENU?(y/n): ");
-					scanf("%s",&torna);
-					if((torna == 'n')||(torna == 'N')){
+					scanf("%s",&back);
+					if((back == 'n')||(back == 'N')){
 						clrscr();
 						exit(0);
 					}
-				}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
+				}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
 			}break; //default (main menu)
 		}
 	}while((choice_menu >= 0) || (choice_menu <= 10));
