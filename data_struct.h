@@ -228,6 +228,21 @@ void quick_I(int A[], int l, int h){
 	}
 }
 
+void shell_I(int A[], int dim){
+	int tmp;
+	for(int i=dim/2; i>0; i=i/2){
+		for(int j=i; j<dim; j++){
+			for(int k=j-i; k>=0; k=k-i){
+				if(A[k+i] >= A[k]){
+					break;
+				}else{
+					swap3(&A[k],&A[k+i]);
+				}
+			}
+		}
+	}
+}
+
 void bubble_R(int A[], int dim){
 	if(dim == 1){
 		return;
@@ -276,16 +291,39 @@ int linear_I(int A[], int dim, int x){
 	return -1;
 }
 
-int binary_I(int A[], int l, int r, int x){
+int binary_I(int arr[], int l, int r, int x){
+	while(l <= r){
+		int m = l +(r-l)/2;
+		if(arr[m] == x){
+			return m;
+		}
+		if(arr[m] < x){
+			l = m + 1;
+		}else{
+			r = m - 1;
+		}
+	}
+	return -1;
+}
+
+int linear_R(int A[], int l, int r, int x){
+	if(r < l)
+		return -1;
+	if (A[l] == x)
+		return l;
+	return linear_R(A,l+1,r,x);
+}
+
+int binary_R(int A[], int l, int r, int x){
 	if(r >= l){
 		int mid=l+(r-l)/2;
 		if(A[mid] == x){
 			return mid;
 		}
 		if(A[mid] > x){
-			return binary_I(A,l,mid-1,x);
+			return binary_R(A,l,mid-1,x);
 		}
-		return binary_I(A,mid+1,r,x);
+		return binary_R(A,mid+1,r,x);
 	}
 	return -1;
 }
