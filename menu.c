@@ -22,9 +22,9 @@ void main(int argc,char const *argv[]){
 	int scelta_menu=0;
 	char torna='n';	
 /*┌────────────────────────────────┐
-  │├► [●]: completato/funziona     │
-  │├► [ ]: manca                   │
-  │├► [○]: in sviluppo             │
+  │├► [●]: complete/work           │
+  │├► [ ]: miss                    │
+  │├► [○]: in dev                  │
   └────────────────────────────────┘*/
   	do{
   		clrscr();
@@ -2654,7 +2654,7 @@ void main(int argc,char const *argv[]){
 					printf("│└► 2.  DATA-STRUCT                                                            │\n");
 					printf("│       ├► 0.  BACK TO MAIN MENU                                               │\n");
 					printf("│       ├► 1.  MENU ARRAY                                                      │\n");
-					printf("│       ├► 2.  MENU STRING                                                  [○]│\n");
+					printf("│       ├► 2.  MENU STRING                                                     │\n");
 					printf("│       ├► 3.  MENU MATRIX                                                     │\n");
 					printf("│       ├► 4.  MENU STACK                                                      │\n");
 					printf("│       ├► 5.  MENU QUEUE                                                      │\n");
@@ -5010,7 +5010,7 @@ void main(int argc,char const *argv[]){
 								printf("│              ├► 1.  INSERT                                                   │\n");
 								printf("│              ├► 2.  DELETE                                                   │\n");
 								printf("│              ├► 3.  OPERATIONS                                               │\n");
-								printf("│              ├► 4.  SORTING                                               [ ]│\n");
+								printf("│              ├► 4.  SORTING                                                  │\n");
 								printf("│              ├► 5.  SEARCHING                                             [ ]│\n");
 								printf("│              └► 6.  CHECK                                                 [ ]│\n");
 								printf("└──────────────────────────────────────────────────────────────────────────────┘\n");
@@ -5698,7 +5698,7 @@ void main(int argc,char const *argv[]){
 								printf("│              ├► 1.  INSERT                                                   │\n");
 								printf("│              ├► 2.  DELETE                                                   │\n");
 								printf("│              ├► 3.  OPERATIONS                                               │\n");
-								printf("│              ├► 4.  SORTING                                               [ ]│\n");
+								printf("│              ├► 4.  SORTING                                                  │\n");
 								printf("│              ├► 5.  SEARCHING                                             [ ]│\n");
 								printf("│              └► 6.  CHECK                                                 [ ]│\n");
 								printf("└──────────────────────────────────────────────────────────────────────────────┘\n");
