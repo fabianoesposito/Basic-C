@@ -19,7 +19,7 @@ void clrscr(void){
 #include "data_struct.h"
 
 void main(int argc,char const *argv[]){
-	int scelta_menu=0;
+	int choice_menu=0;
 	char torna='n';	
 /*┌────────────────────────────────┐
   │├► [●]: complete/work           │
@@ -35,15 +35,15 @@ void main(int argc,char const *argv[]){
 		printf("│└► 2.  MENU DATA-STRUCT                                                    [○]│\n");
 		printf("└──────────────────────────────────────────────────────────────────────────────┘\n");
 		printf("CHOICE MENU: ");
-		scanf("%d",&scelta_menu);
-		switch(scelta_menu){
+		scanf("%d",&choice_menu);
+		switch(choice_menu){
 			case 0:{ //exit
 				clrscr();
 				exit(0);
 			}break; //case 0
 
 			case 1:{ //basic
-				int scelta_basic=0;
+				int choice_basic=0;
 				do{
 					clrscr();
 					printf("┌──────────────────────────────────────────────────────────────────────────────┐\n");
@@ -61,8 +61,8 @@ void main(int argc,char const *argv[]){
 					printf("│       └► 9.  MENU RANDPASS                                                   │\n");
 					printf("└──────────────────────────────────────────────────────────────────────────────┘\n");
 					printf("CHOICE BASIC: ");
-					scanf("%d",&scelta_basic);
-					switch(scelta_basic){
+					scanf("%d",&choice_basic);
+					switch(choice_basic){
 						case 0:{
 							clrscr();
 							printf("┌──────────────────────────────────────────────────────────────────────────────┐\n");
@@ -115,7 +115,7 @@ void main(int argc,char const *argv[]){
 						}break;
 
 						case 4:{
-							int scelta_patterns=0,n=0;
+							int choice_patterns=0,n=0;
 							do{
 								clrscr();
 								printf("┌──────────────────────────────────────────────────────────────────────────────┐\n");
@@ -162,8 +162,8 @@ void main(int argc,char const *argv[]){
 								printf("│              └► 37. X PATTERN                                                │\n");
 								printf("└──────────────────────────────────────────────────────────────────────────────┘\n");
 								printf("CHOICE PATTERNS: ");
-								scanf("%d",&scelta_patterns);
-								switch(scelta_patterns){
+								scanf("%d",&choice_patterns);
+								switch(choice_patterns){
 									case 0:{
 										clrscr();
 										printf("┌──────────────────────────────────────────────────────────────────────────────┐\n");
@@ -825,7 +825,7 @@ void main(int argc,char const *argv[]){
 						}break;
 
 						case 5:{
-							int a,b,scelta_numbers=0;
+							int a,b,choice_numbers=0;
 							do{
 								clrscr();
 								printf("┌──────────────────────────────────────────────────────────────────────────────┐\n");
@@ -864,8 +864,8 @@ void main(int argc,char const *argv[]){
 								printf("│              └► 29. SWAP WITH POINTERS                                       │\n");
 								printf("└──────────────────────────────────────────────────────────────────────────────┘\n");
 								printf("CHOICE NUMBERS: ");
-								scanf("%d",&scelta_numbers);
-								switch(scelta_numbers){
+								scanf("%d",&choice_numbers);
+								switch(choice_numbers){
 									case 0:{
 										clrscr();
 										printf("┌──────────────────────────────────────────────────────────────────────────────┐\n");
@@ -1422,7 +1422,7 @@ void main(int argc,char const *argv[]){
 						}break;
 
 						case 6:{
-							int scelta_math_formula=0;
+							int choice_math_formula=0;
 							do{
 								clrscr();
 								printf("┌──────────────────────────────────────────────────────────────────────────────┐\n");
@@ -1455,8 +1455,8 @@ void main(int argc,char const *argv[]){
 								printf("│              └► 23. VOLUME & SURFACE AREA SPHARE                             │\n");
 								printf("└──────────────────────────────────────────────────────────────────────────────┘\n");
 								printf("CHOICE MATH FORMULA: ");
-								scanf("%d",&scelta_math_formula);
-								switch(scelta_math_formula){
+								scanf("%d",&choice_math_formula);
+								switch(choice_math_formula){
 									case 0:{
 										clrscr();
 										printf("┌──────────────────────────────────────────────────────────────────────────────┐\n");
@@ -1883,7 +1883,7 @@ void main(int argc,char const *argv[]){
 						}break;
 
 						case 7:{
-							int scelta_eps_rmin=0,base=2;
+							int choice_eps_rmin=0,base=2;
 							float e1=1.0,epsilon1,rmins;
 							double e2=1.0,epsilon2,rmind;
 							do{
@@ -1897,8 +1897,8 @@ void main(int argc,char const *argv[]){
 								printf("│              └► 2.  MINUMUM REAL NUMBER (SINGLE/DOUBLE PRECISION)            │\n");
 								printf("└──────────────────────────────────────────────────────────────────────────────┘\n");
 								printf("CHOICE MATH FORMULA: ");
-								scanf("%d",&scelta_eps_rmin);
-								switch(scelta_eps_rmin){
+								scanf("%d",&choice_eps_rmin);
+								switch(choice_eps_rmin){
 									case 0:{
 										clrscr();
 										printf("┌──────────────────────────────────────────────────────────────────────────────┐\n");
@@ -1965,7 +1965,7 @@ void main(int argc,char const *argv[]){
 						}break;
 
 						case 8:{
-							int scelta_conversions=0;
+							int choice_conversions=0;
 							do{
 								clrscr();
 								printf("┌──────────────────────────────────────────────────────────────────────────────┐\n");
@@ -1989,8 +1989,8 @@ void main(int argc,char const *argv[]){
 								printf("│              └► 14. FAHRENHEIT TO CELSIUS                                    │\n");
 								printf("└──────────────────────────────────────────────────────────────────────────────┘\n");
 								printf("CHOICE CONVERSIONS: ");
-								scanf("%d",&scelta_conversions);
-								switch(scelta_conversions){
+								scanf("%d",&choice_conversions);
+								switch(choice_conversions){
 									case 0:{
 										clrscr();
 										printf("┌──────────────────────────────────────────────────────────────────────────────┐\n");
@@ -2352,7 +2352,7 @@ void main(int argc,char const *argv[]){
 						}break;
 
 						case 9:{
-							int scelta_randpass=0,length=0;
+							int choice_randpass=0,length=0;
 							do{
 								clrscr();
 								printf("┌──────────────────────────────────────────────────────────────────────────────┐\n");
@@ -2375,8 +2375,8 @@ void main(int argc,char const *argv[]){
 								printf("│              └► 13.             NUM + SYM                                    │\n");
 								printf("└──────────────────────────────────────────────────────────────────────────────┘\n");
 								printf("CHOICE RANDPASS: ");
-								scanf("%d",&scelta_randpass);
-								switch(scelta_randpass){
+								scanf("%d",&choice_randpass);
+								switch(choice_randpass){
 									case 0:{
 										clrscr();
 										printf("┌──────────────────────────────────────────────────────────────────────────────┐\n");
@@ -2646,7 +2646,7 @@ void main(int argc,char const *argv[]){
 			}break; //case 1 (basic)
 
 			case 2:{ //data-struct
-				int scelta_datastruct=0;
+				int choice_datastruct=0;
 				do{
 					clrscr();
 					printf("┌──────────────────────────────────────────────────────────────────────────────┐\n");
@@ -2663,8 +2663,8 @@ void main(int argc,char const *argv[]){
 					printf("│       └► 8.  MENU BINARY TREE                                             [ ]│\n");
 					printf("└──────────────────────────────────────────────────────────────────────────────┘\n");
 					printf("CHOICE DATA-STRUCT: ");
-					scanf("%d",&scelta_datastruct);
-					switch(scelta_datastruct){
+					scanf("%d",&choice_datastruct);
+					switch(choice_datastruct){
 						case 0:{
 							clrscr();
 							printf("┌──────────────────────────────────────────────────────────────────────────────┐\n");
@@ -2675,7 +2675,7 @@ void main(int argc,char const *argv[]){
 						}break;
 
 						case 1:{
-							int scelta_array=0,dim=0,A[dim],k,x,min=0,max=0;
+							int choice_array=0,dim=0,A[dim],k,x,min=0,max=0;
 							do{
 								clrscr();
 								printf("┌──────────────────────────────────────────────────────────────────────────────┐\n");
@@ -2690,8 +2690,8 @@ void main(int argc,char const *argv[]){
 								printf("│              └► 5.  CHECK                                                 [ ]│\n");
 								printf("└──────────────────────────────────────────────────────────────────────────────┘\n");
 								printf("CHOICE ARRAY: ");
-								scanf("%d",&scelta_array);
-								switch(scelta_array){
+								scanf("%d",&choice_array);
+								switch(choice_array){
 									case 0:{
 										clrscr();
 										printf("┌──────────────────────────────────────────────────────────────────────────────┐\n");
@@ -2720,7 +2720,7 @@ void main(int argc,char const *argv[]){
 									}break;
 
 									case 2:{
-										int scelta_operations=0;
+										int choice_operations=0;
 										do{
 											clrscr();
 											printf("┌──────────────────────────────────────────────────────────────────────────────┐\n");
@@ -2737,8 +2737,8 @@ void main(int argc,char const *argv[]){
 											printf("│                     └► 6.  MAX/MIN                                           │\n");
 											printf("└──────────────────────────────────────────────────────────────────────────────┘\n");
 											printf("CHOICE OPERATIONS: ");
-											scanf("%d",&scelta_operations);
-											switch(scelta_operations){
+											scanf("%d",&choice_operations);
+											switch(choice_operations){
 												case 0:{
 													clrscr();
 													printf("┌──────────────────────────────────────────────────────────────────────────────┐\n");
@@ -2878,7 +2878,7 @@ void main(int argc,char const *argv[]){
 									}break;
 
 									case 3:{
-										int scelta_sort=0;
+										int choice_sort=0;
 										do{
 											clrscr();
 											printf("┌──────────────────────────────────────────────────────────────────────────────┐\n");
@@ -2901,8 +2901,8 @@ void main(int argc,char const *argv[]){
 											printf("│                     └► 12. SHELL     RE                                   [ ]│\n");
 											printf("└──────────────────────────────────────────────────────────────────────────────┘\n");
 											printf("CHOICE SORT: ");
-											scanf("%d",&scelta_sort);
-											switch(scelta_sort){
+											scanf("%d",&choice_sort);
+											switch(choice_sort){
 												case 0:{
 													clrscr();
 													printf("┌──────────────────────────────────────────────────────────────────────────────┐\n");
@@ -3167,7 +3167,7 @@ void main(int argc,char const *argv[]){
 									}break;
 
 									case 4:{
-										int scelta_search=0;
+										int choice_search=0;
 										do{
 											clrscr();
 											printf("┌──────────────────────────────────────────────────────────────────────────────┐\n");
@@ -3182,8 +3182,8 @@ void main(int argc,char const *argv[]){
 											printf("│                     └► 4.  BINARY RE                                      [ ]│\n");
 											printf("└──────────────────────────────────────────────────────────────────────────────┘\n");
 											printf("CHOICE SEARCHING: ");
-											scanf("%d",&scelta_search);
-											switch(scelta_search){
+											scanf("%d",&choice_search);
+											switch(choice_search){
 												case 0:{
 													clrscr();
 													printf("┌──────────────────────────────────────────────────────────────────────────────┐\n");
@@ -3329,7 +3329,7 @@ void main(int argc,char const *argv[]){
 						}break;
 						
 						case 2:{
-							int scelta_string=0,dim=0,k,x,min=0,max=0;
+							int choice_string=0,dim=0,k,x,min=0,max=0;
 							char Str1[MAXSIZE], Str2[MAXSIZE], Str3[MAXSIZE][MAXSIZE];
 							do{
 								clrscr();
@@ -3345,8 +3345,8 @@ void main(int argc,char const *argv[]){
 								printf("│              └► 5.  CHECK                                                    │\n");
 								printf("└──────────────────────────────────────────────────────────────────────────────┘\n");
 								printf("CHOICE STRING: ");
-								scanf("%d",&scelta_string);
-								switch(scelta_string){
+								scanf("%d",&choice_string);
+								switch(choice_string){
 									case 0:{
 										clrscr();
 										printf("┌──────────────────────────────────────────────────────────────────────────────┐\n");
@@ -3373,7 +3373,7 @@ void main(int argc,char const *argv[]){
 									}break;
 
 									case 2:{
-										int scelta_operations=0;
+										int choice_operations=0;
 										do{
 											clrscr();
 											printf("┌──────────────────────────────────────────────────────────────────────────────┐\n");
@@ -3393,8 +3393,8 @@ void main(int argc,char const *argv[]){
 											printf("│                     └► 9.  COPY CHAR ARRAY                                   │\n");
 											printf("└──────────────────────────────────────────────────────────────────────────────┘\n");
 											printf("CHOICE OPERATIONS: ");
-											scanf("%d",&scelta_operations);
-											switch(scelta_operations){
+											scanf("%d",&choice_operations);
+											switch(choice_operations){
 												case 0:{
 													clrscr();
 													printf("┌──────────────────────────────────────────────────────────────────────────────┐\n");
@@ -3618,7 +3618,7 @@ void main(int argc,char const *argv[]){
 									}break;
 
 									case 3:{
-										int scelta_sort=0;
+										int choice_sort=0;
 										do{
 											clrscr();
 											printf("┌──────────────────────────────────────────────────────────────────────────────┐\n");
@@ -3630,8 +3630,8 @@ void main(int argc,char const *argv[]){
 											printf("│                     └► 1.  STRING SORTING                                    │\n");
 											printf("└──────────────────────────────────────────────────────────────────────────────┘\n");
 											printf("CHOICE SORT: ");
-											scanf("%d",&scelta_sort);
-											switch(scelta_sort){
+											scanf("%d",&choice_sort);
+											switch(choice_sort){
 												case 0:{
 													clrscr();
 													printf("┌──────────────────────────────────────────────────────────────────────────────┐\n");
@@ -3680,7 +3680,7 @@ void main(int argc,char const *argv[]){
 									}break;
 
 									case 4:{
-										int scelta_search=0;
+										int choice_search=0;
 										do{
 											clrscr();
 											printf("┌──────────────────────────────────────────────────────────────────────────────┐\n");
@@ -3691,8 +3691,8 @@ void main(int argc,char const *argv[]){
 											printf("│                     ├► 0.  BACK STRING MENU                                  │\n");
 											printf("└──────────────────────────────────────────────────────────────────────────────┘\n");
 											printf("CHOICE SEARCHING: ");
-											scanf("%d",&scelta_search);
-											switch(scelta_search){
+											scanf("%d",&choice_search);
+											switch(choice_search){
 												case 0:{
 													clrscr();
 													printf("┌──────────────────────────────────────────────────────────────────────────────┐\n");
@@ -3725,7 +3725,7 @@ void main(int argc,char const *argv[]){
 									}break;
 
 									case 5:{
-										int scelta_check=0;
+										int choice_check=0;
 										do{
 											clrscr();
 											printf("┌──────────────────────────────────────────────────────────────────────────────┐\n");
@@ -3743,8 +3743,8 @@ void main(int argc,char const *argv[]){
 											printf("│                     └► 7.  PALINDROME OF STRING                              │\n");
 											printf("└──────────────────────────────────────────────────────────────────────────────┘\n");
 											printf("CHOICE CHECK: ");
-											scanf("%d",&scelta_check);
-											switch(scelta_check){
+											scanf("%d",&choice_check);
+											switch(choice_check){
 												case 0:{
 													clrscr();
 													printf("┌──────────────────────────────────────────────────────────────────────────────┐\n");
@@ -3929,7 +3929,7 @@ void main(int argc,char const *argv[]){
 						}break;
 
 						case 3:{
-							int scelta_matrix=0,r=0,c=0,max=0,min=0,M[r][c];
+							int choice_matrix=0,r=0,c=0,max=0,min=0,M[r][c];
 							do{
 								clrscr();
 								printf("┌──────────────────────────────────────────────────────────────────────────────┐\n");
@@ -3944,8 +3944,8 @@ void main(int argc,char const *argv[]){
 								printf("│              └► 5.  CHECK                                                    │\n");
 								printf("└──────────────────────────────────────────────────────────────────────────────┘\n");
 								printf("CHOICE MATRIX: ");
-								scanf("%d",&scelta_matrix);
-								switch(scelta_matrix){
+								scanf("%d",&choice_matrix);
+								switch(choice_matrix){
 									case 0:{
 										clrscr();
 										printf("┌──────────────────────────────────────────────────────────────────────────────┐\n");
@@ -3976,7 +3976,7 @@ void main(int argc,char const *argv[]){
 									}break;
 
 									case 2:{
-										int scelta_operations=0;
+										int choice_operations=0;
 										do{
 											clrscr();
 											printf("┌──────────────────────────────────────────────────────────────────────────────┐\n");
@@ -3995,8 +3995,8 @@ void main(int argc,char const *argv[]){
 											printf("└──────────────────────────────────────────────────────────────────────────────┘\n");
 											
 											printf("CHOICE OPERATIONS: ");
-											scanf("%d",&scelta_operations);
-											switch(scelta_operations){
+											scanf("%d",&choice_operations);
+											switch(choice_operations){
 												case 0:{
 													clrscr();
 													printf("┌──────────────────────────────────────────────────────────────────────────────┐\n");
@@ -4191,7 +4191,7 @@ void main(int argc,char const *argv[]){
 									}break;
 
 									case 5:{
-										int scelta_check=0;
+										int choice_check=0;
 										do{
 											clrscr();
 											printf("┌──────────────────────────────────────────────────────────────────────────────┐\n");
@@ -4205,8 +4205,8 @@ void main(int argc,char const *argv[]){
 											printf("│                     └► 3.  IDENTIFY OR NOT                                   │\n");
 											printf("└──────────────────────────────────────────────────────────────────────────────┘\n");
 											printf("CHOICE CHECK: ");
-											scanf("%d",&scelta_check);
-											switch(scelta_check){
+											scanf("%d",&choice_check);
+											switch(choice_check){
 												case 0:{
 													clrscr();
 													printf("┌──────────────────────────────────────────────────────────────────────────────┐\n");
@@ -4308,9 +4308,9 @@ void main(int argc,char const *argv[]){
 						}break;
 
 						case 4:{
-							int scelta_stack=0,val=0,length=0,x=0,y=0,n=0,upper=10,lower=0;
+							int choice_stack=0,val=0,length=0,x=0,y=0,n=0,upper=10,lower=0;
 							struct S *head=NULL;
-							char scelta_random='n';
+							char choice_random='n';
 							srand(time(NULL));
 							do{
 								clrscr();
@@ -4327,8 +4327,8 @@ void main(int argc,char const *argv[]){
 								printf("│              └► 6.  CHECK                                                 [ ]│\n");
 								printf("└──────────────────────────────────────────────────────────────────────────────┘\n");
 								printf("CHOICE STACK: ");
-								scanf("%d",&scelta_stack);
-								switch(scelta_stack){
+								scanf("%d",&choice_stack);
+								switch(choice_stack){
 									case 0:{
 										clrscr();
 										printf("┌──────────────────────────────────────────────────────────────────────────────┐\n");
@@ -4340,7 +4340,7 @@ void main(int argc,char const *argv[]){
 									}break;
 									
 									case 1:{
-										int scelta_insert=0;
+										int choice_insert=0;
 										do{
 											clrscr();
 											printf("┌──────────────────────────────────────────────────────────────────────────────┐\n");
@@ -4353,8 +4353,8 @@ void main(int argc,char const *argv[]){
 											printf("│                     └► 2.  HEAD RE                                           │\n");
 											printf("└──────────────────────────────────────────────────────────────────────────────┘\n");
 											printf("CHOICE INSERT: ");
-											scanf("%d",&scelta_insert);
-											switch(scelta_insert){
+											scanf("%d",&choice_insert);
+											switch(choice_insert){
 												case 0:{
 													clrscr();
 													printf("┌──────────────────────────────────────────────────────────────────────────────┐\n");
@@ -4378,8 +4378,8 @@ void main(int argc,char const *argv[]){
 														printf("└──────────────────────────────────────────────────────────────────────────────┘\n");
 														print_stack_it(&head);
 														printf("Insert random value/s?(y/n): ");
-														scanf("%s",&scelta_random);
-														if((scelta_random == 'y') && (scelta_random != 'n')){
+														scanf("%s",&choice_random);
+														if((choice_random == 'y') && (choice_random != 'n')){
 															//random insert
 															printf("Enter how many value/s: ");
 															scanf("%d",&n);
@@ -4413,8 +4413,8 @@ void main(int argc,char const *argv[]){
 														printf("└──────────────────────────────────────────────────────────────────────────────┘\n");
 														print_stack_it(&head);
 														printf("Insert random value/s?(y/n): ");
-														scanf("%s",&scelta_random);
-														if((scelta_random == 'y') && (scelta_random != 'n')){
+														scanf("%s",&choice_random);
+														if((choice_random == 'y') && (choice_random != 'n')){
 															//random insert
 															printf("Enter how many value/s: ");
 															scanf("%d",&n);
@@ -4457,7 +4457,7 @@ void main(int argc,char const *argv[]){
 									}break;
 
 									case 2:{
-										int scelta_delete=0;
+										int choice_delete=0;
 										do{
 											clrscr();
 											printf("┌──────────────────────────────────────────────────────────────────────────────┐\n");
@@ -4470,8 +4470,8 @@ void main(int argc,char const *argv[]){
 											printf("│                     └► 2.  HEAD RE                                           │\n");
 											printf("└──────────────────────────────────────────────────────────────────────────────┘\n");
 											printf("CHOICE DELETE: ");
-											scanf("%d",&scelta_delete);
-											switch(scelta_delete){
+											scanf("%d",&choice_delete);
+											switch(choice_delete){
 												case 0:{
 													clrscr();
 													printf("┌──────────────────────────────────────────────────────────────────────────────┐\n");
@@ -4544,7 +4544,7 @@ void main(int argc,char const *argv[]){
 									}break;
 
 									case 3:{
-										int scelta_operations=0;
+										int choice_operations=0;
 										do{
 											clrscr();
 											printf("┌──────────────────────────────────────────────────────────────────────────────┐\n");
@@ -4563,8 +4563,8 @@ void main(int argc,char const *argv[]){
 											printf("│                     └► 8.  SWAP        RE                                    │\n");
 											printf("└──────────────────────────────────────────────────────────────────────────────┘\n");
 											printf("CHOICE OPERATIONS: ");
-											scanf("%d",&scelta_operations);
-											switch(scelta_operations){
+											scanf("%d",&choice_operations);
+											switch(choice_operations){
 												case 0:{
 													clrscr();
 													printf("┌──────────────────────────────────────────────────────────────────────────────┐\n");
@@ -4752,7 +4752,7 @@ void main(int argc,char const *argv[]){
 									}break;
 
 									case 4:{
-										int scelta_sort=0;
+										int choice_sort=0;
 										do{
 											clrscr();
 											printf("┌──────────────────────────────────────────────────────────────────────────────┐\n");
@@ -4771,8 +4771,8 @@ void main(int argc,char const *argv[]){
 											printf("│                     └► 8.  QUICK     RE                                      │\n");
 											printf("└──────────────────────────────────────────────────────────────────────────────┘\n");
 											printf("CHOICE SORTING: ");
-											scanf("%d",&scelta_sort);
-											switch(scelta_sort){
+											scanf("%d",&choice_sort);
+											switch(choice_sort){
 												case 0:{
 													clrscr();
 													printf("┌──────────────────────────────────────────────────────────────────────────────┐\n");
@@ -4996,9 +4996,9 @@ void main(int argc,char const *argv[]){
 						}break;
 
 						case 5:{
-							int scelta_queue=0,val=0,length=0,x=0,y=0,n=0,upper=10,lower=0;
+							int choice_queue=0,val=0,length=0,x=0,y=0,n=0,upper=10,lower=0;
 							struct Q *head=NULL;
-							char scelta_random='n';
+							char choice_random='n';
 							srand(time(NULL));
 							do{
 								clrscr();
@@ -5015,8 +5015,8 @@ void main(int argc,char const *argv[]){
 								printf("│              └► 6.  CHECK                                                 [ ]│\n");
 								printf("└──────────────────────────────────────────────────────────────────────────────┘\n");
 								printf("CHOICE QUEUE: ");
-								scanf("%d",&scelta_queue);
-								switch(scelta_queue){
+								scanf("%d",&choice_queue);
+								switch(choice_queue){
 									case 0:{
 										clrscr();
 										printf("┌──────────────────────────────────────────────────────────────────────────────┐\n");
@@ -5028,7 +5028,7 @@ void main(int argc,char const *argv[]){
 									}break;
 									
 									case 1:{
-										int scelta_insert=0;
+										int choice_insert=0;
 										do{
 											clrscr();
 											printf("┌──────────────────────────────────────────────────────────────────────────────┐\n");
@@ -5041,8 +5041,8 @@ void main(int argc,char const *argv[]){
 											printf("│                     └► 2.  HEAD RE                                           │\n");
 											printf("└──────────────────────────────────────────────────────────────────────────────┘\n");
 											printf("CHOICE INSERT: ");
-											scanf("%d",&scelta_insert);
-											switch(scelta_insert){
+											scanf("%d",&choice_insert);
+											switch(choice_insert){
 												case 0:{
 													clrscr();
 													printf("┌──────────────────────────────────────────────────────────────────────────────┐\n");
@@ -5066,8 +5066,8 @@ void main(int argc,char const *argv[]){
 														printf("└──────────────────────────────────────────────────────────────────────────────┘\n");
 														print_queue_it(&head);
 														printf("Insert random value/s?(y/n): ");
-														scanf("%s",&scelta_random);
-														if((scelta_random == 'y') && (scelta_random != 'n')){
+														scanf("%s",&choice_random);
+														if((choice_random == 'y') && (choice_random != 'n')){
 															//random insert
 															printf("Enter how many value/s: ");
 															scanf("%d",&n);
@@ -5101,8 +5101,8 @@ void main(int argc,char const *argv[]){
 														printf("└──────────────────────────────────────────────────────────────────────────────┘\n");
 														print_queue_it(&head);
 														printf("Insert random value/s?(y/n): ");
-														scanf("%s",&scelta_random);
-														if((scelta_random == 'y') && (scelta_random != 'n')){
+														scanf("%s",&choice_random);
+														if((choice_random == 'y') && (choice_random != 'n')){
 															//random insert
 															printf("Enter how many value/s: ");
 															scanf("%d",&n);
@@ -5145,7 +5145,7 @@ void main(int argc,char const *argv[]){
 									}break;
 
 									case 2:{
-										int scelta_delete=0;
+										int choice_delete=0;
 										do{
 											clrscr();
 											printf("┌──────────────────────────────────────────────────────────────────────────────┐\n");
@@ -5158,8 +5158,8 @@ void main(int argc,char const *argv[]){
 											printf("│                     └► 2.  QUEUE RE                                          │\n");
 											printf("└──────────────────────────────────────────────────────────────────────────────┘\n");
 											printf("CHOICE DELETE: ");
-											scanf("%d",&scelta_delete);
-											switch(scelta_delete){
+											scanf("%d",&choice_delete);
+											switch(choice_delete){
 												case 0:{
 													clrscr();
 													printf("┌──────────────────────────────────────────────────────────────────────────────┐\n");
@@ -5232,7 +5232,7 @@ void main(int argc,char const *argv[]){
 									}break;
 
 									case 3:{
-										int scelta_operations=0;
+										int choice_operations=0;
 										do{
 											clrscr();
 											printf("┌──────────────────────────────────────────────────────────────────────────────┐\n");
@@ -5251,8 +5251,8 @@ void main(int argc,char const *argv[]){
 											printf("│                     └► 8.  SWAP        RE                                    │\n");
 											printf("└──────────────────────────────────────────────────────────────────────────────┘\n");
 											printf("CHOICE OPERATIONS: ");
-											scanf("%d",&scelta_operations);
-											switch(scelta_operations){
+											scanf("%d",&choice_operations);
+											switch(choice_operations){
 												case 0:{
 													clrscr();
 													printf("┌──────────────────────────────────────────────────────────────────────────────┐\n");
@@ -5440,7 +5440,7 @@ void main(int argc,char const *argv[]){
 									}break;
 
 									case 4:{
-										int scelta_sort=0;
+										int choice_sort=0;
 										do{
 											clrscr();
 											printf("┌──────────────────────────────────────────────────────────────────────────────┐\n");
@@ -5459,8 +5459,8 @@ void main(int argc,char const *argv[]){
 											printf("│                     └► 8.  QUICK     RE                                      │\n");
 											printf("└──────────────────────────────────────────────────────────────────────────────┘\n");
 											printf("CHOICE SORTING: ");
-											scanf("%d",&scelta_sort);
-											switch(scelta_sort){
+											scanf("%d",&choice_sort);
+											switch(choice_sort){
 												case 0:{
 													clrscr();
 													printf("┌──────────────────────────────────────────────────────────────────────────────┐\n");
@@ -5684,9 +5684,9 @@ void main(int argc,char const *argv[]){
 						}break;
 
 						case 6:{
-							int scelta_list=0,val=0,length=0,x=0,y=0,n=0,upper=10,lower=0;
+							int choice_list=0,val=0,length=0,x=0,y=0,n=0,upper=10,lower=0;
 							struct L *head=NULL;
-							char scelta_random='n';
+							char choice_random='n';
 							srand(time(NULL));
 							do{
 								clrscr();
@@ -5703,8 +5703,8 @@ void main(int argc,char const *argv[]){
 								printf("│              └► 6.  CHECK                                                 [ ]│\n");
 								printf("└──────────────────────────────────────────────────────────────────────────────┘\n");
 								printf("CHOICE LIST: ");
-								scanf("%d",&scelta_list);
-								switch(scelta_list){
+								scanf("%d",&choice_list);
+								switch(choice_list){
 									case 0:{
 										clrscr();
 										printf("┌──────────────────────────────────────────────────────────────────────────────┐\n");
@@ -5716,7 +5716,7 @@ void main(int argc,char const *argv[]){
 									}break;
 									
 									case 1:{
-										int scelta_insert=0;
+										int choice_insert=0;
 										do{
 											clrscr();
 											printf("┌──────────────────────────────────────────────────────────────────────────────┐\n");
@@ -5735,8 +5735,8 @@ void main(int argc,char const *argv[]){
 											printf("│                     └► 8.  QUEUE  RE                                         │\n");
 											printf("└──────────────────────────────────────────────────────────────────────────────┘\n");
 											printf("CHOICE INSERT: ");
-											scanf("%d",&scelta_insert);
-											switch(scelta_insert){
+											scanf("%d",&choice_insert);
+											switch(choice_insert){
 												case 0:{
 													clrscr();
 													printf("┌──────────────────────────────────────────────────────────────────────────────┐\n");
@@ -5760,8 +5760,8 @@ void main(int argc,char const *argv[]){
 														printf("└──────────────────────────────────────────────────────────────────────────────┘\n");
 														print_list_it(&head);
 														printf("Insert random value/s?(y/n): ");
-														scanf("%s",&scelta_random);
-														if((scelta_random == 'y') && (scelta_random != 'n')){
+														scanf("%s",&choice_random);
+														if((choice_random == 'y') && (choice_random != 'n')){
 															//random insert
 															printf("Enter how many value/s: ");
 															scanf("%d",&n);
@@ -5795,8 +5795,8 @@ void main(int argc,char const *argv[]){
 														printf("└──────────────────────────────────────────────────────────────────────────────┘\n");
 														print_list_it(&head);
 														printf("Insert random value/s?(y/n): ");
-														scanf("%s",&scelta_random);
-														if((scelta_random == 'y') && (scelta_random != 'n')){
+														scanf("%s",&choice_random);
+														if((choice_random == 'y') && (choice_random != 'n')){
 															//random insert
 															printf("Enter how many value/s: ");
 															scanf("%d",&n);
@@ -5830,8 +5830,8 @@ void main(int argc,char const *argv[]){
 														printf("└──────────────────────────────────────────────────────────────────────────────┘\n");
 														print_list_it(&head);
 														printf("Insert random value/s?(y/n): ");
-														scanf("%s",&scelta_random);
-														if((scelta_random == 'y') && (scelta_random != 'n')){
+														scanf("%s",&choice_random);
+														if((choice_random == 'y') && (choice_random != 'n')){
 															//random insert
 															printf("Enter how many value/s: ");
 															scanf("%d",&n);
@@ -5865,8 +5865,8 @@ void main(int argc,char const *argv[]){
 														printf("└──────────────────────────────────────────────────────────────────────────────┘\n");
 														print_list_it(&head);
 														printf("Insert random value/s?(y/n): ");
-														scanf("%s",&scelta_random);
-														if((scelta_random == 'y') && (scelta_random != 'n')){
+														scanf("%s",&choice_random);
+														if((choice_random == 'y') && (choice_random != 'n')){
 															//random insert
 															printf("Enter how many value/s: ");
 															scanf("%d",&n);
@@ -5900,8 +5900,8 @@ void main(int argc,char const *argv[]){
 														printf("└──────────────────────────────────────────────────────────────────────────────┘\n");
 														print_list_it(&head);
 														printf("Insert random value/s?(y/n): ");
-														scanf("%s",&scelta_random);
-														if((scelta_random == 'y') && (scelta_random != 'n')){
+														scanf("%s",&choice_random);
+														if((choice_random == 'y') && (choice_random != 'n')){
 															//random insert
 															printf("Enter how many value/s: ");
 															scanf("%d",&n);
@@ -5935,8 +5935,8 @@ void main(int argc,char const *argv[]){
 														printf("└──────────────────────────────────────────────────────────────────────────────┘\n");
 														print_list_it(&head);
 														printf("Insert random value/s?(y/n): ");
-														scanf("%s",&scelta_random);
-														if((scelta_random == 'y') && (scelta_random != 'n')){
+														scanf("%s",&choice_random);
+														if((choice_random == 'y') && (choice_random != 'n')){
 															//random insert
 															printf("Enter how many value/s: ");
 															scanf("%d",&n);
@@ -5970,8 +5970,8 @@ void main(int argc,char const *argv[]){
 														printf("└──────────────────────────────────────────────────────────────────────────────┘\n");
 														print_list_it(&head);
 														printf("Insert random value/s?(y/n): ");
-														scanf("%s",&scelta_random);
-														if((scelta_random == 'y') && (scelta_random != 'n')){
+														scanf("%s",&choice_random);
+														if((choice_random == 'y') && (choice_random != 'n')){
 															//random insert
 															printf("Enter how many value/s: ");
 															scanf("%d",&n);
@@ -6005,8 +6005,8 @@ void main(int argc,char const *argv[]){
 														printf("└──────────────────────────────────────────────────────────────────────────────┘\n");
 														print_list_it(&head);
 														printf("Insert random value/s?(y/n): ");
-														scanf("%s",&scelta_random);
-														if((scelta_random == 'y') && (scelta_random != 'n')){
+														scanf("%s",&choice_random);
+														if((choice_random == 'y') && (choice_random != 'n')){
 															//random insert
 															printf("Enter how many value/s: ");
 															scanf("%d",&n);
@@ -6049,7 +6049,7 @@ void main(int argc,char const *argv[]){
 									}break;
 
 									case 2:{
-										int scelta_delete=0;
+										int choice_delete=0;
 										do{
 											clrscr();
 											printf("┌──────────────────────────────────────────────────────────────────────────────┐\n");
@@ -6068,8 +6068,8 @@ void main(int argc,char const *argv[]){
 											printf("│                     └► 8.  ALL    RE                                         │\n");
 											printf("└──────────────────────────────────────────────────────────────────────────────┘\n");
 											printf("CHOICE DELETE: ");
-											scanf("%d",&scelta_delete);
-											switch(scelta_delete){
+											scanf("%d",&choice_delete);
+											switch(choice_delete){
 												case 0:{
 													clrscr();
 													printf("┌──────────────────────────────────────────────────────────────────────────────┐\n");
@@ -6266,7 +6266,7 @@ void main(int argc,char const *argv[]){
 									}break;
 
 									case 3:{
-										int scelta_operations=0;
+										int choice_operations=0;
 										do{
 											clrscr();
 											printf("┌──────────────────────────────────────────────────────────────────────────────┐\n");
@@ -6285,8 +6285,8 @@ void main(int argc,char const *argv[]){
 											printf("│                     └► 8.  SWAP       RE                                     │\n");
 											printf("└──────────────────────────────────────────────────────────────────────────────┘\n");
 											printf("CHOICE OPERATIONS: ");
-											scanf("%d",&scelta_operations);
-											switch(scelta_operations){
+											scanf("%d",&choice_operations);
+											switch(choice_operations){
 												case 0:{
 													clrscr();
 													printf("┌──────────────────────────────────────────────────────────────────────────────┐\n");
@@ -6474,7 +6474,7 @@ void main(int argc,char const *argv[]){
 									}break;
 
 									case 4:{
-										int scelta_sort=0;
+										int choice_sort=0;
 										do{
 											clrscr();
 											printf("┌──────────────────────────────────────────────────────────────────────────────┐\n");
@@ -6493,8 +6493,8 @@ void main(int argc,char const *argv[]){
 											printf("│                     └► 8.  QUICK     RE                                      │\n");
 											printf("└──────────────────────────────────────────────────────────────────────────────┘\n");
 											printf("CHOICE SORTING: ");
-											scanf("%d",&scelta_sort);
-											switch(scelta_sort){
+											scanf("%d",&choice_sort);
+											switch(choice_sort){
 												case 0:{
 													clrscr();
 													printf("┌──────────────────────────────────────────────────────────────────────────────┐\n");
@@ -6751,5 +6751,5 @@ void main(int argc,char const *argv[]){
 				}while((((torna == 'n')&&(torna == 'N')))||((torna != 'y')&&(torna != 'Y')));
 			}break; //default (main menu)
 		}
-	}while((scelta_menu >= 0) || (scelta_menu <= 10));
+	}while((choice_menu >= 0) || (choice_menu <= 10));
 }
