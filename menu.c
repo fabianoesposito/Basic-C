@@ -17,7 +17,6 @@ void clrscr(void){
 }
 #include "basic.h"
 #include "data_struct.h"
-
 void main(int argc,char const *argv[]){
 	int choice_menu=0;
 	char back='n';	
@@ -2892,7 +2891,7 @@ void main(int argc,char const *argv[]){
 											printf("│                     ├► 3.  INSERTION IT                                      │\n");
 											printf("│                     ├► 4.  MERGE     IT                                      │\n");
 											printf("│                     ├► 5.  QUICK     IT                                      │\n");
-											printf("│                     ├► 6.  SHELL     IT                                   [ ]│\n");
+											printf("│                     ├► 6.  SHELL     IT                                      │\n");
 											printf("│                     ├► 7.  BUBBLE    RE                                      │\n");
 											printf("│                     ├► 8.  SELECTION RE                                      │\n");
 											printf("│                     ├► 9.  INSERTION RE                                      │\n");
@@ -3024,7 +3023,11 @@ void main(int argc,char const *argv[]){
 														printf("│              └► 3.  SORTING                                                  │\n");
 														printf("│                     └► 6.  SHELL IT                                          │\n");
 														printf("└──────────────────────────────────────────────────────────────────────────────┘\n");
-														//shell sort it
+														printf("Array before:\n");
+														print_array(dim,A);
+														shell_I(A,dim);
+														printf("Array after:\n");
+														print_array(dim,A);
 														printf("Do you want to back to SORT?(y/n): ");
 														scanf("%s",&back);
 													}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
@@ -3178,8 +3181,8 @@ void main(int argc,char const *argv[]){
 											printf("│                     ├► 0.  BACK ARRAY MENU                                   │\n");
 											printf("│                     ├► 1.  LINEAR IT                                         │\n");
 											printf("│                     ├► 2.  BINARY IT                                         │\n");
-											printf("│                     ├► 3.  LINEAR RE                                      [ ]│\n");
-											printf("│                     └► 4.  BINARY RE                                      [ ]│\n");
+											printf("│                     ├► 3.  LINEAR RE                                         │\n");
+											printf("│                     └► 4.  BINARY RE                                         │\n");
 											printf("└──────────────────────────────────────────────────────────────────────────────┘\n");
 											printf("CHOICE SEARCHING: ");
 											scanf("%d",&choice_search);
@@ -3231,7 +3234,7 @@ void main(int argc,char const *argv[]){
 														printf("└──────────────────────────────────────────────────────────────────────────────┘\n");
 														printf("Enter value for search: ");
 														scanf("%d",&x);
-														int result=binary_I(A,0,dim-1,x);
+														int result=binary_I(A,0,dim,x);
 														if(result == -1){
 															printf("Value %d is not in array!\n",x);
 														}else{
@@ -3253,7 +3256,15 @@ void main(int argc,char const *argv[]){
 														printf("│              └► 4.  SEARCHING                                                │\n");
 														printf("│                     └► 3.  LINEAR RE                                         │\n");
 														printf("└──────────────────────────────────────────────────────────────────────────────┘\n");
-														
+														printf("Enter value for search: ");
+														scanf("%d",&x);
+														int result=linear_R(A,0,dim,x);
+														if(result == -1){
+															printf("Value %d is not in array!\n",x);
+														}else{
+															printf("Value %d is in %d° position!!!\n",x,result+1);
+														}
+														print_array(dim,A);
 														printf("Do you want to back to SEARCHING?(y/n): ");
 														scanf("%s",&back);
 													}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
@@ -3269,7 +3280,15 @@ void main(int argc,char const *argv[]){
 														printf("│              └► 4.  SEARCHING                                                │\n");
 														printf("│                     └► 4.  BINARY RE                                         │\n");
 														printf("└──────────────────────────────────────────────────────────────────────────────┘\n");
-														
+														printf("Enter value for search: ");
+														scanf("%d",&x);
+														int result=binary_R(A,0,dim-1,x);
+														if(result == -1){
+															printf("Value %d is not in array!\n",x);
+														}else{
+															printf("Value %d is in %d° position!!!\n",x,result+1);
+														}
+														print_array(dim,A);
 														printf("Do you want to back to SEARCHING?(y/n): ");
 														scanf("%s",&back);
 													}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
@@ -3296,6 +3315,7 @@ void main(int argc,char const *argv[]){
 									}break;
 
 									case 5:{
+										int choice_check=0;
 										do{
 											clrscr();
 											printf("┌──────────────────────────────────────────────────────────────────────────────┐\n");
@@ -3303,7 +3323,37 @@ void main(int argc,char const *argv[]){
 											printf("│└► 1.  MENU DATA-STRUCT                                                       │\n");
 											printf("│       └► 1.  MENU ARRAY                                                      │\n");
 											printf("│              └► 5.  CHECK                                                    │\n");
+											printf("│                     ├► 0.  BACK ARRAY MENU                                   │\n");
 											printf("└──────────────────────────────────────────────────────────────────────────────┘\n");
+											printf("CHOICE CHECK: ");
+											scanf("%d",&choice_check);
+											switch(choice_check){
+												case 0:{
+													clrscr();
+													printf("┌──────────────────────────────────────────────────────────────────────────────┐\n");
+													printf("│MAIN MENU                                                                     │\n");
+													printf("│└► 2.  MENU DATA-STRUCT                                                       │\n");
+													printf("│       └► 1.  MENU ARRAY                                                      │\n");
+													printf("│              └► 5.  CHECK                                                    │\n");
+													printf("│                     └► 0.  BACK ARRAY MENU                                   │\n");
+													printf("└──────────────────────────────────────────────────────────────────────────────┘\n");
+												}break;
+												//...
+												default:{
+													do{
+														clrscr();
+														printf("┌──────────────────────────────────────────────────────────────────────────────┐\n");
+														printf("│MAIN MENU                                                                     │\n");
+														printf("│└► 2.  MENU DATA-STRUCT                                                       │\n");
+														printf("│       └► 1.  MENU ARRAY                                                      │\n");
+														printf("│              └► 5.  CHECK                                                    │\n");
+														printf("│                     └► X.  DEFAULT: ERROR CHOICE!                            │\n");
+														printf("└──────────────────────────────────────────────────────────────────────────────┘\n");
+														printf("Do you want to back to CHECK?(y/n): ");
+														scanf("%s",&back);
+													}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
+												}break;
+											}
 											printf("Do you want to back to ARRAY MENU?(y/n): ");
 											scanf("%s",&back);
 										}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
