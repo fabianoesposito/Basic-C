@@ -2897,7 +2897,7 @@ void main(int argc,char const *argv[]){
 											printf("│                     ├► 9.  INSERTION RE                                      │\n");
 											printf("│                     ├► 10. MERGE     RE                                      │\n");
 											printf("│                     ├► 11. QUICK     RE                                      │\n");
-											printf("│                     └► 12. SHELL     RE                                   [ ]│\n");
+											printf("│                     └► 12. SHELL     RE                                      │\n");
 											printf("└──────────────────────────────────────────────────────────────────────────────┘\n");
 											printf("CHOICE SORT: ");
 											scanf("%d",&choice_sort);
@@ -3065,7 +3065,7 @@ void main(int argc,char const *argv[]){
 														printf("└──────────────────────────────────────────────────────────────────────────────┘\n");
 														printf("Array before:\n");
 														print_array(dim,A);
-														sel_I(A,dim);
+														sel_R(A,0,dim);
 														printf("Array after:\n");
 														print_array(dim,A);
 														printf("Do you want to back to SORT?(y/n): ");
@@ -3143,7 +3143,12 @@ void main(int argc,char const *argv[]){
 														printf("│              └► 3.  SORTING                                                  │\n");
 														printf("│                     └► 12. SHELL RE                                          │\n");
 														printf("└──────────────────────────────────────────────────────────────────────────────┘\n");
-														//shell sort re
+														printf("Array before:\n");
+														print_array(dim,A);
+														int k=(dim+1)/2;
+														shell_R(A,dim,k);
+														printf("Array after:\n");
+														print_array(dim,A);
 														printf("Do you want to back to SORT?(y/n): ");
 														scanf("%s",&back);
 													}while((((back == 'n')&&(back == 'N')))||((back != 'y')&&(back != 'Y')));
@@ -3801,7 +3806,7 @@ void main(int argc,char const *argv[]){
 													printf("│MAIN MENU                                                                     │\n");
 													printf("│└► 2.  MENU DATA-STRUCT                                                       │\n");
 													printf("│       └► 2.  MENU STRING                                                     │\n");
-													printf("│              └► 4.  CHECK                                                    │\n");
+													printf("│              └► 5.  CHECK                                                    │\n");
 													printf("│                     └► 0.  BACK STRING MENU                                  │\n");
 													printf("└──────────────────────────────────────────────────────────────────────────────┘\n");
 												}break;
@@ -3814,7 +3819,7 @@ void main(int argc,char const *argv[]){
 														printf("│MAIN MENU                                                                     │\n");
 														printf("│└► 2.  MENU DATA-STRUCT                                                       │\n");
 														printf("│       └► 2.  MENU STRING                                                     │\n");
-														printf("│              └► 4.  CHECK                                                    │\n");
+														printf("│              └► 5.  CHECK                                                    │\n");
 														printf("│                     └► 1.  CHECK VOWELS IN A STRING                          │\n");
 														printf("└──────────────────────────────────────────────────────────────────────────────┘\n");
 														print_string(1,Str1,Str2,0,Str3);
@@ -3833,7 +3838,7 @@ void main(int argc,char const *argv[]){
 														printf("│MAIN MENU                                                                     │\n");
 														printf("│└► 2.  MENU DATA-STRUCT                                                       │\n");
 														printf("│       └► 2.  MENU STRING                                                     │\n");
-														printf("│              └► 4.  CHECK                                                    │\n");
+														printf("│              └► 5.  CHECK                                                    │\n");
 														printf("│                     └► 2.  COMPARE STRINGS WITHOUT STRCMP()                  │\n");
 														printf("└──────────────────────────────────────────────────────────────────────────────┘\n");
 														ins_string(2,Str1,Str2,0,Str3);
@@ -3856,7 +3861,7 @@ void main(int argc,char const *argv[]){
 														printf("│MAIN MENU                                                                     │\n");
 														printf("│└► 2.  MENU DATA-STRUCT                                                       │\n");
 														printf("│       └► 2.  MENU STRING                                                     │\n");
-														printf("│              └► 4.  CHECK                                                    │\n");
+														printf("│              └► 5.  CHECK                                                    │\n");
 														printf("│                     └► 3.  COMPARE TWO STRINGS                               │\n");
 														printf("└──────────────────────────────────────────────────────────────────────────────┘\n");
 														ins_string(2,Str1,Str2,0,Str3);
@@ -3878,7 +3883,7 @@ void main(int argc,char const *argv[]){
 														printf("│MAIN MENU                                                                     │\n");
 														printf("│└► 2.  MENU DATA-STRUCT                                                       │\n");
 														printf("│       └► 2.  MENU STRING                                                     │\n");
-														printf("│              └► 4.  CHECK                                                    │\n");
+														printf("│              └► 5.  CHECK                                                    │\n");
 														printf("│                     └► 4.  COUNT FREQUENCY OF CHARACTERS IN A STRING         │\n");
 														printf("└──────────────────────────────────────────────────────────────────────────────┘\n");
 														print_string(1,Str1,Str2,0,Str3);
@@ -3895,7 +3900,7 @@ void main(int argc,char const *argv[]){
 														printf("│MAIN MENU                                                                     │\n");
 														printf("│└► 2.  MENU DATA-STRUCT                                                       │\n");
 														printf("│       └► 2.  MENU STRING                                                     │\n");
-														printf("│              └► 4.  CHECK                                                    │\n");
+														printf("│              └► 5.  CHECK                                                    │\n");
 														printf("│                     └► 5.  COUNT TOT NUMBER UPPER/LOWERCASE IN STRING        │\n");
 														printf("└──────────────────────────────────────────────────────────────────────────────┘\n");
 														print_string(1,Str1,Str2,0,Str3);
@@ -3912,7 +3917,7 @@ void main(int argc,char const *argv[]){
 														printf("│MAIN MENU                                                                     │\n");
 														printf("│└► 2.  MENU DATA-STRUCT                                                       │\n");
 														printf("│       └► 2.  MENU STRING                                                     │\n");
-														printf("│              └► 4.  CHECK                                                    │\n");
+														printf("│              └► 5.  CHECK                                                    │\n");
 														printf("│                     └► 6.  PALINDROME USING ARRAY                            │\n");
 														printf("└──────────────────────────────────────────────────────────────────────────────┘\n");
 														print_string(1,Str1,Str2,0,Str3);
@@ -3929,7 +3934,7 @@ void main(int argc,char const *argv[]){
 														printf("│MAIN MENU                                                                     │\n");
 														printf("│└► 2.  MENU DATA-STRUCT                                                       │\n");
 														printf("│       └► 2.  MENU STRING                                                     │\n");
-														printf("│              └► 4.  CHECK                                                    │\n");
+														printf("│              └► 5.  CHECK                                                    │\n");
 														printf("│                     └► 7.  PALINDROME OF STRING                              │\n");
 														printf("└──────────────────────────────────────────────────────────────────────────────┘\n");
 														print_string(1,Str1,Str2,0,Str3);
@@ -3946,7 +3951,7 @@ void main(int argc,char const *argv[]){
 														printf("│MAIN MENU                                                                     │\n");
 														printf("│└► 2.  MENU DATA-STRUCT                                                       │\n");
 														printf("│       └► 2.  MENU STRING                                                     │\n");
-														printf("│              └► 4.  CHECK                                                    │\n");
+														printf("│              └► 5.  CHECK                                                    │\n");
 														printf("│                     └► X.  DEFAULT: ERROR CHOICE!                            │\n");
 														printf("└──────────────────────────────────────────────────────────────────────────────┘\n");
 														printf("Do you want to back to CHECK?(y/n): ");
