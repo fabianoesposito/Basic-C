@@ -6,25 +6,17 @@
 #include <ctype.h>
 #include <time.h>
 #define MAXSIZE 1000
-/*┌─────────────────────────────────┐
-  │GLOBAL                           │
-  │└► clrscr                        │
-  │   └► Description:               │
-  └─────────────────────────────────┘*/
-void clrscr(void){
-	printf("\033[2J");
-	printf("\033[0;0f");
-}
+#include "global.h"
 #include "basic.h"
 #include "data_struct.h"
 void main(int argc,char const *argv[]){
 	int choice_menu=0;
 	char back='n';	
-/*┌────────────────────────────────┐
-  │├► [●]: complete/work           │
-  │├► [ ]: miss                    │
-  │├► [○]: in dev                  │
-  └────────────────────────────────┘*/
+//┌────────────────────────────────┐
+//│├► [●]: complete/work           │
+//│├► [ ]: miss                    │
+//│├► [○]: in dev                  │
+//└────────────────────────────────┘
   	do{
   		clrscr();
 		printf("┌──────────────────────────────────────────────────────────────────────────────┐\n");
