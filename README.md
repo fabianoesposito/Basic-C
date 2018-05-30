@@ -1,2 +1,2 @@
 # Basic-C
-OPEN README.txt
+COMPILE AND EXECUTE: gcc menu.c -o menu -lm && ./menu
