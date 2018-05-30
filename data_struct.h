@@ -229,6 +229,7 @@ void quick_I(int A[], int l, int h){
 }
 
 void shell_I(int A[], int dim){
+	//VERSION1
 	int tmp;
 	for(int i=dim/2; i>0; i=i/2){
 		for(int j=i; j<dim; j++){
@@ -241,6 +242,28 @@ void shell_I(int A[], int dim){
 			}
 		}
 	}
+	
+/*	//VERSION2
+	int dist=dim, k, x, curr, prec;
+	while(dist > 1){
+		dist=dist/2;
+		for(int j=0;j<dist;j++){
+			k=j+dist;
+			while(k < dim){
+				x=A[k];
+				curr=k;
+				prec=curr-dist;
+				while((prec >= j)&&(x < A[prec])){
+					A[curr]=A[prec];
+					curr=prec;
+					prec=prec-dist;
+				}
+				A[curr]=x;
+				k=k+dist;
+			}
+		}
+	}
+*/
 }
 
 void bubble_R(int A[], int dim){
@@ -252,6 +275,22 @@ void bubble_R(int A[], int dim){
 			swap3(&A[i],&A[i+1]);
 
 	bubble_R(A,dim-1);
+}
+
+void sel_R(int A[], int i, int dim){
+	int small, temp;
+	if(i < dim-1) {
+		small = i;
+		for(int j = i+1; j < dim; j++){
+			if(A[j] < A[small]){
+				small = j;
+			}
+		}
+		temp = A[small];
+		A[small] = A[i];
+		A[i] = temp;
+		sel_R(A,i+1,dim);
+	}
 }
 
 void ins_R(int A[], int dim){
@@ -281,6 +320,24 @@ void quick_R(int A[], int l, int h){
 		int p=partition(A,l,h);
 		quick_R(A,l,p-1);
 		quick_R(A,p+1,h);
+	}
+}
+
+void shell_R(int A[], int dim, int k){
+	if(k <= 0){
+		return;
+	}else{
+		int i=0,temp,key=k;
+		while(key < dim){
+			if(A[i] >= A[key]){
+				temp=A[i];
+				A[i]=A[key];
+				A[key]=temp;
+			}
+			key++;
+			i++;
+		}
+		shell_R(A,dim,k-1);
 	}
 }
 
