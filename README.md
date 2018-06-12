@@ -1,6 +1,7 @@
-<!-- ---
+---
 title: "Basic-C"
-layout: github.com/fabianoesposito/fabianoesposito.github.io/_layouts/archive
+---
+<!-- layout: github.com/fabianoesposito/fabianoesposito.github.io/_layouts/archive
 # permalink: /machine-learning/
 author_profile: true
 header:
