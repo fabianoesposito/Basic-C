@@ -1,13 +1,3 @@
----
-title: "Basic_C"
-date: 2018-01-28
-tags: [programming, language, C]
-# header:
-#   image: "/images/perceptron/percept.jpg"
-excerpt: "Basic-C"
-mathjax: "true"
----
-
 # H1 Heading
 
 ## H2 Heading
