@@ -1,5 +1,4 @@
 ---
-title: "Basic-C"
 header:
   image: "/images/zakim.jpg"
 ---
