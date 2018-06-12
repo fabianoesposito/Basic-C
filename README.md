@@ -1,3 +1,8 @@
+---
+title: "Basic-C"
+header:
+  image: "/images/zakim.jpg"
+---
 # Basic-C
 COMPILE AND EXECUTE: gcc menu.c -o menu -lm && ./menu
 
