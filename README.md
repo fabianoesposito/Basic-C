@@ -1,3 +1,12 @@
+---
+# title: "Machine Learning Project: Perceptron"
+date: 2018-01-28
+# tags: [machine learning, data science, neural network]
+header:
+  image: "https://github.com/fabianoesposito/fabianoesposito.github.io/images/perceptron/percept.jpg"
+excerpt: "..."
+mathjax: "true"
+---
 # Basic-C
 
 ## H2 Heading
