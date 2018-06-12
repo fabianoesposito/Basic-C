@@ -1,11 +1,11 @@
 ---
-title: "Page Not Found"
+title: "Basic-C"
 layout: github.com/fabianoesposito/fabianoesposito.github.io/_layouts/archive
 # permalink: /machine-learning/
 author_profile: true
 header:
   image: "github.com/fabianoesposito/fabianoesposito.github.io/images/fort point.png"
-excerpt: "Page not found."
+# excerpt: "Page not found."
 sitemap: false
 # permalink: /404.html
 ---
