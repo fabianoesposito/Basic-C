@@ -1,12 +1,12 @@
 ---
 title: "Basic-C"
-layout: single
+layout: archive
 # excerpt: "Page not found."
 # "Your pixels are in another canvas."
-sitemap: false
+# sitemap: false
 # permalink: /Basic-C.html
 ---
-# Basic-C
+<!-- # Basic-C -->
 
 COMPILE AND EXECUTE: gcc menu.c -o menu -lm && ./menu
 Back to: [fabianoesposito.github.io/projects](https://fabianoesposito.github.io/projects/)
