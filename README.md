@@ -2,8 +2,8 @@
 title: "Basic-C"
 date: 2018-06-12
 # tags: [machine learning, data science, neural network]
-header:
-  image: "/images/perceptron/percept.jpg"
+# header:
+#   image: "/images/perceptron/percept.jpg"
 excerpt: "Basic-C"
 mathjax: "true"
 ---
